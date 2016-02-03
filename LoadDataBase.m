@@ -120,7 +120,7 @@ for idx_folder = startFoldIdx:stopFoldIdx
                 Data = extractdata(allskel);
                 save tst_skel Data;
                 
-                clear all;
+                
                 
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
                 % Plot raw Acceleration data of each test             
@@ -145,3 +145,4 @@ for idx_folder = startFoldIdx:stopFoldIdx
         end
     end
 end
+clear all;
