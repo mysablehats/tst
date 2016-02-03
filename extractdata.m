@@ -6,7 +6,7 @@ for i = 2:length(structure)
 end
 % It will also construct data for a clustering analysis, whatever the hell
 % that might be in this sense
-vectordata = [structure.skel(:,1,1); structure.skel(:,2,1); structure.skel(:,3,1)];
+vectordata = [Data(:,1,1); Data(:,2,1); Data(:,3,1)];
 for i = 2:length(Data)
-    vectordata = cat(2,vectordata, [structure.skel(:,1,i); structure.skel(:,2,i); structure.skel(:,3,i)]);
+    vectordata = cat(2,vectordata, [Data(:,1,i); Data(:,2,i); Data(:,3,i)]);
 end

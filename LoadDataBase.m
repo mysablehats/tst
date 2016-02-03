@@ -117,25 +117,29 @@ for idx_folder = startFoldIdx:stopFoldIdx
                 else
                     allskel = jskelstruc;
                 end
+                Data = extractdata(allskel);
+                save tst_skel Data;
+                
+                clear all;
                 
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
                 % Plot raw Acceleration data of each test             
-                figure; 
-                subplot 121; title('35EE'); hold on;
-                plot(X_acc_raw_35EE,'b'); plot(Y_acc_raw_35EE,'r'); plot(Z_acc_raw_35EE,'k');
-                subplot 122; title('36F9'); hold on;
-                plot(X_acc_raw_36F9,'b'); plot(Y_acc_raw_36F9,'r'); plot(Z_acc_raw_36F9,'k');
+                %figure; 
+                %subplot 121; title('35EE'); hold on;
+                %plot(X_acc_raw_35EE,'b'); plot(Y_acc_raw_35EE,'r'); plot(Z_acc_raw_35EE,'k');
+                %subplot 122; title('36F9'); hold on;
+                %plot(X_acc_raw_36F9,'b'); plot(Y_acc_raw_36F9,'r'); plot(Z_acc_raw_36F9,'k');
                 
                 % Plot Depth and Skeleton data of each test
-                figure;
-                subplot 131;
-                imagesc(M); title('depth frame');
-                subplot 132;  hold on;
-                plot3(jMatSkl(:,1,1),jMatSkl(:,3,1),jMatSkl(:,2,1),'.r','markersize',20); view(0,0); axis equal;
-                title('skeleton in skeleton space');
-                subplot 133;
-                plot3(jMatDep(:,1,1),jMatDep(:,3,1),jMatDep(:,2,1),'.b','markersize',20); view(0,0); axis equal; set(gca,'ZDir','Reverse');
-                title('skeleton in depth space');
+                %figure;
+                %subplot 131;
+                %imagesc(M); title('depth frame');
+                %subplot 132;  hold on;
+                %plot3(jMatSkl(:,1,1),jMatSkl(:,3,1),jMatSkl(:,2,1),'.r','markersize',20); view(0,0); axis equal;
+                %title('skeleton in skeleton space');
+                %subplot 133;
+                %plot3(jMatDep(:,1,1),jMatDep(:,3,1),jMatDep(:,2,1),'.b','markersize',20); view(0,0); axis equal; set(gca,'ZDir','Reverse');
+                %title('skeleton in depth space');
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
             end
         end
