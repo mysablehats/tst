@@ -7,11 +7,11 @@
 clc;
 %clear; close all;
 colordef black
-NumOfEpochs   = 600;
+NumOfEpochs   = 30000;
 NumOfSamples = 400;
 age_inc               = 1;
 max_age             = 200;
-max_nodes         = 600;
+max_nodes         = 2000;
 eb                         = .05;
 en                         = .005;
 lamda                   = 350;
