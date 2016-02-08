@@ -142,5 +142,5 @@ for idx_folder = startFoldIdx:stopFoldIdx
     end
 end
 [X, Data,Y] = extractdata(allskel);
-save('tst_skel','Data','-v7.3');
+save('tst_skel','Data', 'Y','-v7.3');
 %clear all;
