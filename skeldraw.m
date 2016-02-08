@@ -1,11 +1,17 @@
 % plot the nodes
 %reconstruct the nodes from the 75 dimension vector. each 3 is a point
 function skeldraw(skel)
-tdskel = zeros(25,3);
-for i=1:3
-    for j=1:25
-        tdskel(j,i) = skel(j+25*(i-1));
+hold_initialstate = ishold();
+
+if all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
+    tdskel = zeros(25,3);
+    for i=1:3
+        for j=1:25
+            tdskel(j,i) = skel(j+25*(i-1));
+        end
     end
+else
+        tdskel = skel;
 end
 
 plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
@@ -15,6 +21,10 @@ for k=1:25
 end
 stick_draw(tdskel)
 hold off
+if hold_initialstate == 1
+    hold on
+end
+   
 end
 
 function stick_draw(tdskel)

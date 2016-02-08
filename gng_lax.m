@@ -104,20 +104,20 @@ end
 
 Cur_RMSE(kk) = norm(error)/sqrt(NumOfNodes);
 RMSE = [RMSE Cur_RMSE(kk)];
-if length(RMSE)>100
-    RMSE = RMSE(end-100:end);
-end
+%if length(RMSE)>100
+%    RMSE = RMSE(end-100:end);
+%end
 
 Epoch = [Epoch kk];
-if length(Epoch)>100
-    Epoch = Epoch(end-100:end);
-end
+%if length(Epoch)>100
+%    Epoch = Epoch(end-100:end);
+%end
 
 subplot(1,2,1);
 plotgng(nodes,edges,'n');
 % xlim([-1/2 2.5]);
 % ylim([-1 8]);
-% zlim([-1/2 1.5]);
+% zlim([-1/2 1.5]);nnts
 % xlim([-1 6]);
 % ylim([-1 6]);
 % zlim([-7 7]);

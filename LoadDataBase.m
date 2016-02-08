@@ -4,7 +4,7 @@ clear all;close all;clc;
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Choose:
 startFoldIdx = 1;   % Index of the first test folder to load (1->'Data1')
-stopFoldIdx = 11;    % Index of the last test folder to load (11->'Data11')
+stopFoldIdx = 5;    % Index of the last test folder to load (11->'Data11')
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 %The script loads:
@@ -19,7 +19,7 @@ stopFoldIdx = 11;    % Index of the last test folder to load (11->'Data11')
 % - KinectTimeBody: timestamps assigned by the PC to the skeleton, when it is available to the PC [100ns]/[us]
 
 SLASH = '/'; % or '\' in windows!
-pathtodata = '../Documents/';
+pathtodata = '/Volumes/Elements/fall_detection_datasets/TST Fall detection database ver. 2/';
 ADLFolderName = {'sit','grasp','walk','lay'};
 FallFolderName = {'front','back','side','EndUpSit'};
 %*****Wearable device*****
@@ -141,6 +141,6 @@ for idx_folder = startFoldIdx:stopFoldIdx
         end
     end
 end
-[X, Data] = extractdata(allskel);
+[X, Data,Y] = extractdata(allskel);
 save('tst_skel','Data','-v7.3');
-clear all;
+%clear all;
