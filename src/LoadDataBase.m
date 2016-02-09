@@ -18,8 +18,8 @@ stopFoldIdx = 5;    % Index of the last test folder to load (11->'Data11')
 % - jMatSkl:        skeleton joints in skeleton space
 % - KinectTimeBody: timestamps assigned by the PC to the skeleton, when it is available to the PC [100ns]/[us]
 
-SLASH = '/'; % or '\' in windows!
-pathtodata = '/Volumes/Elements/fall_detection_datasets/TST Fall detection database ver. 2/';
+[SLASH, pathtodata] = OS_VARS(); % adjusst environment variables to system in question (PC, MAC, UNIX)
+
 ADLFolderName = {'sit','grasp','walk','lay'};
 FallFolderName = {'front','back','side','EndUpSit'};
 %*****Wearable device*****

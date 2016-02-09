@@ -1,5 +1,5 @@
 function PckVal = loadPackets(device,path)
-SLASH = '/';
+[SLASH, pathtodata] = OS_VARS();
 n = 22; % No. of columns of T
 fid = fopen(strcat(path,SLASH,'Shimmer',SLASH,'Packets',device,'.bin'));    
 B = fread(fid,'uint8');
