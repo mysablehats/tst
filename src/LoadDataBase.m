@@ -1,10 +1,11 @@
 %Place this code in the same folder of the database (Data1,Data2,...Data11)
+function allskel = LoadDataBase(startFoldIdx, stopFoldIdx,isvalidate)
 clear all;close all;clc;
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Choose:
-startFoldIdx = 1;   % Index of the first test folder to load (1->'Data1')
-stopFoldIdx = 5;    % Index of the last test folder to load (11->'Data11')
+%startFoldIdx = 1;   % Index of the first test folder to load (1->'Data1')
+%stopFoldIdx = 5;    % Index of the last test folder to load (11->'Data11')
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 %The script loads:
@@ -141,6 +142,11 @@ for idx_folder = startFoldIdx:stopFoldIdx
         end
     end
 end
+
+if isvalidate
+[X, data,y] = extractdata(allskel);
+save(strcat('..',SLASH,'share',SLASH,'tst_skel_val'),'data', 'y','-v7.3');
+else
 [X, Data,Y] = extractdata(allskel);
-save('tst_skel','Data', 'Y','-v7.3');
-%clear all;
+save(strcat('..',SLASH,'share',SLASH,'tst_skel'),'Data', 'Y','-v7.3');
+end
