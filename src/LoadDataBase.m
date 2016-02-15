@@ -1,4 +1,4 @@
-function allskel = LoadDataBase(startFoldIdx, stopFoldIdx,isvalidate)
+function allskel = LoadDataBase(startFoldIdx, stopFoldIdx)
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Choose:
@@ -141,10 +141,3 @@ for idx_folder = startFoldIdx:stopFoldIdx
     end
 end
 
-if isvalidate
-[X, data,y] = extractdata(allskel);
-save(strcat('..',SLASH,'share',SLASH,'tst_skel_val'),'data', 'y','-v7.3');
-else
-[X, Data,Y] = extractdata(allskel);
-save(strcat('..',SLASH,'share',SLASH,'tst_skel'),'Data', 'Y','-v7.3');
-end
