@@ -95,50 +95,52 @@ end
 error = d*error;
 
 end
+wants_plot = false;
+if wants_plot
+    NumOfNodes = size(nodes,2);
+    Cur_NumOfNodes = [Cur_NumOfNodes NumOfNodes];
+    if length(Cur_NumOfNodes)>100
+        Cur_NumOfNodes = Cur_NumOfNodes(end-100:end);
+    end
 
-NumOfNodes = size(nodes,2);
-Cur_NumOfNodes = [Cur_NumOfNodes NumOfNodes];
-if length(Cur_NumOfNodes)>100
-    Cur_NumOfNodes = Cur_NumOfNodes(end-100:end);
+    Cur_RMSE(kk) = norm(error)/sqrt(NumOfNodes);
+    RMSE = [RMSE Cur_RMSE(kk)];
+    if length(RMSE)>100
+        RMSE = RMSE(end-100:end);
+    end
+
+    Epoch = [Epoch kk];
+    if length(Epoch)>100
+        Epoch = Epoch(end-100:end);
+    end
+
+    subplot(1,2,1);
+    plotgng(nodes,edges,'n');
+    % xlim([-1/2 2.5]);
+    % ylim([-1 8]);
+    % zlim([-1/2 1.5]);
+    % xlim([-1 6]);
+    % ylim([-1 6]);
+    % zlim([-7 7]);
+    drawnow;
+
+    subplot(2,2,2);
+    plot(Epoch,RMSE,'r.');
+    title('RMS Error');
+    if kk>100
+         xlim([Epoch(1) Epoch(end)]);
+    end
+    xlabel('Training Epoch Number');
+    grid on;
+
+    subplot(2,2,4);
+    plot(Epoch,Cur_NumOfNodes,'g.');
+    title('Number of Neural Units in the Growing Neural Gas');
+    if kk>100
+      xlim([Epoch(1) Epoch(end)]);
+    end
+    xlabel('Training Epoch Number');
+    grid on;
 end
-
-Cur_RMSE(kk) = norm(error)/sqrt(NumOfNodes);
-RMSE = [RMSE Cur_RMSE(kk)];
-if length(RMSE)>100
-    RMSE = RMSE(end-100:end);
-end
-
-Epoch = [Epoch kk];
-if length(Epoch)>100
-    Epoch = Epoch(end-100:end);
-end
-
-subplot(1,2,1);
-plotgng(nodes,edges,'n');
-% xlim([-1/2 2.5]);
-% ylim([-1 8]);
-% zlim([-1/2 1.5]);
-% xlim([-1 6]);
-% ylim([-1 6]);
-% zlim([-7 7]);
-drawnow;
-
-subplot(2,2,2);
-plot(Epoch,RMSE,'r.');
-title('RMS Error');
-if kk>100
-     xlim([Epoch(1) Epoch(end)]);
-end
-xlabel('Training Epoch Number');
-grid on;
-
-subplot(2,2,4);
-plot(Epoch,Cur_NumOfNodes,'g.');
-title('Number of Neural Units in the Growing Neural Gas');
-if kk>100
-  xlim([Epoch(1) Epoch(end)]);
-end
-xlabel('Training Epoch Number');
-grid on;
 
 end
