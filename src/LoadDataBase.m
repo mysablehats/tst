@@ -1,4 +1,4 @@
-function allskel = LoadDataBase(startFoldIdx, stopFoldIdx)
+function allskel = LoadDataBase(idx_folderi)
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Choose:
@@ -31,7 +31,7 @@ columnPixel = 512;  %[pixel] number of column
 frameIdx = 1; %depth frame number
 
 % Load selected folders
-for idx_folder = startFoldIdx:stopFoldIdx
+for idx_folder = idx_folderi
     for groupName = {'ADL' 'Fall'}
         if strcmp(groupName,'ADL')
             subfolder = ADLFolderName;
@@ -40,7 +40,7 @@ for idx_folder = startFoldIdx:stopFoldIdx
         end
         for name_Subfolder = subfolder
             for idx_test = 1:3
-                Folder = strcat(pathtodata, 'Data',num2str(idx_folder),SLASH,cell2mat(groupName),SLASH,cell2mat(name_Subfolder),SLASH,num2str(idx_test)) %Folder where are stored the data
+                Folder = strcat(pathtodata, 'Data',num2str(idx_folder),SLASH,cell2mat(groupName),SLASH,cell2mat(name_Subfolder),SLASH,num2str(idx_test)); %Folder where are stored the data
                 %*************************
                 %Load wearable device data
                 %*************************
