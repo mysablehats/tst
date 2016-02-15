@@ -7,14 +7,14 @@ Data = data_train;
 clc;
 %clear; close all;
 colordef black
-NumOfEpochs   = 70;
-NumOfSamples = 503;
+NumOfEpochs   = 500;
+NumOfSamples = fix(length(Data)/NumOfEpochs);
 age_inc               = 1;
-max_age             = 200;
-max_nodes         = 600;
+max_age             = 50;
+max_nodes         = 1000;
 eb                         = .3;
 en                         = .006;
-lamda                   = 350;
+lamda                   = 20;
 alpha                    = .5;     % q and f units error reduction constant.
 d                           = .99;   % Error reduction factor.
 RMSE                  = zeros(1,NumOfEpochs);
