@@ -4,8 +4,10 @@
 %b = diff(a')';
 %cl_skel(b)
 
-LoadDataBase(1, 5, false);
-LoadDataBase(6, 11, true);
+[SLASH, pathtodata] = OS_VARS();
 
-load('tst_skel.mat')
-load('tst_skel.mat')
+allskel1 = LoadDataBase(1, 5, false);
+allskel2 = LoadDataBase(6, 11, true);
+
+load(strcat('..',SLASH,'share',SLASH,'tst_skel_val.mat'))
+load(strcat('..',SLASH,'share',SLASH,'tst_skel.mat'))

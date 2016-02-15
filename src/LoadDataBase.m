@@ -1,6 +1,4 @@
-%Place this code in the same folder of the database (Data1,Data2,...Data11)
 function allskel = LoadDataBase(startFoldIdx, stopFoldIdx,isvalidate)
-clear all;close all;clc;
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Choose:
@@ -19,7 +17,7 @@ clear all;close all;clc;
 % - jMatSkl:        skeleton joints in skeleton space
 % - KinectTimeBody: timestamps assigned by the PC to the skeleton, when it is available to the PC [100ns]/[us]
 
-[SLASH, pathtodata] = OS_VARS(); % adjusst environment variables to system in question (PC, MAC, UNIX)
+[SLASH, pathtodata] = OS_VARS(); % adjust environment variables to system in question (PC, MAC, UNIX)
 
 ADLFolderName = {'sit','grasp','walk','lay'};
 FallFolderName = {'front','back','side','EndUpSit'};
