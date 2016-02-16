@@ -3,7 +3,7 @@
 % Main paper used for development of this neural network was:
 % Fritzke B. "A Growing Neural Gas Network Learns Topologies", in 
 %                         Advances in Neural Information Processing Systems, MIT Press, Cambridge MA, 1995.
-Data = data_train;
+% Data = data_train;
 clc;
 %clear; close all;
 colordef black
@@ -14,7 +14,7 @@ max_age             = 50;
 max_nodes         = 1000;
 eb                         = .3;
 en                         = .006;
-lamda                   = 20;
+lamda                   = 3;
 alpha                    = .5;     % q and f units error reduction constant.
 d                           = .99;   % Error reduction factor.
 RMSE                  = zeros(1,NumOfEpochs);
@@ -95,7 +95,7 @@ end
 error = d*error;
 
 end
-wants_plot = false;
+wants_plot = true;
 if wants_plot
     NumOfNodes = size(nodes,2);
     Cur_NumOfNodes = [Cur_NumOfNodes NumOfNodes];

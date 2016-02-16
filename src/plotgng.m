@@ -40,7 +40,6 @@ end
 % Line coordinates
 [I J] = meshgrid(1:S,1:S);
 [i  j] = find(edges == 1); 
-
 numLines = length(i);
 
 x = [pos(1,i); pos(1,j); zeros(1,numLines)+NaN];
@@ -77,3 +76,4 @@ ylabel(var(2));
 zlabel(var(3));
 title(t)
 view(2 + (R>=3));
+

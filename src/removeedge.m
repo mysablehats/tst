@@ -9,5 +9,6 @@ if ~isempty(row)
 end
 end
 function C = xerocol(C,i)
-C(:,i) = zeros(size(C),1);
-C(i,:) = zeros(1,size(C));
+C(:,i) = zeros(size(C,1),1);
+C(i,:) = zeros(1,size(C,1));
+end

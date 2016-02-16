@@ -1,4 +1,4 @@
-function nodes = gwr(data)
+function A = gwr(data)
 
 %cf parisi, 2015 and cf marsland, 2002
 
@@ -13,17 +13,17 @@ function nodes = gwr(data)
 
 %the initial parameters for the algorithm:
 global maxnodes at en eb h0 ab an tb tn amax
-maxnodes = 100; %maximum number of nodes/neurons in the gas
-at = 0.5; %activity threshold
-en = 0.6; %epsilon subscript n
-eb = 0.5; %epsilon subscript b
+maxnodes = 1000; %maximum number of nodes/neurons in the gas
+at = 0.95; %activity threshold
+en = 0.006; %epsilon subscript n
+eb = 0.2; %epsilon subscript b
 h0 = 1;
-ab = 1.05;
-an = 1.05;
+ab = 0.95;
+an = 0.95;
 tb = 3.33;
 tn = 3.33;
-amax = Inf; %greatest allowed age
-time = 0; % my algorithm is static!
+amax = 50; %greatest allowed age
+t0 = cputime; % my algorithm is not static!
 
 %test some algorithm conditions:
 if ~(0 < en || en < eb || eb < 1)
@@ -46,6 +46,7 @@ h = zeros(1,maxnodes);%firing counter matrix
 
 % start of the loop
 for k = 1:size(data,2) %step 1
+    time = (cputime - t0)*1000; 
     eta = data(:,k); % this the k-th data sample
     [ws wt s t distance] = findnearest(eta, A); %step 2 and 3
     % I have no idea what the weight vector is I will use 1
@@ -55,7 +56,7 @@ for k = 1:size(data,2) %step 1
         C_age = spdi_del(C_age,s,t);
     end
     a = exp(-norm(eta-s)); %step 5
-    if a < at %step 6
+    if a < at && r < maxnodes %step 6
         wr = 0.5*(ws+eta); %too low activity, needs to create new node r
         A = [A wr];
         C = spdi_add(C,t,r);
@@ -64,17 +65,21 @@ for k = 1:size(data,2) %step 1
         r = r+1;
     else %step 7
         for i = 1:size(A,2) % check this for possible indexing errors
-            wi = A(i);
-            A(i) = wi + en*h(i)*(eta-wi);
+            wi = A(:,i);
+            A(:,i) = wi + en*h(i)*(eta-wi);
         end
-        A(s) = ws + eb*h(s)*(eta-ws); %adjusts nearest point MORE;;; also, I need to adjust this after the for loop or the for loop would reset this!!!
+        A(:,s) = ws + eb*h(s)*(eta-ws); %adjusts nearest point MORE;;; also, I need to adjust this after the for loop or the for loop would reset this!!!
     end
     %step 8 : age edges with end at s
     %first we need to find if the edges connect to s
-    [row, col] = find(C);% there will likely be infinite mistakes in indexing here...
+    
+    [row, col] = find(C); % there will likely be infinite mistakes in indexing here...
     for i = 1:length(row)
-        if row(i) = s
-            C_age = spdi_add(C_age,s,i);
+        if row(i) == s
+            %s
+            %i 
+            C_age = spdi_add(C_age,s,col(i)); %omg, the horror.... but s = row(i) already is this it? I have no idea...
+            %cummax(cummax(C_age))
         end
     end
     %step 9: again we do it inverted, for loop first
@@ -87,6 +92,8 @@ for k = 1:size(data,2) %step 1
     %check for old edges (maybe we can move it the following line to be
     %before the previous line it would save one computation....
     [C, C_age ] = removeedge(C, C_age);    
+    plotgng(A, C,'n')
+    drawnow
 end
 end
 function sparsemat = spdi_add(sparsemat, a, b) % adds a 2 way connection, so that I don't have to type this all the time and forget it...
@@ -102,7 +109,7 @@ end
 %some of the functions definitions used to say this is biologically
 %plausible...
 function X = S(t)
-    X = 1
+    X = 1;
 end
 function X = hs(t)
 global h0 ab tb 

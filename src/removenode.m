@@ -11,16 +11,18 @@ for i = 1:max(a)
         C_age = clipsimmat(C_age,i);
         h = clipvect(h,i);
     end
-end
 %clip everything after max(a)
 %C = clip(C, maxa)
 
 end
+end
+
 function C = clipsimmat(C,i)
 C(i,:) = [];
 C(:,i) = [];
 C = padarray(C,[1 1],'post');
 end
+
 function V = clipvect(V, i)
 V(i) = [];
 V = [V 0];
