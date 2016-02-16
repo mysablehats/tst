@@ -9,7 +9,7 @@ function labels = labeling(nodes, data, y)
 
 labels = zeros(1,length(nodes));
 for i = 1:length(nodes)
-    % progress(i,length(nodes))
+    progress(i,length(nodes))
     [s1 s2 distances] = findTwoNearest(nodes(:,i),data); % s1 is the index of the nearest point in data
     labels(i) = y(s1);
 end
