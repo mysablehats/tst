@@ -13,8 +13,8 @@ function A = gwr(data)
 
 %the initial parameters for the algorithm:
 global maxnodes at en eb h0 ab an tb tn amax
-maxnodes = 500; %maximum number of nodes/neurons in the gas
-at = 0.95; %activity threshold
+maxnodes = 20; %maximum number of nodes/neurons in the gas
+at = 0.75; %activity threshold
 en = 0.006; %epsilon subscript n
 eb = 0.2; %epsilon subscript b
 h0 = 1;
@@ -47,14 +47,17 @@ C_age = C;
 r = 3; %the first point to be added is the point 3 because we already have n1 and n2
 h = zeros(1,maxnodes);%firing counter matrix
 
+% crazy idea: go through the dataset twice
+for aaaaaaaaa = 1:2
+
 % start of the loop
 for k = 1:size(data,2) %step 1
-    % time = (cputime - t0)/10; % ok, it is static
+    %time = (cputime - t0)/1; 
     eta = data(:,k); % this the k-th data sample
     [ws wt s t distance] = findnearest(eta, A); %step 2 and 3
     % I have no idea what the weight vector is I will use 1
     if C(s,t)==0 %step 4
-        C = spdi_add(C,s,t);
+        C = spdi_bind(C,s,t);
     else
         C_age = spdi_del(C_age,s,t);
     end
@@ -94,13 +97,16 @@ for k = 1:size(data,2) %step 1
     end
     h(s) = hs(time);
     %step 10: check if a node has no edges and delete them
-    [C, A, C_age, h, r ] = removenode(C, A, C_age, h, r); %forgot to reduce r each time we remove a node
+    [C, A, C_age, h, r ] = removenode(C, A, C_age, h, r); 
     %check for old edges (maybe we can move it the following line to be
     %before the previous line it would save one computation....
-    [C, C_age ] = removeedge(C, C_age);    
+    [C, C_age ] = removeedge(C, C_age);  
+    %[C, A, C_age, h, r ] = removenode(C, A, C_age, h, r);  %inverted order as it says on the algorithm to remove points faster
+    
     plotgng(A, C,'n')
     axis([0 10 0 10])
     drawnow
+end
 end
 end
 function sparsemat = spdi_add(sparsemat, a, b) %increases the number so that I don't have to type this all the time and forget it...
