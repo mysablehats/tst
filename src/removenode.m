@@ -1,4 +1,4 @@
-function [C, A, C_age, h ] = removenode(C, A, C_age, h) %depends only on C operates on everything
+function [C, A, C_age, h,r ] = removenode(C, A, C_age, h,r) %depends only on C operates on everything
 [row,col] = find(C);
 a = [row;col];
 maxa = max(a);
@@ -10,6 +10,8 @@ for i = 1:max(a)
         A = padarray(A,[0 1],'post');
         C_age = clipsimmat(C_age,i);
         h = clipvect(h,i);
+        r = r-1
+        break%hack: this will only remove 1 node per iteration
     end
 %clip everything after max(a)
 %C = clip(C, maxa)
