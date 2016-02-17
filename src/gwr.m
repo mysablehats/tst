@@ -13,7 +13,7 @@ function A = gwr(data)
 
 %the initial parameters for the algorithm:
 global maxnodes at en eb h0 ab an tb tn amax
-maxnodes = 100; %maximum number of nodes/neurons in the gas
+maxnodes = 500; %maximum number of nodes/neurons in the gas
 at = 0.95; %activity threshold
 en = 0.006; %epsilon subscript n
 eb = 0.2; %epsilon subscript b
@@ -22,7 +22,7 @@ ab = 0.95;
 an = 0.95;
 tb = 3.33;
 tn = 3.33;
-amax = 100; %greatest allowed age
+amax = 50; %greatest allowed age
 t0 = cputime; % my algorithm is not static!
 
 time = 0;
@@ -49,7 +49,7 @@ h = zeros(1,maxnodes);%firing counter matrix
 
 % start of the loop
 for k = 1:size(data,2) %step 1
-    time = (cputime - t0)/10; % ok, it is static
+    % time = (cputime - t0)/10; % ok, it is static
     eta = data(:,k); % this the k-th data sample
     [ws wt s t distance] = findnearest(eta, A); %step 2 and 3
     % I have no idea what the weight vector is I will use 1
