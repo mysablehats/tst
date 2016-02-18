@@ -6,10 +6,8 @@ tic()
 
 %load_skel_data
 
-%gng_lax
+[nodes,C] = gwr(data_train); %or gng_lax
 
 %untitled6
-
-[nodes,C] = gwr(data_train);
 
 toc()
