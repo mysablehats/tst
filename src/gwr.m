@@ -13,8 +13,8 @@ function A = gwr(data)
 
 %the initial parameters for the algorithm:
 global maxnodes at en eb h0 ab an tb tn amax
-maxnodes = 20; %maximum number of nodes/neurons in the gas
-at = 0.75; %activity threshold
+maxnodes = 100; %maximum number of nodes/neurons in the gas
+at = 0.95; %activity threshold
 en = 0.006; %epsilon subscript n
 eb = 0.2; %epsilon subscript b
 h0 = 1;
@@ -23,7 +23,7 @@ an = 0.95;
 tb = 3.33;
 tn = 3.33;
 amax = 50; %greatest allowed age
-t0 = cputime; % my algorithm is not static!
+t0 = cputime; % my algorithm is not necessarily static!
 
 time = 0;
 
@@ -52,10 +52,9 @@ for aaaaaaaaa = 1:2
 
 % start of the loop
 for k = 1:size(data,2) %step 1
-    %time = (cputime - t0)/1; 
+    %time = (cputime - t0)*1; %uncomment this if you want it to deal with changing input 
     eta = data(:,k); % this the k-th data sample
     [ws wt s t distance] = findnearest(eta, A); %step 2 and 3
-    % I have no idea what the weight vector is I will use 1
     if C(s,t)==0 %step 4
         C = spdi_bind(C,s,t);
     else
@@ -65,9 +64,9 @@ for k = 1:size(data,2) %step 1
     
     %algorithm has some issues, so here I will calculate the neighbours of
     %s
-        [neighbours] = findneighbours(s, C);
+    [neighbours] = findneighbours(s, C);
     
-    if a < at && r < maxnodes %step 6
+    if a < at && r <= maxnodes %step 6
         wr = 0.5*(ws+eta); %too low activity, needs to create new node r
         A = [A wr];
         C = spdi_bind(C,t,r);
@@ -97,11 +96,10 @@ for k = 1:size(data,2) %step 1
     end
     h(s) = hs(time);
     %step 10: check if a node has no edges and delete them
-    [C, A, C_age, h, r ] = removenode(C, A, C_age, h, r); 
-    %check for old edges (maybe we can move it the following line to be
-    %before the previous line it would save one computation....
+    %[C, A, C_age, h, r ] = removenode(C, A, C_age, h, r); 
+    %check for old edges
     [C, C_age ] = removeedge(C, C_age);  
-    %[C, A, C_age, h, r ] = removenode(C, A, C_age, h, r);  %inverted order as it says on the algorithm to remove points faster
+    [C, A, C_age, h, r ] = removenode(C, A, C_age, h, r);  %inverted order as it says on the algorithm to remove points faster
     
     plotgng(A, C,'n')
     axis([0 10 0 10])
