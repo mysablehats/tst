@@ -6,7 +6,7 @@ tic()
 
 load_skel_data
 
-[nodes,C] = gwr(data_train); %or gng_lax
+[nodes,C, n1, n2] = gwr(data_train); %or gng_lax
 
 %untitled6
 
