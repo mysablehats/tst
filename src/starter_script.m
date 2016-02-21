@@ -4,7 +4,7 @@ tic()
 
 %clear all
 
-%load_skel_data
+load_skel_data
 
 [nodes,C] = gwr(data_train); %or gng_lax
 
