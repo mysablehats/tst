@@ -6,10 +6,11 @@
 % this he calls the training phase (but everything is the training phase)
 % go through the nodeset and see in the data_set what is more similar
 function labels = labeling(nodes, data, y)
+maxmax = size(nodes,2);
+labels = zeros(1,maxmax);
 
-labels = zeros(1,length(nodes));
-for i = 1:length(nodes)
-    progress(i,length(nodes))
-    [s1 s2 distances] = findTwoNearest(nodes(:,i),data); % s1 is the index of the nearest point in data
-    labels(i) = y(s1);
+for i = 1:maxmax
+    progress(i,maxmax)
+    [~, ~, ni1 , ~ , ~] = findnearest(nodes(:,i), data); % s1 is the index of the nearest point in data
+    labels(i) = y(ni1);
 end
