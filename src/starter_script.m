@@ -5,8 +5,8 @@ clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-
-NODES =  [100 100 100 100 200 200 200 200];
+[data_train, y_train] = shuffledataftw(data_train, y_train);
+NODES =  [300 300 300 300 1000 1000 1000 1000];
 NODES = NODES/10;
 savestructure = struct('nodes',0,'nodes_gwr',[],'edges_gng',[]);
 parfor i = 1:length(NODES)
