@@ -1,7 +1,14 @@
 function progress(i,maxi)
 onepercent  = maxi/100;
 if mod(i,onepercent)<.1
+    
     %a = toc;
+    if i/onepercent<1.99
+        a = dbstack;
+        if length(a)>1
+            fprintf(a(end).name)
+        end
+    end
     percentage = i/onepercent;
 %     eta = (100-percentage)*a;
 %     hours = fix(eta/3600);

@@ -1,10 +1,20 @@
-% create the structure to access the database and run the classification?
+% create the matrix from the structure to access the database and run the
+% classification....
 function [Data, vectordata, Y] = extractdata(structure)
+WANTVELOCITY = true;
+
+
+
 Data = structure(1).skel;
+
+% approach
 Y = strcmp('Fall',structure(1).act)*ones(size(structure(1).skel,3),1);
-for i = 2:length(structure)
+for i = 2:length(structure) % I think each iteration is one action
     Data = cat(3, Data, structure(i).skel);
     Y = cat(1, Y, strcmp('Fall',structure(i).act)*ones(size(structure(i).skel,3),1));
+end
+if WANTVELOCITY
+    
 end
 % It will also construct data for a clustering analysis, whatever the hell
 % that might mean in this sense

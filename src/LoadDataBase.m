@@ -110,7 +110,10 @@ for idx_folder = idx_folderi
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
                 % % Put here your code! 
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-                jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder);
+                %%% Calculate velocities!!
+                
+                
+                jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder,'time',KinectTimeBody,'vel',[]);
                 %%%%%% size(jskelstruc.skel) % this was here for debugging
                 if exist('allskel','var') % initialize my big matrix of skeletons 
                     allskel = cat(2,allskel,jskelstruc);
