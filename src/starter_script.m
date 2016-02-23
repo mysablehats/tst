@@ -1,12 +1,12 @@
 %generate_skel_data %% very time consuming -> also will generate a new
-%validation and training set
+%%validation and training set
 
 clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
 
-NODES =  [100 100 100 100 100 100 100 100 200 200 200 200 200 200 200 200];
+NODES =  [100 100 100 100 200 200 200 200];
 NODES = NODES/10;
 savestructure = struct('nodes',0,'nodes_gwr',[],'edges_gng',[]);
 parfor i = 1:length(NODES)
