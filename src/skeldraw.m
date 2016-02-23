@@ -2,9 +2,22 @@
 %or the 25x3 skeleton
 % plot the nodes
 %reconstruct the nodes from the 75 dimension vector. each 3 is a point
+%I use the NaN interpolation to draw sticks which is much faster!
 function A = skeldraw(skel,doIdraw)
 
-if all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
+%checks if skeleton is 72x1 which is a hip-less skeleton
+if all(size(skel) == [72 1])
+    tdskel = zeros(24,3);
+    for i=1:3
+        for j=1:24
+            tdskel(j,i) = skel(j+24*(i-1));
+        end
+    end
+    tdskel = [[0 0 0 ]; tdskel];
+    if all(size(tdskel) ~= [25 3])
+        error('wrong skeleton building procedure!')
+    end
+elseif all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
     tdskel = zeros(25,3);
     for i=1:3
         for j=1:25
