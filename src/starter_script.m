@@ -6,9 +6,9 @@ tic()
 clear all
 
 load_skel_data
-removehipbias
-resizeafter_removehipbias
-NODES =  [20 60];
+[data_train, data_val] = removehipbias(data_train, data_val);
+
+NODES =  [10];
 
 for num_of_nodes = NODES
     tic

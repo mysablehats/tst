@@ -11,10 +11,12 @@ else
         tdskel = skel;
 end
 hips = tdskel(1,:); 
-newskel = zeros(size(tdskel));
-for i = 1:25
-    newskel(i,:) = tdskel(i,:)- 1*hips;
+newskel = zeros(size(tdskel)-[1 0]);
+for i = 2:25
+    newskel(i-1,:) = tdskel(i,:)- 1*hips;
 end
-%I need to shape it back into 75 x 1
+%I need to shape it back into 75(-3 now) x 1
 newskel = [newskel(:,1);newskel(:,2);newskel(:,3)]; % I think....
-%disp('hello')
+if all(size(newskel) ~= [72 1])
+    error('wrong skeleton size!')
+end
