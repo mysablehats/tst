@@ -35,18 +35,28 @@ for i = 1:length(NODES)
     num_of_nodes = NODES(i);
     load(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
 end
+confusionstruc = struct('nodes',0,'class_train_gwr',[],'class_val_gwr',[]);
 parfor i = 1:length(NODES)
     num_of_nodes = NODES(i);
-    figure
-    
-    [class_train_gwr, class_val_gwr] = untitled6(nodes_gwr, data_train,data_val, y_train, y_val,strcat('GWR Classifier ',num2str(num_of_nodes)));
-
+    nodes_gwr = savestructure(i).nodes_gwr;
+    [class_train_gwr, class_val_gwr] = untitled6(nodes_gwr, data_train,data_val, y_train);
+    confusionstruc(i).class_train_gwr = class_train_gwr;
+    confusionstruc(i).class_val_gwr = class_val_gwr;
 %     figure
 % 
 %     [class_train_gng, class_val_gng] = untitled6(nodes_gng, data_train, data_val, y_train, y_val,strcat('GNG Classifier ', num2str(num_of_nodes)));
-    
+%     confusionstruc(i).class_train_gng = class_train_gng;
+%     confusionstruc(i).class_val_gng = class_val_gng;
 end
 %figure
 %plotconfusion(ones(size(y_val)),y_val, 'always a fall on Validation Set:',zeros(size(y_val)),y_val, 'never a fall on Validation Set:')
-
+for i=1:length(confusionstruc)
+    num_of_nodes = NODES(i);
+    class_train = confusionstruc(i).class_train_gwr;
+    class_val = confusionstruc(i).class_val_gwr;
+    namename = strcat('GWR Classifier ',num2str(num_of_nodes));
+    figure
+    u = plotconfusion(y_val,class_val, 'Performed on Validation Set:',y_train,class_train,'Performed on the Training Set:'); % I am using the wrong names here. My Y is actually the T and the class_val is the y... I should change this everywhere, but for now
+    u.Name = namename;    
+end
 clear i
