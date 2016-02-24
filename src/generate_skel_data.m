@@ -58,6 +58,7 @@ end
 
 [X, data_train,y_train] = extractdata(allskel1);
 save(strcat('..',SLASH,'share',SLASH,'tst_skel'),'data_train', 'y_train','allskeli1','-v7.3');
-
+dbgmsg('Training data saved.')
 [X, data_val,y_val] = extractdata(allskel2);
 save(strcat('..',SLASH,'share',SLASH,'tst_skel_val'),'data_val', 'y_val','allskeli2','-v7.3');
+dbgmsg('Validation data saved.')

@@ -3,7 +3,7 @@
 function [nohips_train, nohips_val] = removehipbias(data_train, data_val)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%MESSAGES PART
-dbgmsg('Applies translation invariance on both training and validation datasets')
+dbgmsg('Applies translation invariance on both training and validation datasets',1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 nohips_train = zeros(size(data_train)-[3 0]);

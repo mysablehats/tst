@@ -1,7 +1,9 @@
 function newskel = centerhips(skel)
 %%%%%%%%%MESSAGES PART
-dbgmsg('Removing displacement based on hip coordinates (1st point on 25x3 skeleton matrix) from every other')
-dbgmsg('This makes the dataset translation invariant')
+%%%%%%%%ATTENTION: this function is executed in loops, so running it will
+%%%%%%%%messages on will cause unpredictable behaviour
+%dbgmsg('Removing displacement based on hip coordinates (1st point on 25x3 skeleton matrix) from every other')
+%dbgmsg('This makes the dataset translation invariant')
 %%%%%%%%%%%%%%%%%%%%%
 
 %%%% reshape skeleton
