@@ -16,7 +16,7 @@ load_skel_data
 [data_train, y_train] = shuffledataftw(data_train, y_train);
 NODES = [10 10 10 10 10];
 %NODES = fix(NODES/30);
-savestructure = struct('nodes',0,'nodes_gwr',[],'edges_gng',[]);
+savestructure = struct();
 
 dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 for i = 1:length(NODES)
@@ -46,7 +46,7 @@ for i = 1:length(NODES)
     num_of_nodes = NODES(i);
     load(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
 end
-confusionstruc = struct('class_train_gwr',[],'class_val_gwr',[]);
+confusionstruc = struct();
 %%%%%%%dbgmsg('Starting parallel pool for labelling GWR and GNG nodes:',num2str(NODES),1)
 %doesnt work with parfor. don't know why, maybe should debug in the future.
 %but labelling isn't that time consuming
