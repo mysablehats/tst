@@ -10,11 +10,19 @@
 % data_train, y_train
 % data_val, y_val
 % 
+
 allskeli1 = [9,10,11,4,8,5,3,6]; %% comment these out to have random new samples
 allskeli2 = [1,2,7];%% comment these out to have random new samples
 sampling_type = 'type2'
 
 [SLASH, pathtodata] = OS_VARS();
+
+%%%%%%%%Messages part: provides feedback for the user
+dbgmsg('Generating random datasets for training and validation')
+if exist('allskeli1')
+    dbgmsg('Variable allskeli1 is defined. Will skip randomization.')
+end
+%%%%%%%%%%%%
 
 %%%% type 1 data sampling: known subjects, unknown individual activities from them:
 if strcmp(sampling_type,'type1')
@@ -50,6 +58,7 @@ end
 
 [X, data_train,y_train] = extractdata(allskel1);
 save(strcat('..',SLASH,'share',SLASH,'tst_skel'),'data_train', 'y_train','allskeli1','-v7.3');
-
+dbgmsg('Training data saved.')
 [X, data_val,y_val] = extractdata(allskel2);
 save(strcat('..',SLASH,'share',SLASH,'tst_skel_val'),'data_val', 'y_val','allskeli2','-v7.3');
+dbgmsg('Validation data saved.')

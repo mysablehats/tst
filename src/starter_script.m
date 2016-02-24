@@ -1,43 +1,46 @@
-%generate_skel_data %% very time consuming -> also will generate a new
-%%validation and training set
+global VERBOSE
+VERBOSE = true;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%MESSAGES PART
+dbgmsg('Running starter script')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% generate_skel_data %% very time consuming -> also will generate a new
+% %%validation and training set
+% dbgmsg('Skeleton data (training and validation) generated.')
 
 clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
 [data_train, y_train] = shuffledataftw(data_train, y_train);
-NODES =  [300 300 300 300 1000 1000 1000 1000];
-NODES = NODES/10;
-savestructure = struct('nodes',0,'nodes_gwr',[],'edges_gng',[]);
-parfor i = 1:length(NODES)
+NODES = [10 11 12 13];
+%NODES = fix(NODES/30);
+savestructure = struct();
+
+dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
+for i = 1:length(NODES)
     num_of_nodes = NODES(i);
-    tic
-    [nodes_gwr,edges_gwr, ~, ~] = gwr(data_train,num_of_nodes);
-    toc
-%     tic
+    dbgmsg('Starting gwr for process:',num2str(i),1)
+    [savestructure(i).nodes_gwr, savestructure(i).edges_gwr, ~, ~] = gwr(data_train,num_of_nodes);
+    dbgmsg('Finished gwr for process:',num2str(i),1)
+%     
 %     [nodes_gng,edges_gng, ~, ~] = gng_lax(data_train,num_of_nodes);
-%     toc
+%   
     savestructure(i).nodes = num_of_nodes;
-    savestructure(i).nodes_gwr = nodes_gwr;
-    savestructure(i).edges_gwr = edges_gwr;
+    
 %    savestructure(i).nodes_gng = nodes_gng;
 %    savestructure(i).edges_gng = edges_gng;
 end
-for i = 1:length(NODES)
-    num_of_nodes = NODES(i);
-    nodes_gwr = savestructure(i).nodes_gwr;
-    edges_gwr = savestructure(i).edges_gwr;
-%     nodes_gng = savestructure(i).nodes_gng;
-%     edges_gng = savestructure(i).edges_gng;
-    save(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
-end
-for i = 1:length(NODES)
-    num_of_nodes = NODES(i);
-    load(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
-end
-confusionstruc = struct('nodes',0,'class_train_gwr',[],'class_val_gwr',[]);
-parfor i = 1:length(NODES)
-    num_of_nodes = NODES(i);
+save('../share/gng_gwr','data_train', 'data_val', 'y_train', 'y_val','savestructure')
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+load('../share/gng_gwr')
+confusionstruc = struct();
+%%%%%%%dbgmsg('Starting parallel pool for labelling GWR and GNG nodes:',num2str(NODES),1)
+%doesnt work with parfor. don't know why, maybe should debug in the future.
+%but labelling isn't that time consuming
+for i = 1:length(savestructure)
+    num_of_nodes = savestructure(i).nodes;
     nodes_gwr = savestructure(i).nodes_gwr;
     [class_train_gwr, class_val_gwr] = untitled6(nodes_gwr, data_train,data_val, y_train);
     confusionstruc(i).class_train_gwr = class_train_gwr;
@@ -50,6 +53,7 @@ parfor i = 1:length(NODES)
 end
 %figure
 %plotconfusion(ones(size(y_val)),y_val, 'always a fall on Validation Set:',zeros(size(y_val)),y_val, 'never a fall on Validation Set:')
+dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 for i=1:length(confusionstruc)
     num_of_nodes = NODES(i);
     class_train = confusionstruc(i).class_train_gwr;

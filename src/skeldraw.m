@@ -1,9 +1,13 @@
+function A = skeldraw(skel,doIdraw)
 %makes a beautiful skeleton of the 75 dimension vector
 %or the 25x3 skeleton
 % plot the nodes
 %reconstruct the nodes from the 75 dimension vector. each 3 is a point
 %I use the NaN interpolation to draw sticks which is much faster!
-function A = skeldraw(skel,doIdraw)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%MESSAGES PART
+%dbgmsg('This function is very often called in drawing functions and this message will cause serious slowdown.',1)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %checks if skeleton is 72x1 which is a hip-less skeleton
 if all(size(skel) == [72 1])
@@ -47,7 +51,7 @@ end
 
 function a = stick_draw(tdskel)
 
-%%
+%
 %in the end the end the text command upstairs was what did the job and I
 %wrote down the connection of the skeleton points
 %it is as follows:
