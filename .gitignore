@@ -2,8 +2,6 @@
 *.m~
 *.mat
 
-share/tst_skel_val.mat
 
-share/tst_skel.mat
 
 *.jpg
