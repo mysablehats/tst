@@ -14,22 +14,21 @@ clear all
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
 [data_train, y_train] = shuffledataftw(data_train, y_train);
-NODES = [10 10];
+NODES = [10 10 10 10 10];
 %NODES = fix(NODES/30);
 savestructure = struct('nodes',0,'nodes_gwr',[],'edges_gng',[]);
 
 dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
-parfor i = 1:length(NODES)
+for i = 1:length(NODES)
     num_of_nodes = NODES(i);
     dbgmsg('Starting gwr for process:',num2str(i),1)
-    [nodes_gwr,edges_gwr, ~, ~] = gwr(data_train,num_of_nodes);
+    [savestructure(i).nodes_gwr, savestructure(i).edges_gwr, ~, ~] = gwr(data_train,num_of_nodes);
     dbgmsg('Finished gwr for process:',num2str(i),1)
 %     
 %     [nodes_gng,edges_gng, ~, ~] = gng_lax(data_train,num_of_nodes);
 %   
     savestructure(i).nodes = num_of_nodes;
-    savestructure(i).nodes_gwr = nodes_gwr;
-    savestructure(i).edges_gwr = edges_gwr;
+    
 %    savestructure(i).nodes_gng = nodes_gng;
 %    savestructure(i).edges_gng = edges_gng;
 end
