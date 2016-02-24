@@ -14,7 +14,7 @@ clear all
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
 [data_train, y_train] = shuffledataftw(data_train, y_train);
-NODES = [10 10 10 10 10];
+NODES = [10 11 12 13];
 %NODES = fix(NODES/30);
 savestructure = struct();
 
@@ -32,26 +32,15 @@ for i = 1:length(NODES)
 %    savestructure(i).nodes_gng = nodes_gng;
 %    savestructure(i).edges_gng = edges_gng;
 end
-dbgmsg('Saving gng_gwr nodes and edges matrices...',1)
-for i = 1:length(NODES)
-    num_of_nodes = NODES(i);
-    nodes_gwr = savestructure(i).nodes_gwr;
-    edges_gwr = savestructure(i).edges_gwr;
-%     nodes_gng = savestructure(i).nodes_gng;
-%     edges_gng = savestructure(i).edges_gng;
-    save(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
-end
-dbgmsg('Loading gng_gwr nodes and edges matrices...',1)
-for i = 1:length(NODES)
-    num_of_nodes = NODES(i);
-    load(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
-end
+save('../share/gng_gwr','data_train', 'data_val', 'y_train', 'y_val','savestructure')
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+load('../share/gng_gwr')
 confusionstruc = struct();
 %%%%%%%dbgmsg('Starting parallel pool for labelling GWR and GNG nodes:',num2str(NODES),1)
 %doesnt work with parfor. don't know why, maybe should debug in the future.
 %but labelling isn't that time consuming
-for i = 1:length(NODES)
-    num_of_nodes = NODES(i);
+for i = 1:length(savestructure)
+    num_of_nodes = savestructure(i).nodes;
     nodes_gwr = savestructure(i).nodes_gwr;
     [class_train_gwr, class_val_gwr] = untitled6(nodes_gwr, data_train,data_val, y_train);
     confusionstruc(i).class_train_gwr = class_train_gwr;
