@@ -1,6 +1,11 @@
 %removehipbias
 %have to initiate a newer array with one dimension less...
 function [nohips_train, nohips_val] = removehipbias(data_train, data_val)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%MESSAGES PART
+dbgmsg('Applies translation invariance on both training and validation datasets')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 nohips_train = zeros(size(data_train)-[3 0]);
 nohips_val = zeros(size(data_val)-[3 0]);
 

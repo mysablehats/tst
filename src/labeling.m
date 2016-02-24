@@ -10,7 +10,7 @@ maxmax = size(nodes,2);
 labels = zeros(1,maxmax);
 
 for i = 1:maxmax
-    progress(i,maxmax)
+    progress(i,1,maxmax)
     [~, ~, ni1 , ~ , ~] = findnearest(nodes(:,i), data); % s1 is the index of the nearest point in data
     labels(i) = y(ni1);
 end

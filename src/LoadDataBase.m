@@ -1,5 +1,11 @@
 function allskel = LoadDataBase(idx_folderi)
 
+%%%%%%Messages part. Provides feedback for the user about what is being
+%%%%%%done
+dbgmsg('Loading Database and building allskel structure. Please wait, this takes a while.')
+%%%%%%
+
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Choose:
 %startFoldIdx = 1;   % Index of the first test folder to load (1->'Data1')
@@ -111,9 +117,11 @@ for idx_folder = idx_folderi
                 % % Put here your code! 
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
                 %%% Calculate velocities!!
-                
-                
-                jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder,'time',KinectTimeBody,'vel',[]);
+                vel = zeros(size(jMatSkl)); % initial velocity is zero
+                for i = 2:size(jMatSkl,3)
+                    vel(:,:,i) = (jMatSkl(:,:,i) - jMatSkl(:,:,i-1))/(KinectTimeBody(i,1)-KinectTimeBody(i-1,1));
+                end
+                jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder,'time',KinectTimeBody,'vel',vel);
                 %%%%%% size(jskelstruc.skel) % this was here for debugging
                 if exist('allskel','var') % initialize my big matrix of skeletons 
                     allskel = cat(2,allskel,jskelstruc);

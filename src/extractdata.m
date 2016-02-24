@@ -3,10 +3,15 @@
 function [Data, vectordata, Y] = extractdata(structure)
 WANTVELOCITY = true;
 
+%%%%%%%%Messages part. Feedback for the user about the algorithm
+dbgmsg('Extracting data from skeleton structure')
+if WANTVELOCITY
+    dbgmsg('Constructing long vectors with velocity data as well')
+end
+%%%%%%%%
 
 
 Data = structure(1).skel;
-
 % approach
 Y = strcmp('Fall',structure(1).act)*ones(size(structure(1).skel,3),1);
 for i = 2:length(structure) % I think each iteration is one action
@@ -14,7 +19,11 @@ for i = 2:length(structure) % I think each iteration is one action
     Y = cat(1, Y, strcmp('Fall',structure(i).act)*ones(size(structure(i).skel,3),1));
 end
 if WANTVELOCITY
-    
+    Data_vel = structure(1).vel;
+    for i = 2:length(structure) % I think each iteration is one action
+        Data_vel = cat(3, Data_vel, structure(i).vel);        
+    end
+    Data = cat(1,Data, Data_vel);
 end
 % It will also construct data for a clustering analysis, whatever the hell
 % that might mean in this sense

@@ -1,4 +1,11 @@
-%generate_skel_data %% very time consuming -> also will generate a new
+global VERBOSE
+VERBOSE = true;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%MESSAGES PART
+dbgmsg('Running starter script')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+generate_skel_data %% very time consuming -> also will generate a new
 %%validation and training set
 
 clear all
@@ -6,9 +13,11 @@ clear all
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
 [data_train, y_train] = shuffledataftw(data_train, y_train);
-NODES =  [300 300 300 300 1000 1000 1000 1000];
-NODES = NODES/10;
+NODES = [10 11 12 13 14 15];
+%NODES = fix(NODES/30);
 savestructure = struct('nodes',0,'nodes_gwr',[],'edges_gng',[]);
+
+dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 parfor i = 1:length(NODES)
     num_of_nodes = NODES(i);
     tic
@@ -23,6 +32,7 @@ parfor i = 1:length(NODES)
 %    savestructure(i).nodes_gng = nodes_gng;
 %    savestructure(i).edges_gng = edges_gng;
 end
+dbgmsg('Saving gng_gwr nodes and edges matrices...')
 for i = 1:length(NODES)
     num_of_nodes = NODES(i);
     nodes_gwr = savestructure(i).nodes_gwr;
@@ -31,11 +41,13 @@ for i = 1:length(NODES)
 %     edges_gng = savestructure(i).edges_gng;
     save(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
 end
+dbgmsg('Loading gng_gwr nodes and edges matrices...')
 for i = 1:length(NODES)
     num_of_nodes = NODES(i);
     load(strcat('../share/gng_gwr',num2str(num_of_nodes),'_',num2str(i),'.mat' ))
 end
-confusionstruc = struct('nodes',0,'class_train_gwr',[],'class_val_gwr',[]);
+confusionstruc = struct('class_train_gwr',[],'class_val_gwr',[]);
+dbgmsg('Starting parallel pool for labelling GWR and GNG nodes:',num2str(NODES),1)
 parfor i = 1:length(NODES)
     num_of_nodes = NODES(i);
     nodes_gwr = savestructure(i).nodes_gwr;
@@ -50,6 +62,7 @@ parfor i = 1:length(NODES)
 end
 %figure
 %plotconfusion(ones(size(y_val)),y_val, 'always a fall on Validation Set:',zeros(size(y_val)),y_val, 'never a fall on Validation Set:')
+dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 for i=1:length(confusionstruc)
     num_of_nodes = NODES(i);
     class_train = confusionstruc(i).class_train_gwr;

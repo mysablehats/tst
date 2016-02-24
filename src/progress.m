@@ -1,21 +1,41 @@
-function progress(i,maxi)
-onepercent  = maxi/100;
-if mod(i,onepercent)<.1
-    
-    %a = toc;
-    if i/onepercent<1.99
-        a = dbstack;
-        if length(a)>1
-            fprintf(a(end).name)
-        end
-    end
-    percentage = i/onepercent;
-%     eta = (100-percentage)*a;
-%     hours = fix(eta/3600);
-%     minutes = fix((eta-hours*3600)/60);
-%     seconds = eta-hours*3600-minutes*60;
-%     bbb = strcat('Progress: ',num2str(percentage),'%% Estimated remaining time: ', num2str(hours), ':',num2str(minutes),':',num2str(seconds), '\x8B');
-    fprintf('#')
+function progress(i,mini, maxi)
+%%% 
+%this was crashing and causing a lot of problems 
+% if i==maxi
+%     fprintf('\bDone!\r\n')
+% elseif i==mini
+%     fprintf(' ')
+% else
+% switch mod(i,4)
+%     case 0
+%     fprintf('\b\\')
+%     case 1
+%     fprintf('\b-')
+%     case 2
+%     fprintf('\b/')
+%     case 3
+%     fprintf('\b|')
+% end
+% end
+% N = maxi - mini;
+% partsize = fix(100/N*i);
+% lastpartsize = fix(100/N*(i-1));
+% if lastpartsize < 0
+%     lastpartsize = 0;
+% end
+% if i == mini
+%     fprintf('\r')
+% end
+% for j = 0:lastpartsize
+%     fprintf('\b')
+% end
+% 
+% for j = 1:partsize
+%     fprintf('#')
+% end
+% if partsize == 100
+%     fprintf('Done!\r')
+   
 end
     
     
