@@ -6,7 +6,7 @@ function A = skeldraw(skel,doIdraw)
 %I use the NaN interpolation to draw sticks which is much faster!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%MESSAGES PART
-dbgmsg('This function is very often called in drawing functions and this message will cause serious slowdown.')
+%dbgmsg('This function is very often called in drawing functions and this message will cause serious slowdown.',1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %checks if skeleton is 72x1 which is a hip-less skeleton
