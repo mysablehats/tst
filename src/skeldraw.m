@@ -1,9 +1,27 @@
+function A = skeldraw(skel,doIdraw)
+%makes a beautiful skeleton of the 75 dimension vector
+%or the 25x3 skeleton
 % plot the nodes
 %reconstruct the nodes from the 75 dimension vector. each 3 is a point
-function skeldraw(skel)
-hold_initialstate = ishold();
+%I use the NaN interpolation to draw sticks which is much faster!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%MESSAGES PART
+%dbgmsg('This function is very often called in drawing functions and this message will cause serious slowdown.',1)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-if all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
+%checks if skeleton is 72x1 which is a hip-less skeleton
+if all(size(skel) == [72 1])
+    tdskel = zeros(24,3);
+    for i=1:3
+        for j=1:24
+            tdskel(j,i) = skel(j+24*(i-1));
+        end
+    end
+    tdskel = [[0 0 0 ]; tdskel];
+    if all(size(tdskel) ~= [25 3])
+        error('wrong skeleton building procedure!')
+    end
+elseif all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
     tdskel = zeros(25,3);
     for i=1:3
         for j=1:25
@@ -13,23 +31,27 @@ if all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
 else
         tdskel = skel;
 end
+A = stick_draw(tdskel);
 
-plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
-hold on
-for k=1:25
-    text(tdskel(k,1), tdskel(k,2), tdskel(k,3),num2str(k))
-end
-stick_draw(tdskel)
-hold off
-if hold_initialstate == 1
+if doIdraw ==true 
+    hold_initialstate = ishold();
+    plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
     hold on
-end
+    for k=1:25 % I used this to make the drawings, but now I think it looks cool and I don't want to remove it
+        text(tdskel(k,1), tdskel(k,2), tdskel(k,3),num2str(k))
+    end
+    plot3(A(1,:),A(2,:), A(3,:))
+    hold off
+    if hold_initialstate == 1
+        hold on
+    end
    
 end
+end
 
-function stick_draw(tdskel)
+function a = stick_draw(tdskel)
 
-%%
+%
 %in the end the end the text command upstairs was what did the job and I
 %wrote down the connection of the skeleton points
 %it is as follows:
@@ -52,75 +74,44 @@ function stick_draw(tdskel)
 % 17-18-19 left leg
 % 19-20 left foot
 
-draw_1_stick(tdskel, 1,2)
+a = draw_1_stick(tdskel, 1,2);
 %draw_1_stick(tdskel, 2,3)
-draw_1_stick(tdskel, 2,21)
-draw_1_stick(tdskel, 21,3)
-draw_1_stick(tdskel, 3,4)
+a= [a draw_1_stick(tdskel, 2,21)];
+a= [a draw_1_stick(tdskel, 21,3)];
+a= [a draw_1_stick(tdskel, 3,4)];
 
-draw_1_stick(tdskel, 5,21)
-draw_1_stick(tdskel, 21,9)
+a= [a draw_1_stick(tdskel, 5,21)];
+a= [a draw_1_stick(tdskel, 21,9)];
 
-draw_1_stick(tdskel, 5,6)
-draw_1_stick(tdskel, 6,7)
+a= [a draw_1_stick(tdskel, 5,6)];
+a= [a draw_1_stick(tdskel, 6,7)];
 
-draw_1_stick(tdskel, 7,8) % unsure
+a= [a draw_1_stick(tdskel, 7,8)]; % unsure
 
-draw_1_stick(tdskel, 8,22)
-draw_1_stick(tdskel, 22,23) % unsure
-draw_1_stick(tdskel, 8,23) % unsure
+a= [a draw_1_stick(tdskel, 8,22)];
+a= [a draw_1_stick(tdskel, 22,23)]; % unsure
+a= [a draw_1_stick(tdskel, 8,23)]; % unsure
 
-draw_1_stick(tdskel, 9,10)
-draw_1_stick(tdskel, 10,11)
+a= [a draw_1_stick(tdskel, 9,10)];
+a= [a draw_1_stick(tdskel, 10,11)];
 
-draw_1_stick(tdskel, 11,12) % unsure
-draw_1_stick(tdskel, 12,24)
-draw_1_stick(tdskel, 12,25) % unsure
-draw_1_stick(tdskel, 24,25)
-draw_1_stick(tdskel, 13,1)
-draw_1_stick(tdskel, 1,17)
-draw_1_stick(tdskel, 13,17) % draw a thick hip, because we like hips
+a= [a draw_1_stick(tdskel, 11,12)]; % unsure
+a= [a draw_1_stick(tdskel, 12,24)];
+a= [a draw_1_stick(tdskel, 12,25)]; % unsure
+a= [a draw_1_stick(tdskel, 24,25)];
+a= [a draw_1_stick(tdskel, 13,1)];
+a= [a draw_1_stick(tdskel, 1,17)];
+a= [a draw_1_stick(tdskel, 13,17)]; % draw a thick hip, because we like hips
 
-draw_1_stick(tdskel, 13,14)
-draw_1_stick(tdskel, 14,15)
-draw_1_stick(tdskel, 15,16)
-draw_1_stick(tdskel, 17,18)
-draw_1_stick(tdskel, 18,19)
-draw_1_stick(tdskel, 19,20)
-%%
-% here only because this 
-%go through the whole set to find adequate conections
-%a = length(tdskel);
-%sticks = zeros(2, 3,a*a);
-%jj=0;
-%for i=1:a
-%    for j=(i+1):a %ugly, I know
-%        jj=jj+1;
-%        [tdskel(i,:); tdskel(j,:)];
-%        sticks(:,:,jj) = [tdskel(j,:); tdskel(i,:)];
-%    end
-%end
-%stick = zeros(2,3,24);
-%st = 0; %counter for the 24 sticks
-%for k = 1:a*a
-%    plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.b','markersize',20); view(0,0); axis equal;
-%    line(sticks(:,1,k),sticks(:,2,k),sticks(:,3,k))
-%    [sticks(:,1,k),sticks(:,2,k),sticks(:,3,k)]
-%    addline = input('Is this stick right? [N]', 's');
-%    if ~isempty(addline)&&addline=='y'
-%        st = st+1;
-%        stick(:,:,st) = [sticks(:,1,k),sticks(:,2,k),sticks(:,3,k)]; %this is probably unnecessaryly complex indexing
-%    elseif ~isempty(addline)&&addline=='q'
-%        break
-%    end
-%    
-%end
-%stick
+a= [a draw_1_stick(tdskel, 13,14)];
+a= [a draw_1_stick(tdskel, 14,15)];
+a= [a draw_1_stick(tdskel, 15,16)];
+a= [a draw_1_stick(tdskel, 17,18)];
+a= [a draw_1_stick(tdskel, 18,19)];
+a= [a draw_1_stick(tdskel, 19,20)];
 
 end
 
-function stickman(tdskel,limbmat)
-end
-function draw_1_stick(tdskel, i,j)
-line([tdskel(i,1) tdskel(j,1)], [tdskel(i,2) tdskel(j,2)], [tdskel(i,3) tdskel(j,3)]) 
+function A = draw_1_stick(tdskel, i,j)
+A = [[tdskel(i,1) tdskel(j,1) NaN]; [tdskel(i,2) tdskel(j,2) NaN]; [tdskel(i,3) tdskel(j,3) NaN]];
 end

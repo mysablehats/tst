@@ -1,10 +1,15 @@
-%Place this code in the same folder of the database (Data1,Data2,...Data11)
-clear all;close all;clc;
+function allskel = LoadDataBase(idx_folderi)
+
+%%%%%%Messages part. Provides feedback for the user about what is being
+%%%%%%done
+dbgmsg('Loading Database and building allskel structure. Please wait, this takes a while.')
+%%%%%%
+
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Choose:
-startFoldIdx = 1;   % Index of the first test folder to load (1->'Data1')
-stopFoldIdx = 5;    % Index of the last test folder to load (11->'Data11')
+%startFoldIdx = 1;   % Index of the first test folder to load (1->'Data1')
+%stopFoldIdx = 5;    % Index of the last test folder to load (11->'Data11')
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 %The script loads:
@@ -18,8 +23,8 @@ stopFoldIdx = 5;    % Index of the last test folder to load (11->'Data11')
 % - jMatSkl:        skeleton joints in skeleton space
 % - KinectTimeBody: timestamps assigned by the PC to the skeleton, when it is available to the PC [100ns]/[us]
 
-SLASH = '/'; % or '\' in windows!
-pathtodata = '/Volumes/Elements/fall_detection_datasets/TST Fall detection database ver. 2/';
+[SLASH, pathtodata] = OS_VARS(); % adjust environment variables to system in question (PC, MAC, UNIX)
+
 ADLFolderName = {'sit','grasp','walk','lay'};
 FallFolderName = {'front','back','side','EndUpSit'};
 %*****Wearable device*****
@@ -32,7 +37,7 @@ columnPixel = 512;  %[pixel] number of column
 frameIdx = 1; %depth frame number
 
 % Load selected folders
-for idx_folder = startFoldIdx:stopFoldIdx
+for idx_folder = idx_folderi
     for groupName = {'ADL' 'Fall'}
         if strcmp(groupName,'ADL')
             subfolder = ADLFolderName;
@@ -41,7 +46,7 @@ for idx_folder = startFoldIdx:stopFoldIdx
         end
         for name_Subfolder = subfolder
             for idx_test = 1:3
-                Folder = strcat(pathtodata, 'Data',num2str(idx_folder),SLASH,cell2mat(groupName),SLASH,cell2mat(name_Subfolder),SLASH,num2str(idx_test)) %Folder where are stored the data
+                Folder = strcat(pathtodata, 'Data',num2str(idx_folder),SLASH,cell2mat(groupName),SLASH,cell2mat(name_Subfolder),SLASH,num2str(idx_test)); %Folder where are stored the data
                 %*************************
                 %Load wearable device data
                 %*************************
@@ -111,7 +116,12 @@ for idx_folder = startFoldIdx:stopFoldIdx
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
                 % % Put here your code! 
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-                jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder);
+                %%% Calculate velocities!!
+                vel = zeros(size(jMatSkl)); % initial velocity is zero
+                for i = 2:size(jMatSkl,3)
+                    vel(:,:,i) = (jMatSkl(:,:,i) - jMatSkl(:,:,i-1))/(KinectTimeBody(i,1)-KinectTimeBody(i-1,1));
+                end
+                jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder,'time',KinectTimeBody,'vel',vel);
                 %%%%%% size(jskelstruc.skel) % this was here for debugging
                 if exist('allskel','var') % initialize my big matrix of skeletons 
                     allskel = cat(2,allskel,jskelstruc);
@@ -141,6 +151,4 @@ for idx_folder = startFoldIdx:stopFoldIdx
         end
     end
 end
-[X, Data,Y] = extractdata(allskel);
-save('tst_skel','Data', 'Y','-v7.3');
-%clear all;
+
