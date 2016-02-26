@@ -17,8 +17,8 @@ switch lllen
         velidx = [];
     case 147
         %%%%skeleton - hips + velocities
-        polidx = [1:24 49:72 98:122];
-        velidx = [25:48 73:97 123:147];
+        polidx = [1:24 50:73 99:122];
+        velidx = [25:49 74:98 123:147];
     otherwise
         error('Strange size!')
         %%%%regular skeleton
