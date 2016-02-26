@@ -1,5 +1,5 @@
 global VERBOSE
-VERBOSE = true;
+VERBOSE = true; %%%% this is not really working...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%MESSAGES PART
 disp('####### ATTENTION IMBECILE: ####### YOU SHOULD ADD EVERYTHING TO THE PATH AND EXECUTE IT IN THE TST/SRC DIRECTORY. IF YOU WANT TO MAKE YOUR ALGORITHM HARD TO THESE CHANGES, BE MY GUEST, OTHERWISE JUST DO IT EACH TIME YOU START MATLAB, OR THIS WILL NOT RUN!!!!')
@@ -35,7 +35,6 @@ parfor i = 1:length(NODES)
     [savestructure(i).class_train_gng, savestructure(i).class_val_gng] = untitled6(savestructure(i).nodes_gng, savestructure(i).data_train,data_val, savestructure(i).y_train);
 end
 
-%plotconfusion(ones(size(y_val)),y_val, 'always a fall on Validation Set:',zeros(size(y_val)),y_val, 'never a fall on Validation Set:')
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 u = {};
 for i=1:length(savestructure)
@@ -46,4 +45,6 @@ for i=1:length(savestructure)
     u = {u{:}, gwr_u{:}, gng_u{:}}; 
 end
 plotconfusion(u{:})
+figure
+plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
 clear i
