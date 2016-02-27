@@ -16,7 +16,7 @@ load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
 NODES = [40 40 40 40];
 %NODES = fix(NODES/30);
-gas_methods = struct('edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[]); %bestmatch will have the training matrix for subsequent layers
+gas_methods = struct('layername','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[]); %bestmatch will have the training matrix for subsequent layers
 all_gas = struct('gwr',gas_methods,'gng',gas_methods);
 sts_structure = struct('data',[],'gwr',gas_methods);
 savestructure(length(NODES)) = struct('nodes',[], 'pos', all_gas, 'vel', all_gas, 'train',struct('y',[],'data',[]),'STS',sts_structure);
@@ -35,7 +35,7 @@ parfor i = 1:length(NODES)
     dbgmsg('POS: Finished gwr for process:',num2str(i),1)
     %%%%%% VELOCITIES
     dbgmsg('VEL: Starting gwr for process:',num2str(i),1)
-    [savestructure(i).vel.gwr.nodes, savestructure(i).pos.gwr.edges, ~, ~] = gwr(savestructure(i).train.data(velidx,:),num_of_nodes); %gets the part below
+    [savestructure(i).vel.gwr.nodes, savestructure(i).vel.gwr.edges, ~, ~] = gwr(savestructure(i).train.data(velidx,:),num_of_nodes); %gets the part below
     dbgmsg('VEL: Finished gwr for process:',num2str(i),1)
     
     %%%%%% FIND BEST MATCHING UNITS TO DO IT OVER...
