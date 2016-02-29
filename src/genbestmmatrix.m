@@ -13,6 +13,8 @@ switch whichisit
         datachop = data(polidx,:);
     case 'vel'
         datachop = data(velidx,:);
+    case 'all'
+        datachop = data;
     otherwise
         if ~ischar(whichisti)
             error('variable whichisit isn''t even a char, wtf man')
