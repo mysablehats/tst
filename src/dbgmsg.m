@@ -3,6 +3,8 @@ function dbgmsg(varargin)
 %%%% should have a trailing ", true" option added to it, because parallel
 %%%% pools don't receive global values
 
+global logfile
+logfile = fopen('../var/log.txt','at'); % global is not working and I don't want to figure out why
 msg = varargin{1};
 if nargin >2
     msg = strcat(varargin{1:end-1});
@@ -14,16 +16,16 @@ else
     global VERBOSE
 end
 if VERBOSE
-    fprintf('[%f] ',cputime)
+    fprintf(logfile,'[%s %f] ',date,cputime);
     a = dbstack;
-    fprintf(a(end).name)
+    fprintf(logfile,a(end).name);
     if length(a)>1
         for i = (length(a)-1):-1:2
-            fprintf(': ')
-            fprintf(a(i).name)
+            fprintf(logfile,': ');
+            fprintf(logfile,a(i).name);
         end
     end
-    fprintf(': ')
-    fprintf(msg)
-    fprintf('\n')
+    fprintf(logfile,': ');
+    fprintf(logfile,msg);
+    fprintf(logfile,'\n');
 end

@@ -1,4 +1,5 @@
-global VERBOSE
+global VERBOSE logfile
+logfile = fopen('../var/log.txt','at');
 VERBOSE = true; %%%% this is not really working...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%MESSAGES PART
@@ -14,12 +15,12 @@ clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = [40 40 40 40];
+NODES = 1000*ones(1,8);
 %NODES = fix(NODES/30);
 gas_methods = struct('layername','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[]); %bestmatch will have the training matrix for subsequent layers
 all_gas = struct('gwr',gas_methods,'gng',gas_methods);
 sts_structure = struct('data',[],'gwr',gas_methods);
-savestructure(length(NODES)) = struct('nodes',[], 'pos', all_gas, 'vel', all_gas, 'train',struct('y',[],'data',[]),'STS',sts_structure);
+savestructure(length(NODES)) = struct('nodes',[], 'pos', all_gas, 'vel', all_gas, 'train',struct('y',[],'data',[]),'STS',sts_structure,'confusions',struct('val',[],'train',[]));
 
 dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
@@ -31,11 +32,11 @@ parfor i = 1:length(NODES)
     savestructure(i).nodes = num_of_nodes;
     %%%%%% POSITIONS
     dbgmsg('POS: Starting gwr for process:',num2str(i),1)
-    [savestructure(i).pos.gwr.nodes, savestructure(i).pos.gwr.edges, ~, ~] = gwr(savestructure(i).train.data(polidx,:),num_of_nodes); %gets the upper part
+    [savestructure(i).pos.gwr.nodes, savestructure(i).pos.gwr.edges, ~, ~] = gng_lax(savestructure(i).train.data(polidx,:),num_of_nodes); %gets the upper part
     dbgmsg('POS: Finished gwr for process:',num2str(i),1)
     %%%%%% VELOCITIES
     dbgmsg('VEL: Starting gwr for process:',num2str(i),1)
-    [savestructure(i).vel.gwr.nodes, savestructure(i).vel.gwr.edges, ~, ~] = gwr(savestructure(i).train.data(velidx,:),num_of_nodes); %gets the part below
+    [savestructure(i).vel.gwr.nodes, savestructure(i).vel.gwr.edges, ~, ~] = gng_lax(savestructure(i).train.data(velidx,:),num_of_nodes); %gets the part below
     dbgmsg('VEL: Finished gwr for process:',num2str(i),1)
     
     %%%%%% FIND BEST MATCHING UNITS TO DO IT OVER...
@@ -49,6 +50,7 @@ parfor i = 1:length(NODES)
     %%%%%% for the time being...
     dbgmsg('PRE-STS: Combining position and velocity gwr best matching unit matrices:',num2str(i),1)
     savestructure(i).STS.data = cat(2,savestructure(i).pos.gwr.bestmatch,savestructure(i).vel.gwr.bestmatch);
+    
 %         
 %     dbgmsg('POS: Applying GWR labels for process:',num2str(i),1)
 %     %%%%%% POSITIONS
@@ -60,7 +62,7 @@ parfor i = 1:length(NODES)
     
     %%%%%% STS-LAYER
     dbgmsg('STS-LAYER: Starting gwr for process:',num2str(i),1)
-    [savestructure(i).STS.gwr.nodes, savestructure(i).STS.gwr.edges, ~, ~] = gwr(savestructure(i).STS.data,num_of_nodes); %gets the part below
+    [savestructure(i).STS.gwr.nodes, savestructure(i).STS.gwr.edges, ~, ~] = gng_lax(savestructure(i).STS.data,num_of_nodes); %gets the part below
     dbgmsg('STS-LAYER: Finished gwr for process:',num2str(i),1)
     dbgmsg('STS-LAYER: Applying gwr labels for process:',num2str(i),1)
     [savestructure(i).STS.gwr.class.train, savestructure(i).STS.gwr.class.val] = untitled6(savestructure(i).STS.gwr.nodes, savestructure(i).train.data,data_val, savestructure(i).train.y);
@@ -77,7 +79,11 @@ end
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 u = {};
 for i=1:length(savestructure)
-    
+    [~,savestructure(i).confusions.val,~,~] = confusion(y_val,savestructure(i).STS.gwr.class.val);
+    [~,savestructure(i).confusions.train,~,~] = confusion(savestructure(i).train.y,savestructure(i).STS.gwr.class.train);
+    %tempvar = num2str(savestructure(i).confusions.val);
+    dbgmsg(strcat(num2str(i),'-th set. Confusion matrix on this validation set:',writedownmatrix(savestructure(i).confusions.val)),1)
+    dbgmsg('\n',1)
     gwr_u = {y_val,savestructure(i).STS.gwr.class.val, strcat('GWR Val ', num2str(savestructure(i).nodes)),savestructure(i).train.y,savestructure(i).STS.gwr.class.train,strcat('GWR Train ', num2str(savestructure(i).nodes))};
     %gng_u = {y_val,savestructure(i).gng.class.val, strcat('GNG Val ', num2str(savestructure(i).nodes)),savestructure(i).train.y,savestructure(i).gwr.class.train,strcat('GNG Train ', num2str(savestructure(i).nodes))};
     
