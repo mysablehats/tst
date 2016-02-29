@@ -2755,3 +2755,922 @@ make_general_channel/channel_generalmake_general_channel/channel_general: : gng_
 [29-Feb-2016 13160.560000] starter_script: 8-th set. Confusion matrix on this validation set:(1,1):8890	(1,2):1	(2,1):5761	(2,2):778	
 [29-Feb-2016 13160.560000] starter_script: 
 
+[29-Feb-2016 21430.140000] starter_script: Running starter script
+[29-Feb-2016 21431.330000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[29-Feb-2016 21434.180000] starter_script: Starting parallel pool for GWR and GNG for nodes:10  10  10  10  10  10  10  10
+[29-Feb-2016 21434.180000] starter_script: ###Using multilayer GWR and GNG ###
+[29-Feb-2016 11.820000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 11.820000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 11.860000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 11.860000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 11.880000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:2
+[29-Feb-2016 11.950000] [29-Feb-2016 11.970000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: shuffledataftw: : Shuffles training data (data_train) and training labels (y_train) together.
+make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.[29-Feb-2016 11.960000] 
+remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 11.980000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 12.030000] remoteParallelFunction: make_general_channel/channel_general[29-Feb-2016 11.920000] remoteParallelFunction: : shuffledataftwmake_general_channel/channel_general: POS: Starting gwr for process:8
+: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 12.040000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 12.100000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 12.110000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 11.940000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 11.940000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 11.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 11.870000] remoteParallelFunction[29-Feb-2016 11.960000] remoteParallelFunction: : make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+make_general_channel/channel_general[29-Feb-2016 12.000000] : remoteParallelFunctionshuffledataftw: make_general_channel/channel_general: POS: Starting gwr for process:3
+: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 11.870000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 11.980000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 11.960000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 11.990000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 11.980000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 12.060000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:6
+[29-Feb-2016 12.100000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:4
+[29-Feb-2016 12.170000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:5
+[29-Feb-2016 12.060000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 11.930000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:1
+[29-Feb-2016 12.070000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 12.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 12.050000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:7
+[29-Feb-2016 12.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 12.150000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 12.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 12.200000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 12.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 12.120000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 12.220000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 12.170000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 12.220000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: [29-Feb-2016 11.970000]     0          .  0      000 .    51.0. 9   10036539012
+remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 11.980000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 12.100000] remoteParallelFunction[29-Feb-2016 11.990000] : make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 12.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 12.120000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 16.170000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 16.180000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:4
+[29-Feb-2016 16.180000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:4
+[29-Feb-2016 16.200000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 16.200000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 16.200000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 16.150000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 16.150000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:6
+[29-Feb-2016 16.160000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:6
+[29-Feb-2016 16.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 16.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 16.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 16.060000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 16.070000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:1
+[29-Feb-2016 16.070000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:1
+[29-Feb-2016 16.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 16.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 16.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 16.350000] remoteParallelFunction[29-Feb-2016 16.190000] : make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 16.190000] remoteParallelFunction: [29-Feb-2016 16.360000] make_general_channel/channel_general: POS: Finished gwr for process:8
+remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:5
+[29-Feb-2016 16.190000] remoteParallelFunction[29-Feb-2016 16.360000] : make_general_channel/channel_general: VEL: Starting gwr for process:8
+remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:5
+[29-Feb-2016 16.200000] [29-Feb-2016 16.370000] remoteParallelFunction: remoteParallelFunction: make_general_channel/channel_general: make_general_channel/channel_general: gng_lax: gng_lax: generates GNG A and C matrices
+generates GNG A and C matrices
+[29-Feb-2016 16.370000] [29-Feb-2016 16.200000] remoteParallelFunction: make_general_channel/channel_generalremoteParallelFunction: : gng_laxmake_general_channel/channel_general: : Executing GNG with:10 nodes.gng_lax
+: Executing GNG with:10 nodes.
+[29-Feb-2016 16.200000] [29-Feb-2016 16.370000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_general: make_general_channel/channel_generalgng_lax: : gng_lax    0          .  0      000 .    51.0. 9   10036539012
+:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 16.200000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 16.210000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:2
+[29-Feb-2016 16.210000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:2
+[29-Feb-2016 16.220000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 16.220000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 16.220000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 16.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 16.300000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:7
+[29-Feb-2016 16.300000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:7
+[29-Feb-2016 16.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 16.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 16.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 16.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 16.460000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:3
+[29-Feb-2016 16.460000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:3
+[29-Feb-2016 16.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 16.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 16.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 19.860000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 19.860000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:4
+[29-Feb-2016 19.860000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:4
+[29-Feb-2016 19.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 19.880000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:6
+[29-Feb-2016 19.880000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:6
+[29-Feb-2016 19.740000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 20.000000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 19.750000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:1
+[29-Feb-2016 19.750000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:1
+[29-Feb-2016 20.000000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:5
+[29-Feb-2016 20.000000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:5
+[29-Feb-2016 20.090000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 20.100000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:2
+[29-Feb-2016 20.100000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:2
+[29-Feb-2016 20.290000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 20.300000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:8
+[29-Feb-2016 20.300000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:8
+[29-Feb-2016 20.340000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 20.340000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:7
+[29-Feb-2016 20.350000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:7
+[29-Feb-2016 20.510000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:10 With MAXNODES:10
+[29-Feb-2016 20.520000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:3
+[29-Feb-2016 20.520000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:3
+[29-Feb-2016 20.820000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:4
+[29-Feb-2016 20.840000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:6
+[29-Feb-2016 21.000000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:5
+[29-Feb-2016 20.780000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:1
+[29-Feb-2016 21.080000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:2
+[29-Feb-2016 21.220000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:8
+[29-Feb-2016 21.420000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:7
+[29-Feb-2016 21.510000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:3
+[29-Feb-2016 21.730000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:4
+[29-Feb-2016 21.730000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:4
+[29-Feb-2016 21.730000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 21.730000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 21.740000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 21.740000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 21.750000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:4
+[29-Feb-2016 21.750000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:4
+[29-Feb-2016 21.760000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 21.760000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:6
+[29-Feb-2016 21.760000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:6
+[29-Feb-2016 21.760000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 21.760000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 21.760000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 21.770000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 21.770000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:6
+[29-Feb-2016 21.770000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:6
+[29-Feb-2016 21.790000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 21.900000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:5
+[29-Feb-2016 21.910000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:5
+[29-Feb-2016 21.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 21.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 21.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 21.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 21.910000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:5
+[29-Feb-2016 21.920000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:5
+[29-Feb-2016 21.930000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 21.700000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:1
+[29-Feb-2016 21.700000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:1
+[29-Feb-2016 21.700000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 21.710000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 21.710000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 21.710000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 21.710000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:1
+[29-Feb-2016 21.710000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:1
+[29-Feb-2016 21.730000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.070000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:2
+[29-Feb-2016 22.070000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:2
+[29-Feb-2016 22.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 22.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 22.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 22.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 22.080000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:2
+[29-Feb-2016 22.080000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:2
+[29-Feb-2016 22.090000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.160000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:8
+[29-Feb-2016 22.160000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:8
+[29-Feb-2016 22.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 22.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 22.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 22.170000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 22.170000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:8
+[29-Feb-2016 22.170000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:8
+[29-Feb-2016 22.180000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.500000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.400000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:7
+[29-Feb-2016 22.400000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:7
+[29-Feb-2016 22.400000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 22.400000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 22.400000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 22.410000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 22.410000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:7
+[29-Feb-2016 22.410000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:7
+[29-Feb-2016 22.420000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.450000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:3
+[29-Feb-2016 22.460000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:3
+[29-Feb-2016 22.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 22.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:10 nodes.
+[29-Feb-2016 22.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0      000 .    51.0. 9   10036539012
+[29-Feb-2016 22.470000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:7 With MAXNODES:10
+[29-Feb-2016 22.470000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:3
+[29-Feb-2016 22.470000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:3
+[29-Feb-2016 22.480000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.510000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.700000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.470000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.000000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.940000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.020000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.980000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.240000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 22.990000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.230000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.270000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.480000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.560000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.820000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 23.860000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 21460.010000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:10  10  10  10  10  10  10  10
+[29-Feb-2016 21461.000000] starter_script: 1-th set. Confusion matrix on this validation set:(1,1):8891	(1,2):0	(2,1):6539	(2,2):0	
+[29-Feb-2016 21461.780000] starter_script: 2-th set. Confusion matrix on this validation set:(1,1):2068	(1,2):6823	(2,1):1633	(2,2):4906	
+[29-Feb-2016 21462.710000] starter_script: 3-th set. Confusion matrix on this validation set:(1,1):0	(1,2):8891	(2,1):0	(2,2):6539	
+[29-Feb-2016 21463.490000] starter_script: 4-th set. Confusion matrix on this validation set:(1,1):7691	(1,2):1200	(2,1):4172	(2,2):2367	
+[29-Feb-2016 21464.230000] starter_script: 5-th set. Confusion matrix on this validation set:(1,1):231	(1,2):8660	(2,1):715	(2,2):5824	
+[29-Feb-2016 21464.880000] starter_script: 6-th set. Confusion matrix on this validation set:(1,1):2729	(1,2):6162	(2,1):3219	(2,2):3320	
+[29-Feb-2016 21465.460000] starter_script: 7-th set. Confusion matrix on this validation set:(1,1):4395	(1,2):4496	(2,1):4309	(2,2):2230	
+[29-Feb-2016 21466.130000] starter_script: 8-th set. Confusion matrix on this validation set:(1,1):7626	(1,2):1265	(2,1):4307	(2,2):2232	
+[29-Feb-2016 21466.160000] starter_script: F1 for validation:
+[29-Feb-2016 21466.160000] starter_script: F1 for training:
+[29-Feb-2016 21522.910000] dbgmsg: F1 for validation:0.51878
+[29-Feb-2016 21529.230000] dbgmsg: F1 for training:0.53147
+[29-Feb-2016 21569.090000] starter_script: Running starter script
+[29-Feb-2016 21570.130000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[29-Feb-2016 21573.230000] starter_script: Starting parallel pool for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[29-Feb-2016 21573.230000] starter_script: ###Using multilayer GWR and GNG ###
+[29-Feb-2016 25.220000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 25.220000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 25.510000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.[29-Feb-2016 25.360000] 
+remoteParallelFunction[29-Feb-2016 25.520000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: : This is supposed to make training from the gas faster.
+make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 25.370000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 25.280000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:8
+[29-Feb-2016 25.310000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 25.310000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 25.580000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:3
+[29-Feb-2016 25.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 25.430000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:2
+[29-Feb-2016 25.030000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 25.040000] remoteParallelFunction[29-Feb-2016 24.770000] : make_general_channel/channel_general: [29-Feb-2016 25.730000] shuffledataftw: This is supposed to make training from the gas faster.
+remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: shuffledataftw: shuffledataftw: : Shuffles training data (data_train) and training labels (y_train) together.
+Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 24.770000] [29-Feb-2016 25.740000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: remoteParallelFunctionThis is supposed to make training from the gas faster.: 
+make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 24.790000] remoteParallelFunction[29-Feb-2016 25.610000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 24.810000] remoteParallelFunction: make_general_channel/channel_general[29-Feb-2016 25.610000] : shuffledataftwremoteParallelFunction: : make_general_channel/channel_general: gng_lax: This is supposed to make training from the gas faster.Executing GNG with:100 nodes.
+
+[29-Feb-2016 25.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 25.620000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 25.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 25.470000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 24.850000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 24.860000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 25.110000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:5
+[29-Feb-2016 25.810000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:7
+[29-Feb-2016 24.870000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:1
+[29-Feb-2016 24.870000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:4
+[29-Feb-2016 25.150000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 25.150000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 25.850000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 25.850000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 25.160000] [29-Feb-2016 24.920000] remoteParallelFunctionremoteParallelFunction: make_general_channel/channel_general: : gng_laxmake_general_channel/channel_general: : gng_laxgenerates GNG A and C matrices: 
+[29-Feb-2016 24.930000]     0          .  0     1000 .    50.0. 9   10036539012
+remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:6
+[29-Feb-2016 24.930000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 24.900000] remoteParallelFunction: make_general_channel/channel_general[29-Feb-2016 25.870000] : gng_lax: generates GNG A and C matrices
+remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 24.930000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 24.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 24.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 24.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 24.930000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 24.970000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 50.660000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 50.660000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:4
+[29-Feb-2016 50.660000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:4
+[29-Feb-2016 50.680000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 50.690000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 50.690000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 51.480000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 51.480000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:2
+[29-Feb-2016 51.490000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:2
+[29-Feb-2016 51.500000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 51.500000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 51.510000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 51.850000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 51.860000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:8
+[29-Feb-2016 51.860000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:8
+[29-Feb-2016 51.570000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 51.570000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:5
+[29-Feb-2016 51.570000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:5
+[29-Feb-2016 51.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 51.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 51.880000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 51.590000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 51.590000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 51.590000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 51.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 51.420000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:6
+[29-Feb-2016 51.420000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:6
+[29-Feb-2016 51.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 51.430000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:1
+[29-Feb-2016 51.430000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:1
+[29-Feb-2016 51.440000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 51.440000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 51.440000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 51.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 51.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 51.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 52.510000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 52.520000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:3
+[29-Feb-2016 52.520000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:3
+[29-Feb-2016 52.530000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 52.530000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 52.530000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 53.550000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 53.550000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:7
+[29-Feb-2016 53.550000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:7
+[29-Feb-2016 53.580000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 53.580000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 53.580000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 75.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 75.920000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:4
+[29-Feb-2016 75.920000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:4
+[29-Feb-2016 77.130000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 77.130000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:5
+[29-Feb-2016 77.130000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:5
+[29-Feb-2016 76.960000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 76.970000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:1
+[29-Feb-2016 76.970000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:1
+[29-Feb-2016 77.050000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 77.060000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:6
+[29-Feb-2016 77.060000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:6
+[29-Feb-2016 78.280000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 78.280000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:2
+[29-Feb-2016 78.280000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:2
+[29-Feb-2016 78.410000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 78.420000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:8
+[29-Feb-2016 78.420000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:8
+[29-Feb-2016 80.560000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 80.560000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:3
+[29-Feb-2016 80.560000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:3
+[29-Feb-2016 81.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:100 With MAXNODES:100
+[29-Feb-2016 81.080000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:7
+[29-Feb-2016 81.080000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:7
+[29-Feb-2016 84.910000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:4
+[29-Feb-2016 85.970000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:1
+[29-Feb-2016 86.010000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:6
+[29-Feb-2016 86.370000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:5
+[29-Feb-2016 87.850000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:8
+[29-Feb-2016 88.020000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:2
+[29-Feb-2016 90.460000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:7
+[29-Feb-2016 90.460000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:3
+[29-Feb-2016 93.930000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:4
+[29-Feb-2016 93.940000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:4
+[29-Feb-2016 93.940000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 93.940000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 93.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 94.020000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 94.030000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:4
+[29-Feb-2016 94.030000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:4
+[29-Feb-2016 94.030000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 95.130000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:1
+[29-Feb-2016 95.140000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:1
+[29-Feb-2016 95.140000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 95.140000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 95.140000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 95.220000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 95.220000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:1
+[29-Feb-2016 95.220000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:1
+[29-Feb-2016 95.230000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 95.320000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:6
+[29-Feb-2016 95.320000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:6
+[29-Feb-2016 95.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 95.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 95.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 95.390000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 95.400000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:6
+[29-Feb-2016 95.400000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:6
+[29-Feb-2016 95.400000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 95.720000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:5
+[29-Feb-2016 95.720000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:5
+[29-Feb-2016 95.720000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 95.730000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 95.730000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 95.810000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 95.810000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:5
+[29-Feb-2016 95.810000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:5
+[29-Feb-2016 95.820000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 97.640000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:8
+[29-Feb-2016 97.650000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:8
+[29-Feb-2016 97.650000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 97.650000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 97.650000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 97.740000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 97.750000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:8
+[29-Feb-2016 97.750000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:8
+[29-Feb-2016 97.750000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 98.130000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:2
+[29-Feb-2016 98.140000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:2
+[29-Feb-2016 98.140000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 98.140000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 98.140000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 98.220000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 98.220000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:2
+[29-Feb-2016 98.220000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:2
+[29-Feb-2016 98.230000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 100.390000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:7
+[29-Feb-2016 100.400000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:7
+[29-Feb-2016 100.400000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 100.400000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 100.410000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 100.490000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 100.490000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:7
+[29-Feb-2016 100.490000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:7
+[29-Feb-2016 100.500000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 100.420000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:3
+[29-Feb-2016 100.420000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:3
+[29-Feb-2016 100.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 100.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:100 nodes.
+[29-Feb-2016 100.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[29-Feb-2016 100.500000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:67 With MAXNODES:100
+[29-Feb-2016 100.510000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:3
+[29-Feb-2016 100.510000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:3
+[29-Feb-2016 100.510000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 100.870000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 102.360000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 102.410000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 103.120000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 104.330000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 105.170000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 105.850000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 105.990000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 106.010000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 106.770000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 108.070000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 108.270000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 109.210000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 109.660000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 111.850000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 112.170000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 21628.870000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[29-Feb-2016 21629.850000] starter_script: 1-th set. Confusion matrix on this validation set:(1,1):7489	(1,2):1402	(2,1):5783	(2,2):756	
+[29-Feb-2016 21630.690000] starter_script: 2-th set. Confusion matrix on this validation set:(1,1):7661	(1,2):1230	(2,1):4169	(2,2):2370	
+[29-Feb-2016 21631.510000] starter_script: 3-th set. Confusion matrix on this validation set:(1,1):7799	(1,2):1092	(2,1):5872	(2,2):667	
+[29-Feb-2016 21632.280000] starter_script: 4-th set. Confusion matrix on this validation set:(1,1):2877	(1,2):6014	(2,1):1582	(2,2):4957	
+[29-Feb-2016 21633.040000] starter_script: 5-th set. Confusion matrix on this validation set:(1,1):5716	(1,2):3175	(2,1):3168	(2,2):3371	
+[29-Feb-2016 21633.780000] starter_script: 6-th set. Confusion matrix on this validation set:(1,1):7759	(1,2):1132	(2,1):5411	(2,2):1128	
+[29-Feb-2016 21634.520000] starter_script: 7-th set. Confusion matrix on this validation set:(1,1):8127	(1,2):764	(2,1):5506	(2,2):1033	
+[29-Feb-2016 21635.220000] starter_script: 8-th set. Confusion matrix on this validation set:(1,1):6522	(1,2):2369	(2,1):3511	(2,2):3028	
+[29-Feb-2016 21635.240000] starter_script: F1 for validation:0.67404
+[29-Feb-2016 21635.240000] starter_script: F1 for training:0.69991
+[29-Feb-2016 21725.600000] starter_script: Running starter script
+[29-Feb-2016 21726.390000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[29-Feb-2016 21729.500000] starter_script: Starting parallel pool for GWR and GNG for nodes:200  200  200  200  200  200  200  200  200  200  200  200  200  200  200  200
+[29-Feb-2016 21729.500000] starter_script: ###Using multilayer GWR and GNG ###
+[29-Feb-2016 117.830000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 117.830000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 117.210000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 117.220000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 112.000000] remoteParallelFunction: [29-Feb-2016 114.770000] make_general_channel/channel_general: shuffledataftw: remoteParallelFunctionShuffles training data (data_train) and training labels (y_train) together.
+: make_general_channel/channel_general[29-Feb-2016 112.010000] : shuffledataftwremoteParallelFunction: make_general_channel/channel_general: : shuffledataftw: This is supposed to make training from the gas faster.
+Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 114.780000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 117.900000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:4
+[29-Feb-2016 120.080000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw[29-Feb-2016 117.930000] : remoteParallelFunctionShuffles training data (data_train) and training labels (y_train) together.: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+
+[29-Feb-2016 120.080000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 119.610000] remoteParallelFunction: [29-Feb-2016 113.710000] make_general_channel/channel_general: shuffledataftwremoteParallelFunction: [29-Feb-2016 117.930000] Shuffles training data (data_train) and training labels (y_train) together.remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+
+: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.[29-Feb-2016 119.620000] 
+remoteParallelFunction: [29-Feb-2016 117.260000] make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.[29-Feb-2016 113.720000] remoteParallelFunction
+: make_general_channel/channel_general: POS: Starting gwr for process:12
+remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 117.940000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 113.940000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 113.940000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 112.060000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:8
+[29-Feb-2016 117.290000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 114.840000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:9
+[29-Feb-2016 117.290000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 117.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 120.130000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:6
+[29-Feb-2016 112.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 112.110000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 120.150000] [29-Feb-2016 113.790000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: remoteParallelFunctiongenerates GNG A and C matrices: 
+make_general_channel/channel_general: POS: Starting gwr for process:10
+[29-Feb-2016 119.700000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:11
+[29-Feb-2016 112.120000] remoteParallelFunction: make_general_channel/channel_general: [29-Feb-2016 114.880000] gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices[29-Feb-2016 120.160000] 
+remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 120.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 114.900000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 114.020000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:2
+[29-Feb-2016 113.820000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 119.720000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 114.910000] [29-Feb-2016 113.820000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 119.730000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 113.830000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 119.740000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 114.050000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 114.050000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 114.060000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 166.350000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 166.350000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:8
+[29-Feb-2016 166.350000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:8
+[29-Feb-2016 166.370000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 166.370000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 166.370000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 169.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 169.110000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:2
+[29-Feb-2016 169.110000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:2
+[29-Feb-2016 169.120000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 169.120000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 169.120000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 171.030000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 171.040000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:9
+[29-Feb-2016 171.040000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:9
+[29-Feb-2016 171.050000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 171.050000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 171.050000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 171.070000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 171.070000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:10
+[29-Feb-2016 171.080000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:10
+[29-Feb-2016 171.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 171.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 171.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 175.280000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 175.280000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:12
+[29-Feb-2016 175.290000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:12
+[29-Feb-2016 175.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 175.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 175.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 176.850000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 176.850000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:4
+[29-Feb-2016 176.860000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:4
+[29-Feb-2016 176.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 176.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 176.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 179.310000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 179.320000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:6
+[29-Feb-2016 179.320000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:6
+[29-Feb-2016 179.330000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 179.330000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 179.330000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 180.750000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 180.750000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:11
+[29-Feb-2016 180.750000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:11
+[29-Feb-2016 180.770000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 180.770000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 180.770000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 219.780000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 219.780000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:8
+[29-Feb-2016 219.780000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:8
+[29-Feb-2016 224.620000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 224.630000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:2
+[29-Feb-2016 224.630000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:2
+[29-Feb-2016 226.000000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 226.010000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:9
+[29-Feb-2016 226.010000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:9
+[29-Feb-2016 226.610000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 226.610000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:10
+[29-Feb-2016 226.610000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:10
+[29-Feb-2016 232.130000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 232.130000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:4
+[29-Feb-2016 232.130000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:4
+[29-Feb-2016 234.030000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 234.040000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:12
+[29-Feb-2016 234.040000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:12
+[29-Feb-2016 238.170000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 238.170000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:6
+[29-Feb-2016 238.180000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:6
+[29-Feb-2016 240.630000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 240.630000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:11
+[29-Feb-2016 240.640000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:11
+[29-Feb-2016 238.430000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:8
+[29-Feb-2016 243.010000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:2
+[29-Feb-2016 244.180000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:9
+[29-Feb-2016 244.000000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:10
+[29-Feb-2016 251.320000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:4
+[29-Feb-2016 252.740000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:12
+[29-Feb-2016 258.160000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:6
+[29-Feb-2016 260.550000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:11
+[29-Feb-2016 257.710000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:8
+[29-Feb-2016 257.710000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:8
+[29-Feb-2016 257.710000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 257.720000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 257.720000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 257.990000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 257.990000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:8
+[29-Feb-2016 257.990000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:8
+[29-Feb-2016 258.000000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 262.440000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:2
+[29-Feb-2016 262.450000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:2
+[29-Feb-2016 262.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 262.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 262.460000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 262.740000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 262.740000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:2
+[29-Feb-2016 262.740000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:2
+[29-Feb-2016 262.750000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 263.670000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:9
+[29-Feb-2016 263.670000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:9
+[29-Feb-2016 263.680000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 263.680000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 263.680000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 263.940000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 263.940000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:9
+[29-Feb-2016 263.950000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:9
+[29-Feb-2016 263.950000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 263.030000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:10
+[29-Feb-2016 263.030000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:10
+[29-Feb-2016 263.040000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 263.040000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 263.040000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 263.320000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 263.330000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:10
+[29-Feb-2016 263.330000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:10
+[29-Feb-2016 263.330000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 270.890000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:4
+[29-Feb-2016 270.900000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:4
+[29-Feb-2016 270.900000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 270.900000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 270.900000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 271.160000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 271.160000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:4
+[29-Feb-2016 271.160000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:4
+[29-Feb-2016 271.170000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 272.470000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:12
+[29-Feb-2016 272.470000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:12
+[29-Feb-2016 272.480000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 272.480000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 272.480000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 272.780000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 272.780000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:12
+[29-Feb-2016 272.780000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:12
+[29-Feb-2016 272.790000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 279.050000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:6
+[29-Feb-2016 279.060000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:6
+[29-Feb-2016 279.060000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 279.060000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 279.060000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 279.350000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 279.350000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:6
+[29-Feb-2016 279.350000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:6
+[29-Feb-2016 279.360000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 272.040000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 279.830000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:11
+[29-Feb-2016 279.840000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:11
+[29-Feb-2016 279.840000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 279.840000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 279.840000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 280.120000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 280.130000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:11
+[29-Feb-2016 280.130000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:11
+[29-Feb-2016 280.140000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 278.070000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 277.350000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 277.360000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 279.380000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 285.770000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 287.370000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 285.470000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 284.530000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 284.770000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 294.660000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 293.250000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 295.670000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 294.690000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 293.730000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 293.730000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 293.750000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:7
+[29-Feb-2016 293.760000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 293.760000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 293.760000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 302.050000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 303.140000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 298.450000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 298.450000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 298.470000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:13
+[29-Feb-2016 298.490000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 298.490000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 298.490000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 299.910000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 299.910000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 299.940000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:14
+[29-Feb-2016 299.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 299.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 299.960000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 299.270000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 299.270000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 299.300000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:1
+[29-Feb-2016 299.310000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 299.310000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 299.310000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 308.260000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 308.260000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 308.280000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:3
+[29-Feb-2016 308.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 308.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 308.300000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 309.610000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 309.610000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 309.640000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:15
+[29-Feb-2016 309.650000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 309.650000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 309.660000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 317.530000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 317.540000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 317.560000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:5
+[29-Feb-2016 317.570000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 317.570000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 317.580000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 318.390000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 318.390000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 318.430000] remoteParallelFunction: make_general_channel/channel_general: POS: Starting gwr for process:16
+[29-Feb-2016 318.440000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 318.440000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 318.450000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 347.770000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 347.770000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:7
+[29-Feb-2016 347.770000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:7
+[29-Feb-2016 347.780000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 347.780000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 347.780000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 353.410000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 353.410000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:1
+[29-Feb-2016 353.410000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:1
+[29-Feb-2016 353.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 353.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 353.420000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 353.930000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 353.930000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:13
+[29-Feb-2016 353.940000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:13
+[29-Feb-2016 353.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 353.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 353.950000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 355.480000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 355.490000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:14
+[29-Feb-2016 355.490000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:14
+[29-Feb-2016 355.500000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 355.500000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 355.500000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 365.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 365.080000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:3
+[29-Feb-2016 365.080000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:3
+[29-Feb-2016 365.090000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 365.090000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 365.090000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 366.850000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 366.850000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:15
+[29-Feb-2016 366.850000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:15
+[29-Feb-2016 366.860000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 366.860000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 366.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 374.580000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 374.580000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:5
+[29-Feb-2016 374.580000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:5
+[29-Feb-2016 374.590000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 374.590000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 374.590000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 377.850000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 377.850000] remoteParallelFunction: make_general_channel/channel_general: POS: Finished gwr for process:16
+[29-Feb-2016 377.850000] remoteParallelFunction: make_general_channel/channel_general: VEL: Starting gwr for process:16
+[29-Feb-2016 377.860000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 377.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 377.870000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 401.660000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 401.660000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:7
+[29-Feb-2016 401.660000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:7
+[29-Feb-2016 407.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 407.910000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:1
+[29-Feb-2016 407.910000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:1
+[29-Feb-2016 409.050000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 409.050000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:13
+[29-Feb-2016 409.050000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:13
+[29-Feb-2016 410.780000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 410.790000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:14
+[29-Feb-2016 410.790000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:14
+[29-Feb-2016 422.100000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 422.100000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:3
+[29-Feb-2016 422.100000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:3
+[29-Feb-2016 425.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 425.080000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:15
+[29-Feb-2016 425.080000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:15
+[29-Feb-2016 420.500000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:7
+[29-Feb-2016 432.690000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 432.690000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:5
+[29-Feb-2016 432.690000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:5
+[29-Feb-2016 426.930000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:13
+[29-Feb-2016 427.260000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:1
+[29-Feb-2016 429.870000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:14
+[29-Feb-2016 437.210000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:200 With MAXNODES:200
+[29-Feb-2016 437.210000] remoteParallelFunction: make_general_channel/channel_general: VEL: Finished gwr for process:16
+[29-Feb-2016 437.220000] remoteParallelFunction: make_general_channel/channel_general: POS: Rebuilding matrix with best matching units for process:16
+[29-Feb-2016 441.370000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:3
+[29-Feb-2016 443.970000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:15
+[29-Feb-2016 439.540000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:7
+[29-Feb-2016 439.540000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:7
+[29-Feb-2016 439.550000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 439.550000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 439.550000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 439.860000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 439.860000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:7
+[29-Feb-2016 439.860000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:7
+[29-Feb-2016 439.860000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 445.230000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:13
+[29-Feb-2016 445.230000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:13
+[29-Feb-2016 445.230000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 445.230000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 445.230000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 445.500000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 445.500000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:13
+[29-Feb-2016 445.500000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:13
+[29-Feb-2016 445.500000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 446.110000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:1
+[29-Feb-2016 446.110000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:1
+[29-Feb-2016 446.110000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 446.110000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 446.120000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 446.390000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 446.390000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:1
+[29-Feb-2016 446.390000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:1
+[29-Feb-2016 446.390000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 452.720000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:5
+[29-Feb-2016 448.820000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:14
+[29-Feb-2016 448.820000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:14
+[29-Feb-2016 448.820000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 448.830000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 448.830000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 449.080000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 449.080000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:14
+[29-Feb-2016 449.080000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:14
+[29-Feb-2016 449.080000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 456.550000] remoteParallelFunction: make_general_channel/channel_general: VEL: Rebuilding matrix with best matching units for process:16
+[29-Feb-2016 454.250000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 461.360000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:3
+[29-Feb-2016 461.370000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:3
+[29-Feb-2016 461.370000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 461.370000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 461.370000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 461.660000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 461.660000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:3
+[29-Feb-2016 461.660000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:3
+[29-Feb-2016 461.670000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 462.900000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:15
+[29-Feb-2016 462.900000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:15
+[29-Feb-2016 462.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 462.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 462.910000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 459.710000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 463.240000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 463.240000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:15
+[29-Feb-2016 463.240000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:15
+[29-Feb-2016 463.240000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 460.730000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 463.470000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 461.300000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 472.540000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:5
+[29-Feb-2016 472.540000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:5
+[29-Feb-2016 472.540000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 472.550000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 472.550000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 472.890000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 472.890000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:5
+[29-Feb-2016 472.890000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:5
+[29-Feb-2016 472.890000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 466.890000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 467.990000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 470.860000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 475.890000] remoteParallelFunction: make_general_channel/channel_general: PRE-STS: Combining position and velocity gwr best matching unit matrices:16
+[29-Feb-2016 475.890000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Starting gwr for process:16
+[29-Feb-2016 475.890000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: generates GNG A and C matrices
+[29-Feb-2016 475.890000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: Executing GNG with:200 nodes.
+[29-Feb-2016 475.890000] remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0          .  0     2000 .    50.0. 9   10036539012
+[29-Feb-2016 476.170000] remoteParallelFunction: make_general_channel/channel_general: gng_lax: End number of nodes:132 With MAXNODES:200
+[29-Feb-2016 476.170000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Finished gwr for process:16
+[29-Feb-2016 476.170000] remoteParallelFunction: make_general_channel/channel_general: STS-LAYER: Applying gwr labels for process:16
+[29-Feb-2016 476.170000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 476.810000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 477.540000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 484.090000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 484.470000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 487.670000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 491.040000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 494.640000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 497.920000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 21957.370000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:200  200  200  200  200  200  200  200  200  200  200  200  200  200  200  200
+[29-Feb-2016 21958.400000] starter_script: 1-th set. Confusion matrix on this validation set:(1,1):8571	(1,2):320	(2,1):6133	(2,2):406	
+[29-Feb-2016 21959.180000] starter_script: 2-th set. Confusion matrix on this validation set:(1,1):8891	(1,2):0	(2,1):6539	(2,2):0	
+[29-Feb-2016 21960.060000] starter_script: 3-th set. Confusion matrix on this validation set:(1,1):8891	(1,2):0	(2,1):6539	(2,2):0	
+[29-Feb-2016 21960.960000] starter_script: 4-th set. Confusion matrix on this validation set:(1,1):7362	(1,2):1529	(2,1):4677	(2,2):1862	
+[29-Feb-2016 21961.690000] starter_script: 5-th set. Confusion matrix on this validation set:(1,1):7320	(1,2):1571	(2,1):4323	(2,2):2216	
+[29-Feb-2016 21962.400000] starter_script: 6-th set. Confusion matrix on this validation set:(1,1):7377	(1,2):1514	(2,1):4529	(2,2):2010	
+[29-Feb-2016 21963.260000] starter_script: 7-th set. Confusion matrix on this validation set:(1,1):6361	(1,2):2530	(2,1):2696	(2,2):3843	
+[29-Feb-2016 21964.110000] starter_script: 8-th set. Confusion matrix on this validation set:(1,1):0	(1,2):8891	(2,1):0	(2,2):6539	
+[29-Feb-2016 21964.940000] starter_script: 9-th set. Confusion matrix on this validation set:(1,1):1767	(1,2):7124	(2,1):3066	(2,2):3473	
+[29-Feb-2016 21965.760000] starter_script: 10-th set. Confusion matrix on this validation set:(1,1):8867	(1,2):24	(2,1):5756	(2,2):783	
+[29-Feb-2016 21966.560000] starter_script: 11-th set. Confusion matrix on this validation set:(1,1):0	(1,2):8891	(2,1):0	(2,2):6539	
+[29-Feb-2016 21967.430000] starter_script: 12-th set. Confusion matrix on this validation set:(1,1):0	(1,2):8891	(2,1):0	(2,2):6539	
+[29-Feb-2016 21968.170000] starter_script: 13-th set. Confusion matrix on this validation set:(1,1):8050	(1,2):841	(2,1):5115	(2,2):1424	
+[29-Feb-2016 21969.000000] starter_script: 14-th set. Confusion matrix on this validation set:(1,1):8891	(1,2):0	(2,1):6539	(2,2):0	
+[29-Feb-2016 21969.780000] starter_script: 15-th set. Confusion matrix on this validation set:(1,1):8323	(1,2):568	(2,1):5788	(2,2):751	
+[29-Feb-2016 21970.550000] starter_script: 16-th set. Confusion matrix on this validation set:(1,1):8329	(1,2):562	(2,1):5628	(2,2):911	
+[29-Feb-2016 21970.570000] starter_script: F1 for validation:0.64164
+[29-Feb-2016 21970.580000] starter_script: F1 for training:0.65492

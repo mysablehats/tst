@@ -15,7 +15,7 @@ clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = 1000*ones(1,8);
+NODES = 200*ones(1,16);
 %NODES = fix(NODES/30);
 gas_methods = struct('layername','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[]); %bestmatch will have the training matrix for subsequent layers
 all_gas = struct('gwr',gas_methods,'gng',gas_methods);
@@ -83,13 +83,16 @@ for i=1:length(savestructure)
     [~,savestructure(i).confusions.train,~,~] = confusion(savestructure(i).train.y,savestructure(i).STS.gwr.class.train);
     %tempvar = num2str(savestructure(i).confusions.val);
     dbgmsg(strcat(num2str(i),'-th set. Confusion matrix on this validation set:',writedownmatrix(savestructure(i).confusions.val)),1)
-    dbgmsg('\n',1)
     gwr_u = {y_val,savestructure(i).STS.gwr.class.val, strcat('GWR Val ', num2str(savestructure(i).nodes)),savestructure(i).train.y,savestructure(i).STS.gwr.class.train,strcat('GWR Train ', num2str(savestructure(i).nodes))};
     %gng_u = {y_val,savestructure(i).gng.class.val, strcat('GNG Val ', num2str(savestructure(i).nodes)),savestructure(i).train.y,savestructure(i).gwr.class.train,strcat('GNG Train ', num2str(savestructure(i).nodes))};
     
     u = {u{:}, gwr_u{:}};%, gng_u{:}}; 
 end
-plotconfusion(u{:})
-figure
-plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
-clear i
+% plotconfusion(u{:})
+% figure
+% plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
+% clear i
+f1 = howgood(savestructure);
+dbgmsg('F1 for validation:', num2str(f1(1)),1)
+dbgmsg('F1 for training:', num2str(f1(2)),1)
+disp(f1(1))
