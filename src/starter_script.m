@@ -47,7 +47,7 @@ dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
 [posidx, velidx] = generateidx(size(data_train,1));
 
-for i = 1:length(NODES)
+parfor i = 1:length(NODES)
     [savestructure(i).train.data, savestructure(i).train.y] = shuffledataftw(data_train, y_train);
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
@@ -88,7 +88,7 @@ end
 
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 
-for i=1:length(savestructure)
+parfor i=1:length(savestructure)
     for j =1:length(savestructure(i).gas)
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).gas(j).class.val);
         [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(savestructure(i).train.y,savestructure(i).gas(j).class.train);
@@ -105,7 +105,7 @@ end
 %end
 % plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
 % clear i
-for j = length(savestructure(1).gas) %this is weird
+parfor j = length(savestructure(1).gas) %this is weird
     f1 = howgood(savestructure,j);
     dbgmsg(savestructure(1).gas(j).name,'F1 for validation:', num2str(f1(1)),'||','F1 for training:', num2str(f1(2)),1)
     disp(f1(1))
