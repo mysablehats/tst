@@ -4,7 +4,9 @@ VERBOSE = true; %%%% this is not really working...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%MESSAGES PART
 disp('####### ATTENTION IMBECILE: ####### YOU SHOULD ADD EVERYTHING TO THE PATH AND EXECUTE IT IN THE TST/SRC DIRECTORY. IF YOU WANT TO MAKE YOUR ALGORITHM HARD TO THESE CHANGES, BE MY GUEST, OTHERWISE JUST DO IT EACH TIME YOU START MATLAB, OR THIS WILL NOT RUN!!!!')
+dbgmsg('=======================================================================================================================================================================================================================================')
 dbgmsg('Running starter script')
+dbgmsg('=======================================================================================================================================================================================================================================')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % generate_skel_data %% very time consuming -> also will generate a new
@@ -15,7 +17,7 @@ clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = 10*ones(1,4);
+NODES = 100*ones(1,16);
 %NODES = fix(NODES/30);
 
 
@@ -68,8 +70,7 @@ for i = 1:length(NODES)
             error('unknown method')
         end
         %%%% POS-MESSAGE
-        dbgmsg('Finished working on gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') with method: ',savestructure(i).gas(j).method ,' for process:',num2str(i),1)
-        
+        dbgmsg('Finished working on gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') with method: ',savestructure(i).gas(j).method ,'.Num of nodes reached:',num2str(size(savestructure(i).gas(j).nodes,2)),' for process:',num2str(i),1)
         %%%% FIND BESTMATCHING UNITS
         
         %PRE MESSAGE  
@@ -92,7 +93,7 @@ for i=1:length(savestructure)
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).gas(j).class.val);
         [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(savestructure(i).train.y,savestructure(i).gas(j).class.train);
         
-        dbgmsg(strcat(num2str(i),'-th set. Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val)),1)
+        dbgmsg(num2str(i),'-th set. Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val),1)
         savestructure(i).gas(j).fig = {y_val,                   savestructure(i).gas(j).class.val,  strcat(savestructure(i).gas(j).method,' Val ', num2str(savestructure(i).maxnodes)),...
                                        savestructure(i).train.y,savestructure(i).gas(j).class.train,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
         savestructure(i).figset = {savestructure(i).figset{:}, savestructure(i).gas(j).fig{:}};
@@ -104,7 +105,8 @@ end
 %end
 % plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
 % clear i
-f1 = howgood(savestructure);
-dbgmsg('F1 for validation:', num2str(f1(1)),1)
-dbgmsg('F1 for training:', num2str(f1(2)),1)
-disp(f1(1))
+for j = length(savestructure(1).gas) %this is weird
+    f1 = howgood(savestructure,j);
+    dbgmsg(savestructure(1).gas(j).name,'F1 for validation:', num2str(f1(1)),'||','F1 for training:', num2str(f1(2)),1)
+    disp(f1(1))
+end

@@ -4219,3 +4219,127 @@ remoteParallelFunction: make_general_channel/channel_general: gng_lax:     0    
 [29-Feb-2016 209.930000] starter_script: gwr: Executing GWR with:10 nodes.
 [29-Feb-2016 209.930000] starter_script: gwr: Executing with random nodes.
 [29-Feb-2016 209.940000] starter_script: gwr: Algorithm set as STATIC
+[29-Feb-2016 34099.800000] starter_script: Running starter script
+[29-Feb-2016 34100.640000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[29-Feb-2016 34119.790000] starter_script: Starting parallel pool for GWR and GNG for nodes:100  100  100  100  100  100  100  100  100  100  100  100  100  100  100  100
+[29-Feb-2016 34119.790000] starter_script: ###Using multilayer GWR and GNG ###
+[29-Feb-2016 34119.810000] starter_script: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[29-Feb-2016 34119.810000] starter_script: shuffledataftw: This is supposed to make training from the gas faster.
+[29-Feb-2016 34120.160000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[29-Feb-2016 34120.180000] starter_script: gwr: generates GWR A and C matrices
+[29-Feb-2016 34120.190000] starter_script: gwr: Executing GWR with:100 nodes.
+[29-Feb-2016 34120.190000] starter_script: gwr: Executing with random nodes.
+[29-Feb-2016 34120.190000] starter_script: gwr: Algorithm set as STATIC
+[29-Feb-2016 34120.190000] starter_script: gwr: Initial parametersn1 =41448 n2 =16068
+[29-Feb-2016 34409.750000] starter_script: gwr: Mean end activation =1.5493e-51
+[29-Feb-2016 34409.750000] starter_script: gwr: Activation end points1.3688e-162           0           0 9.1939e-201           0  6.155e-218 9.5412e-125           0 3.0824e-176 2.2285e-248  1.3115e-60 4.8793e-217 1.1479e-200 1.3236e-252   6.352e-50           0  9.8074e-87           0  2.6193e-89 7.2227e-303           0
+[29-Feb-2016 34409.750000] starter_script: gwr: Activation initial points0           0           0           0           0           0 1.4813e-258 1.3875e-235           0 9.8415e-274           0 2.5454e-225           0 1.2055e-176 3.3653e-273           0 5.3362e-218           0           0 1.7066e-175
+[29-Feb-2016 34409.770000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[29-Feb-2016 34409.770000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[29-Feb-2016 34423.470000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[29-Feb-2016 34423.470000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 34439.690000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 34447.700000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 34463.880000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[29-Feb-2016 34463.880000] starter_script: gwr: generates GWR A and C matrices
+[29-Feb-2016 34463.880000] starter_script: gwr: Executing GWR with:100 nodes.
+[29-Feb-2016 34463.880000] starter_script: gwr: Executing with random nodes.
+[29-Feb-2016 34463.880000] starter_script: gwr: Algorithm set as STATIC
+[29-Feb-2016 34463.880000] starter_script: gwr: Initial parametersn1 =77961 n2 =61757
+[29-Feb-2016 35558.130000] starter_script: gwr: Mean end activation =0.99935
+[29-Feb-2016 35558.130000] starter_script: gwr: Activation end points0.9998     0.99255     0.99921     0.99957     0.99962     0.99937     0.99987     0.99933     0.99983     0.99983     0.99993     0.99963     0.99953     0.99977     0.99994     0.99967     0.99992     0.99947     0.99991     0.99861     0.99794
+[29-Feb-2016 35558.140000] starter_script: gwr: Activation initial points0.99923     0.99991     0.99936     0.99793     0.99929     0.99977     0.99979     0.99944      0.9997     0.99986     0.99775     0.99933     0.99975     0.99983     0.99977      0.9996           1     0.99984      0.9952      0.9995
+[29-Feb-2016 35558.140000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[29-Feb-2016 35558.140000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[29-Feb-2016 35571.120000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:1
+[29-Feb-2016 35571.120000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 35588.410000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 35596.820000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 35613.530000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[29-Feb-2016 35613.530000] starter_script: gwr: generates GWR A and C matrices
+[29-Feb-2016 35613.530000] starter_script: gwr: Executing GWR with:100 nodes.
+[29-Feb-2016 35613.530000] starter_script: gwr: Executing with random nodes.
+[29-Feb-2016 35613.530000] starter_script: gwr: Algorithm set as STATIC
+[29-Feb-2016 35613.540000] starter_script: gwr: Initial parametersn1 =156976 n2 =128120
+[29-Feb-2016 36442.790000] starter_script: gwr: Mean end activation =2.4625e-68
+[29-Feb-2016 36442.790000] starter_script: gwr: Activation end points2.6577e-138           0           0    7.9e-178           0 3.9144e-265 1.0342e-148           0 3.1507e-184  1.078e-238  9.8877e-86 2.0379e-210 3.0017e-215 8.2954e-222  1.0096e-66           0  2.8277e-99           0  8.0042e-91 2.5958e-208           0
+[29-Feb-2016 36442.790000] starter_script: gwr: Activation initial points0           0 8.0701e-276           0 5.0873e-275           0 4.2165e-223 1.5159e-219           0 1.5426e-192           0 1.8846e-186           0 1.0778e-159 6.5912e-283           0 5.6035e-187           0           0 7.6198e-159
+[29-Feb-2016 36442.790000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[29-Feb-2016 36442.790000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[29-Feb-2016 36455.780000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:1
+[29-Feb-2016 36455.780000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 36472.700000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 36480.570000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 36497.640000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[29-Feb-2016 36497.640000] starter_script: gwr: generates GWR A and C matrices
+[29-Feb-2016 36497.640000] starter_script: gwr: Executing GWR with:100 nodes.
+[29-Feb-2016 36497.640000] starter_script: gwr: Executing with random nodes.
+[29-Feb-2016 36497.640000] starter_script: gwr: Algorithm set as STATIC
+[29-Feb-2016 36497.640000] starter_script: gwr: Initial parametersn1 =128617 n2 =177478
+[29-Feb-2016 39737.320000] starter_script: gwr: Mean end activation =0.99938
+[29-Feb-2016 39737.320000] starter_script: gwr: Activation end points0.99979     0.99373      0.9992     0.99958      0.9996     0.99931     0.99986     0.99932     0.99976     0.99984     0.99993     0.99962     0.99949     0.99975     0.99993     0.99974     0.99988     0.99951     0.99992     0.99862     0.99806
+[29-Feb-2016 39737.330000] starter_script: gwr: Activation initial points0.99923     0.99991     0.99936     0.99793     0.99929     0.99977     0.99979     0.99944      0.9997     0.99986     0.99775     0.99933     0.99975     0.99983     0.99977      0.9996           1     0.99984      0.9952      0.9995
+[29-Feb-2016 39737.330000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[29-Feb-2016 39737.330000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[29-Feb-2016 39750.780000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:1
+[29-Feb-2016 39750.780000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 39767.130000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 39774.890000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[29-Feb-2016 39793.330000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[29-Feb-2016 39793.330000] starter_script: gwr: generates GWR A and C matrices
+[29-Feb-2016 39793.330000] starter_script: gwr: Executing GWR with:100 nodes.
+[29-Feb-2016 39793.330000] starter_script: gwr: Executing with random nodes.
+[29-Feb-2016 39793.330000] starter_script: gwr: Algorithm set as STATIC
+[29-Feb-2016 39793.330000] starter_script: gwr: Initial parametersn1 =73879 n2 =134250
+[01-Mar-2016 42493.630000] starter_script: gwr: Mean end activation =8.7477e-70
+[01-Mar-2016 42493.630000] starter_script: gwr: Activation end points3.1652e-149           0           0 6.7465e-180           0  1.911e-268 6.5768e-147           0 1.1916e-154 1.6621e-233  2.3752e-88 3.8697e-212 5.2229e-230 4.2034e-212  6.0006e-69           0  2.8286e-98           0  2.6327e-90  3.302e-297           0
+[01-Mar-2016 42493.640000] starter_script: gwr: Activation initial points0           0           0           0           0 1.4822e-323 4.6468e-299 1.1108e-257           0 2.0345e-295           0 4.6526e-252           0 9.2176e-195 8.9218e-306           0 1.8869e-200           0           0 2.1614e-169
+[01-Mar-2016 42493.650000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[01-Mar-2016 42493.650000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[01-Mar-2016 42506.840000] starter_script: Applying labels for gas: 'gwr5layer' (5) for process:1
+[01-Mar-2016 42506.840000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 42523.920000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 42531.990000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 42549.700000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[01-Mar-2016 42549.700000] starter_script: gwr: generates GWR A and C matrices
+[01-Mar-2016 42549.700000] starter_script: gwr: Executing GWR with:100 nodes.
+[01-Mar-2016 42549.700000] starter_script: gwr: Executing with random nodes.
+[01-Mar-2016 42549.700000] starter_script: gwr: Algorithm set as STATIC
+[01-Mar-2016 42549.700000] starter_script: gwr: Initial parametersn1 =34299 n2 =153179
+[01-Mar-2016 45776.770000] starter_script: gwr: Mean end activation =0.99938
+[01-Mar-2016 45776.780000] starter_script: gwr: Activation end points0.99979     0.99373      0.9992     0.99958      0.9996     0.99931     0.99986     0.99932     0.99976     0.99984     0.99993     0.99962     0.99949     0.99975     0.99993     0.99974     0.99988     0.99951     0.99992     0.99862     0.99806
+[01-Mar-2016 45776.780000] starter_script: gwr: Activation initial points0.99923     0.99991     0.99936     0.99793     0.99929     0.99977     0.99979     0.99944      0.9997     0.99986     0.99775     0.99933     0.99975     0.99983     0.99977      0.9996           1     0.99984      0.9952      0.9995
+[01-Mar-2016 45776.780000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[01-Mar-2016 45776.780000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[01-Mar-2016 45790.190000] starter_script: Applying labels for gas: 'gwr6layer' (6) for process:1
+[01-Mar-2016 45790.190000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 45807.180000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 45815.510000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 45831.180000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[01-Mar-2016 45831.180000] starter_script: gwr: generates GWR A and C matrices
+[01-Mar-2016 45831.190000] starter_script: gwr: Executing GWR with:100 nodes.
+[01-Mar-2016 45831.190000] starter_script: gwr: Executing with random nodes.
+[01-Mar-2016 45831.190000] starter_script: gwr: Algorithm set as STATIC
+[01-Mar-2016 68142.080000] starter_script: =======================================================================================================================================================================================================================================
+[01-Mar-2016 68142.090000] starter_script: Running starter script
+[01-Mar-2016 68142.090000] starter_script: =======================================================================================================================================================================================================================================
+[01-Mar-2016 68143.330000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[01-Mar-2016 68162.130000] starter_script: Starting parallel pool for GWR and GNG for nodes:100  100  100  100  100  100  100  100  100  100  100  100  100  100  100  100
+[01-Mar-2016 68162.130000] starter_script: ###Using multilayer GWR and GNG ###
+[01-Mar-2016 68162.140000] starter_script: shuffledataftw: Shuffles training data (data_train) and training labels (y_train) together.
+[01-Mar-2016 68162.140000] starter_script: shuffledataftw: This is supposed to make training from the gas faster.
+[01-Mar-2016 68162.480000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[01-Mar-2016 68162.500000] starter_script: gwr: generates GWR A and C matrices
+[01-Mar-2016 68162.500000] starter_script: gwr: Executing GWR with:100 nodes.
+[01-Mar-2016 68162.500000] starter_script: gwr: Executing with random nodes.
+[01-Mar-2016 68162.510000] starter_script: gwr: Algorithm set as STATIC
+[01-Mar-2016 68162.510000] starter_script: gwr: Initial parametersn1 =89418 n2 =23992
+[01-Mar-2016 68439.600000] starter_script: gwr: Mean end activation =1.3625e-80
+[01-Mar-2016 68439.610000] starter_script: gwr: Activation end points5.5864e-79           0 3.7729e-109           0 1.2285e-101           0 6.8578e-178 7.4472e-130           0           0 1.4747e-103           0           0           0 2.1015e-280 3.2717e-213           0 5.1937e-317 3.6137e-284 4.0628e-191 3.7309e-105
+[01-Mar-2016 68439.610000] starter_script: gwr: Activation initial points0           0           0           0 6.2638e-239 1.5239e-237  6.812e-289           0           0 3.7154e-225 3.6047e-194           0           0 2.3595e-300 1.8483e-274           0 6.3028e-107 1.1731e-294 3.2765e-100           0
+[01-Mar-2016 68439.620000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:100 for process:1
+[01-Mar-2016 68439.620000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[01-Mar-2016 68452.730000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[01-Mar-2016 68452.740000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 68469.760000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[01-Mar-2016 68478.170000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
