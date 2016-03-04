@@ -13968,3 +13968,472 @@ remoteParallelFunction: make_general_channel/channel_general: gwr: Initial param
 [04-Mar-2016 11.660000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
 [04-Mar-2016 11.660000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
 [04-Mar-2016 11.670000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =21615 n2 =11965
+[04-Mar-2016 200.730000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 200.730000] starter_script: Running starter script
+[04-Mar-2016 200.730000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 201.100000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 213.560000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 213.570000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 9.420000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 9.420000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 9.410000] remoteParallelFunction[04-Mar-2016 9.410000] : remoteParallelFunctionmake_general_channel/channel_general: shuffledataftw: : Shuffles training data (data_train) and generates the indexes for unshuffling
+make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling[04-Mar-2016 9.410000] 
+remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 9.410000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 9.460000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 9.470000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 220.940000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 220.940000] starter_script: Running starter script
+[04-Mar-2016 220.940000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 221.460000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 223.550000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 223.560000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 10.340000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 10.350000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 10.340000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 10.340000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 10.320000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 10.320000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: [04-Mar-2016 10.370000] Shuffling is supposed to make training from the gas faster.
+remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 10.370000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 10.480000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 10.470000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[04-Mar-2016 10.450000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[04-Mar-2016 10.500000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+[04-Mar-2016 228.970000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 228.980000] starter_script: Running starter script
+[04-Mar-2016 228.980000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 229.370000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 231.460000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 231.460000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 231.470000] starter_script: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 231.470000] starter_script: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 231.560000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 260.620000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 260.630000] starter_script: Running starter script
+[04-Mar-2016 260.630000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 260.950000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 263.010000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 263.010000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 12.630000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 12.630000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 12.650000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 12.650000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 12.600000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 12.600000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 12.660000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 12.660000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 12.760000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 12.770000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[04-Mar-2016 12.730000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[04-Mar-2016 12.790000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+[04-Mar-2016 12.780000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 12.780000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 12.790000] remoteParallelFunction[04-Mar-2016 12.780000] : make_general_channel/channel_general: remoteParallelFunctiongwr: : generates GWR A and C matricesmake_general_channel/channel_general
+: gwr: Executing with random nodes.
+[04-Mar-2016 12.780000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 12.810000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 12.810000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 12.800000] remoteParallelFunction: make_general_channel/channel_general: gwr[04-Mar-2016 12.810000] : Initial parametersn1 =7909 n2 =6716
+remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 12.750000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 12.810000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =26767 n2 =22654
+[04-Mar-2016 12.760000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 12.760000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 12.760000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 12.810000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 12.760000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =5893 n2 =5266
+[04-Mar-2016 12.810000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 12.820000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 12.820000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 12.820000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =1989 n2 =23107
+[04-Mar-2016 30.420000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =3.5643e-63
+[04-Mar-2016 30.430000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points0           0           0           0 1.3254e-133   2.684e-90 2.1174e-210 2.5537e-197 3.6737e-308           0           0 2.3867e-123 4.4343e-243 1.1266e-127           0  1.0732e-72 8.8565e-220           0           0 4.6897e-102           0
+[04-Mar-2016 30.430000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0 2.3221e-322           0           0           0    1.3e-175           0 6.4893e-282           0           0 2.9608e-243           0 2.8617e-229           0           0 2.8453e-116 5.3388e-255  5.088e-287 1.6004e-237 2.5918e-300
+[04-Mar-2016 30.430000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:2
+[04-Mar-2016 30.430000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 31.390000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =7.0519e-71
+[04-Mar-2016 31.390000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points0 4.9209e-313  1.2258e-94           0           0  3.736e-159 1.3832e-154 2.4315e-287 2.2476e-260 2.3028e-236 2.6283e-100           0 2.3067e-117           0 1.4314e-104           0           0 1.6371e-238           0 1.3266e-301 3.7742e-174
+[04-Mar-2016 31.400000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0           0  4.501e-211           0 2.4974e-213           0 2.2613e-119  1.589e-114           0           0           0 3.9035e-194           0           0 1.0041e-222 4.4418e-149 8.8882e-141           0
+[04-Mar-2016 31.400000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:3
+[04-Mar-2016 31.400000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[04-Mar-2016 32.130000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =2.8077e-78
+[04-Mar-2016 32.140000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points6.5523e-280 9.9218e-195  7.361e-193           0 1.9616e-119           0 1.2396e-135 2.2488e-193           0 2.9267e-283  4.697e-111 2.2819e-132 1.0504e-132 5.0491e-153           0           0           0           0           0 1.1409e-248           0
+[04-Mar-2016 32.140000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points1.7476e-271 1.2706e-134           0           0           0           0  9.997e-196           0 2.1941e-142           0           0           0 5.3473e-247 3.8485e-137           0 4.4791e-228 8.6978e-164           0           0           0
+[04-Mar-2016 32.150000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 32.150000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 33.200000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 33.210000] remoteParallelFunction: make_general_channel/channel_general: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 268.090000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 268.090000] starter_script: Running starter script
+[04-Mar-2016 268.090000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 268.400000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 270.460000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 270.460000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 34.040000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 34.040000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 34.030000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 34.040000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 34.040000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 34.050000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 34.000000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 34.010000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 34.170000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 34.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 34.170000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[04-Mar-2016 34.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 34.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 34.180000] [04-Mar-2016 34.180000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 34.190000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =2548 n2 =8428
+[04-Mar-2016 34.140000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[04-Mar-2016 34.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 34.190000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 34.190000] [04-Mar-2016 34.190000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 34.190000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 34.190000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 34.190000] remoteParallelFunction: [04-Mar-2016 34.190000] make_general_channel/channel_general: gwr: Initial parametersn1 =17901 n2 =9567
+remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 34.190000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 34.150000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 34.200000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =1979 n2 =25386
+[04-Mar-2016 34.150000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 34.150000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 34.150000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 34.160000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =8688 n2 =4567
+[04-Mar-2016 50.660000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =3.1235e-95
+[04-Mar-2016 50.660000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points1.7611e-183           0 1.4421e-319           0           0 4.6247e-108 1.3637e-151 1.5956e-112           0           0 3.6814e-101 1.3708e-116 1.5939e-312  8.184e-292 7.9693e-265           0 8.5001e-112           0 1.7515e-190 1.7269e-193 4.8541e-175
+[04-Mar-2016 50.660000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points2.0937e-124           0           0  1.287e-254           0 2.9784e-183           0           0           0 1.4604e-169 2.6463e-144 4.4751e-107 2.6799e-265           0 1.5128e-240           0           0           0 6.5659e-180           0
+[04-Mar-2016 50.670000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:4
+[04-Mar-2016 50.670000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 52.120000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =2.1638e-82
+[04-Mar-2016 52.130000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points2.562e-164 5.5141e-181 7.3358e-260 1.4151e-106 3.2608e-195           0 2.3638e-277           0  8.1081e-96           0           0           0           0           0 2.3715e-322 2.0563e-300 5.1973e-237 2.4054e-210 9.9676e-127  2.5135e-97  1.0713e-95
+[04-Mar-2016 52.130000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0           0           0           0 4.0909e-287    7.4e-260 2.8162e-141 1.0513e-197 1.2974e-175           0 3.0835e-216 1.4512e-154           0           0 9.1318e-111 2.8642e-103 2.0186e-216           0
+[04-Mar-2016 52.130000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:2
+[04-Mar-2016 52.140000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 52.730000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =7.9399e-77
+[04-Mar-2016 52.740000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points2.2413e-226           0 1.4068e-121           0 1.3873e-108           0           0 2.0881e-225 1.6488e-152 1.1615e-243 9.8607e-119 1.1312e-124 1.1441e-136  1.087e-157 9.6346e-258  3.2554e-75           0 4.2438e-212           0 2.5479e-310  1.0758e-81
+[04-Mar-2016 52.740000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0 1.9385e-122 3.8616e-101 2.1104e-284 2.0171e-199           0 8.7473e-314 8.2691e-307 1.1353e-232           0 5.6347e-283 5.6782e-235 4.0589e-114 7.5877e-142           0           0           0 9.4793e-164
+[04-Mar-2016 52.740000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:3
+[04-Mar-2016 52.740000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[04-Mar-2016 53.190000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 274.250000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 274.250000] starter_script: Running starter script
+[04-Mar-2016 274.250000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 274.560000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 276.640000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 276.640000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 54.020000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 54.030000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 54.010000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: [04-Mar-2016 53.960000] Shuffles training data (data_train) and generates the indexes for unshuffling
+remoteParallelFunction[04-Mar-2016 54.010000] : remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 53.960000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 53.990000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 53.990000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 54.150000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 54.140000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[04-Mar-2016 54.080000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[04-Mar-2016 54.170000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 54.170000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 54.170000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 54.170000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 54.170000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =28629 n2 =27879
+[04-Mar-2016 54.120000] [04-Mar-2016 54.150000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 54.100000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 54.150000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 54.150000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 54.150000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 54.100000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 54.100000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 54.100000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 54.160000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =21102 n2 =25756
+[04-Mar-2016 54.100000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =5857 n2 =21504
+[04-Mar-2016 54.130000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 54.140000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 54.140000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 54.140000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 54.140000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =21354 n2 =7363
+[04-Mar-2016 72.550000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =8.8543e-76
+[04-Mar-2016 72.560000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points1.1201e-252 2.4944e-131           0           0 1.8187e-135           0  1.383e-202 8.1138e-104           0           0  3.6303e-74           0 1.6621e-271           0           0           0 6.1906e-143 1.0183e-176 4.3628e-217           0 2.7338e-139
+[04-Mar-2016 72.560000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0 1.9296e-266           0           0           0           0           0 2.8696e-225 3.2613e-156 1.0455e-196           0 5.7157e-309           0           0           0           0           0           0           0           0
+[04-Mar-2016 72.560000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:4
+[04-Mar-2016 72.560000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 73.590000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =1.1789e-80
+[04-Mar-2016 73.590000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points1.7264e-270 1.1786e-165 6.2503e-198 8.7941e-155  1.9729e-86  4.8333e-79           0           0           0           0           0   4.032e-88           0           0           0 1.8413e-231 1.7353e-169           0           0           0 1.2378e-233
+[04-Mar-2016 73.590000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points2.5884e-317           0 1.4941e-245           0           0 1.1119e-196           0           0 1.1544e-188 1.1615e-248 4.2467e-163 4.9407e-324           0 5.2541e-270           0           0           0  4.796e-116 2.9633e-294 2.6946e-283
+[04-Mar-2016 73.600000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:2
+[04-Mar-2016 73.600000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 74.460000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =5.0641e-113
+[04-Mar-2016 74.460000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points1.9187e-227 2.9983e-186 8.3021e-256 5.1556e-263           0 1.1152e-125 1.0516e-202 2.0763e-111 3.6831e-269 4.6125e-190 8.0751e-165  1.462e-216           0 8.2975e-298           0   6.65e-141  3.586e-162           0           0           0           0
+[04-Mar-2016 74.470000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points1.6199e-296           0           0           0  1.434e-252 8.1027e-126 6.1956e-126           0           0 1.5962e-196           0 2.8366e-202 1.7678e-138 2.8594e-108           0           0           0 1.5743e-172 2.4703e-323 1.5514e-305
+[04-Mar-2016 74.470000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 74.470000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 75.170000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 282.580000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 282.580000] starter_script: Running starter script
+[04-Mar-2016 282.580000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 282.890000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 284.920000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 284.920000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 76.110000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 76.110000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 76.050000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 76.060000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 76.020000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling[04-Mar-2016 76.030000] 
+remoteParallelFunction[04-Mar-2016 76.020000] remoteParallelFunction: make_general_channel/channel_general: : shuffledataftw: Shuffling is supposed to make training from the gas faster.
+make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 76.040000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 76.240000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 76.190000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[04-Mar-2016 76.260000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 76.260000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 76.260000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 76.260000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 76.160000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[04-Mar-2016 76.170000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+[04-Mar-2016 76.260000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =1153 n2 =8124
+[04-Mar-2016 76.200000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 76.200000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 76.200000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 76.200000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 76.170000] remoteParallelFunction[04-Mar-2016 76.210000] : make_general_channel/channel_general: gwrremoteParallelFunction: : generates GWR A and C matricesmake_general_channel/channel_general
+: gwr: Initial parametersn1 =12851 n2 =17371
+[04-Mar-2016 76.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 76.170000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 76.170000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 76.180000] remoteParallelFunction: [04-Mar-2016 76.170000] make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 76.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 76.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 76.180000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =3148 n2 =14112
+[04-Mar-2016 76.190000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =8503 n2 =8648
+[04-Mar-2016 104.800000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =1.0668e-62
+[04-Mar-2016 104.800000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points3.82e-150  3.619e-190 1.5279e-113           0           0 6.4729e-242 2.4703e-322           0 1.1612e-247  4.3737e-61           0  1.3105e-95           0           0 8.1696e-250 1.1878e-105 1.0956e-175 6.9361e-150           0           0  1.711e-212
+[04-Mar-2016 104.800000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0           0           0 2.1563e-226           0           0 5.6662e-149           0           0           0 8.9378e-168 3.0747e-160           0           0 1.0603e-276           0           0 1.1968e-302
+[04-Mar-2016 104.810000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:4
+[04-Mar-2016 104.810000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 105.720000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =3.4925e-87
+[04-Mar-2016 105.730000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points0           0           0 6.1204e-197           0 5.1232e-118  6.486e-127 8.7331e-234 1.2238e-131           0 1.2761e-120 1.0219e-155 2.0087e-153 7.3317e-124           0  1.4319e-85  1.138e-160 8.6398e-195           0 9.7252e-201 2.9794e-218
+[04-Mar-2016 105.730000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points1.9418e-214           0           0           0           0 2.0137e-247           0           0 2.1842e-219 9.2305e-313           0           0 9.2479e-164           0 9.5157e-183           0 3.3143e-226           0  6.004e-189 4.6412e-158
+[04-Mar-2016 105.730000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:2
+[04-Mar-2016 105.740000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 106.760000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =8.3611e-70
+[04-Mar-2016 106.770000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points8.1266e-90           0   3.428e-68 1.1129e-124 1.3567e-171           0           0 4.3153e-125           0           0 1.3485e-276  6.3288e-76           0           0           0           0           0 2.6699e-229  2.2108e-83  2.686e-165 2.6784e-209
+[04-Mar-2016 106.770000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0           0           0           0           0           0 9.0549e-144           0           0           0 1.2876e-154 2.6758e-141 1.5148e-318 5.9903e-227 1.6325e-298  1.8757e-98 2.3441e-221  7.719e-114
+[04-Mar-2016 106.770000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:3
+[04-Mar-2016 106.770000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[04-Mar-2016 107.260000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =3.2692e-81
+[04-Mar-2016 107.270000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points1.0967e-175 2.0291e-120           0 1.2998e-261 1.3073e-167  1.3404e-79           0  3.797e-213 8.7924e-272           0 1.2663e-164 1.9428e-239           0 4.7994e-134           0 2.9515e-135  1.033e-206 2.0185e-245 3.9731e-232           0           0
+[04-Mar-2016 107.270000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0 1.1424e-183           0           0 5.9036e-269 3.7014e-228 5.4234e-173           0 4.5045e-120           0 5.5641e-199 1.8301e-128  4.0454e-95 1.4679e-144           0 8.6186e-258  3.937e-282 6.8137e-195
+[04-Mar-2016 107.270000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 107.270000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 107.250000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 107.250000] remoteParallelFunction: make_general_channel/channel_general: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 290.610000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 290.610000] starter_script: Running starter script
+[04-Mar-2016 290.610000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 290.980000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 293.110000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 293.120000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 293.120000] starter_script: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 293.120000] starter_script: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 293.200000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 293.230000] starter_script: gwr: generates GWR A and C matrices
+[04-Mar-2016 293.230000] starter_script: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 293.240000] starter_script: gwr: Executing with random nodes.
+[04-Mar-2016 293.240000] starter_script: gwr: Algorithm set as STATIC
+[04-Mar-2016 293.240000] starter_script: gwr: Initial parametersn1 =6153 n2 =7697
+[04-Mar-2016 309.770000] starter_script: gwr: Mean end activation =1.0269e-79
+[04-Mar-2016 309.770000] starter_script: gwr: Activation end points0 1.1803e-174 1.3518e-124 7.1169e-310 3.0408e-102           0 1.2181e-139           0           0 3.2312e-286           0 3.0662e-294  2.094e-279           0 8.4545e-239  9.6676e-83 9.7434e-188           0 2.8553e-153           0 8.0721e-209
+[04-Mar-2016 309.780000] starter_script: gwr: Activation initial points0  5.686e-184 1.4051e-141           0 4.2053e-223           0 2.0932e-280           0           0           0  1.497e-188           0           0 1.3675e-308           0           0 6.5778e-298           0 4.0872e-254           0
+[04-Mar-2016 309.780000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 309.780000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 312.400000] starter_script: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 312.400000] starter_script: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 364.780000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 364.780000] starter_script: Running starter script
+[04-Mar-2016 364.780000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 365.100000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 367.150000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 367.150000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 367.160000] starter_script: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 367.160000] starter_script: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 367.250000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 367.260000] starter_script: gwr: generates GWR A and C matrices
+[04-Mar-2016 367.260000] starter_script: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 367.260000] starter_script: gwr: Executing with random nodes.
+[04-Mar-2016 367.260000] starter_script: gwr: Algorithm set as STATIC
+[04-Mar-2016 367.270000] starter_script: gwr: Initial parametersn1 =2625 n2 =7868
+[04-Mar-2016 383.620000] starter_script: gwr: Mean end activation =1.6539e-94
+[04-Mar-2016 383.620000] starter_script: gwr: Activation end points1.1473e-221   6.781e-93           0 1.5185e-150           0           0           0           0           0 4.0098e-203 4.5446e-162  4.656e-300 1.8638e-162 5.7493e-131           0 1.8371e-158           0           0           0           0 2.6525e-251
+[04-Mar-2016 383.620000] starter_script: gwr: Activation initial points0    1.3e-217           0           0           0           0           0 3.0842e-267           0           0 7.1889e-154           0           0 2.1072e-149           0 3.0941e-261           0           0           0  3.007e-235
+[04-Mar-2016 383.630000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 383.630000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 386.250000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 386.260000] starter_script: Running starter script
+[04-Mar-2016 386.260000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 386.570000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 388.600000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 388.600000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 388.610000] starter_script: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 388.610000] starter_script: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 388.690000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 388.700000] starter_script: gwr: generates GWR A and C matrices
+[04-Mar-2016 388.710000] starter_script: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 388.710000] starter_script: gwr: Executing with random nodes.
+[04-Mar-2016 388.710000] starter_script: gwr: Algorithm set as STATIC
+[04-Mar-2016 388.710000] starter_script: gwr: Initial parametersn1 =29300 n2 =15165
+[04-Mar-2016 416.420000] starter_script: gwr: Mean end activation =2.826e-93
+[04-Mar-2016 416.430000] starter_script: gwr: Activation end points0           0 5.3747e-186 2.2913e-278           0 2.1904e-263 1.2129e-243           0           0 6.7822e-178 3.8852e-124  3.069e-108 7.8868e-140           0           0 2.3231e-201           0  1.1586e-91 2.2427e-194           0 9.1978e-244
+[04-Mar-2016 416.430000] starter_script: gwr: Activation initial points0           0 1.8608e-255           0           0           0           0           0 3.4512e-251 1.4458e-205           0 9.0198e-245           0           0 8.1955e-155           0           0           0 2.2697e-192 9.3689e-130
+[04-Mar-2016 416.430000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 416.430000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 418.980000] starter_script: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 418.980000] starter_script: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 418.980000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 427.200000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 427.200000] starter_script: Running starter script
+[04-Mar-2016 427.200000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 427.520000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 429.550000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 429.550000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 429.560000] starter_script: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 429.560000] starter_script: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 429.650000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 429.660000] starter_script: gwr: generates GWR A and C matrices
+[04-Mar-2016 429.670000] starter_script: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 429.670000] starter_script: gwr: Executing with random nodes.
+[04-Mar-2016 429.670000] starter_script: gwr: Algorithm set as STATIC
+[04-Mar-2016 429.670000] starter_script: gwr: Initial parametersn1 =17126 n2 =7919
+[04-Mar-2016 457.690000] starter_script: gwr: Mean end activation =1.0379e-91
+[04-Mar-2016 457.690000] starter_script: gwr: Activation end points9.1775e-235           0 1.5667e-124 5.3595e-135 4.3679e-113           0 2.3184e-222           0  3.8332e-94           0 1.8945e-112           0 3.0784e-245 1.1643e-241 1.0409e-157  3.7442e-99 2.4495e-218 5.3397e-204 1.6396e-137 1.4513e-175 9.0414e-206
+[04-Mar-2016 457.690000] starter_script: gwr: Activation initial points0           0           0           0           0           0           0           0 1.5872e-237 2.0041e-307 4.0702e-281           0           0 1.3769e-308           0           0           0           0           0           0
+[04-Mar-2016 457.690000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 457.700000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 460.390000] starter_script: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 460.400000] starter_script: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 460.400000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 460.410000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[04-Mar-2016 518.550000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 518.560000] starter_script: Running starter script
+[04-Mar-2016 518.560000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 518.880000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 520.920000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 520.920000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 520.930000] starter_script: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 520.930000] starter_script: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 521.010000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 521.020000] starter_script: gwr: generates GWR A and C matrices
+[04-Mar-2016 521.020000] starter_script: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 521.020000] starter_script: gwr: Executing with random nodes.
+[04-Mar-2016 521.020000] starter_script: gwr: Algorithm set as STATIC
+[04-Mar-2016 521.030000] starter_script: gwr: Initial parametersn1 =23395 n2 =4481
+[04-Mar-2016 548.790000] starter_script: gwr: Mean end activation =3.1419e-87
+[04-Mar-2016 548.790000] starter_script: gwr: Activation end points0           0 1.4875e-145  9.2591e-99 1.3776e-162           0 8.4906e-229  1.2882e-85           0 5.8647e-277           0 2.0059e-156 5.4762e-176           0 4.6472e-161           0           0  5.841e-235 5.1885e-153 2.1035e-115 2.2354e-291
+[04-Mar-2016 548.790000] starter_script: gwr: Activation initial points0           0 2.4029e-233           0           0 1.9237e-311 6.3649e-153 4.7801e-200           0 2.3646e-299           0           0 3.6976e-273           0 5.3537e-204  1.047e-224 5.4462e-263           0           0 1.1283e-183
+[04-Mar-2016 548.800000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 548.800000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 551.410000] starter_script: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 551.410000] starter_script: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 551.410000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 551.580000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[04-Mar-2016 563.020000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 563.030000] starter_script: Running starter script
+[04-Mar-2016 563.030000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 563.350000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 565.380000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 565.380000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 565.390000] starter_script: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 565.390000] starter_script: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 565.480000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 565.490000] starter_script: gwr: generates GWR A and C matrices
+[04-Mar-2016 565.490000] starter_script: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 565.500000] starter_script: gwr: Executing with random nodes.
+[04-Mar-2016 565.500000] starter_script: gwr: Algorithm set as STATIC
+[04-Mar-2016 565.500000] starter_script: gwr: Initial parametersn1 =20415 n2 =6106
+[04-Mar-2016 582.360000] starter_script: gwr: Mean end activation =8.0882e-85
+[04-Mar-2016 582.360000] starter_script: gwr: Activation end points1.9325e-185           0           0           0 2.6272e-105           0  3.809e-114 1.3171e-202  8.496e-139           0           0           0           0           0  8.6728e-99 2.8478e-255           0           0 1.3331e-154           0           0
+[04-Mar-2016 582.360000] starter_script: gwr: Activation initial points0           0           0           0 2.7307e-274 6.2051e-278           0           0           0 2.2398e-155 1.6993e-176           0           0 1.2409e-115 8.2531e-117 1.6057e-101           0 2.0725e-207           0           0
+[04-Mar-2016 582.370000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 582.370000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 584.980000] starter_script: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 584.990000] starter_script: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 584.990000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 585.160000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[04-Mar-2016 859.880000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 859.880000] starter_script: Running starter script
+[04-Mar-2016 859.880000] starter_script: =======================================================================================================================================================================================================================================
+[04-Mar-2016 860.190000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[04-Mar-2016 862.280000] starter_script: Starting parallel pool for GWR and GNG for nodes:50  50  50  50
+[04-Mar-2016 862.280000] starter_script: ###Using multilayer GWR and GNG ###
+[04-Mar-2016 116.520000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 116.520000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 116.410000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffles training data (data_train) and generates the indexes for unshuffling
+[04-Mar-2016 116.410000] remoteParallelFunction: make_general_channel/channel_general: shuffledataftw: Shuffling is supposed to make training from the gas faster.
+[04-Mar-2016 116.360000] [04-Mar-2016 116.340000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : shuffledataftwshuffledataftw: : Shuffles training data (data_train) and generates the indexes for unshufflingShuffles training data (data_train) and generates the indexes for unshuffling
+
+[04-Mar-2016 116.360000] [04-Mar-2016 116.340000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : shuffledataftwshuffledataftw: : Shuffling is supposed to make training from the gas faster.Shuffling is supposed to make training from the gas faster.
+
+[04-Mar-2016 116.660000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[04-Mar-2016 116.540000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[04-Mar-2016 116.670000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 116.680000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 116.560000] remoteParallelFunction[04-Mar-2016 116.680000] remoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: gwr: : Executing with random nodes.gwr
+: generates GWR A and C matrices
+[04-Mar-2016 116.680000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 116.480000] [04-Mar-2016 116.560000] remoteParallelFunction: make_general_channel/channel_general: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 116.680000] [04-Mar-2016 116.560000] remoteParallelFunction[04-Mar-2016 116.490000] : make_general_channel/channel_general: remoteParallelFunctiongwr: : Initial parametersn1 =13525 n2 =25376make_general_channel/channel_general
+: remoteParallelFunctiongwr: : Executing with random nodes.make_general_channel/channel_general: 
+Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[04-Mar-2016 116.560000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 116.560000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =15736 n2 =14306
+[04-Mar-2016 116.490000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 116.500000] remoteParallelFunction: make_general_channel/channel_general: gwr: generates GWR A and C matrices
+[04-Mar-2016 116.490000] remoteParallelFunction: make_general_channel/channel_general: gwr: Executing GWR with:50 nodes.
+[04-Mar-2016 116.510000] [04-Mar-2016 116.490000] remoteParallelFunction: make_general_channel/channel_general: gwr: remoteParallelFunctionExecuting GWR with:50 nodes.
+: make_general_channel/channel_general: gwr: Executing with random nodes.
+[04-Mar-2016 116.510000] [04-Mar-2016 116.490000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : gwrgwr: : Executing with random nodes.Algorithm set as STATIC
+
+[04-Mar-2016 116.510000] remoteParallelFunction: make_general_channel/channel_general: gwr: Algorithm set as STATIC
+[04-Mar-2016 116.500000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =18915 n2 =7597
+[04-Mar-2016 116.510000] remoteParallelFunction: make_general_channel/channel_general: gwr: Initial parametersn1 =27507 n2 =26781
+[04-Mar-2016 134.110000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =7.4056e-87
+[04-Mar-2016 134.110000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points0   4.84e-272 4.4474e-248           0           0           0 3.0526e-288  1.416e-170           0 8.1287e-237 2.6523e-263           0  3.1142e-90           0  1.568e-272           0 2.9644e-323           0 1.0827e-143  1.642e-206           0
+[04-Mar-2016 134.110000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0   1.15e-139           0 2.2538e-180           0 4.9733e-268           0           0           0           0           0           0           0           0           0 5.9041e-305           0           0
+[04-Mar-2016 134.120000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:2
+[04-Mar-2016 134.120000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 136.800000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 136.810000] remoteParallelFunction: make_general_channel/channel_general: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 136.810000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gwr1layer' (1) for process:2
+[04-Mar-2016 136.990000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[04-Mar-2016 145.330000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =6.8077e-80
+[04-Mar-2016 145.330000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points1.8133e-189           0  2.1623e-98 1.4479e-214           0           0           0           0 1.1048e-107  2.7912e-78 2.5364e-234 1.6525e-118 1.0416e-181           0           0           0 4.5556e-180  1.4577e-94           0 1.2889e-105 3.4008e-103
+[04-Mar-2016 145.340000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0           0           0 1.8123e-225 4.0111e-291 9.3979e-243           0           0 3.3146e-163 6.8588e-301           0           0 1.9849e-189           0 2.3945e-158           0           0           0
+[04-Mar-2016 145.340000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:4
+[04-Mar-2016 145.340000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 147.110000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =1.9774e-80
+[04-Mar-2016 147.120000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points2.4248e-130 1.9103e-235 1.4322e-130 5.6106e-267 9.4897e-216 1.7026e-107  6.0938e-96           0 8.5132e-252 9.3489e-262 1.5693e-259           0           0 1.2769e-189 5.2467e-183           0           0 9.8407e-106 2.1067e-135 8.8647e-102  8.926e-135
+[04-Mar-2016 147.120000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points0           0           0           0           0           0 2.1753e-307 3.5217e-233 4.3591e-149           0 4.1538e-177           0 1.0503e-130 2.2609e-278           0           0 4.2221e-123           0           0 4.0624e-111
+[04-Mar-2016 147.120000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:3
+[04-Mar-2016 147.120000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[04-Mar-2016 147.850000] remoteParallelFunction: make_general_channel/channel_general: gwr: Mean end activation =1.1585e-82
+[04-Mar-2016 147.850000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation end points0  1.332e-201           0           0           0 7.1064e-176 3.3947e-178   3.329e-81 1.4086e-128           0           0 1.8794e-179           0 2.2411e-124 3.0656e-237 9.0198e-128           0           0 1.0375e-207 1.8669e-193           0
+[04-Mar-2016 147.860000] remoteParallelFunction: make_general_channel/channel_general: gwr: Activation initial points2.3761e-306 5.0624e-216 1.4675e-307  1.908e-198           0           0           0           0           0           0 4.9163e-168 1.4423e-150           0           0 4.9113e-229           0           0 5.9926e-222           0           0
+[04-Mar-2016 147.860000] remoteParallelFunction: make_general_channel/channel_general: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:50 for process:1
+[04-Mar-2016 147.860000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 147.700000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 147.700000] remoteParallelFunction: make_general_channel/channel_general: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 147.710000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gwr1layer' (1) for process:4
+[04-Mar-2016 147.890000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[04-Mar-2016 150.090000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:3
+[04-Mar-2016 150.100000] remoteParallelFunction: make_general_channel/channel_general: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 150.110000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gwr1layer' (1) for process:3
+[04-Mar-2016 150.300000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.
+[04-Mar-2016 150.850000] remoteParallelFunction: make_general_channel/channel_general: Unshuffling best matching units for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 150.850000] remoteParallelFunction: make_general_channel/channel_general: unshuffledata: Unshuffles training data (data_train)
+[04-Mar-2016 150.850000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gwr1layer' (1) for process:1
+[04-Mar-2016 151.040000] remoteParallelFunction: make_general_channel/channel_general: untitled6: labeling: Applying labels to the prototypical nodes.

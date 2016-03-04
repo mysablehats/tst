@@ -17,7 +17,7 @@ clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = 150*ones(1,32);
+NODES = 50*ones(1,4);
 %NODES = fix(NODES/30);
 
 
@@ -43,7 +43,7 @@ parfor i = 1:length(allconn)
     arq_connect(i).layertype = allconn{i}{4};
 end
 gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[],'input',[],'confusions',struct('val',[],'train',[]), 'fig',[]); %bestmatch will have the training matrix for subsequent layers
-savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',struct('y',[],'data',[]),'figset',[]); % I have a problem with figset. I don't kno
+savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',struct('indexes',[],'data',[]),'figset',[]); % I have a problem with figset. I don't kno
 parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
     savestructure(i).figset = {};
 end
@@ -55,7 +55,7 @@ dbgmsg('###Using multilayer GWR and GNG ###',1)
 [posidx, velidx] = generateidx(size(data_train,1));
 
 parfor i = 1:length(NODES)
-    [savestructure(i).train.data, savestructure(i).train.y] = shuffledataftw(data_train, y_train);
+    [savestructure(i).train.data, savestructure(i).train.indexes] = shuffledataftw(data_train);
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
     for j = 1:length(arq_connect)
@@ -63,6 +63,14 @@ parfor i = 1:length(NODES)
         savestructure(i).gas(j).name = arq_connect(j).name;
         savestructure(i).gas(j).method = arq_connect(j).method;
         savestructure(i).gas(j).input = setinput(arq_connect(j), savestructure(i), size(data_train,1));
+        
+        %%%% making sliding window thingy
+        %%% I am assuming I receive the data unshuffled.
+        %%% and I receive the positions on where to cut
+        
+        %%%call the integration function; it will return my new cut points
+        %%%and the sliding windowed data as new input.
+        
         
         %%%% PRE-MESSAGE
         dbgmsg('Working on gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') with method: ',savestructure(i).gas(j).method ,' for process:',num2str(i),1)
@@ -84,11 +92,15 @@ parfor i = 1:length(NODES)
         dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).train.data, arq_connect(j).layertype); %assuming the best matching node always comes from initial dataset!
     
+        %now I have to unshuffle to label it.
+        dbgmsg('Unshuffling best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        savestructure(i).gas(j).bestmatch = unshuffledata(savestructure(i).gas(j).bestmatch ,savestructure(i).train.indexes);
+        
         %labeling
         %pretty much useless unless it is the last layer, but I can label
         %everyone, so I will.
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, savestructure(i).train.y);
+        [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype);
     end
     
 end
