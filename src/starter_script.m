@@ -17,7 +17,7 @@ clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = 100*ones(1,8);
+NODES = 70*ones(1,32);
 %NODES = fix(NODES/30);
 
 
@@ -112,8 +112,11 @@ end
 %end
 % plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
 % clear i
-for j = length(savestructure(1).gas) %this is weird
+for j = 1:length(savestructure(1).gas) %this is weird, but I just changed this to show only the last gas
     f1 = howgood(savestructure,j);
-    dbgmsg(savestructure(1).gas(j).name,'F1 for validation:', num2str(f1(1)),'||','F1 for training:', num2str(f1(2)),1)
+    dbgmsg(savestructure(1).gas(j).name,'F1 for validation overall mean:', num2str(f1(1)),'||','F1 for training overall mean:', num2str(f1(2)),1)
+    disp(f1(1))
+    f1 = whoisbest(savestructure,j);
+    dbgmsg(savestructure(1).gas(j).name,'F1 for validation best:', num2str(f1(1)),'||','F1 for training best:', num2str(f1(2)),1)
     disp(f1(1))
 end
