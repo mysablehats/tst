@@ -17,7 +17,7 @@ clear all
 
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = 70*ones(1,32);
+NODES = 150*ones(1,32);
 %NODES = fix(NODES/30);
 
 
@@ -54,7 +54,7 @@ dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
 [posidx, velidx] = generateidx(size(data_train,1));
 
-for i = 1:length(NODES)
+parfor i = 1:length(NODES)
     [savestructure(i).train.data, savestructure(i).train.y] = shuffledataftw(data_train, y_train);
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
