@@ -4,7 +4,7 @@ inputinput = cell(length(arq_connect.sourcelayer),1);
 [posidx, velidx] = generateidx(data_size);
 for j = 1:length(arq_connect.sourcelayer)
     for i = 1:length(savestruc.gas)
-        if strcmp(arq_connect.sourcelayer, savestruc.gas(i).name)
+        if strcmp(arq_connect.sourcelayer{j}, savestruc.gas(i).name)
             if isempty(savestruc.gas(i).bestmatch)
                 error('wrong computation order. bestmatch field not yet defined.')
             end
@@ -14,6 +14,8 @@ for j = 1:length(arq_connect.sourcelayer)
                 inputinput{j} = savestruc.train.data(posidx,:);
             elseif strcmp(arq_connect.layertype, 'vel')
                 inputinput{j} = savestruc.train.data(velidx,:);
+            elseif strcmp(arq_connect.layertype, 'all')
+                inputinput{j} = savestruc.train.data;
             end
         end
     end

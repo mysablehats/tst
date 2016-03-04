@@ -2,7 +2,7 @@ function matmat = genbestmmatrix(gwr_nodes, data, whichisit)
 
 matmat = zeros(size(data,1),size(gwr_nodes,2));    
 for i = 1:size(gwr_nodes,2)
-        matmat(:,i) = bestmatchingunit(gwr_nodes(:,1),data,whichisit);
+        matmat(:,i) = bestmatchingunit(gwr_nodes(:,i),data,whichisit);
 end
 end
 function s = bestmatchingunit(w,data,whichisit)
