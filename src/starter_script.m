@@ -54,7 +54,7 @@ dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
 [posidx, velidx] = generateidx(size(data_train,1));
 
-parfor i = 1:length(NODES)
+for i = 1:length(NODES)
     [savestructure(i).train.data, savestructure(i).train.indexes] = shuffledataftw(data_train);
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
@@ -70,6 +70,8 @@ parfor i = 1:length(NODES)
         
         %%%call the integration function; it will return my new cut points
         %%%and the sliding windowed data as new input.
+        
+        %%%perhaps shuffling should then be moved to this point. 
         
         
         %%%% PRE-MESSAGE
@@ -110,11 +112,11 @@ dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2s
 for i=1:length(savestructure)
     for j =1:length(savestructure(i).gas)
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).gas(j).class.val);
-        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(savestructure(i).train.y,savestructure(i).gas(j).class.train);
+        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(y_train,savestructure(i).gas(j).class.train);
         
         dbgmsg(num2str(i),'-th set.',savestructure(i).gas(j).name,' Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val),1)
         savestructure(i).gas(j).fig = {y_val,                   savestructure(i).gas(j).class.val,  strcat(savestructure(i).gas(j).method,' Val ', num2str(savestructure(i).maxnodes)),...
-                                       savestructure(i).train.y,savestructure(i).gas(j).class.train,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
+                                       y_train,savestructure(i).gas(j).class.train,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
         savestructure(i).figset = {savestructure(i).figset{:}, savestructure(i).gas(j).fig{:}};
     end
 end
