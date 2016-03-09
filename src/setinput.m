@@ -24,15 +24,15 @@ for j = 1:length(arq_connect.sourcelayer)
             %inputinput{j} = longinput(savestruc.gas(i).bestmatch; %
         else
             if strcmp(arq_connect.layertype, 'pos')
-                [inputinput{j},inputends] = longinput(savestruc.train.data(posidx,:), arq_connect.q, savestructure.train.ends);
+                [inputinput{j},inputends] = longinput(savestruc.train.data(posidx,:), arq_connect.q, savestruc.train.ends);
                 %inputinput{j} = savestruc.train.data(posidx,:); %
                 %ends is savestructure.train.ends
             elseif strcmp(arq_connect.layertype, 'vel')
-                [inputinput{j},inputends] = longinput(savestruc.train.data(velidx,:), arq_connect.q, savestructure.train.ends);
+                [inputinput{j},inputends] = longinput(savestruc.train.data(velidx,:), arq_connect.q, savestruc.train.ends);
                 %inputinput{j} = savestruc.train.data(velidx,:); %
                 %ends is savestructure.train.ends
             elseif strcmp(arq_connect.layertype, 'all')
-                [inputinput{j},inputends] = longinput(savestruc.train.data, arq_connect.q, savestructure.train.ends);
+                [inputinput{j},inputends] = longinput(savestruc.train.data, arq_connect.q, savestruc.train.ends);
                 %inputinput{j} = savestruc.train.data; %
                 %ends is savestructure.train.ends
             end

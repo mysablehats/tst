@@ -16,10 +16,9 @@ generate_skel_data %% very time consuming -> also will generate a new
 clear all
 tic()
 load_skel_data
-[data_train, data_val] = removehipbias(data_train, data_val);
+%[data_train, data_val] = removehipbias(data_train, data_val);
+[data_val, data_train] = removehipbias(data_train, data_val); % i am inverting data_train and data_val to train on a smaller set
 % I will take only a part of the data-set out
-data_train = data_train(:,1:100);
-y_train = y_train(:,1:100);
 NODES = 50; %*ones(1,8);
 %NODES = fix(NODES/30);
 
