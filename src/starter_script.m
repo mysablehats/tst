@@ -9,7 +9,7 @@ dbgmsg('Running starter script')
 dbgmsg('=======================================================================================================================================================================================================================================')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% generate_skel_data %% very time consuming -> also will generate a new
+generate_skel_data %% very time consuming -> also will generate a new
 % %%validation and training set
 % dbgmsg('Skeleton data (training and validation) generated.')
 
@@ -27,27 +27,28 @@ NODES = 50; %*ones(1,8);
 
 %%%% connection definitions:
  allconn = {...
-     {'gwr1layer',   'gwr',{'pos'},                    'pos'}...
-     {'gwr2layer',   'gwr',{'vel'},                    'vel'}...
-     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos'}...
-     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel'}...
-     {'gwr5layer',   'gwr',{'gwr3layer'},              'pos'}...
-     {'gwr6layer',   'gwr',{'gwr4layer'},              'vel'}...
-     {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},'all'}};
+     {'gwr1layer',   'gwr',{'pos'},                    'pos',3}...
+     {'gwr2layer',   'gwr',{'vel'},                    'vel',3}...
+     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3}...
+     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3}...
+     {'gwr5layer',   'gwr',{'gwr3layer'},              'pos',3}...
+     {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3}...
+     {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3}};
 
 %allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos'}...
 %           {'gwr12ayer',   'gwr',{'gwr1layer'},                    'pos'}};
 
 %%%% building arq_connect
-arq_connect(1:length(allconn)) = struct('name','','method','','sourcelayer','', 'layertype','');
+arq_connect(1:length(allconn)) = struct('name','','method','','sourcelayer','', 'layertype','','q',1);
 parfor i = 1:length(allconn)
     arq_connect(i).name = allconn{i}{1};
     arq_connect(i).method = allconn{i}{2};
     arq_connect(i).sourcelayer = allconn{i}{3};
     arq_connect(i).layertype = allconn{i}{4};
+    arq_connect(i).q = allconn{i}{5};
 end
-gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[],'input',[],'confusions',struct('val',[],'train',[]), 'fig',[]); %bestmatch will have the training matrix for subsequent layers
-savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',struct('indexes',[],'data',[]),'figset',[]); % I have a problem with figset. I don't kno
+gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[],'input',[],'input_ends',[],'confusions',struct('val',[],'train',[]), 'fig',[]); %bestmatch will have the training matrix for subsequent layers
+savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',struct('indexes',[],'data',[],'ends',[]),'figset',[]); % I have a problem with figset. I don't kno
 parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
     savestructure(i).figset = {};
 end
@@ -63,24 +64,24 @@ for i = 1:length(NODES)
     %shuffledataftw(data_train); % I cant shuffle any longer...
     %but I still need to assign it !
     savestructure(i).train.data = data_train;
-    
-    
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
+    savestructure(i).train.ends = ends_train;
+    
     for j = 1:length(arq_connect)
         %will I shift enormous matrices around? yes.
         savestructure(i).gas(j).name = arq_connect(j).name;
         savestructure(i).gas(j).method = arq_connect(j).method;
-        savestructure(i).gas(j).input = setinput(arq_connect(j), savestructure(i), size(data_train,1));
+      
+        %all of the long inputing will be done inside setinput, because it
+        %has to be like this...
+        [savestructure(i).gas(j).input, savestructure(i).gas(j).input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1)); %%%%%%
         
-        %%%% making sliding window thingy
-        %%% I am assuming I receive the data unshuffled.
-        %%% and I receive the positions on where to cut
         
-        %%%call the integration function; it will return my new cut points
-        %%%and the sliding windowed data as new input.
+      
         
-        %%%perhaps shuffling should then be moved to this point. 
+        
+        %shuffle shoud be applied in input
         
         
         %%%% PRE-MESSAGE
