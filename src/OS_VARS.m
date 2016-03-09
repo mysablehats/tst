@@ -6,7 +6,8 @@ elseif ismac
     pathtodata = '/Volumes/Elements/fall_detection_datasets/TST Fall detection database ver. 2/';
     SLASH = '/'; % 
 elseif isunix
-    pathtodata = '/media/Elements/fall_detection_datasets/TST Fall detection database ver. 2/';
+    %pathtodata = '/media/Elements/fall_detection_datasets/TST Fall detection database ver. 2/';
+    pathtodata = '/media/fbklein/share/fall_detection_datasets/TST Fall detection database ver. 2/';
     SLASH = '/'; % 
 else
     error('Cant determine OS')

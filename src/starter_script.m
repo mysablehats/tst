@@ -14,12 +14,16 @@ dbgmsg('========================================================================
 % dbgmsg('Skeleton data (training and validation) generated.')
 
 clear all
-
+tic()
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = 50*ones(1,4);
+% I will take only a part of the data-set out
+data_train = data_train(:,1:100);
+y_train = y_train(:,1:100);
+NODES = 50; %*ones(1,8);
 %NODES = fix(NODES/30);
 
+%%%% gas structures region
 
 %%%% connection definitions:
  allconn = {...
@@ -48,14 +52,19 @@ parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
     savestructure(i).figset = {};
 end
 
-
+%%% end of gas structures region
 
 dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
 [posidx, velidx] = generateidx(size(data_train,1));
 
 for i = 1:length(NODES)
-    [savestructure(i).train.data, savestructure(i).train.indexes] = shuffledataftw(data_train);
+    %[savestructure(i).train.data, savestructure(i).train.indexes] =
+    %shuffledataftw(data_train); % I cant shuffle any longer...
+    %but I still need to assign it !
+    savestructure(i).train.data = data_train;
+    
+    
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
     for j = 1:length(arq_connect)
@@ -94,22 +103,30 @@ for i = 1:length(NODES)
         dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).train.data, arq_connect(j).layertype); %assuming the best matching node always comes from initial dataset!
     
+        %since I can't shuffle, then I dont need to unshuffle
         %now I have to unshuffle to label it.
-        dbgmsg('Unshuffling best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        savestructure(i).gas(j).bestmatch = unshuffledata(savestructure(i).gas(j).bestmatch ,savestructure(i).train.indexes);
+        %dbgmsg('Unshuffling best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        %savestructure(i).gas(j).bestmatch = unshuffledata(savestructure(i).gas(j).bestmatch ,savestructure(i).train.indexes);
         
+       end
+    
+end
+
+dbgmsg('Labelling',num2str(NODES),1)
+
+parfor i=1:length(savestructure)
+    for j =1:length(savestructure(i).gas)
         %labeling
         %pretty much useless unless it is the last layer, but I can label
         %everyone, so I will.
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype);
     end
-    
 end
 
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 
-for i=1:length(savestructure)
+parfor i=1:length(savestructure)
     for j =1:length(savestructure(i).gas)
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).gas(j).class.val);
         [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(y_train,savestructure(i).gas(j).class.train);
@@ -134,3 +151,4 @@ for j = 1:length(savestructure(1).gas) %this is weird, but I just changed this t
     dbgmsg(savestructure(1).gas(j).name,'F1 for validation best:', num2str(f1(1)),'||','F1 for training best:', num2str(f1(2)),1)
     disp(f1(1))
 end
+toc()
