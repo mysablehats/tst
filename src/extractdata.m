@@ -1,6 +1,6 @@
 % create the matrix from the structure to access the database and run the
 % classification....
-function [Data, vectordata, Y] = extractdata(structure)
+function [Data, vectordata, Y, ends] = extractdata(structure)
 WANTVELOCITY = true;
 
 %%%%%%%%Messages part. Feedback for the user about the algorithm
@@ -12,11 +12,13 @@ end
 
 
 Data = structure(1).skel;
+ends = size(structure(1).skel,3);
 % approach
 Y = strcmp('Fall',structure(1).act)*ones(size(structure(1).skel,3),1);
 for i = 2:length(structure) % I think each iteration is one action
     Data = cat(3, Data, structure(i).skel);
     Y = cat(1, Y, strcmp('Fall',structure(i).act)*ones(size(structure(i).skel,3),1));
+    ends = cat(2, ends, size(structure(i).skel,3));
 end
 if WANTVELOCITY
     Data_vel = structure(1).vel;

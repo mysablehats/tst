@@ -19,7 +19,7 @@ sampling_type = 'type2'
 
 %%%%%%%%Messages part: provides feedback for the user
 dbgmsg('Generating random datasets for training and validation')
-if exist('allskeli1')
+if exist('allskeli1','var')
     dbgmsg('Variable allskeli1 is defined. Will skip randomization.')
 end
 %%%%%%%%%%%%
@@ -27,7 +27,7 @@ end
 %%%% type 1 data sampling: known subjects, unknown individual activities from them:
 if strcmp(sampling_type,'type1')
     allskel = LoadDataBase(1:11); %main data
-    if ~exist('allskeli1')
+    if ~exist('allskeli1','var')
         allskeli1 = randperm(length(allskel),fix(length(allskel)*.8)); % generates the indexes for sampling the dataset
     end
     allskel1 = allskel(allskeli1);
@@ -37,7 +37,7 @@ end
 
 %%%% type 2 data sampling: unknown subjects, unknown individual activities from them:
 if strcmp(sampling_type,'type2')
-    if ~exist('allskeli1')
+    if ~exist('allskeli1','var')
         allskeli1 = randperm(11,fix(11*.8)); % generates the indexes for sampling the dataset
     end
     allskel1 = LoadDataBase(allskeli1(1)); %initializes the training dataset
@@ -56,9 +56,9 @@ end
 % saves data
 %%%%%%
 
-[X, data_train,y_train] = extractdata(allskel1);
-save(strcat('..',SLASH,'share',SLASH,'tst_skel'),'data_train', 'y_train','allskeli1','-v7.3');
+[~, data_train,y_train, ends_train] = extractdata(allskel1);
+save(strcat('..',SLASH,'share',SLASH,'tst_skel'),'data_train', 'y_train','allskeli1','ends_train','-v7.3');
 dbgmsg('Training data saved.')
-[X, data_val,y_val] = extractdata(allskel2);
-save(strcat('..',SLASH,'share',SLASH,'tst_skel_val'),'data_val', 'y_val','allskeli2','-v7.3');
+[~, data_val,y_val, ends_val] = extractdata(allskel2);
+save(strcat('..',SLASH,'share',SLASH,'tst_skel_val'),'data_val', 'y_val','allskeli2','ends_val','-v7.3');
 dbgmsg('Validation data saved.')

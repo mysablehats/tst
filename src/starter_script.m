@@ -14,12 +14,16 @@ dbgmsg('========================================================================
 % dbgmsg('Skeleton data (training and validation) generated.')
 
 clear all
-
+tic()
 load_skel_data
 [data_train, data_val] = removehipbias(data_train, data_val);
-NODES = 70*ones(1,32);
+% I will take only a part of the data-set out
+data_train = data_train(:,1:100);
+y_train = y_train(:,1:100);
+NODES = 50; %*ones(1,8);
 %NODES = fix(NODES/30);
 
+%%%% gas structures region
 
 %%%% connection definitions:
  allconn = {...
@@ -43,19 +47,24 @@ parfor i = 1:length(allconn)
     arq_connect(i).layertype = allconn{i}{4};
 end
 gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[],'input',[],'confusions',struct('val',[],'train',[]), 'fig',[]); %bestmatch will have the training matrix for subsequent layers
-savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',struct('y',[],'data',[]),'figset',[]); % I have a problem with figset. I don't kno
+savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',struct('indexes',[],'data',[]),'figset',[]); % I have a problem with figset. I don't kno
 parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
     savestructure(i).figset = {};
 end
 
-
+%%% end of gas structures region
 
 dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
 [posidx, velidx] = generateidx(size(data_train,1));
 
 for i = 1:length(NODES)
-    [savestructure(i).train.data, savestructure(i).train.y] = shuffledataftw(data_train, y_train);
+    %[savestructure(i).train.data, savestructure(i).train.indexes] =
+    %shuffledataftw(data_train); % I cant shuffle any longer...
+    %but I still need to assign it !
+    savestructure(i).train.data = data_train;
+    
+    
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
     for j = 1:length(arq_connect)
@@ -63,6 +72,16 @@ for i = 1:length(NODES)
         savestructure(i).gas(j).name = arq_connect(j).name;
         savestructure(i).gas(j).method = arq_connect(j).method;
         savestructure(i).gas(j).input = setinput(arq_connect(j), savestructure(i), size(data_train,1));
+        
+        %%%% making sliding window thingy
+        %%% I am assuming I receive the data unshuffled.
+        %%% and I receive the positions on where to cut
+        
+        %%%call the integration function; it will return my new cut points
+        %%%and the sliding windowed data as new input.
+        
+        %%%perhaps shuffling should then be moved to this point. 
+        
         
         %%%% PRE-MESSAGE
         dbgmsg('Working on gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') with method: ',savestructure(i).gas(j).method ,' for process:',num2str(i),1)
@@ -84,25 +103,37 @@ for i = 1:length(NODES)
         dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).train.data, arq_connect(j).layertype); %assuming the best matching node always comes from initial dataset!
     
+        %since I can't shuffle, then I dont need to unshuffle
+        %now I have to unshuffle to label it.
+        %dbgmsg('Unshuffling best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        %savestructure(i).gas(j).bestmatch = unshuffledata(savestructure(i).gas(j).bestmatch ,savestructure(i).train.indexes);
+        
+       end
+    
+end
+
+dbgmsg('Labelling',num2str(NODES),1)
+
+parfor i=1:length(savestructure)
+    for j =1:length(savestructure(i).gas)
         %labeling
         %pretty much useless unless it is the last layer, but I can label
         %everyone, so I will.
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, savestructure(i).train.y);
+        [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype);
     end
-    
 end
 
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 
-for i=1:length(savestructure)
+parfor i=1:length(savestructure)
     for j =1:length(savestructure(i).gas)
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).gas(j).class.val);
-        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(savestructure(i).train.y,savestructure(i).gas(j).class.train);
+        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(y_train,savestructure(i).gas(j).class.train);
         
         dbgmsg(num2str(i),'-th set.',savestructure(i).gas(j).name,' Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val),1)
         savestructure(i).gas(j).fig = {y_val,                   savestructure(i).gas(j).class.val,  strcat(savestructure(i).gas(j).method,' Val ', num2str(savestructure(i).maxnodes)),...
-                                       savestructure(i).train.y,savestructure(i).gas(j).class.train,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
+                                       y_train,savestructure(i).gas(j).class.train,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
         savestructure(i).figset = {savestructure(i).figset{:}, savestructure(i).gas(j).fig{:}};
     end
 end
@@ -120,3 +151,4 @@ for j = 1:length(savestructure(1).gas) %this is weird, but I just changed this t
     dbgmsg(savestructure(1).gas(j).name,'F1 for validation best:', num2str(f1(1)),'||','F1 for training best:', num2str(f1(2)),1)
     disp(f1(1))
 end
+toc()
