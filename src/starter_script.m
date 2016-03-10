@@ -1,3 +1,4 @@
+fclose('all') 
 global VERBOSE logfile
 logfile = fopen('../var/log.txt','at');
 VERBOSE = true; %%%% this is not really working...
@@ -9,7 +10,7 @@ dbgmsg('Running starter script')
 dbgmsg('=======================================================================================================================================================================================================================================')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-generate_skel_data %% very time consuming -> also will generate a new
+%generate_skel_data %% very time consuming -> also will generate a new
 % %%validation and training set
 % dbgmsg('Skeleton data (training and validation) generated.')
 
@@ -46,8 +47,11 @@ parfor i = 1:length(allconn)
     arq_connect(i).layertype = allconn{i}{4};
     arq_connect(i).q = allconn{i}{5};
 end
-gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'class',struct('val',[],'train',[]),'bestmatch',[],'input',[],'input_ends',[],'confusions',struct('val',[],'train',[]), 'fig',[]); %bestmatch will have the training matrix for subsequent layers
-savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',struct('indexes',[],'data',[],'ends',[]),'figset',[]); % I have a problem with figset. I don't kno
+inputs = struct('input',[],'input_ends',[]);
+gas_data = struct('name','','class',[],'inputs',inputs,'confusions',[]);
+gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'bestmatch',[],'fig',[]); %bestmatch will have the training matrix for subsequent layers
+vt_data = struct('indexes',[],'data',[],'ends',[],'gas',gas_data);
+savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',vt_data,'val',vt_data,'figset',[]); % I have a problem with figset. I don't kno
 parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
     savestructure(i).figset = {};
 end
@@ -62,9 +66,9 @@ for i = 1:length(NODES)
     %[savestructure(i).train.data, savestructure(i).train.indexes] =
     %shuffledataftw(data_train); % I cant shuffle any longer...
     %but I still need to assign it !
-    savestructure(i).train.data = data_train;
     num_of_nodes = NODES(i);
     savestructure(i).maxnodes = num_of_nodes;
+    savestructure(i).train.data = data_train;
     savestructure(i).train.ends = ends_train;
     
     for j = 1:length(arq_connect)
@@ -74,13 +78,9 @@ for i = 1:length(NODES)
       
         %all of the long inputing will be done inside setinput, because it
         %has to be like this...
-        [savestructure(i).gas(j).input, savestructure(i).gas(j).input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1)); %%%%%%
-        
-        
-      
-        
-        
-        %shuffle shoud be applied in input
+        [savestructure(i).train.gas(j).inputs.input, savestructure(i).train.gas(j).inputs.input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).train); %%%%%%
+  
+        %shuffle could be applied in input
         
         
         %%%% PRE-MESSAGE
@@ -88,10 +88,10 @@ for i = 1:length(NODES)
         %DO GNG OR GWR
         if strcmp(arq_connect(j).method,'gng')
             %do gng
-            [savestructure(i).gas(j).nodes, savestructure(i).gas(j).edges, ~, ~] = gng_lax(savestructure(i).gas(j).input,num_of_nodes); 
+            [savestructure(i).gas(j).nodes, savestructure(i).gas(j).edges, ~, ~] = gng_lax(savestructure(i).train.gas(j).inputs.input,num_of_nodes); 
         elseif strcmp(arq_connect(j).method,'gwr')
             %do gwr
-            [savestructure(i).gas(j).nodes, savestructure(i).gas(j).edges, ~, ~] = gwr(savestructure(i).gas(j).input,num_of_nodes); 
+            [savestructure(i).gas(j).nodes, savestructure(i).gas(j).edges, ~, ~] = gwr(savestructure(i).train.gas(j).inputs.input,num_of_nodes); 
         else
             error('unknown method')
         end
@@ -101,7 +101,7 @@ for i = 1:length(NODES)
         
         %PRE MESSAGE  
         dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).gas(j).input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
+        savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).inputs.input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
     
         %since I can't shuffle, then I dont need to unshuffle
         %now I have to unshuffle to label it.
@@ -115,12 +115,20 @@ end
 dbgmsg('Labelling',num2str(NODES),1)
 
 for i=1:length(savestructure)
+    savestructure(i).val.data = data_val;
+    savestructure(i).val.ends = ends_val;
     for j =1:length(savestructure(i).gas)
         %labeling
         %pretty much useless unless it is the last layer, but I can label
         %everyone, so I will.
+        savestructure(i).train.gas(j).name = arq_connect(j).name;
+        savestructure(i).val.gas(j).name = arq_connect(j).name;
+        
+        
+        dbgmsg('Setting validation input for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        [savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype, arq_connect(j).q);
+        [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.gas(j).inputs.input,savestructure(i).val.gas(j).inputs.input, y_train);
         
         %[savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype, arq_connect(j).q);
     end

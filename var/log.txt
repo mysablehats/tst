@@ -4781,3 +4781,344 @@ remoteParallelFunction: make_general_channel/channel_general: 2-th set.gwr1layer
 [10-Mar-2016 9238.160000] starter_script: Labelling5
 [10-Mar-2016 9238.170000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
 [10-Mar-2016 9238.200000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[10-Mar-2016 847.530000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 847.540000] starter_script: Running starter script
+[10-Mar-2016 847.550000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 847.580000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[10-Mar-2016 847.590000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[10-Mar-2016 847.600000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 853.150000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 855.000000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 856.930000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 858.800000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 860.970000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 862.930000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 864.830000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 866.470000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 868.880000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 871.660000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 873.670000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 873.670000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 874.930000] starter_script: generate_skel_data: Training data saved.
+[10-Mar-2016 874.940000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 874.940000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 875.600000] starter_script: generate_skel_data: Validation data saved.
+[10-Mar-2016 876.020000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 888.690000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 888.690000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 888.980000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 897.980000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 897.990000] starter_script: Running starter script
+[10-Mar-2016 897.990000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 898.000000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[10-Mar-2016 898.000000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[10-Mar-2016 898.010000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 899.920000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 901.670000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 903.490000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 905.230000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 907.180000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 909.030000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 910.810000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 912.330000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 914.620000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 917.250000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 919.120000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 919.120000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 920.380000] starter_script: generate_skel_data: Training data saved.
+[10-Mar-2016 920.390000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 920.390000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 921.020000] starter_script: generate_skel_data: Validation data saved.
+[10-Mar-2016 921.590000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 923.530000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 923.530000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 923.810000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 925.800000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 925.810000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 926.630000] [10-Mar-2016 36.960000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 36.980000] starter_script: Running starter script
+[10-Mar-2016 36.980000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 37.110000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[10-Mar-2016 37.110000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[10-Mar-2016 37.130000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 38.910000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 40.620000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 42.420000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 44.180000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 46.060000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 47.850000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 49.590000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 51.070000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 53.320000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 55.890000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 57.700000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 57.710000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 58.960000] starter_script: generate_skel_data: Training data saved.
+[10-Mar-2016 58.960000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 58.960000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 59.590000] starter_script: generate_skel_data: Validation data saved.
+[10-Mar-2016 60.010000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 71.860000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 71.860000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 72.150000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 74.280000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 74.290000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 75.140000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 76.360000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 76.360000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 77.280000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 79.500000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 79.500000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 80.830000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 82.500000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 82.510000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 84.110000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 87.720000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 87.720000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 90.470000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 94.160000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 94.170000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 114.170000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 168.530000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 168.540000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 208.120000] starter_script: Labelling5
+[10-Mar-2016 208.140000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 208.170000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[10-Mar-2016 233.730000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 233.740000] starter_script: Running starter script
+[10-Mar-2016 233.740000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 233.750000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[10-Mar-2016 233.750000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[10-Mar-2016 233.770000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 235.990000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 237.830000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 239.760000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 241.590000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 243.620000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 245.560000] starter_script: [10-Mar-2016 31.690000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 31.710000] starter_script: Running starter script
+[10-Mar-2016 31.710000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 32.110000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 44.190000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 44.190000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 44.510000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 56.310000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 56.310000] starter_script: Running starter script
+[10-Mar-2016 56.320000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 56.880000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 58.770000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 58.780000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 59.040000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 61.070000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 61.070000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 61.910000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 63.110000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 63.110000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 64.010000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 66.230000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 66.230000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 67.560000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 69.190000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 69.200000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 70.740000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 74.320000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 74.320000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 77.000000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 80.660000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 80.660000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 97.640000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 151.110000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 151.110000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 190.570000] starter_script: Labelling5
+[10-Mar-2016 190.570000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 190.600000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[10-Mar-2016 192.660000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 192.660000] starter_script: Running starter script
+[10-Mar-2016 192.660000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 193.810000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 195.810000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 195.810000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 196.100000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 198.000000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 198.000000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 198.780000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 200.010000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 200.010000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 200.970000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 203.200000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 203.200000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 204.510000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 206.160000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 206.160000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 207.700000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 211.310000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 211.310000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 213.990000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 217.850000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 217.860000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 232.410000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 281.860000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 281.870000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 321.730000] starter_script: Labelling5
+[10-Mar-2016 321.740000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 321.740000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[10-Mar-2016 456.410000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 456.410000] starter_script: Running starter script
+[10-Mar-2016 456.410000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 457.630000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 466.270000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 466.280000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 466.570000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 491.990000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 491.990000] starter_script: Running starter script
+[10-Mar-2016 491.990000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 492.620000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 494.560000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 494.560000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 494.830000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 496.840000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 496.850000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 504.660000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 504.670000] starter_script: Running starter script
+[10-Mar-2016 504.670000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 505.050000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 506.890000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 506.890000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 507.160000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 509.100000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 509.110000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 509.950000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 511.150000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 511.160000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 637.780000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 637.790000] starter_script: Running starter script
+[10-Mar-2016 637.790000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 638.410000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 647.210000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 647.210000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 647.470000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 649.350000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 649.360000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 650.110000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 651.240000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 651.250000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 659.590000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 659.590000] starter_script: Running starter script
+[10-Mar-2016 659.590000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 660.220000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 662.080000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 662.080000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 662.340000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 664.270000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 664.280000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 665.050000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 666.230000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 666.230000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 667.120000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 669.380000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 669.380000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 670.700000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 672.370000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 672.380000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 673.930000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 677.510000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 677.520000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 680.240000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 683.520000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 683.520000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 700.430000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 754.540000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 754.540000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 794.300000] starter_script: Labelling5
+[10-Mar-2016 794.310000] starter_script: Setting validation input for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 877.120000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 877.120000] starter_script: Running starter script
+[10-Mar-2016 877.120000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 878.190000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 886.850000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 886.850000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 887.110000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 888.950000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 888.960000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 889.740000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 890.830000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 890.830000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 891.700000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 893.830000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 893.840000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 895.130000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 896.820000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 896.820000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 898.370000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 901.840000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 901.840000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 904.480000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 907.650000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 907.650000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 923.250000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 978.220000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 978.220000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 1017.880000] starter_script: Labelling5
+[10-Mar-2016 1017.890000] starter_script: Setting validation input for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 1046.010000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 1046.020000] starter_script: Running starter script
+[10-Mar-2016 1046.020000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 1047.270000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 1049.120000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 1049.120000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 1049.380000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 1051.360000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1051.370000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 1052.120000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 1053.320000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1053.320000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 1054.160000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 1056.440000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1056.440000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 1057.730000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 1059.480000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1059.480000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 1061.030000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 1064.660000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1064.660000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 1067.310000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 1070.750000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1070.750000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 1085.080000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 1135.060000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1135.070000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 1174.830000] starter_script: Labelling5
+[10-Mar-2016 1174.840000] starter_script: Setting validation input for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 1175.240000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 1175.240000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[10-Mar-2016 1319.670000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 1319.670000] starter_script: Running starter script
+[10-Mar-2016 1319.670000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 1320.460000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 1322.310000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 1322.320000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 1322.590000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 1324.550000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1324.560000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 1325.360000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 1326.670000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1326.670000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 1327.570000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 1330.000000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1330.010000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 1331.350000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 1333.050000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1333.050000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 1334.610000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 1338.250000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1338.260000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 1340.930000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 1344.190000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1344.190000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 1358.700000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 1408.260000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 1408.260000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 1447.600000] starter_script: Labelling5
+[10-Mar-2016 1447.610000] starter_script: Setting validation input for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 1447.750000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 1447.760000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.

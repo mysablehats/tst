@@ -1,4 +1,4 @@
-function [extinput, inputends] = setinput(arq_connect, savestruc,data_size) %needs to receive the correct data size so that generateidx may work well
+function [extinput, inputends] = setinput(arq_connect, savestruc,data_size, svst_t_v) %needs to receive the correct data size so that generateidx may work well
 %%%%%% this is the place to get long inputs actually.
 %arqconnect has only the current layer, so it is flat
 %inputends need to be the same for everything to work out fine
@@ -21,23 +21,23 @@ for j = 1:length(arq_connect.sourcelayer)
             if isempty(savestruc.gas(i).bestmatch)
                 error('wrong computation order. bestmatch field not yet defined.')
             end
-            [inputinput{j},inputends] = longinput(savestruc.gas(i).bestmatch, arq_connect.q, savestruc.gas(i).input_ends);
+            [inputinput{j},inputends] = longinput(savestruc.gas(i).bestmatch, arq_connect.q, svst_t_v.gas(i).inputs.input_ends);
             %inputinput{j} = longinput(savestruc.gas(i).bestmatch; %
             foundmysource = true;
         end
     end
     if ~foundmysource        
             if strcmp(arq_connect.layertype, 'pos')
-                [inputinput{j},inputends] = longinput(savestruc.train.data(posidx,:), arq_connect.q, savestruc.train.ends);
-                %inputinput{j} = savestruc.train.data(posidx,:); %
+                [inputinput{j},inputends] = longinput(svst_t_v.data(posidx,:), arq_connect.q, svst_t_v.ends);
+                %inputinput{j} = svst_t_v.data(posidx,:); %
                 %ends is savestructure.train.ends
             elseif strcmp(arq_connect.layertype, 'vel')
-                [inputinput{j},inputends] = longinput(savestruc.train.data(velidx,:), arq_connect.q, savestruc.train.ends);
-                %inputinput{j} = savestruc.train.data(velidx,:); %
+                [inputinput{j},inputends] = longinput(svst_t_v.data(velidx,:), arq_connect.q, svst_t_v.ends);
+                %inputinput{j} = svst_t_v.data(velidx,:); %
                 %ends is savestructure.train.ends
             elseif strcmp(arq_connect.layertype, 'all')
-                [inputinput{j},inputends] = longinput(savestruc.train.data, arq_connect.q, savestruc.train.ends);
-                %inputinput{j} = savestruc.train.data; %
+                [inputinput{j},inputends] = longinput(svst_t_v.data, arq_connect.q, svst_t_v.ends);
+                %inputinput{j} = svst_t_v.data; %
                 %ends is savestructure.train.ends
             end
     end
