@@ -1,9 +1,9 @@
-function matmat = genbestmmatrix(gwr_nodes, data, whichisit)
+function matmat = genbestmmatrix(gwr_nodes, data, whichisit,q)
 %%%% I have just changed this whole function. the likelyhood that it will
 %%%% work is very very very low
 matmat = zeros(size(gwr_nodes,1),size(data,2));    
 for i = 1:size(data,2) 
-        matmat(:,i) = bestmatchingunit(data(:,i),gwr_nodes,whichisit);
+        matmat(:,i) = bestmatchingunit(data(:,i),gwr_nodes,whichisit,q);
 end
 end
 % % old genbestmatch. I figured out it is the other way around, which makes
@@ -15,10 +15,10 @@ end
 %         matmat(:,i) = bestmatchingunit(gwr_nodes(:,i),data,whichisit);
 % end
 % end
-function s = bestmatchingunit(w,gas_nodes,whichisit)
+function s = bestmatchingunit(w,gas_nodes,whichisit,q)
 %finds the best matching unit
 
-wchop = chop_procedure(w, whichisit);
+wchop = w; %chop_procedure(w, whichisit,q); %% this is being disabled like nature does it. implicitly. I think set input took on this role and I don't need this function anymore, but I might be wrong. see if it breaks like this...
 
 maxmax = size(gas_nodes,2);
 a = zeros(maxmax,1);

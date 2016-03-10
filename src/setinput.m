@@ -15,6 +15,7 @@ extinput = [];
 inputinput = cell(length(arq_connect.sourcelayer),1);
 [posidx, velidx] = generateidx(data_size);
 for j = 1:length(arq_connect.sourcelayer)
+    foundmysource = false;
     for i = 1:length(savestruc.gas)
         if strcmp(arq_connect.sourcelayer{j}, savestruc.gas(i).name)
             if isempty(savestruc.gas(i).bestmatch)
@@ -22,7 +23,10 @@ for j = 1:length(arq_connect.sourcelayer)
             end
             [inputinput{j},inputends] = longinput(savestruc.gas(i).bestmatch, arq_connect.q, savestruc.gas(i).input_ends);
             %inputinput{j} = longinput(savestruc.gas(i).bestmatch; %
-        else
+            foundmysource = true;
+        end
+    end
+    if ~foundmysource        
             if strcmp(arq_connect.layertype, 'pos')
                 [inputinput{j},inputends] = longinput(savestruc.train.data(posidx,:), arq_connect.q, savestruc.train.ends);
                 %inputinput{j} = savestruc.train.data(posidx,:); %
@@ -36,15 +40,14 @@ for j = 1:length(arq_connect.sourcelayer)
                 %inputinput{j} = savestruc.train.data; %
                 %ends is savestructure.train.ends
             end
-        end
     end
-end
-if isempty(inputinput)
-    error(strcat('Unknown layer type:', arq_connect.layertype,'or sourcelayer:',arq_connect.sourcelayer))
+    if isempty(inputinput)
+        error(strcat('Unknown layer type:', arq_connect.layertype,'or sourcelayer:',arq_connect.sourcelayer))
+    end
 end
 if length(inputinput)>1
     for i = 1:length(inputinput)
-        extinput = cat(2,extinput,inputinput{i}); % this part should check for the right ends, ends should also be a cell array, and they should be concatenated properly
+        extinput = cat(1,extinput,inputinput{i}); % this part should check for the right ends, ends should also be a cell array, and they should be concatenated properly
     end
 else
     extinput = inputinput{:};

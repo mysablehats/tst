@@ -17,9 +17,9 @@ clear all
 tic()
 load_skel_data
 %[data_train, data_val] = removehipbias(data_train, data_val);
-[data_val, data_train] = removehipbias(data_train, data_val); % i am inverting data_train and data_val to train on a smaller set
+[data_train, data_val] = removehipbias(data_train, data_val); % i am inverting data_train and data_val to train on a smaller set
 % I will take only a part of the data-set out
-NODES = 50; %*ones(1,8);
+NODES = 5; %*ones(1,8);
 %NODES = fix(NODES/30);
 
 %%%% gas structures region
@@ -101,7 +101,7 @@ for i = 1:length(NODES)
         
         %PRE MESSAGE  
         dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).train.data, arq_connect(j).layertype); %assuming the best matching node always comes from initial dataset!
+        savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).gas(j).input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
     
         %since I can't shuffle, then I dont need to unshuffle
         %now I have to unshuffle to label it.
@@ -114,13 +114,15 @@ end
 
 dbgmsg('Labelling',num2str(NODES),1)
 
-parfor i=1:length(savestructure)
+for i=1:length(savestructure)
     for j =1:length(savestructure(i).gas)
         %labeling
         %pretty much useless unless it is the last layer, but I can label
         %everyone, so I will.
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype);
+        [savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype, arq_connect(j).q);
+        
+        %[savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype, arq_connect(j).q);
     end
 end
 

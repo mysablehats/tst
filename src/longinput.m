@@ -11,7 +11,7 @@ newends = ends-(q-1);
 k = 1;
 dimshort = size(shortinput,1);
 maxj = size(ends,2);
-endofdata = size(shortindex,2);
+endofdata = size(shortinput,2);
 for j = 1:maxj
     maxi = newends(j);
     if maxi<0

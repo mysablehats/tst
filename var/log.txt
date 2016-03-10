@@ -4466,3 +4466,318 @@ remoteParallelFunction: make_general_channel/channel_general: 2-th set.gwr1layer
 [09-Mar-2016 4967.640000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
 [09-Mar-2016 4970.040000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
 [09-Mar-2016 4970.040000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 4974.610000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 4974.610000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 4979.380000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 4982.730000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 4982.730000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 4982.730000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 4986.720000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 4986.720000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 4986.720000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 4986.720000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 4986.720000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 4990.680000] starter_script: Starting parallel pool for GWR and GNG for nodes:50
+[09-Mar-2016 4990.680000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 4997.050000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 4997.050000] starter_script: Running starter script
+[09-Mar-2016 4997.050000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 4997.050000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[09-Mar-2016 4997.050000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[09-Mar-2016 4997.050000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 4997.050000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5001.610000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5001.610000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5006.070000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5006.070000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5010.850000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5010.850000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5015.000000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5015.000000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5021.230000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5021.230000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5021.230000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5021.230000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 5021.230000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5021.230000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5026.070000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 5026.070000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 5026.070000] starter_script: Starting parallel pool for GWR and GNG for nodes:50
+[09-Mar-2016 5026.070000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 5208.420000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5208.420000] starter_script: Running starter script
+[09-Mar-2016 5208.420000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5208.430000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[09-Mar-2016 5208.440000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[09-Mar-2016 5208.460000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5210.820000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5213.040000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5215.360000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5217.570000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5220.000000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5222.360000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5224.570000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5226.520000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5229.420000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5232.760000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5235.170000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5235.170000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5235.170000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 5235.170000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5235.170000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5237.610000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 5237.610000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 5246.100000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[09-Mar-2016 5246.100000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 5252.080000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5252.080000] starter_script: Running starter script
+[09-Mar-2016 5252.080000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5252.080000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[09-Mar-2016 5252.080000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[09-Mar-2016 5252.080000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5256.130000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5258.280000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5260.600000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5260.600000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5265.250000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5265.250000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5269.760000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5269.760000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5274.520000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5277.880000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5277.880000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5277.880000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5281.870000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 5281.870000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5281.870000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5281.870000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 5281.870000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 5285.750000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[09-Mar-2016 5285.750000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 5285.750000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[09-Mar-2016 5291.970000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5291.970000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[09-Mar-2016 5477.460000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5477.470000] starter_script: Running starter script
+[09-Mar-2016 5477.470000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5477.480000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[09-Mar-2016 5477.480000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[09-Mar-2016 5477.490000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5479.800000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5481.960000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5484.230000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5486.410000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5488.830000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5491.150000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5493.350000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5495.240000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5498.090000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5501.410000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5503.770000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5503.770000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5505.410000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 5505.410000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5505.410000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5505.410000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 5505.410000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 5514.790000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[09-Mar-2016 5514.790000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 5517.250000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[09-Mar-2016 5521.800000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5521.800000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[09-Mar-2016 5526.230000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[09-Mar-2016 5529.790000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5529.790000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[09-Mar-2016 5561.110000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5561.110000] starter_script: Running starter script
+[09-Mar-2016 5561.110000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5561.140000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[09-Mar-2016 5561.140000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[09-Mar-2016 5561.140000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5563.470000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5565.630000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5567.900000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5570.050000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5572.460000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5574.720000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5576.970000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5578.830000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5581.670000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5584.960000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5587.270000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5587.270000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5588.900000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 5588.900000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5588.900000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5588.900000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 5590.530000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 5592.890000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[09-Mar-2016 5592.890000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 5594.660000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[09-Mar-2016 5599.240000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5599.240000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[09-Mar-2016 5602.880000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[09-Mar-2016 5607.330000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5607.330000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[09-Mar-2016 5610.960000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[09-Mar-2016 5615.420000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5615.420000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[09-Mar-2016 5618.910000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[09-Mar-2016 5622.530000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5622.530000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[09-Mar-2016 5626.180000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[09-Mar-2016 5630.670000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5630.670000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[09-Mar-2016 5630.670000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[09-Mar-2016 5637.820000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5637.820000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[09-Mar-2016 5643.570000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[09-Mar-2016 5656.900000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5656.900000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[09-Mar-2016 5663.480000] starter_script: Labelling5
+[09-Mar-2016 13.330000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gwr1layer' (1) for process:1
+[09-Mar-2016 5691.170000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5691.170000] starter_script: Running starter script
+[09-Mar-2016 5691.170000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5691.180000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[09-Mar-2016 5691.180000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[09-Mar-2016 5691.210000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5693.500000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5695.670000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5697.960000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5700.140000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5702.550000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5704.920000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5707.180000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5709.150000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5712.030000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5715.370000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5717.670000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5717.670000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5719.260000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 5719.260000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5719.260000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5719.260000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 5720.620000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 5722.970000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[09-Mar-2016 5722.970000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 5724.620000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[09-Mar-2016 5729.170000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5729.170000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[09-Mar-2016 5732.710000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[09-Mar-2016 5736.270000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5736.270000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[09-Mar-2016 5739.820000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[09-Mar-2016 5744.250000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5744.250000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[09-Mar-2016 5747.870000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[09-Mar-2016 5751.410000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5751.410000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[09-Mar-2016 5755.010000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[09-Mar-2016 5759.470000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5759.470000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[09-Mar-2016 5759.470000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[09-Mar-2016 5766.530000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5766.530000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[09-Mar-2016 5772.190000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[09-Mar-2016 5785.490000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5785.490000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[09-Mar-2016 5792.040000] starter_script: Labelling5
+[09-Mar-2016 16.130000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gwr1layer' (1) for process:1
+[09-Mar-2016 5795.490000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5795.490000] starter_script: Running starter script
+[09-Mar-2016 5795.490000] starter_script: =======================================================================================================================================================================================================================================
+[09-Mar-2016 5795.490000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[09-Mar-2016 5795.490000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[09-Mar-2016 5795.490000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5800.770000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5800.770000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5805.230000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5805.230000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5809.880000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5809.880000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5814.430000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5814.430000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5819.320000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5819.320000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[09-Mar-2016 5824.960000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5824.960000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5824.960000] starter_script: generate_skel_data: Training data saved.
+[09-Mar-2016 5824.960000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[09-Mar-2016 5824.960000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[09-Mar-2016 5824.960000] starter_script: generate_skel_data: Validation data saved.
+[09-Mar-2016 5824.960000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[09-Mar-2016 5830.170000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[09-Mar-2016 5830.170000] starter_script: ###Using multilayer GWR and GNG ###
+[09-Mar-2016 5830.170000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[09-Mar-2016 5836.330000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5836.330000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[09-Mar-2016 5836.330000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[09-Mar-2016 5844.310000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5844.310000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[09-Mar-2016 5844.310000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[09-Mar-2016 5852.320000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5852.320000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[09-Mar-2016 5852.320000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[09-Mar-2016 5859.380000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5859.380000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[09-Mar-2016 5859.380000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[09-Mar-2016 5867.390000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5867.390000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[09-Mar-2016 5867.390000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[09-Mar-2016 5874.460000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5874.460000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[09-Mar-2016 5874.460000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[09-Mar-2016 5893.450000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[09-Mar-2016 5893.450000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[09-Mar-2016 5893.450000] starter_script: Labelling5
+[09-Mar-2016 5893.450000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 8824.940000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 8824.950000] starter_script: Running starter script
+[10-Mar-2016 8824.950000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 8824.960000] starter_script: generate_skel_data: Generating random datasets for training and validation
+[10-Mar-2016 8824.970000] starter_script: generate_skel_data: Variable allskeli1 is defined. Will skip randomization.
+[10-Mar-2016 8825.000000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8827.450000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8829.730000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8832.050000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8834.300000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8836.780000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8839.140000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8841.430000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8843.410000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8846.380000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8849.750000] starter_script: generate_skel_data: LoadDataBase: Loading Database and building allskel structure. Please wait, this takes a while.
+[10-Mar-2016 8852.180000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 8852.180000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 8853.810000] starter_script: generate_skel_data: Training data saved.
+[10-Mar-2016 8853.810000] starter_script: generate_skel_data: extractdata: Extracting data from skeleton structure
+[10-Mar-2016 8853.810000] starter_script: generate_skel_data: extractdata: Constructing long vectors with velocity data as well
+[10-Mar-2016 8853.810000] starter_script: generate_skel_data: Validation data saved.
+[10-Mar-2016 8855.590000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 8858.090000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 8858.090000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 8858.090000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 8861.890000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 8861.890000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 8863.260000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 8865.310000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 8865.310000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 8866.690000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 8870.590000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 8870.590000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 8872.690000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 8875.750000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 8875.750000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 8878.270000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 8885.270000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 8885.270000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 8889.900000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 8897.050000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 8897.050000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 8934.430000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 9104.040000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 9104.050000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 9238.160000] starter_script: Labelling5
+[10-Mar-2016 9238.170000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 9238.200000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
