@@ -5122,3 +5122,34 @@ remoteParallelFunction: make_general_channel/channel_general: 2-th set.gwr1layer
 [10-Mar-2016 1447.610000] starter_script: Setting validation input for gas: 'gwr1layer' (1) for process:1
 [10-Mar-2016 1447.750000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
 [10-Mar-2016 1447.760000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
+[10-Mar-2016 2852.680000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 2852.690000] starter_script: Running starter script
+[10-Mar-2016 2852.690000] starter_script: =======================================================================================================================================================================================================================================
+[10-Mar-2016 2853.770000] starter_script: removehipbias: Applies translation invariance on both training and validation datasets
+[10-Mar-2016 2855.680000] starter_script: Starting parallel pool for GWR and GNG for nodes:5
+[10-Mar-2016 2855.680000] starter_script: ###Using multilayer GWR and GNG ###
+[10-Mar-2016 2855.960000] starter_script: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[10-Mar-2016 2857.930000] starter_script: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 2857.950000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 2858.760000] starter_script: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[10-Mar-2016 2860.030000] starter_script: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 2860.030000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[10-Mar-2016 2860.930000] starter_script: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[10-Mar-2016 2863.200000] starter_script: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 2863.200000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[10-Mar-2016 2864.510000] starter_script: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[10-Mar-2016 2866.190000] starter_script: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 2866.200000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[10-Mar-2016 2867.760000] starter_script: Working on gas: 'gwr5layer' (5) with method:gwr for process:1
+[10-Mar-2016 2871.370000] starter_script: Finished working on gas: 'gwr5layer' (5) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 2871.380000] starter_script: Finding best matching units for gas: 'gwr5layer' (5) for process:1
+[10-Mar-2016 2874.040000] starter_script: Working on gas: 'gwr6layer' (6) with method:gwr for process:1
+[10-Mar-2016 2877.970000] starter_script: Finished working on gas: 'gwr6layer' (6) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 2877.980000] starter_script: Finding best matching units for gas: 'gwr6layer' (6) for process:1
+[10-Mar-2016 2893.720000] starter_script: Working on gas: 'gwrSTSlayer' (7) with method:gwr for process:1
+[10-Mar-2016 2949.630000] starter_script: Finished working on gas: 'gwrSTSlayer' (7) with method:gwr.Num of nodes reached:5 for process:1
+[10-Mar-2016 2949.630000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (7) for process:1
+[10-Mar-2016 2989.370000] starter_script: Labelling5
+[10-Mar-2016 2989.380000] starter_script: Setting validation input for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 2989.500000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[10-Mar-2016 2989.530000] starter_script: untitled6: labeling: Applying labels to the prototypical nodes.
