@@ -4,7 +4,7 @@
 % data_val, y_val
 % 
 
-[SLASH, pathtodata] = OS_VARS();
+aa_environment
 
-load(strcat('..',SLASH,'share',SLASH,'tst_skel_val.mat'))
-load(strcat('..',SLASH,'share',SLASH,'tst_skel.mat'))
+load(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_val.mat'))
+load(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel.mat'))

@@ -1,26 +1,21 @@
-fclose('all') 
-global VERBOSE logfile
-logfile = fopen('../var/log.txt','at');
-VERBOSE = true; %%%% this is not really working...
+fclose('all');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%MESSAGES PART
-disp('####### ATTENTION IMBECILE: ####### YOU SHOULD ADD EVERYTHING TO THE PATH AND EXECUTE IT IN THE TST/SRC DIRECTORY. IF YOU WANT TO MAKE YOUR ALGORITHM HARD TO THESE CHANGES, BE MY GUEST, OTHERWISE JUST DO IT EACH TIME YOU START MATLAB, OR THIS WILL NOT RUN!!!!')
 dbgmsg('=======================================================================================================================================================================================================================================')
 dbgmsg('Running starter script')
 dbgmsg('=======================================================================================================================================================================================================================================')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %generate_skel_data %% very time consuming -> also will generate a new
-% %%validation and training set
+% clear all
 % dbgmsg('Skeleton data (training and validation) generated.')
+% %%validation and training set
 
-clear all
-tic()
+aa_environment
 load_skel_data
-%[data_train, data_val] = removehipbias(data_train, data_val);
-[data_train, data_val] = removehipbias(data_train, data_val); % i am inverting data_train and data_val to train on a smaller set
+[data_train, data_val] = removehipbias(data_train, data_val); 
 % I will take only a part of the data-set out
-NODES = 5; %*ones(1,8);
+NODES = 300; %*ones(1,8);
 %NODES = fix(NODES/30);
 
 %%%% gas structures region
@@ -130,7 +125,6 @@ for i=1:length(savestructure)
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.gas(j).inputs.input,savestructure(i).val.gas(j).inputs.input, y_train);
         
-        %[savestructure(i).gas(j).class.train, savestructure(i).gas(j).class.val] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.data,data_val, y_train, arq_connect(j).layertype, arq_connect(j).q);
     end
 end
 
@@ -161,4 +155,3 @@ for j = 1:length(savestructure(1).gas) %this is weird, but I just changed this t
     dbgmsg(savestructure(1).gas(j).name,'F1 for validation best:', num2str(f1(1)),'||','F1 for training best:', num2str(f1(2)),1)
     disp(f1(1))
 end
-toc()

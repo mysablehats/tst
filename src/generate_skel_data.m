@@ -10,12 +10,12 @@
 % data_train, y_train
 % data_val, y_val
 % 
+aa_environment
 
 allskeli1 = [9,10,11,4,8,5,3,6]; %% comment these out to have random new samples
 allskeli2 = [1,2,7];%% comment these out to have random new samples
 sampling_type = 'type2'
 
-[SLASH, pathtodata] = OS_VARS();
 
 %%%%%%%%Messages part: provides feedback for the user
 dbgmsg('Generating random datasets for training and validation')
@@ -57,8 +57,8 @@ end
 %%%%%%
 
 [~, data_train,y_train, ends_train] = extractdata(allskel1);
-save(strcat('..',SLASH,'share',SLASH,'tst_skel'),'data_train', 'y_train','allskeli1','ends_train','-v7.3');
+save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel'),'data_train', 'y_train','allskeli1','ends_train','-v7.3');
 dbgmsg('Training data saved.')
 [~, data_val,y_val, ends_val] = extractdata(allskel2);
-save(strcat('..',SLASH,'share',SLASH,'tst_skel_val'),'data_val', 'y_val','allskeli2','ends_val','-v7.3');
+save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_val'),'data_val', 'y_val','allskeli2','ends_val','-v7.3');
 dbgmsg('Validation data saved.')
