@@ -1,4 +1,4 @@
-function newskel = centerhips(skel)
+function [tdskel,hh] = makefatskel(skel)
 %%%%%%%%%MESSAGES PART
 %%%%%%%%ATTENTION: this function is executed in loops, so running it will
 %%%%%%%%messages on will cause unpredictable behaviour
@@ -19,20 +19,10 @@ elseif all(size(skel) == [150 1])
 elseif all(size(skel) == [25 3])
         tdskel = skel;
 else
-    error('Do not know this size of skeleton yet!')
-end
-
-hips = [repmat(tdskel(1,:),25,1);zeros(hh-25,3)]; 
-
-newskel = tdskel - hips;
-newskel(1,:) = [];
-% newskel = zeros(size(tdskel)-[1 0]);
-% for i = 2:hh
-%     newskel(i-1,:) = tdskel(i,:)- 1*hips;
-% end
-
-%I need to shape it back into 75(-3 now) x 1
-newskel = [newskel(:,1);newskel(:,2);newskel(:,3)]; % I think....
-if ~(all(size(newskel) == [72 1])||all(size(newskel) == [147 1]))
-    error('wrong skeleton size!')
+    disp('Not sure, but will try just the reshape...')
+    try
+        tdskel = reshape(skel,hh,3);
+    catch
+        disp('Yup, reshaping didnt work...')
+    end
 end

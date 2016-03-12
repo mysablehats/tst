@@ -1,6 +1,7 @@
-function A = skeldraw(skel,doIdraw)
+function A = skeldraw(varargin)
 %makes a beautiful skeleton of the 75 dimension vector
-%or the 25x3 skeleton
+%or the 25x3 skeleton or random crazy skeletons of the 25 points type...
+%will improve to draw the 20 point one...
 % plot the nodes
 %reconstruct the nodes from the 75 dimension vector. each 3 is a point
 %I use the NaN interpolation to draw sticks which is much faster!
@@ -8,29 +9,37 @@ function A = skeldraw(skel,doIdraw)
 %%%%%%MESSAGES PART
 %dbgmsg('This function is very often called in drawing functions and this message will cause serious slowdown.',1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%checks if skeleton is 72x1 which is a hip-less skeleton
-if all(size(skel) == [72 1])
-    tdskel = zeros(24,3);
-    for i=1:3
-        for j=1:24
-            tdskel(j,i) = skel(j+24*(i-1));
-        end
-    end
-    tdskel = [[0 0 0 ]; tdskel];
-    if all(size(tdskel) ~= [25 3])
-        error('wrong skeleton building procedure!')
-    end
-elseif all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
-    tdskel = zeros(25,3);
-    for i=1:3
-        for j=1:25
-            tdskel(j,i) = skel(j+25*(i-1));
-        end
-    end
+if length(varargin)==1
+    doIdraw = true;
+    skel = varargin{1};
+elseif length(varargin)==2
+    skel = varargin{1};
+    doIdraw = varargin{2};
 else
-        tdskel = skel;
+    error('too many input arguments, don''t know what to do with all of them!')
+
 end
+
+tdskel = makefatskel(skel);
+
+%check size of tdskel
+% there are many different possibilities here, but the size might be enough
+% to tell what is happening
+%if > 50 then it has to have small paths. I will draw just the first
+%then...
+%if == 49 then it has velocities, I will also take those out
+
+if size(tdskel,1) > 25
+    %have to remove all the n*25 parts from the end 
+    tdskel = tdskel(1:end-(size(tdskel,1)/25-1)*25,:);
+end
+
+if size(tdskel,1) == 24
+    tdskel = [[0 0 0 ];tdskel];
+elseif size(tdskel,1) < 24
+    error('Don''t know what to do weird size :-( ')
+end
+
 A = stick_draw(tdskel);
 
 if doIdraw ==true 

@@ -2,7 +2,8 @@ function dbgmsg(varargin)
 %%%% if this is run inside a parallel processing loop, then the message
 %%%% should have a trailing ", true" option added to it, because parallel
 %%%% pools don't receive global values
-%%global logfile
+%global logfile
+%persistent logfile
 
 logfile = true; %%%this was not working so I removed it... %fopen('/home/fbklein/Documents/classifier/tst/var/log.txt','at'); % global is not working and I don't want to figure out why
 msg = varargin{1};
@@ -31,8 +32,9 @@ if VERBOSE
 end
 end
 function doubleprint(varargin)
-%global logfile
-logfile = fopen('/home/fbklein/Documents/classifier/tst/var/log.txt','at'); % global is not working and I don't want to figure out why
+persistent logfile
+global homepath
+logfile = fopen(strcat(homepath,'tst/var/log.txt'),'at'); % global is not working and I don't want to figure out why
 
 fprintf(logfile,varargin{2:end});
 fprintf(varargin{2:end});
