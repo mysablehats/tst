@@ -1,23 +1,38 @@
-fclose('all');
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%MESSAGES PART
+%% starter_script
+% This is the main script to run the chained classifier, label and generate
+% confusion matrices and recall, precision and F1 values for the skeleton
+% classifier of activities using an architecture of chained neural gases on
+% skeleton activities data (the STS V2 Dataset). This work was done as
+% implemented by Parisi, 2015's paper.
+
+%%
+%%%% STARTING MESSAGES PART FOR THIS RUN
+global VERBOSE LOGIT
+VERBOSE = true;
+LOGIT = true;
 dbgmsg('=======================================================================================================================================================================================================================================')
 dbgmsg('Running starter script')
 dbgmsg('=======================================================================================================================================================================================================================================')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% Generate Skeletons
+% This takes quite a while to execute, so I rarely run it. 
+%%% >>>>> this has to be changed into a function.
 %generate_skel_data %% very time consuming -> also will generate a new
 % clear all
 % dbgmsg('Skeleton data (training and validation) generated.')
 % %%validation and training set
 
+%% Loads environment Variables and saved Data
+fclose('all');
 aa_environment
 load_skel_data
-[data_train, data_val] = removehipbias(data_train, data_val); 
-% I will take only a part of the data-set out
-NODES = 300; %*ones(1,8);
+
+
+NODES = 3; %*ones(1,8);
 %NODES = fix(NODES/30);
 
+%% Classifier structure definitions
 %%%% gas structures region
 
 %%%% connection definitions:
@@ -53,7 +68,21 @@ end
 
 %%% end of gas structures region
 
-dbgmsg('Starting parallel pool for GWR and GNG for nodes:',num2str(NODES),1)
+%% Pre-conditioning of data
+% 
+%[data_train, data_val] = removehipbias(data_train, data_val); 
+[data_train, data_val] = conformskel(data_train, data_val,'nohips');
+
+%% Gas-chain Classifier
+% This part executes the chain of interlinked gases. Each iteration is one
+% gas, and currently it works as follows:
+% 1. Function setinput() chooses based on the input defined in allconn
+% 2. Run either a Growing When Required (gwr) or Growing Neural Gas (GNG)
+% on this data
+% 3. Generate matrix of best matching units to be used by the next gas
+% architecture
+
+dbgmsg('Starting chain structure for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
 [posidx, velidx] = generateidx(size(data_train,1));
 
@@ -75,9 +104,7 @@ for i = 1:length(NODES)
         %has to be like this...
         [savestructure(i).train.gas(j).inputs.input, savestructure(i).train.gas(j).inputs.input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).train); %%%%%%
   
-        %shuffle could be applied in input
-        
-        
+
         %%%% PRE-MESSAGE
         dbgmsg('Working on gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') with method: ',savestructure(i).gas(j).method ,' for process:',num2str(i),1)
         %DO GNG OR GWR
@@ -98,21 +125,27 @@ for i = 1:length(NODES)
         dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).inputs.input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
     
-        %since I can't shuffle, then I dont need to unshuffle
-        %now I have to unshuffle to label it.
-        %dbgmsg('Unshuffling best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        %savestructure(i).gas(j).bestmatch = unshuffledata(savestructure(i).gas(j).bestmatch ,savestructure(i).train.indexes);
-        
-       end
+    end
     
 end
-
+%% Labelling
+% The current labelling procedure for both the validation and training datasets. As of this moment I label all the gases
+% to see how adding each part increases the overall performance of the
+% structure, but since this is slow, the variable whatIlabel can be changed
+% to contain only the last gas.
+%
+% The labelling procedure is simple. It basically picks the label of the
+% closest point and assigns to that. In a sense the gas can be seen as a
+% dimensional (as opposed to temporal) filter, encoding prototypical
+% action-lets.
 dbgmsg('Labelling',num2str(NODES),1)
+
+whatIlabel = 1:length(savestructure(1).gas); %change this series for only the last value to label only the last gas
 
 for i=1:length(savestructure)
     savestructure(i).val.data = data_val;
     savestructure(i).val.ends = ends_val;
-    for j =1:length(savestructure(i).gas)
+    for j = whatIlabel
         %labeling
         %pretty much useless unless it is the last layer, but I can label
         %everyone, so I will.
@@ -128,10 +161,13 @@ for i=1:length(savestructure)
     end
 end
 
+%% Displaying multiple confusion matrices for GWR and GNG for nodes
+% This part creates the matrices that can later be shown with the
+% plotconfusion() function.
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 
 parfor i=1:length(savestructure)
-    for j =1:length(savestructure(i).gas)
+    for j = whatIlabel
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).gas(j).class.val);
         [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(y_train,savestructure(i).gas(j).class.train);
         
@@ -141,13 +177,18 @@ parfor i=1:length(savestructure)
         savestructure(i).figset = {savestructure(i).figset{:}, savestructure(i).gas(j).fig{:}};
     end
 end
-%for i = 1:length(savestructure)
-% plotconfusion(savestructure(i).figset{:})
-% figure
-%end
+
+%% Actual display of the confusion matrices:
+for i = 1:length(savestructure)
+ plotconfusion(savestructure(i).figset{:})
+ figure
+end
 % plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
 % clear i
-for j = 1:length(savestructure(1).gas) %this is weird, but I just changed this to show only the last gas
+%% Calculate my own measures over the matrices
+% TO DO: This is bad. I should probably read the confusion documentation instead of doing this
+% manually
+for j = whatIlabel %this is weird, but I just changed this to show only the last gas
     f1 = howgood(savestructure,j);
     dbgmsg(savestructure(1).gas(j).name,'F1 for validation overall mean:', num2str(f1(1)),'||','F1 for training overall mean:', num2str(f1(2)),1)
     disp(f1(1))

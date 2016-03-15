@@ -1,13 +1,13 @@
-global homepath
+global homepath pathtodropbox SLASH pathtodata
 try
     if ismac
 		pathtodropbox = '~/Dropbox/octave_progs';
 		homepath = '~/matlabprogs/';
-		disp('reached ismac')
+		%disp('reached ismac')
 	elseif isunix
 		pathtodropbox = '/home/fbklein/Dropbox/octave_progs';
 		homepath = '/home/fbklein/Documents/classifier/';
-		disp('reached isunix')
+		%disp('reached isunix')
 	end
 	addpath(genpath(homepath)) 
 catch

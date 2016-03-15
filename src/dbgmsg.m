@@ -4,7 +4,10 @@ function dbgmsg(varargin)
 %%%% pools don't receive global values
 %global logfile
 %persistent logfile
-
+global VERBOSE
+if isempty('VERBOSE')
+    VERBOSE = false;
+end
 logfile = true; %%%this was not working so I removed it... %fopen('/home/fbklein/Documents/classifier/tst/var/log.txt','at'); % global is not working and I don't want to figure out why
 msg = varargin{1};
 if nargin >2
@@ -14,7 +17,7 @@ end
 if nargin >1
     VERBOSE = varargin{end};
 else
-    global VERBOSE
+   
 end
 if VERBOSE
     doubleprint(logfile,'[%s %f] ',date,cputime);
@@ -33,9 +36,15 @@ end
 end
 function doubleprint(varargin)
 persistent logfile
-global homepath
-logfile = fopen(strcat(homepath,'tst/var/log.txt'),'at'); % global is not working and I don't want to figure out why
-
-fprintf(logfile,varargin{2:end});
+global homepath LOGIT
+if ~isempty('LOGIT')||LOGIT
+    if isempty('homepath')
+        aa_environment
+    end
+    logfile = fopen(strcat(homepath,'tst/var/log.txt'),'at'); % global is not working and I don't want to figure out why
+    fprintf(logfile,varargin{2:end});
+    fclose(logfile);
+end
 fprintf(varargin{2:end});
+
 end

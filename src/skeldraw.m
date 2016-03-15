@@ -17,47 +17,66 @@ elseif length(varargin)==2
     doIdraw = varargin{2};
 else
     error('too many input arguments, don''t know what to do with all of them!')
-
+    
 end
 
-tdskel = makefatskel(skel);
-
-%check size of tdskel
-% there are many different possibilities here, but the size might be enough
-% to tell what is happening
-%if > 50 then it has to have small paths. I will draw just the first
-%then...
-%if == 49 then it has velocities, I will also take those out
-
-if size(tdskel,1) > 25
-    %have to remove all the n*25 parts from the end 
-    tdskel = tdskel(1:end-(size(tdskel,1)/25-1)*25,:);
-end
-
-if size(tdskel,1) == 24
-    tdskel = [[0 0 0 ];tdskel];
-elseif size(tdskel,1) < 24
-    error('Don''t know what to do weird size :-( ')
-end
-
-A = stick_draw(tdskel);
-
-if doIdraw ==true 
-    hold_initialstate = ishold();
-    plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
-    hold on
-    for k=1:25 % I used this to make the drawings, but now I think it looks cool and I don't want to remove it
-        text(tdskel(k,1), tdskel(k,2), tdskel(k,3),num2str(k))
+if size(skel,2) ~=1
+    if doIdraw % if you want to draw you care about pretty, but not speed, I assume...
+        % the fast way is create first the A matrix and then do::
+        % plot3(A(1,:),A(2,:), A(3,:)) % so no numbered skeletons if drawing a set :-(
+        for i = 1:size(skel,2)
+            skeldraw(skel(:,i),true); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+        end
+    else
+        A = skeldraw(skel(:,1),false);
+        for i = 2:size(skel,2)
+            A = cat(2, A, skeldraw(skel(:,i),false)); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+        end
     end
-    plot3(A(1,:),A(2,:), A(3,:))
-    hold off
-    if hold_initialstate == 1
+else
+    
+    tdskel = makefatskel(skel);
+    
+    %check size of tdskel
+    % there are many different possibilities here, but the size might be enough
+    % to tell what is happening
+    %if > 50 then it has to have small paths. I will draw just the first
+    %then...
+    %if == 49 then it has velocities, I will also take those out
+    
+    if size(tdskel,1) > 25
+        %have to remove all the n*25 parts from the end
+        wheretoclip = mod(size(tdskel,1),25);
+        if wheretoclip==0
+            wheretoclip = 25;
+        end
+        tdskel = tdskel(1:wheretoclip,:);
+    end
+    
+    if size(tdskel,1) == 24
+        tdskel = [[0 0 0 ];tdskel]; % for the hips
+        %tdskel = [tdskel(1:20,:);[0 0 0 ];tdskel(21:end,:)]; % for the thorax
+    elseif size(tdskel,1) < 24
+        error('Don''t know what to do weird size :-( ')
+    end
+    
+    A = stick_draw(tdskel);
+    if doIdraw ==true
+        hold_initialstate = ishold();
+        plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
         hold on
+        for k=1:25 % I used this to make the drawings, but now I think it looks cool and I don't want to remove it
+            text(tdskel(k,1), tdskel(k,2), tdskel(k,3),num2str(k))
+        end
+        plot3(A(1,:),A(2,:), A(3,:))
+        hold off
+        if hold_initialstate == 1
+            hold on
+        end
+        
     end
-   
 end
 end
-
 function a = stick_draw(tdskel)
 
 %
@@ -91,6 +110,7 @@ a= [a draw_1_stick(tdskel, 3,4)];
 
 a= [a draw_1_stick(tdskel, 5,21)];
 a= [a draw_1_stick(tdskel, 21,9)];
+%a= [a draw_1_stick(tdskel, 5,9)]; %%%% just to draw the thorax thing 
 
 a= [a draw_1_stick(tdskel, 5,6)];
 a= [a draw_1_stick(tdskel, 6,7)];
