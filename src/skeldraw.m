@@ -1,6 +1,7 @@
-function A = skeldraw(skel,doIdraw)
+function A = skeldraw(varargin)
 %makes a beautiful skeleton of the 75 dimension vector
-%or the 25x3 skeleton
+%or the 25x3 skeleton or random crazy skeletons of the 25 points type...
+%will improve to draw the 20 point one...
 % plot the nodes
 %reconstruct the nodes from the 75 dimension vector. each 3 is a point
 %I use the NaN interpolation to draw sticks which is much faster!
@@ -8,47 +9,74 @@ function A = skeldraw(skel,doIdraw)
 %%%%%%MESSAGES PART
 %dbgmsg('This function is very often called in drawing functions and this message will cause serious slowdown.',1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+if length(varargin)==1
+    doIdraw = true;
+    skel = varargin{1};
+elseif length(varargin)==2
+    skel = varargin{1};
+    doIdraw = varargin{2};
+else
+    error('too many input arguments, don''t know what to do with all of them!')
+    
+end
 
-%checks if skeleton is 72x1 which is a hip-less skeleton
-if all(size(skel) == [72 1])
-    tdskel = zeros(24,3);
-    for i=1:3
-        for j=1:24
-            tdskel(j,i) = skel(j+24*(i-1));
+if size(skel,2) ~=1
+    if doIdraw % if you want to draw you care about pretty, but not speed, I assume...
+        % the fast way is create first the A matrix and then do::
+        % plot3(A(1,:),A(2,:), A(3,:)) % so no numbered skeletons if drawing a set :-(
+        for i = 1:size(skel,2)
+            skeldraw(skel(:,i),true); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
         end
-    end
-    tdskel = [[0 0 0 ]; tdskel];
-    if all(size(tdskel) ~= [25 3])
-        error('wrong skeleton building procedure!')
-    end
-elseif all(size(skel) == [75 1]) % checks if the skeleton is a 75x1
-    tdskel = zeros(25,3);
-    for i=1:3
-        for j=1:25
-            tdskel(j,i) = skel(j+25*(i-1));
+    else
+        A = skeldraw(skel(:,1),false);
+        for i = 2:size(skel,2)
+            A = cat(2, A, skeldraw(skel(:,i),false)); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
         end
     end
 else
-        tdskel = skel;
-end
-A = stick_draw(tdskel);
-
-if doIdraw ==true 
-    hold_initialstate = ishold();
-    plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
-    hold on
-    for k=1:25 % I used this to make the drawings, but now I think it looks cool and I don't want to remove it
-        text(tdskel(k,1), tdskel(k,2), tdskel(k,3),num2str(k))
+    
+    tdskel = makefatskel(skel);
+    
+    %check size of tdskel
+    % there are many different possibilities here, but the size might be enough
+    % to tell what is happening
+    %if > 50 then it has to have small paths. I will draw just the first
+    %then...
+    %if == 49 then it has velocities, I will also take those out
+    
+    if size(tdskel,1) > 25
+        %have to remove all the n*25 parts from the end
+        wheretoclip = mod(size(tdskel,1),25);
+        if wheretoclip==0
+            wheretoclip = 25;
+        end
+        tdskel = tdskel(1:wheretoclip,:);
     end
-    plot3(A(1,:),A(2,:), A(3,:))
-    hold off
-    if hold_initialstate == 1
+    
+    if size(tdskel,1) == 24
+        tdskel = [[0 0 0 ];tdskel]; % for the hips
+        %tdskel = [tdskel(1:20,:);[0 0 0 ];tdskel(21:end,:)]; % for the thorax
+    elseif size(tdskel,1) < 24
+        error('Don''t know what to do weird size :-( ')
+    end
+    
+    A = stick_draw(tdskel);
+    if doIdraw ==true
+        hold_initialstate = ishold();
+        plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
         hold on
+        for k=1:25 % I used this to make the drawings, but now I think it looks cool and I don't want to remove it
+            text(tdskel(k,1), tdskel(k,2), tdskel(k,3),num2str(k))
+        end
+        plot3(A(1,:),A(2,:), A(3,:))
+        hold off
+        if hold_initialstate == 1
+            hold on
+        end
+        
     end
-   
 end
 end
-
 function a = stick_draw(tdskel)
 
 %
@@ -82,6 +110,7 @@ a= [a draw_1_stick(tdskel, 3,4)];
 
 a= [a draw_1_stick(tdskel, 5,21)];
 a= [a draw_1_stick(tdskel, 21,9)];
+%a= [a draw_1_stick(tdskel, 5,9)]; %%%% just to draw the thorax thing 
 
 a= [a draw_1_stick(tdskel, 5,6)];
 a= [a draw_1_stick(tdskel, 6,7)];

@@ -2,9 +2,13 @@ function dbgmsg(varargin)
 %%%% if this is run inside a parallel processing loop, then the message
 %%%% should have a trailing ", true" option added to it, because parallel
 %%%% pools don't receive global values
-global logfile
-
-logfile = fopen('../var/log.txt','at'); % global is not working and I don't want to figure out why
+%global logfile
+%persistent logfile
+global VERBOSE
+if isempty('VERBOSE')
+    VERBOSE = false;
+end
+logfile = true; %%%this was not working so I removed it... %fopen('/home/fbklein/Documents/classifier/tst/var/log.txt','at'); % global is not working and I don't want to figure out why
 msg = varargin{1};
 if nargin >2
     msg = strcat(varargin{1:end-1});
@@ -13,7 +17,7 @@ end
 if nargin >1
     VERBOSE = varargin{end};
 else
-    global VERBOSE
+   
 end
 if VERBOSE
     doubleprint(logfile,'[%s %f] ',date,cputime);
@@ -31,9 +35,16 @@ if VERBOSE
 end
 end
 function doubleprint(varargin)
-global logfile
-logfile = fopen('../var/log.txt','at'); % global is not working and I don't want to figure out why
-
-fprintf(logfile,varargin{2:end});
+persistent logfile
+global homepath LOGIT
+if ~isempty('LOGIT')||LOGIT
+    if isempty('homepath')
+        aa_environment
+    end
+    logfile = fopen(strcat(homepath,'tst/var/log.txt'),'at'); % global is not working and I don't want to figure out why
+    fprintf(logfile,varargin{2:end});
+    fclose(logfile);
+end
 fprintf(varargin{2:end});
+
 end
