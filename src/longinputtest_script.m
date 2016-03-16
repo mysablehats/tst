@@ -1,6 +1,6 @@
 %longinputtest_script.m
 
-shortinput = reshape(1:44,4,11)
+shortinput = reshape(1:44,4,[])
 
 q = 3;
 

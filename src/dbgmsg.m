@@ -36,12 +36,12 @@ end
 end
 function doubleprint(varargin)
 persistent logfile
-global homepath LOGIT
+global logpath LOGIT
 if ~isempty('LOGIT')||LOGIT
-    if isempty('homepath')
+    if isempty('logpath')
         aa_environment
     end
-    logfile = fopen(strcat(homepath,'tst/var/log.txt'),'at'); % global is not working and I don't want to figure out why
+    logfile = fopen(logpath,'at'); % global is not working and I don't want to figure out why
     fprintf(logfile,varargin{2:end});
     fclose(logfile);
 end
