@@ -154,8 +154,8 @@ dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2s
 
 parfor i=1:length(savestructure)
     for j = whatIlabel
-        [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).gas(j).class.val);
-        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(y_train,savestructure(i).gas(j).class.train);
+        [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).val.gas(j).class);
+        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(y_train,savestructure(i).train.gas(j).class);
         
         dbgmsg(num2str(i),'-th set.',savestructure(i).gas(j).name,' Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val),1)
         savestructure(i).gas(j).fig = {y_val,                   savestructure(i).val.gas(j).class,  strcat(savestructure(i).gas(j).method,' Val ', num2str(savestructure(i).maxnodes)),...
