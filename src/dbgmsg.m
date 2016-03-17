@@ -38,7 +38,7 @@ function doubleprint(varargin)
 persistent logfile
 global logpath LOGIT
 if ~isempty('LOGIT')||LOGIT
-    if isempty('logpath')
+    if isempty(logpath)
         aa_environment
     end
     logfile = fopen(logpath,'at'); % global is not working and I don't want to figure out why
