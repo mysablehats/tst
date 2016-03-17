@@ -18,10 +18,10 @@ for j = 1:length(arq_connect.sourcelayer)
     foundmysource = false;
     for i = 1:length(savestruc.gas)
         if strcmp(arq_connect.sourcelayer{j}, savestruc.gas(i).name)
-            if isempty(savestruc.gas(i).bestmatch)
+            if isempty( svst_t_v.gas(i).bestmatch)
                 error('wrong computation order. bestmatch field not yet defined.')
             end
-            [inputinput{j},inputends] = longinput(savestruc.gas(i).bestmatch, arq_connect.q, svst_t_v.gas(i).inputs.input_ends);
+            [inputinput{j},inputends] = longinput( svst_t_v.gas(i).bestmatch, arq_connect.q, svst_t_v.gas(i).inputs.input_ends);
             %inputinput{j} = longinput(savestruc.gas(i).bestmatch; %
             foundmysource = true;
         end

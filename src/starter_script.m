@@ -58,8 +58,8 @@ parfor i = 1:length(allconn)
     arq_connect(i).q = allconn{i}{5};
 end
 inputs = struct('input',[],'input_ends',[]);
-gas_data = struct('name','','class',[],'inputs',inputs,'confusions',[]);
-gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'bestmatch',[],'fig',[]); %bestmatch will have the training matrix for subsequent layers
+gas_data = struct('name','','class',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[]);
+gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'fig',[]); %bestmatch will have the training matrix for subsequent layers
 vt_data = struct('indexes',[],'data',[],'ends',[],'gas',gas_data);
 savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',vt_data,'val',vt_data,'figset',[]); % I have a problem with figset. I don't kno
 parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
@@ -84,7 +84,6 @@ end
 
 dbgmsg('Starting chain structure for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
-[posidx, velidx] = generateidx(size(data_train,1));
 
 for i = 1:length(NODES)
     %[savestructure(i).train.data, savestructure(i).train.indexes] =
@@ -96,35 +95,8 @@ for i = 1:length(NODES)
     savestructure(i).train.ends = ends_train;
     
     for j = 1:length(arq_connect)
-        %will I shift enormous matrices around? yes.
-        savestructure(i).gas(j).name = arq_connect(j).name;
-        savestructure(i).gas(j).method = arq_connect(j).method;
-      
-        %all of the long inputing will be done inside setinput, because it
-        %has to be like this...
-        [savestructure(i).train.gas(j).inputs.input, savestructure(i).train.gas(j).inputs.input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).train); %%%%%%
-  
+        savestructure = gas_method(savestructure(i), arq_connect(j), i,j, num_of_nodes, size(data_train,1)); % I had to separate it to debug it.
 
-        %%%% PRE-MESSAGE
-        dbgmsg('Working on gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') with method: ',savestructure(i).gas(j).method ,' for process:',num2str(i),1)
-        %DO GNG OR GWR
-        if strcmp(arq_connect(j).method,'gng')
-            %do gng
-            [savestructure(i).gas(j).nodes, savestructure(i).gas(j).edges, ~, ~] = gng_lax(savestructure(i).train.gas(j).inputs.input,num_of_nodes); 
-        elseif strcmp(arq_connect(j).method,'gwr')
-            %do gwr
-            [savestructure(i).gas(j).nodes, savestructure(i).gas(j).edges, ~, ~] = gwr(savestructure(i).train.gas(j).inputs.input,num_of_nodes); 
-        else
-            error('unknown method')
-        end
-        %%%% POS-MESSAGE
-        dbgmsg('Finished working on gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') with method: ',savestructure(i).gas(j).method ,'.Num of nodes reached:',num2str(size(savestructure(i).gas(j).nodes,2)),' for process:',num2str(i),1)
-        %%%% FIND BESTMATCHING UNITS
-        
-        %PRE MESSAGE  
-        dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        savestructure(i).gas(j).bestmatch = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).inputs.input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
-    
     end
     
 end
@@ -152,11 +124,18 @@ for i=1:length(savestructure)
         savestructure(i).train.gas(j).name = arq_connect(j).name;
         savestructure(i).val.gas(j).name = arq_connect(j).name;
         
-        
         dbgmsg('Setting validation input for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         [savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
+                
+        % I didn't realize, but I need to do this for the validation
+        % dataset as well.
+        dbgmsg('Finding best matching units for gas: ''',savestructure.gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        [savestructure(i).val.gas(j).bestmatch, savestructure(i).val.gas(j).bestmatchbyindex] = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).val.gas(j).inputs.input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
+        
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.gas(j).inputs.input,savestructure(i).val.gas(j).inputs.input, y_train);
+        [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = labeller(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).bestmatchbyindex,  savestructure(i).val.gas(j).bestmatchbyindex, savestructure(i).train.gas(j).inputs.input, y_train);
+        %%%% I dont understand what I did, so I will code this again.
+        %%% why did I write .bestmatch when it should be nodes??? what was I thinnking [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.gas(j).inputs.input,savestructure(i).val.gas(j).inputs.input, y_train);
         
     end
 end
