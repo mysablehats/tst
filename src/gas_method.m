@@ -10,7 +10,7 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, num_of_node
 % After some consideration, I have decided that all of the long inputing
 % will be done inside setinput, because it it would be easier. 
 
-        [savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.input_ends]  = setinput(arq_connect, savestructure, dimdim, savestructure.train); %%%%%%
+        [savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.input_ends, savestructure.train.gas(j).y]  = setinput(arq_connect, savestructure, dimdim, savestructure.train); %%%%%%
   
 %% 
 % After setting the input, we can actually run the gas, either a GNG or the

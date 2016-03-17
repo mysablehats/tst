@@ -29,7 +29,7 @@ aa_environment
 load_skel_data
 
 
-NODES = 3; %*ones(1,8);
+NODES = 300; %*ones(1,8);
 %NODES = fix(NODES/30);
 
 %% Classifier structure definitions
@@ -65,7 +65,7 @@ parfor i = 1:length(allconn)
     arq_connect(i).q = allconn{i}{5};
 end
 inputs = struct('input',[],'input_ends',[]);
-gas_data = struct('name','','class',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[]);
+gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[]);
 gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'fig',[]); %bestmatch will have the training matrix for subsequent layers
 vt_data = struct('indexes',[],'data',[],'ends',[],'gas',gas_data);
 savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',vt_data,'val',vt_data,'figset',[]); % I have a problem with figset. I don't kno
@@ -100,6 +100,7 @@ for i = 1:length(NODES)
     savestructure(i).maxnodes = num_of_nodes;
     savestructure(i).train.data = data_train;
     savestructure(i).train.ends = ends_train;
+    savestructure(i).train.y = y_train;
     
     for j = 1:length(arq_connect)
         savestructure = gas_method(savestructure(i), arq_connect(j), i,j, num_of_nodes, size(data_train,1)); % I had to separate it to debug it.
@@ -124,6 +125,8 @@ whatIlabel = 1:length(savestructure(1).gas); %change this series for only the la
 for i=1:length(savestructure)
     savestructure(i).val.data = data_val;
     savestructure(i).val.ends = ends_val;
+    savestructure(i).val.y = y_val;
+    
     for j = whatIlabel
         %labeling
         %pretty much useless unless it is the last layer, but I can label
@@ -131,16 +134,16 @@ for i=1:length(savestructure)
         savestructure(i).train.gas(j).name = arq_connect(j).name;
         savestructure(i).val.gas(j).name = arq_connect(j).name;
         
-        dbgmsg('Setting validation input for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
-                
+        dbgmsg('Setting validation input (and clipping output) for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        [savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends, savestructure(i).val.gas(j).y]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
+       
         % I didn't realize, but I need to do this for the validation
         % dataset as well.
         dbgmsg('Finding best matching units for gas: ''',savestructure.gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         [savestructure(i).val.gas(j).bestmatch, savestructure(i).val.gas(j).bestmatchbyindex] = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).val.gas(j).inputs.input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
         
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = labeller(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).bestmatchbyindex,  savestructure(i).val.gas(j).bestmatchbyindex, savestructure(i).train.gas(j).inputs.input, y_train);
+        [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = labeller(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).bestmatchbyindex,  savestructure(i).val.gas(j).bestmatchbyindex, savestructure(i).train.gas(j).inputs.input, savestructure(i).train.gas(j).y);
         %%%% I dont understand what I did, so I will code this again.
         %%% why did I write .bestmatch when it should be nodes??? what was I thinnking [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.gas(j).inputs.input,savestructure(i).val.gas(j).inputs.input, y_train);
         
@@ -152,14 +155,14 @@ end
 % plotconfusion() function.
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 
-parfor i=1:length(savestructure)
+for i=1:length(savestructure)
     for j = whatIlabel
-        [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(y_val,savestructure(i).val.gas(j).class);
-        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(y_train,savestructure(i).train.gas(j).class);
+        [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(savestructure(i).val.gas(j).y,savestructure(i).val.gas(j).class);
+        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class);
         
         dbgmsg(num2str(i),'-th set.',savestructure(i).gas(j).name,' Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val),1)
-        savestructure(i).gas(j).fig = {y_val,                   savestructure(i).val.gas(j).class,  strcat(savestructure(i).gas(j).method,' Val ', num2str(savestructure(i).maxnodes)),...
-                                       y_train,savestructure(i).train.gas(j).class,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
+        savestructure(i).gas(j).fig = {savestructure(i).val.gas(j).y,                   savestructure(i).val.gas(j).class,  strcat(savestructure(i).gas(j).method,' Val ', num2str(savestructure(i).maxnodes)),...
+                                       savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
         savestructure(i).figset = {savestructure(i).figset{:}, savestructure(i).gas(j).fig{:}};
     end
 end
