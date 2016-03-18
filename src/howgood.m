@@ -1,13 +1,12 @@
 function f = howgood(savestructure,j)
-a = zeros(2);
-b = a;
-
+A = zeros(2);
 for i = 1:length(savestructure)
-    a = a + savestructure(i).gas(j).confusions.val;
-    b = b + savestructure(i).gas(j).confusions.train;
+    A = A + savestructure(i).gas(j).confusions.val;
+%    b = b + savestructure(i).gas(j).confusions.train;
 end
-result = a;
-f1 = 2*result(1,1)/(2*result(1,1)+result(2,1)+result(1,2));
-result = b;
-f2 = 2*result(1,1)/(2*result(1,1)+result(2,1)+result(1,2));
-f = [f1, f2];
+
+A = savestructure(i).gas(j).confusions.val;
+sensitivity = A(2,2)/(A(2,2)+A(2,1));
+specificity = A(1,1)/(A(1,1)+A(1,2));
+f1 = 2*A(2,2)/(2*A(2,2)+A(1,2)+A(2,1));
+f = [sensitivity*100 specificity*100 f1*100];

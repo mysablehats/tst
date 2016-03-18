@@ -1,6 +1,7 @@
-function [linput,newends] = longinput(shortinput, q, ends)
+function [linput,newends, newy] = longinput(shortinput, q, ends, y)
 newends = zeros(size(ends));
 linput = zeros(size(shortinput,1)*q,size(shortinput,2)-size(ends,2)*(q-1));
+newy = zeros(1,size(linput,2));
 %%% I will try with pre allocation if it doesnt work, then I will try with
 %%% the cat approach -> start from 2 and cat it...
 
@@ -29,6 +30,7 @@ for j = 1:maxj
                 end
             end
             linput(:,k) = a;
+            newy(k) = y(funnyindex); %% this was done in a hurry and has to be debugged.
             k=k+1;
         end
     end
