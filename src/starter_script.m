@@ -180,7 +180,7 @@ end
 % manually
 for j = whatIlabel %this is weird, but I just changed this to show only the last gas
     metrics = howgood(savestructure,j);
-    dbgmsg(savestructure(1).gas(j).name,'\t Sensitivity/Recall for validation overall mean:\t', num2str(metrics(1)),'%%\t|| Specificity for validation overall mean:\t', num2str(metrics(2)),'%%\t|| F1 for validation overall mean:\t', num2str(metrics(3)),'%%',1)
+    dbgmsg(savestructure(1).gas(j).name,'\t [All data for Validation set] Sensitivity/Recall overall mean:\t', num2str(metrics(1)),'%%\t|| Specificity overall mean:\t', num2str(metrics(2)),'%%\t|| Precision overall mean:\t', num2str(metrics(3)),'%%\t|| F1 overall mean:\t', num2str(metrics(4)),'%%',1)
     metrics = whoisbest(savestructure,j);
-    dbgmsg(savestructure(1).gas(j).name,'\t Best Sensitivity/Recall for validation:        \t', num2str(metrics(1)),'%%\t|| Best Specificity for validation:        \t', num2str(metrics(2)),'%%\t|| Best F1 for validation :       \t', num2str(metrics(3)),'%%',1)
+    dbgmsg(savestructure(1).gas(j).name,'\t [All data for Validation set] Best Sensitivity/Recall:        \t', num2str(metrics(1)),'%%\t|| Best Specificity:        \t', num2str(metrics(2)),'%%\t|| Best Precision:        \t', num2str(metrics(3)),'%%\t|| Best F1:       \t', num2str(metrics(4)),'%%',1)
 end

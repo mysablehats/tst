@@ -8,5 +8,6 @@ end
 A = savestructure(i).gas(j).confusions.val;
 sensitivity = A(2,2)/(A(2,2)+A(2,1));
 specificity = A(1,1)/(A(1,1)+A(1,2));
+precision = A(2,2)/(A(2,2)+A(1,2)); 
 f1 = 2*A(2,2)/(2*A(2,2)+A(1,2)+A(2,1));
-f = [sensitivity*100 specificity*100 f1*100];
+f = [sensitivity specificity precision f1]*100;
