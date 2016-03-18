@@ -153,6 +153,7 @@ end
 %% Displaying multiple confusion matrices for GWR and GNG for nodes
 % This part creates the matrices that can later be shown with the
 % plotconfusion() function.
+savestructure(i).figset = {}; %% you should clear the set first if you want to rebuild them
 dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
 
 for i=1:length(savestructure)
@@ -161,8 +162,8 @@ for i=1:length(savestructure)
         [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class);
         
         dbgmsg(num2str(i),'-th set.',savestructure(i).gas(j).name,' Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val),1)
-        savestructure(i).gas(j).fig = {savestructure(i).val.gas(j).y,                   savestructure(i).val.gas(j).class,  strcat(savestructure(i).gas(j).method,' Val ', num2str(savestructure(i).maxnodes)),...
-                                       savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class,strcat(savestructure(i).gas(j).method,'Train ', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
+        savestructure(i).gas(j).fig = {savestructure(i).val.gas(j).y,                   savestructure(i).val.gas(j).class,  strcat(savestructure(i).gas(j).name,savestructure(i).gas(j).method,'V', num2str(savestructure(i).maxnodes)),...
+                                       savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class,strcat(savestructure(i).gas(j).name,savestructure(i).gas(j).method,'T', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
         savestructure(i).figset = {savestructure(i).figset{:}, savestructure(i).gas(j).fig{:}};
     end
 end
@@ -178,10 +179,8 @@ end
 % TO DO: This is bad. I should probably read the confusion documentation instead of doing this
 % manually
 for j = whatIlabel %this is weird, but I just changed this to show only the last gas
-    f1 = howgood(savestructure,j);
-    dbgmsg(savestructure(1).gas(j).name,'F1 for validation overall mean:', num2str(f1(1)),'||','F1 for training overall mean:', num2str(f1(2)),1)
-    disp(f1(1))
-    f1 = whoisbest(savestructure,j);
-    dbgmsg(savestructure(1).gas(j).name,'F1 for validation best:', num2str(f1(1)),'||','F1 for training best:', num2str(f1(2)),1)
-    disp(f1(1))
+    metrics = howgood(savestructure,j);
+    dbgmsg(savestructure(1).gas(j).name,'\t Sensitivity/Recall for validation overall mean:\t', num2str(metrics(1)),'%%\t|| Specificity for validation overall mean:\t', num2str(metrics(2)),'%%\t|| F1 for validation overall mean:\t', num2str(metrics(3)),'%%',1)
+    metrics = whoisbest(savestructure,j);
+    dbgmsg(savestructure(1).gas(j).name,'\t Best Sensitivity/Recall for validation:        \t', num2str(metrics(1)),'%%\t|| Best Specificity for validation:        \t', num2str(metrics(2)),'%%\t|| Best F1 for validation :       \t', num2str(metrics(3)),'%%',1)
 end
