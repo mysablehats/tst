@@ -1,10 +1,9 @@
-%removehipbias
-%have to initiate a newer array with one dimension less...
 function [conform_train, conform_val] = conformskel(varargin )
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%MESSAGES PART
 dbgmsg('Applies normalizations of several sorts on both training and validation datasets')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+test = false;
 
 %%% Since some of the normalizations will change the size of the data-set
 %%% it is sensible to put them all in the same place where this can be
@@ -12,9 +11,9 @@ dbgmsg('Applies normalizations of several sorts on both training and validation 
 
 if isempty(varargin)||strcmp(varargin{1},'test')
     if length(varargin)>1
-        conformskel_test(varargin{2:end}) %%% I've decided to put the testing procedure here to keep things cleaner
+        [conform_train, conform_val] = conformskel_test(varargin{2:end}); %%% I've decided to put the testing procedure here to keep things cleaner
     else
-        conformskel_test()
+        [conform_train, conform_val] = conformskel_test();
     end
 else
     data_train = varargin{1};
@@ -26,6 +25,8 @@ else
     
     for i =3:length(varargin)
         switch varargin{i}
+            case 'test'
+                test = true;
             case 'nohips'
                 conformations = [conformations, {@centerhips}];
                 killdim = [killdim, 1];
@@ -33,10 +34,9 @@ else
                 conformations = [conformations, {@normalize}];
                 %dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
             case 'mirror'
-                %conformations = [conformations, {@mirror}];
-                dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
+                conformations = [conformations, {@mirror}];
             case 'mahal'
-                %conformations = [conformations, {@centerhips}];
+                %conformations = [conformations, {@mahal}];
                 dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
             case 'norotate'
                 conformations = [conformations, {@norotatehips}];
@@ -48,8 +48,8 @@ else
                 dbgmsg('WARNING, the normalization: ' , varargin{i},' is performing poorly, it should not be used.', true);
                 %killdim = [killdim, 21];
             case 'nofeet'
-                %conformations = [conformations, {@nofeet}];
-                dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
+                conformations = [conformations, {@nofeet}];
+                killdim = [killdim, 20, 16];
             case 'axial'
                 %conformations = [conformations, {@centerhips}];
                 dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
@@ -59,10 +59,6 @@ else
                 dbgmsg('ATTENTION: Unimplemented normalization/ typo.',varargin{i},true);
         end
     end
-    %%%%only true for the hips!
-    %conform_train = zeros(size(data_train)-[3 0]);
-    %conform_val = zeros(size(data_val)-[3 0]);
-    
     
     % execute them for training and validation sets
     for i = 1:length(conformations)
@@ -81,51 +77,35 @@ else
     end
     
     % squeeze them accordingly?
-    whattokill = reshape(1:size(data_train,1),size(data_train,1)/3,3);
-    realkilldim = whattokill(killdim,:);
-    conform_train = data_train(setdiff(1:size(data_train,1),realkilldim),:); %sorry for the in-liners..
-    conform_val = data_val(setdiff(1:size(data_val,1),realkilldim),:);
-    
+    if ~test
+        whattokill = reshape(1:size(data_train,1),size(data_train,1)/3,3);
+        realkilldim = whattokill(killdim,:);
+        conform_train = data_train(setdiff(1:size(data_train,1),realkilldim),:); %sorry for the in-liners..
+        conform_val = data_val(setdiff(1:size(data_val,1),realkilldim),:);
+    else
+        conform_train = data_train;
+        conform_val = data_val;        
+    end
 end
 end
 function newskel = centerhips(skel)
-%%%%%%%%%MESSAGES PART
-%%%%%%%%ATTENTION: this function is executed in loops, so running it will
-%%%%%%%%messages on will cause unpredictable behaviour
-%dbgmsg('Removing displacement based on hip coordinates (1st point on 25x3 skeleton matrix) from every other')
-%dbgmsg('This makes the dataset translation invariant')
-%%%%%%%%%%%%%%%%%%%%%
+
 [tdskel,hh] = makefatskel(skel);
 
-hips = [repmat(tdskel(1,:),25,1);zeros(hh-25,3)]; 
+hips = [repmat(tdskel(1,:),25,1);zeros(hh-25,3)]; % this is so that we dont subtract the velocities
 
 newskel = tdskel - hips;
-%newskel(1,:) = []; %this is done at the end of the function...
-% newskel = zeros(size(tdskel)-[1 0]);
-% for i = 2:hh
-%     newskel(i-1,:) = tdskel(i,:)- 1*hips;
-% end
 
 %I need to shape it back into 75(-3 now) x 1
 newskel = makethinskel(newskel);
 end
 function newskel = centertorax(skel)
-%%%%%%%%%MESSAGES PART
-%%%%%%%%ATTENTION: this function is executed in loops, so running it will
-%%%%%%%%messages on will cause unpredictable behaviour
-%dbgmsg('Removing displacement based on hip coordinates (1st point on 25x3 skeleton matrix) from every other')
-%dbgmsg('This makes the dataset translation invariant')
-%%%%%%%%%%%%%%%%%%%%%
+
 [tdskel,hh] = makefatskel(skel);
 
 torax = [repmat(tdskel(21,:),25,1);zeros(hh-25,3)]; 
 
 newskel = tdskel - torax;
-%newskel(1,:) = []; %this is done at the end of the function...
-% newskel = zeros(size(tdskel)-[1 0]);
-% for i = 2:hh
-%     newskel(i-1,:) = tdskel(i,:)- 1*hips;
-% end
 
 %I need to shape it back into 75(-3 now) x 1
 newskel = makethinskel(newskel);
@@ -191,6 +171,30 @@ end
 
 newskel = makethinskel(tdskel);
 end
+function newskel = nofeet(skel)
+[tdskel,hh] = makefatskel(skel);
+
+%%%%some conformation procedure %%%%%
+if mod(hh,25) == 0 % I will remove this and make a smaller skeleton, but first I will zero-it
+    tdskel(16,:) = zeros(1,size(tdskel,2));
+    tdskel(20,:) = zeros(1,size(tdskel,2));
+elseif mod(hh,25) == 24
+    tdskel(15,:) = zeros(1,size(tdskel,2));
+    tdskel(19,:) = zeros(1,size(tdskel,2));
+else
+    dbgmsg('Don''t know how to remove feet from this. Doing nothing')
+end
+
+newskel = makethinskel(tdskel);
+end
+function newskel = mirror(skel)
+[tdskel,~] = makefatskel(skel);
+
+%%%%some conformation procedure %%%%%
+tdskel(:,1) = -tdskel(:,1);
+
+newskel = makethinskel(tdskel);
+end
 function newskel = normalize(skel)
 %%this function was developed by inspection. a random skeleton was used
 %just to make sure that the variables are in similar orders of magnitude.
@@ -199,8 +203,6 @@ function newskel = normalize(skel)
 %the speeds computed as mean(mean(std(allskels(26:end,:,:)))) it was 5.5481e-05
 %magic constants will be used in order to make both these numbers close to
 %1 as possible
-
-
 
 [tdskel,hh] = makefatskel(skel);
 magicconstant1 = 2.951426379619558e+02;
@@ -223,7 +225,7 @@ end
 
 newskel = makethinskel(tdskel);
 end
-function conformskel_test(varargin)
+function [a,b] = conformskel_test(varargin)
 load_test_skel
 
 wholelist  = {'nohips' 'normal' 'mahal' 'norotate' 'norotateshoulders' 'nofeet' 'axial'};
@@ -250,7 +252,7 @@ if sameplace
     
     for i = 1:length(iterateover)
         try
-            [a, b] = conformskel(a,b,iterateover{i});
+            [a, b] = conformskel(a,b,iterateover{i},'test');
             figure(i)
             skeldraw(a,true);
             skeldraw(b,true);
@@ -262,7 +264,7 @@ if sameplace
             
             %size(a)
             %size(b)
-        catch
+        catch ME
             disp(strcat('Method ',iterateover{i},' not successful'))
         end
     end
@@ -274,7 +276,7 @@ else
     for i = 1:length(iterateover)
         try
             
-            [a, b] = conformskel(a,b,iterateover{i});
+            [a, b] = conformskel(a,b,iterateover{i},'test');
             figure(i*2-1)
             hold on
             skeldraw(a,true);
@@ -291,7 +293,7 @@ else
             
             %size(a)
             %size(b)
-        catch
+        catch ME
             disp(strcat('Method ',iterateover{i},' not successful'))
         end
     end

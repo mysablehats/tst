@@ -29,7 +29,7 @@ aa_environment
 load_skel_data
 
 
-NODES = 300; %*ones(1,8);
+NODES = 3*ones(1,2);
 %NODES = fix(NODES/30);
 
 %% Classifier structure definitions
@@ -78,7 +78,15 @@ end
 %% Pre-conditioning of data
 % 
 %[data_train, data_val] = removehipbias(data_train, data_val); 
-[data_train, data_val] = conformskel(data_train, data_val,'nohips');
+[data_train_, data_val_] = conformskel(data_train, data_val,'nohips','normal');
+[data_train_mirror, data_val_mirror] = conformskel(data_train, data_val,'mirror','nohips','normal');
+data_train = [data_train_, data_train_mirror];
+ends_train = [ends_train, ends_train];
+data_val = [data_val_, data_val_mirror];
+ends_val = [ends_val, ends_val];
+y_train = [y_train y_train];
+y_val = [y_val y_val];
+
 
 %% Gas-chain Classifier
 % This part executes the chain of interlinked gases. Each iteration is one
@@ -103,7 +111,7 @@ for i = 1:length(NODES)
     savestructure(i).train.y = y_train;
     
     for j = 1:length(arq_connect)
-        savestructure = gas_method(savestructure(i), arq_connect(j), i,j, num_of_nodes, size(data_train,1)); % I had to separate it to debug it.
+        savestructure(i) = gas_method(savestructure(i), arq_connect(j), i,j, num_of_nodes, size(data_train,1)); % I had to separate it to debug it.
 
     end
     
@@ -139,7 +147,7 @@ for i=1:length(savestructure)
        
         % I didn't realize, but I need to do this for the validation
         % dataset as well.
-        dbgmsg('Finding best matching units for gas: ''',savestructure.gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        dbgmsg('Finding best matching units for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         [savestructure(i).val.gas(j).bestmatch, savestructure(i).val.gas(j).bestmatchbyindex] = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).val.gas(j).inputs.input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
         
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
