@@ -13,6 +13,16 @@
 shortinput = reshape(1:4*11,4,[])
 
 %%
+% We also need to create the y variable for the longinput function to clip,
+% as the size also changes when do do this concatenation. Actually y is the
+% same for all the action, so there would perhaps be a better way of
+% constructing this if we kept the data structure of multiple actions, but
+% I will do it like this. I will generate a sequence, so that we know where
+% we are cliping it
+
+y = 1:size(shortinput,2)
+
+%%
 % The idea behind constructing longer inputs is that we can have some
 % information linking the temporal changes in our data. The way this was implemented was with the usage of a sliding window scheme. It is basically the concatenation over time of q samples, in a way that is you have a vector of dimensionality k, the end vector has the dimensionality k*q. Now let us assume
 % that we are puting together a vector of q = 3 with our input of k = 4 from
@@ -64,7 +74,7 @@ linput_size_auto = [k*q, datasetlength - size(ends,2)*(q-1) ]
 %%
 % The actual function then:
 
-[linput,newends] = longinput(shortinput, q, ends)
+[linput,newends, newy] = longinput(shortinput, q, ends,y)
 
 %%
 % We can see it gives us our expected result, but it is better to run the
@@ -87,17 +97,20 @@ end
 k = 10
 q = 3
 
-ends = fix(rand(1,20)*10) + q % the +q here means I always have at least enough data to fill one long-vector; the shorter action samples would just be discarded. The algorithm does this, but checking it automatically would be a little more complicated.
+ends = fix(rand(1,10)*10) + q % the +q here means I always have at least enough data to fill one long-vector; the shorter action samples would just be discarded. The algorithm does this, but checking it automatically would be a little more complicated.
 
 sum(ends); % this should be equal to the size of the dataset
 
 shortinput = reshape(1:k*sum(ends),k,[])
+
+y = 1:size(shortinput,2) %ones(1, size(shortinput,2)) % also need to redefine y
+
 %%
 newends_should_auto = ends - ( q - 1) % will output, but mostly I want to check automatically with the if clauses
 [k datasetlength ]= size(shortinput)
 linput_size_auto = [k*q, datasetlength - size(ends,2)*(q-1) ]
 %%
-[linput,newends] = longinput(shortinput, q, ends) % will output; but it is too big for visual inspection
+[linput,newends, newy] = longinput(shortinput, q, ends,y) % will output; but it is too big for visual inspection
 
 %%
 % Finally checking what we did:
@@ -111,3 +124,6 @@ if all(newends==newends_should_auto)
 else
     disp('problems with ends :(')
 end
+
+%% But this is not exactly what Parisi did...
+% Our naive approach to implement the sliding window

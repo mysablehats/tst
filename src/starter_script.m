@@ -28,10 +28,13 @@ fclose('all');
 aa_environment
 load_skel_data
 
+TEST = true; % set to false to actually run it
 
-NODES = 3*ones(1,2);
-%NODES = fix(NODES/30);
+NODES = 100*ones(1,4);
 
+if TEST
+    NODES = 3* ones(size(NODES));
+end
 %% Classifier structure definitions
 %%%% gas structures region
 
