@@ -3,6 +3,7 @@
 % and fed as input for the gases as well as a good description of the tests
 % implemented to check if it was giving the right results.
 
+%% An example with small array:
 %%
 % Instead of actual skeleton data I will build a matrix of sequential
 % points so that the reshaping becomes more evident. For my work, each
@@ -91,7 +92,7 @@ else
     disp('problems with ends :(')
 end
 
-%% 
+%% The same with a bigger array:
 % We can try now with a bigger set, say:
 
 k = 10
@@ -126,4 +127,26 @@ else
 end
 
 %% But this is not exactly what Parisi did...
-% Our naive approach to implement the sliding window
+% Our naive approach to implement the sliding window as it is described in
+% Parisi's paper makes an array with a very repetitive pattern when run
+% recursively. This is actually not a problem as far as I can see it, and since this is only the input which is later "filtered" by the GWR gas, this doesnt mean that in the end anything will be the same, but
+% it does generate some very repetitive vectors as we can see:
+
+linput(:,1:2)
+
+%%
+% we can see that 2/3 of the vectors are exactly the same.
+
+linput(11:30,1)
+linput(1:20,2)
+are_they_exactly_the_same = all(linput(11:30,1)==linput(1:20,2)) % 1 is true...
+
+%% 
+% In the paper we are trying to replicate, there is no mention of
+% concatenation of the input position or velocity data, so we assume the
+% input for the first layer depends only on the current data sample. It
+% does mention however that the best-matching units are concatenated and
+% that it takes the whole system 9 data samples to produce one answer. This
+% perhaps implies that the sliding window scheme was using non-overlaping
+% data.
+

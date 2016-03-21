@@ -5756,3 +5756,666 @@ remoteParallelFunction: make_general_channel/channel_general: 2-th set.gwr1layer
 [17-Mar-2016 658.450000] starter_script: gwr4layerF1 for validation best:0.7323||F1 for training best:0.75116
 [17-Mar-2016 658.450000] starter_script: gwrSTSlayerF1 for validation overall mean:0.7329||F1 for training overall mean:0.75218
 [17-Mar-2016 658.450000] starter_script: gwrSTSlayerF1 for validation best:0.7329||F1 for training best:0.75218
+[18-Mar-2016 2416.010000] dbgmsg: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	16.36%	|| Specificity overall mean:	82.1182%	|| Precision overall mean:	40.1518%	|| F1 overall mean:	23.2476%
+[18-Mar-2016 2416.020000] dbgmsg: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	16.36%	|| Best Specificity:        	82.1182%	|| Best Precision:        	40.1518%	|| Best F1:       	23.2476%
+[18-Mar-2016 2416.020000] dbgmsg: gwr2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	7.2677%	|| Specificity overall mean:	97.1199%	|| Precision overall mean:	64.9171%	|| F1 overall mean:	13.0719%
+[18-Mar-2016 2416.020000] dbgmsg: gwr2layer	 [All data for Validation set] Best Sensitivity/Recall:        	7.2677%	|| Best Specificity:        	97.1199%	|| Best Precision:        	64.9171%	|| Best F1:       	13.0719%
+[18-Mar-2016 2416.030000] dbgmsg: gwr3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	0%	|| Specificity overall mean:	100%	|| Precision overall mean:	NaN%	|| F1 overall mean:	0%
+[18-Mar-2016 2416.030000] dbgmsg: gwr3layer	 [All data for Validation set] Best Sensitivity/Recall:        	0%	|| Best Specificity:        	100%	|| Best Precision:        	0%	|| Best F1:       	0%
+[18-Mar-2016 2416.030000] dbgmsg: gwr4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	0%	|| Specificity overall mean:	100%	|| Precision overall mean:	NaN%	|| F1 overall mean:	0%
+[18-Mar-2016 2416.030000] dbgmsg: gwr4layer	 [All data for Validation set] Best Sensitivity/Recall:        	0%	|| Best Specificity:        	100%	|| Best Precision:        	0%	|| Best F1:       	0%
+[18-Mar-2016 2416.040000] dbgmsg: gwrSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	0%	|| Specificity overall mean:	100%	|| Precision overall mean:	NaN%	|| F1 overall mean:	0%
+[18-Mar-2016 2416.050000] dbgmsg: gwrSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	0%	|| Best Specificity:        	100%	|| Best Precision:        	0%	|| Best F1:       	0%
+[19-Mar-2016 55.170000] conformskel: conformskel_test: conformskel: Unimplemented normalization:mirror
+[19-Mar-2016 73.320000] conformskel: conformskel_test: conformskel: Unimplemented normalization:mirror
+[19-Mar-2016 96.660000] conformskel: conformskel_test: conformskel: Unimplemented normalization:mirror
+[19-Mar-2016 299.050000] conformskel: conformskel_test: conformskel: Unimplemented normalization:nofeet
+[19-Mar-2016 522.010000] conformskel: ATTENTION: Unimplemented normalization/ typo.normalize
+[19-Mar-2016 554.370000] conformskel: ATTENTION: Unimplemented normalization/ typo.normalize
+[19-Mar-2016 555.580000] conformskel: ATTENTION: Unimplemented normalization/ typo.normalize
+[19-Mar-2016 569.460000] conformskel: ATTENTION: Unimplemented normalization/ typo.normalize
+[19-Mar-2016 828.690000] starter_script: =======================================================================================================================================================================================================================================
+[19-Mar-2016 828.690000] starter_script: Running starter script
+[19-Mar-2016 828.690000] starter_script: =======================================================================================================================================================================================================================================
+[19-Mar-2016 841.610000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[19-Mar-2016 843.100000] starter_script: Starting chain structure for GWR and GNG for nodes:3
+[19-Mar-2016 843.100000] starter_script: ###Using multilayer GWR and GNG ###
+[19-Mar-2016 843.460000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[19-Mar-2016 845.690000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[19-Mar-2016 845.700000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[19-Mar-2016 846.520000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[19-Mar-2016 847.970000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:1
+[19-Mar-2016 847.970000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[19-Mar-2016 848.880000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[19-Mar-2016 851.370000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:1
+[19-Mar-2016 851.370000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[19-Mar-2016 852.630000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[19-Mar-2016 854.400000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:1
+[19-Mar-2016 854.400000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[19-Mar-2016 857.360000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[19-Mar-2016 879.350000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:1
+[19-Mar-2016 879.350000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[19-Mar-2016 892.420000] starter_script: Labelling3
+[19-Mar-2016 892.420000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[19-Mar-2016 892.500000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[19-Mar-2016 892.630000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[19-Mar-2016 892.650000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[19-Mar-2016 892.990000] starter_script: Setting validation input (and clipping output) for gas: 'gwr2layer' (2) for process:1
+[19-Mar-2016 893.080000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[19-Mar-2016 893.210000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:1
+[19-Mar-2016 893.220000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[19-Mar-2016 893.610000] starter_script: Setting validation input (and clipping output) for gas: 'gwr3layer' (3) for process:1
+[19-Mar-2016 893.710000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[19-Mar-2016 893.910000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:1
+[19-Mar-2016 893.910000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[19-Mar-2016 895.160000] starter_script: Setting validation input (and clipping output) for gas: 'gwr4layer' (4) for process:1
+[19-Mar-2016 895.260000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[19-Mar-2016 895.480000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:1
+[19-Mar-2016 895.480000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[19-Mar-2016 896.850000] starter_script: Setting validation input (and clipping output) for gas: 'gwrSTSlayer' (5) for process:1
+[19-Mar-2016 897.390000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[19-Mar-2016 900.480000] starter_script: Applying labels for gas: 'gwrSTSlayer' (5) for process:1
+[19-Mar-2016 900.480000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[19-Mar-2016 907.870000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:3
+[19-Mar-2016 908.600000] starter_script: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3624	(1,2):1846	(2,1):2613	(2,2):855	
+[19-Mar-2016 909.010000] starter_script: 1-th set.gwr2layer Confusion matrix on this validation set:(1,1):5470	(1,2):0	(2,1):3468	(2,2):0	
+[19-Mar-2016 909.420000] starter_script: 1-th set.gwr3layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[19-Mar-2016 909.820000] starter_script: 1-th set.gwr4layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[19-Mar-2016 910.200000] starter_script: 1-th set.gwrSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):5362	(2,1):0	(2,2):3364	
+[19-Mar-2016 913.620000] starter_script: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	24.654%	|| Specificity overall mean:	66.2523%	|| Precision overall mean:	31.6549%	|| F1 overall mean:	27.7192%
+[19-Mar-2016 913.640000] starter_script: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	24.654%	|| Best Specificity:        	66.2523%	|| Best Precision:        	31.6549%	|| Best F1:       	27.7192%
+[19-Mar-2016 913.640000] starter_script: gwr2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	0%	|| Specificity overall mean:	100%	|| Precision overall mean:	NaN%	|| F1 overall mean:	0%
+[19-Mar-2016 913.650000] starter_script: gwr2layer	 [All data for Validation set] Best Sensitivity/Recall:        	0%	|| Best Specificity:        	100%	|| Best Precision:        	0%	|| Best F1:       	0%
+[19-Mar-2016 913.650000] starter_script: gwr3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[19-Mar-2016 913.660000] starter_script: gwr3layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[19-Mar-2016 913.670000] starter_script: gwr4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[19-Mar-2016 913.670000] starter_script: gwr4layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[19-Mar-2016 913.670000] starter_script: gwrSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.5515%	|| F1 overall mean:	55.6493%
+[19-Mar-2016 913.670000] starter_script: gwrSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.5515%	|| Best F1:       	55.6493%
+[20-Mar-2016 917.940000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 917.950000] starter_script: Running starter script
+[20-Mar-2016 917.950000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 919.550000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 922.240000] starter_script: Starting chain structure for GWR and GNG for nodes:3
+[20-Mar-2016 922.240000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 922.560000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[20-Mar-2016 924.700000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 924.700000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 925.510000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[20-Mar-2016 927.640000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 927.640000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 928.540000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[20-Mar-2016 931.020000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 931.040000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 932.290000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[20-Mar-2016 934.860000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 934.860000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 937.950000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[20-Mar-2016 959.540000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 959.550000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 972.230000] starter_script: Labelling3
+[20-Mar-2016 972.250000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 972.320000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 972.440000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 972.450000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 972.820000] starter_script: Setting validation input (and clipping output) for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 972.910000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 973.040000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 973.040000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 973.370000] starter_script: Setting validation input (and clipping output) for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 973.460000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 973.640000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 973.660000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 974.820000] starter_script: Setting validation input (and clipping output) for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 974.930000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 975.140000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 975.140000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 976.030000] starter_script: Setting validation input (and clipping output) for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 976.620000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 979.690000] starter_script: Applying labels for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 979.700000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 986.380000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:3
+[20-Mar-2016 986.720000] starter_script: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3624	(1,2):1846	(2,1):2613	(2,2):855	
+[20-Mar-2016 987.130000] starter_script: 1-th set.gwr2layer Confusion matrix on this validation set:(1,1):5303	(1,2):167	(2,1):3153	(2,2):315	
+[20-Mar-2016 987.520000] starter_script: 1-th set.gwr3layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[20-Mar-2016 987.920000] starter_script: 1-th set.gwr4layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[20-Mar-2016 988.310000] starter_script: 1-th set.gwrSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):5362	(2,1):0	(2,2):3364	
+[20-Mar-2016 991.130000] starter_script: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	24.654%	|| Specificity overall mean:	66.2523%	|| Precision overall mean:	31.6549%	|| F1 overall mean:	27.7192%
+[20-Mar-2016 991.150000] starter_script: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	24.654%	|| Best Specificity:        	66.2523%	|| Best Precision:        	31.6549%	|| Best F1:       	27.7192%
+[20-Mar-2016 991.150000] starter_script: gwr2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	9.083%	|| Specificity overall mean:	96.947%	|| Precision overall mean:	65.3527%	|| F1 overall mean:	15.9494%
+[20-Mar-2016 991.160000] starter_script: gwr2layer	 [All data for Validation set] Best Sensitivity/Recall:        	9.083%	|| Best Specificity:        	96.947%	|| Best Precision:        	65.3527%	|| Best F1:       	15.9494%
+[20-Mar-2016 991.160000] starter_script: gwr3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[20-Mar-2016 991.160000] starter_script: gwr3layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[20-Mar-2016 991.160000] starter_script: gwr4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[20-Mar-2016 991.170000] starter_script: gwr4layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[20-Mar-2016 991.180000] starter_script: gwrSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.5515%	|| F1 overall mean:	55.6493%
+[20-Mar-2016 991.180000] starter_script: gwrSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.5515%	|| Best F1:       	55.6493%
+[20-Mar-2016 1003.170000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 1003.170000] starter_script: Running starter script
+[20-Mar-2016 1003.170000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 1004.970000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 1007.660000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3  3  3  3  3  3  3
+[20-Mar-2016 1007.670000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 39.340000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+[20-Mar-2016 39.360000] [20-Mar-2016 12.630000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalgas_method: : gas_methodWorking on gas: 'gwr1layer' (1) with method:gwr for process:6: 
+Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[20-Mar-2016 39.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:5
+[20-Mar-2016 42.060000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:5
+[20-Mar-2016 42.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:5
+[20-Mar-2016 42.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 42.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[20-Mar-2016 15.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:6
+[20-Mar-2016 15.530000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:6
+[20-Mar-2016 42.280000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 42.280000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 42.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:5
+[20-Mar-2016 43.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:4
+[20-Mar-2016 16.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:6
+[20-Mar-2016 43.230000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:2
+[20-Mar-2016 45.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:5
+[20-Mar-2016 45.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:5
+[20-Mar-2016 18.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:6
+[20-Mar-2016 18.620000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:6
+[20-Mar-2016 45.430000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 45.430000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:4
+[20-Mar-2016 45.570000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 45.570000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 19.570000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:6
+[20-Mar-2016 46.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:5
+[20-Mar-2016 46.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:4
+[20-Mar-2016 46.600000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:2
+[20-Mar-2016 22.150000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:6
+[20-Mar-2016 22.150000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:6
+[20-Mar-2016 48.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:5
+[20-Mar-2016 48.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:5
+[20-Mar-2016 49.060000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 49.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:4
+[20-Mar-2016 49.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 49.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 23.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:6
+[20-Mar-2016 50.110000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:5
+[20-Mar-2016 50.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:4
+[20-Mar-2016 50.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:2
+[20-Mar-2016 26.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:6
+[20-Mar-2016 26.140000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:6
+[20-Mar-2016 52.770000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:5
+[20-Mar-2016 52.770000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:5
+[20-Mar-2016 53.060000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 53.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:4
+[20-Mar-2016 53.420000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 53.420000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 58.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:5
+[20-Mar-2016 32.200000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:6
+[20-Mar-2016 59.390000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:4
+[20-Mar-2016 60.800000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:2
+[20-Mar-2016 65.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:5
+[20-Mar-2016 65.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:5
+[20-Mar-2016 66.110000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 66.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:4
+[20-Mar-2016 39.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:6
+[20-Mar-2016 39.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:6
+[20-Mar-2016 67.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 67.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 70.420000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[20-Mar-2016 74.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 74.940000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[20-Mar-2016 73.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[20-Mar-2016 76.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:3
+[20-Mar-2016 76.270000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 76.270000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 79.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 79.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:3
+[20-Mar-2016 80.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:3
+[20-Mar-2016 77.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[20-Mar-2016 84.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 84.560000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:3
+[20-Mar-2016 81.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 81.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 86.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:3
+[20-Mar-2016 83.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[20-Mar-2016 90.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 90.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:3
+[20-Mar-2016 87.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 87.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 89.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[20-Mar-2016 93.170000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 93.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 99.780000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:3
+[20-Mar-2016 101.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[20-Mar-2016 107.170000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 107.190000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:3
+[20-Mar-2016 109.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 109.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 115.820000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:7
+[20-Mar-2016 118.490000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:7
+[20-Mar-2016 118.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:7
+[20-Mar-2016 119.760000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:7
+[20-Mar-2016 108.210000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:8
+[20-Mar-2016 123.030000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:7
+[20-Mar-2016 123.050000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:7
+[20-Mar-2016 111.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:8
+[20-Mar-2016 111.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:8
+[20-Mar-2016 124.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:7
+[20-Mar-2016 112.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:8
+[20-Mar-2016 114.780000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:8
+[20-Mar-2016 114.800000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:8
+[20-Mar-2016 127.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:7
+[20-Mar-2016 127.910000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:7
+[20-Mar-2016 116.060000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:8
+[20-Mar-2016 130.000000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:7
+[20-Mar-2016 119.630000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:8
+[20-Mar-2016 119.640000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:8
+[20-Mar-2016 133.530000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:7
+[20-Mar-2016 133.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:7
+[20-Mar-2016 121.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:8
+[20-Mar-2016 125.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:8
+[20-Mar-2016 125.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:8
+[20-Mar-2016 36.430000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 36.880000] starter_script: Running starter script
+[20-Mar-2016 36.890000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 50.190000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 53.430000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3  3  3
+[20-Mar-2016 53.440000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 10.220000] [20-Mar-2016 10.290000] remoteParallelFunctionremoteParallelFunction: make_general_channel/channel_general: gas_method: : Working on gas: 'gwr1layer' (1) with method:gwr for process:3make_general_channel/channel_general
+: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[20-Mar-2016 10.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[20-Mar-2016 10.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+[20-Mar-2016 13.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 13.530000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 13.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 13.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 13.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 13.670000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[20-Mar-2016 13.780000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 13.790000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[20-Mar-2016 14.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:2
+[20-Mar-2016 14.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:3
+[20-Mar-2016 14.590000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[20-Mar-2016 14.800000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:4
+[20-Mar-2016 16.890000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 16.890000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 17.030000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 17.040000] remoteParallelFunction: make_general_channel/channel_general: gas_method[20-Mar-2016 16.980000] : Finding best matching units for gas: 'gwr2layer' (2) for process:3
+remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 16.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 17.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 17.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:4
+[20-Mar-2016 17.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:2
+[20-Mar-2016 18.040000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:3
+[20-Mar-2016 18.000000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[20-Mar-2016 18.390000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:4
+[20-Mar-2016 20.680000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 20.680000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 20.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 20.910000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:3
+[20-Mar-2016 20.860000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 20.870000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 21.370000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 21.370000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:4
+[20-Mar-2016 22.060000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:2
+[20-Mar-2016 22.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:3
+[20-Mar-2016 22.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[20-Mar-2016 22.790000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:4
+[20-Mar-2016 25.040000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 25.050000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 25.200000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 25.200000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 25.290000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 25.290000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:3
+[20-Mar-2016 26.020000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 26.020000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:4
+[20-Mar-2016 31.390000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:2
+[20-Mar-2016 32.030000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:3
+[20-Mar-2016 32.040000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[20-Mar-2016 33.090000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:4
+[20-Mar-2016 38.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 38.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 39.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:3
+[20-Mar-2016 39.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:3
+[20-Mar-2016 39.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 39.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 40.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:4
+[20-Mar-2016 40.020000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:4
+[20-Mar-2016 205.830000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 206.350000] starter_script: Running starter script
+[20-Mar-2016 206.360000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 208.060000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 211.200000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3
+[20-Mar-2016 211.210000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 161.730000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[20-Mar-2016 101.420000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[20-Mar-2016 104.110000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 104.110000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 164.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 164.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 165.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[20-Mar-2016 104.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:2
+[20-Mar-2016 107.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 107.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 167.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 167.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 108.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:2
+[20-Mar-2016 168.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[20-Mar-2016 110.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 110.620000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 171.000000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 171.000000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 111.940000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:2
+[20-Mar-2016 172.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[20-Mar-2016 114.490000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 114.490000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 174.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 174.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 117.830000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:2
+[20-Mar-2016 178.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[20-Mar-2016 123.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 123.530000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 184.940000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 184.950000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 233.880000] starter_script: Labelling3  3
+[20-Mar-2016 233.940000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 266.960000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 266.960000] starter_script: Running starter script
+[20-Mar-2016 266.960000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 268.700000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 271.710000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3
+[20-Mar-2016 271.710000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 145.390000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[20-Mar-2016 210.600000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[20-Mar-2016 147.530000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 147.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 212.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 212.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 148.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:2
+[20-Mar-2016 213.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[20-Mar-2016 150.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 150.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 215.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 215.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 151.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:2
+[20-Mar-2016 216.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[20-Mar-2016 153.810000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 153.820000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 219.230000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 219.230000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 155.110000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:2
+[20-Mar-2016 220.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[20-Mar-2016 157.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 157.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 223.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 223.140000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 160.930000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:2
+[20-Mar-2016 226.370000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[20-Mar-2016 166.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 166.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 232.000000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 232.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 287.520000] starter_script: Labelling3  3
+[20-Mar-2016 287.550000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 287.670000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 287.940000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 287.970000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 288.390000] starter_script: Setting validation input (and clipping output) for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 288.500000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 288.650000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 288.660000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 289.030000] starter_script: Setting validation input (and clipping output) for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 289.130000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 289.340000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 289.340000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 291.070000] starter_script: Setting validation input (and clipping output) for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 291.180000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 291.410000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 291.410000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 292.360000] starter_script: Setting validation input (and clipping output) for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 293.000000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 296.260000] starter_script: Applying labels for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 296.270000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 310.070000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 310.170000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 310.320000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 310.320000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 310.760000] starter_script: Setting validation input (and clipping output) for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 310.870000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 311.170000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 311.170000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 311.720000] starter_script: Setting validation input (and clipping output) for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 311.830000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 312.040000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 312.040000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 313.610000] starter_script: Setting validation input (and clipping output) for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 313.740000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 313.980000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 313.990000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 315.360000] starter_script: Setting validation input (and clipping output) for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 316.070000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 319.370000] starter_script: Applying labels for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 319.390000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 330.870000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:3  3
+[20-Mar-2016 331.540000] starter_script: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3624	(1,2):1846	(2,1):2613	(2,2):855	
+[20-Mar-2016 331.930000] starter_script: 1-th set.gwr2layer Confusion matrix on this validation set:(1,1):5303	(1,2):167	(2,1):3153	(2,2):315	
+[20-Mar-2016 332.370000] starter_script: 1-th set.gwr3layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[20-Mar-2016 332.780000] starter_script: 1-th set.gwr4layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[20-Mar-2016 333.170000] starter_script: 1-th set.gwrSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):5362	(2,1):0	(2,2):3364	
+[20-Mar-2016 333.470000] starter_script: 2-th set.gwr1layer Confusion matrix on this validation set:(1,1):3624	(1,2):1846	(2,1):2613	(2,2):855	
+[20-Mar-2016 333.870000] starter_script: 2-th set.gwr2layer Confusion matrix on this validation set:(1,1):5303	(1,2):167	(2,1):3153	(2,2):315	
+[20-Mar-2016 334.290000] starter_script: 2-th set.gwr3layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[20-Mar-2016 334.690000] starter_script: 2-th set.gwr4layer Confusion matrix on this validation set:(1,1):0	(1,2):5416	(2,1):0	(2,2):3416	
+[20-Mar-2016 335.070000] starter_script: 2-th set.gwrSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):5362	(2,1):0	(2,2):3364	
+[20-Mar-2016 342.840000] starter_script: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	24.654%	|| Specificity overall mean:	66.2523%	|| Precision overall mean:	31.6549%	|| F1 overall mean:	27.7192%
+[20-Mar-2016 342.870000] starter_script: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	24.654%	|| Best Specificity:        	66.2523%	|| Best Precision:        	31.6549%	|| Best F1:       	27.7192%
+[20-Mar-2016 342.870000] starter_script: gwr2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	9.083%	|| Specificity overall mean:	96.947%	|| Precision overall mean:	65.3527%	|| F1 overall mean:	15.9494%
+[20-Mar-2016 342.870000] starter_script: gwr2layer	 [All data for Validation set] Best Sensitivity/Recall:        	9.083%	|| Best Specificity:        	96.947%	|| Best Precision:        	65.3527%	|| Best F1:       	15.9494%
+[20-Mar-2016 342.880000] starter_script: gwr3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[20-Mar-2016 342.880000] starter_script: gwr3layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[20-Mar-2016 342.900000] starter_script: gwr4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[20-Mar-2016 342.900000] starter_script: gwr4layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[20-Mar-2016 342.900000] starter_script: gwrSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.5515%	|| F1 overall mean:	55.6493%
+[20-Mar-2016 342.900000] starter_script: gwrSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.5515%	|| Best F1:       	55.6493%
+[20-Mar-2016 369.940000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 369.950000] starter_script: Running starter script
+[20-Mar-2016 369.950000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 390.430000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 440.910000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 440.910000] starter_script: Running starter script
+[20-Mar-2016 440.910000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 560.960000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 568.230000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3
+[20-Mar-2016 568.240000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 574.900000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 575.360000] starter_script: Running starter script
+[20-Mar-2016 575.360000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 577.020000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 584.240000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3
+[20-Mar-2016 584.250000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 589.580000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 589.580000] starter_script: Running starter script
+[20-Mar-2016 589.590000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 590.660000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 597.850000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3
+[20-Mar-2016 597.870000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 603.310000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 603.740000] starter_script: Running starter script
+[20-Mar-2016 603.740000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 605.390000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 612.610000] starter_script: Starting chain structure for GWR and GNG for nodes:3  3
+[20-Mar-2016 612.610000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 613.290000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[20-Mar-2016 617.930000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 617.940000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 619.850000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[20-Mar-2016 624.490000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 624.490000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 626.500000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[20-Mar-2016 631.790000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 631.800000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 634.430000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[20-Mar-2016 639.790000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 639.810000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 646.450000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[20-Mar-2016 692.040000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:1
+[20-Mar-2016 692.040000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 718.730000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[20-Mar-2016 723.260000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 723.270000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 725.080000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:2
+[20-Mar-2016 729.750000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 729.750000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 731.800000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:2
+[20-Mar-2016 737.140000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 737.140000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 739.880000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:2
+[20-Mar-2016 745.510000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 745.520000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 757.460000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:2
+[20-Mar-2016 809.320000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:3 for process:2
+[20-Mar-2016 809.350000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 836.100000] starter_script: Labelling3  3
+[20-Mar-2016 836.140000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 836.370000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 836.660000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 836.690000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 838.320000] starter_script: Setting validation input (and clipping output) for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 838.500000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 838.790000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 838.800000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 839.710000] starter_script: Setting validation input (and clipping output) for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 839.910000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 840.320000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 840.320000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 842.750000] starter_script: Setting validation input (and clipping output) for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 843.010000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 843.470000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 843.470000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 845.700000] starter_script: Setting validation input (and clipping output) for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 846.950000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 853.420000] starter_script: Applying labels for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 853.430000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 885.380000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 885.640000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 885.950000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 885.960000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 886.760000] starter_script: Setting validation input (and clipping output) for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 887.030000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 887.450000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 887.450000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 888.460000] starter_script: Setting validation input (and clipping output) for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 888.670000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 889.080000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 889.080000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 891.330000] starter_script: Setting validation input (and clipping output) for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 891.530000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 891.950000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 891.950000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 894.320000] starter_script: Setting validation input (and clipping output) for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 895.530000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 902.330000] starter_script: Applying labels for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 902.330000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 927.310000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:3  3
+[20-Mar-2016 928.600000] starter_script: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):7949	(1,2):2991	(2,1):5606	(2,2):1330	
+[20-Mar-2016 929.940000] starter_script: 1-th set.gwr2layer Confusion matrix on this validation set:(1,1):10604	(1,2):336	(2,1):6299	(2,2):637	
+[20-Mar-2016 931.360000] starter_script: 1-th set.gwr3layer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[20-Mar-2016 932.730000] starter_script: 1-th set.gwr4layer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[20-Mar-2016 934.120000] starter_script: 1-th set.gwrSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10724	(2,1):0	(2,2):6728	
+[20-Mar-2016 935.080000] starter_script: 2-th set.gwr1layer Confusion matrix on this validation set:(1,1):7949	(1,2):2991	(2,1):5606	(2,2):1330	
+[20-Mar-2016 936.390000] starter_script: 2-th set.gwr2layer Confusion matrix on this validation set:(1,1):10604	(1,2):336	(2,1):6299	(2,2):637	
+[20-Mar-2016 937.770000] starter_script: 2-th set.gwr3layer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[20-Mar-2016 939.160000] starter_script: 2-th set.gwr4layer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[20-Mar-2016 940.510000] starter_script: 2-th set.gwrSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10724	(2,1):0	(2,2):6728	
+[20-Mar-2016 955.840000] starter_script: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	19.1753%	|| Specificity overall mean:	72.66%	|| Precision overall mean:	30.7799%	|| F1 overall mean:	23.6297%
+[20-Mar-2016 955.850000] starter_script: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	19.1753%	|| Best Specificity:        	72.66%	|| Best Precision:        	30.7799%	|| Best F1:       	23.6297%
+[20-Mar-2016 955.850000] starter_script: gwr2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	9.184%	|| Specificity overall mean:	96.9287%	|| Precision overall mean:	65.4676%	|| F1 overall mean:	16.1082%
+[20-Mar-2016 955.860000] starter_script: gwr2layer	 [All data for Validation set] Best Sensitivity/Recall:        	9.184%	|| Best Specificity:        	96.9287%	|| Best Precision:        	65.4676%	|| Best F1:       	16.1082%
+[20-Mar-2016 955.870000] starter_script: gwr3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[20-Mar-2016 955.880000] starter_script: gwr3layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[20-Mar-2016 955.880000] starter_script: gwr4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[20-Mar-2016 955.880000] starter_script: gwr4layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[20-Mar-2016 955.880000] starter_script: gwrSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.5515%	|| F1 overall mean:	55.6493%
+[20-Mar-2016 955.880000] starter_script: gwrSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.5515%	|| Best F1:       	55.6493%
+[20-Mar-2016 975.970000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 975.970000] starter_script: Running starter script
+[20-Mar-2016 975.970000] starter_script: =======================================================================================================================================================================================================================================
+[20-Mar-2016 983.560000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[20-Mar-2016 990.560000] starter_script: Starting chain structure for GWR and GNG for nodes:300  300  300  300
+[20-Mar-2016 990.570000] starter_script: ###Using multilayer GWR and GNG ###
+[20-Mar-2016 991.240000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[20-Mar-2016 1202.100000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:300 for process:1
+[20-Mar-2016 1202.110000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 1249.080000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:1
+[20-Mar-2016 2183.300000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:300 for process:1
+[20-Mar-2016 2183.320000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 2231.190000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:1
+[20-Mar-2016 2474.390000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:300 for process:1
+[20-Mar-2016 2474.390000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 2564.150000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:1
+[20-Mar-2016 2909.230000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:300 for process:1
+[20-Mar-2016 2909.240000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 3005.660000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:1
+[20-Mar-2016 4930.840000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:300 for process:1
+[20-Mar-2016 4930.840000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 6633.020000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[20-Mar-2016 6842.980000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:300 for process:2
+[20-Mar-2016 6842.980000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[20-Mar-2016 6889.650000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:2
+[20-Mar-2016 7820.690000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:300 for process:2
+[20-Mar-2016 7820.690000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:2
+[20-Mar-2016 7868.670000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:2
+[20-Mar-2016 8112.270000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:300 for process:2
+[20-Mar-2016 8112.280000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:2
+[20-Mar-2016 8201.920000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:2
+[20-Mar-2016 8546.290000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:300 for process:2
+[20-Mar-2016 8546.290000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:2
+[20-Mar-2016 8646.210000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:2
+[20-Mar-2016 10579.450000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:300 for process:2
+[20-Mar-2016 10579.460000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:2
+[20-Mar-2016 12282.430000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[20-Mar-2016 12487.760000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:300 for process:3
+[20-Mar-2016 12487.770000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[20-Mar-2016 12534.520000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:3
+[20-Mar-2016 13465.400000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:300 for process:3
+[20-Mar-2016 13465.420000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:3
+[20-Mar-2016 13513.270000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:3
+[20-Mar-2016 13735.040000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:300 for process:3
+[20-Mar-2016 13735.040000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:3
+[20-Mar-2016 13824.570000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:3
+[20-Mar-2016 14177.900000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:300 for process:3
+[20-Mar-2016 14177.910000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:3
+[20-Mar-2016 14274.930000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:3
+[20-Mar-2016 16206.450000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:300 for process:3
+[20-Mar-2016 16206.450000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:3
+[20-Mar-2016 17909.770000] starter_script: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+[20-Mar-2016 18118.750000] starter_script: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:300 for process:4
+[20-Mar-2016 18118.760000] starter_script: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[20-Mar-2016 18165.510000] starter_script: gas_method: Working on gas: 'gwr2layer' (2) with method:gwr for process:4
+[20-Mar-2016 19096.160000] starter_script: gas_method: Finished working on gas: 'gwr2layer' (2) with method:gwr.Num of nodes reached:300 for process:4
+[20-Mar-2016 19096.160000] starter_script: gas_method: Finding best matching units for gas: 'gwr2layer' (2) for process:4
+[20-Mar-2016 19144.040000] starter_script: gas_method: Working on gas: 'gwr3layer' (3) with method:gwr for process:4
+[20-Mar-2016 19387.580000] starter_script: gas_method: Finished working on gas: 'gwr3layer' (3) with method:gwr.Num of nodes reached:300 for process:4
+[20-Mar-2016 19387.580000] starter_script: gas_method: Finding best matching units for gas: 'gwr3layer' (3) for process:4
+[20-Mar-2016 19477.400000] starter_script: gas_method: Working on gas: 'gwr4layer' (4) with method:gwr for process:4
+[20-Mar-2016 19830.850000] starter_script: gas_method: Finished working on gas: 'gwr4layer' (4) with method:gwr.Num of nodes reached:300 for process:4
+[20-Mar-2016 19830.860000] starter_script: gas_method: Finding best matching units for gas: 'gwr4layer' (4) for process:4
+[20-Mar-2016 19934.910000] starter_script: gas_method: Working on gas: 'gwrSTSlayer' (5) with method:gwr for process:4
+[20-Mar-2016 21873.330000] starter_script: gas_method: Finished working on gas: 'gwrSTSlayer' (5) with method:gwr.Num of nodes reached:300 for process:4
+[20-Mar-2016 21873.340000] starter_script: gas_method: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:4
+[20-Mar-2016 23574.540000] starter_script: Labelling300  300  300  300
+[20-Mar-2016 23574.590000] starter_script: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 23574.790000] starter_script: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 23585.980000] starter_script: Applying labels for gas: 'gwr1layer' (1) for process:1
+[20-Mar-2016 23586.020000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 23597.140000] starter_script: Setting validation input (and clipping output) for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 23597.310000] starter_script: Finding best matching units for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 23608.710000] starter_script: Applying labels for gas: 'gwr2layer' (2) for process:1
+[20-Mar-2016 23608.710000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 23609.900000] starter_script: Setting validation input (and clipping output) for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 23610.090000] starter_script: Finding best matching units for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 23631.550000] starter_script: Applying labels for gas: 'gwr3layer' (3) for process:1
+[20-Mar-2016 23631.550000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 23634.520000] starter_script: Setting validation input (and clipping output) for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 23634.770000] starter_script: Finding best matching units for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 23656.950000] starter_script: Applying labels for gas: 'gwr4layer' (4) for process:1
+[20-Mar-2016 23656.950000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[20-Mar-2016 23659.820000] starter_script: Setting validation input (and clipping output) for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 23660.950000] starter_script: Finding best matching units for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 24072.540000] starter_script: Applying labels for gas: 'gwrSTSlayer' (5) for process:1
+[20-Mar-2016 24072.550000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
