@@ -8856,3 +8856,39 @@ gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of no
 [22-Mar-2016 19005.740000] starter_script: Finding best matching units for gas: 'gng2layer' (2) for process:3
 [22-Mar-2016 19006.070000] starter_script: Applying labels for gas: 'gng2layer' (2) for process:3
 [22-Mar-2016 19006.080000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19066.050000] starter_script: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:3
+[22-Mar-2016 19066.870000] starter_script: Finding best matching units for gas: 'gng3layer' (3) for process:3
+[22-Mar-2016 19066.920000] starter_script: Applying labels for gas: 'gng3layer' (3) for process:3
+[22-Mar-2016 19066.920000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19116.060000] starter_script: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:3
+[22-Mar-2016 19116.890000] starter_script: Finding best matching units for gas: 'gng4layer' (4) for process:3
+[22-Mar-2016 19116.930000] starter_script: Applying labels for gas: 'gng4layer' (4) for process:3
+[22-Mar-2016 19116.930000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19169.600000] starter_script: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:3
+[22-Mar-2016 19170.720000] starter_script: Finding best matching units for gas: 'gngSTSlayer' (5) for process:3
+[22-Mar-2016 19170.760000] starter_script: Applying labels for gas: 'gngSTSlayer' (5) for process:3
+[22-Mar-2016 19170.760000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19223.000000] starter_script: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:4
+[22-Mar-2016 19223.290000] starter_script: Finding best matching units for gas: 'gng1layer' (1) for process:4
+[22-Mar-2016 19223.570000] starter_script: Applying labels for gas: 'gng1layer' (1) for process:4
+[22-Mar-2016 19223.570000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19284.080000] starter_script: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:4
+[22-Mar-2016 19284.680000] starter_script: Finding best matching units for gas: 'gng2layer' (2) for process:4
+[22-Mar-2016 19285.030000] starter_script: Applying labels for gas: 'gng2layer' (2) for process:4
+[22-Mar-2016 19285.040000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19350.820000] starter_script: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:4
+[22-Mar-2016 19351.690000] starter_script: Finding best matching units for gas: 'gng3layer' (3) for process:4
+[22-Mar-2016 19351.720000] starter_script: Applying labels for gas: 'gng3layer' (3) for process:4
+[22-Mar-2016 19351.730000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19403.190000] starter_script: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:4
+[22-Mar-2016 19404.020000] starter_script: Finding best matching units for gas: 'gng4layer' (4) for process:4
+[22-Mar-2016 19404.050000] starter_script: Applying labels for gas: 'gng4layer' (4) for process:4
+[22-Mar-2016 19404.050000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19458.240000] starter_script: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:4
+[22-Mar-2016 19459.050000] starter_script: Finding best matching units for gas: 'gngSTSlayer' (5) for process:4
+[22-Mar-2016 19459.100000] starter_script: Applying labels for gas: 'gngSTSlayer' (5) for process:4
+[22-Mar-2016 19459.110000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 19516.600000] starter_script: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:5
+[22-Mar-2016 19517.210000] starter_script: Finding best matching units for gas: 'gng1layer' (1) for process:5
+[22-Mar-2016 19517.450000] starter_script: Applying labels for gas: 'gng1layer' (1) for process:5
+[22-Mar-2016 19517.460000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
