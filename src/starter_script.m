@@ -28,23 +28,28 @@ fclose('all');
 aa_environment
 load_skel_data
 
-TEST = true; % set to false to actually run it
+TEST = false; % set to false to actually run it
+PARA = false;
 
-NODES = 100*ones(1,4);
+NODES = 100*ones(1,8);
 
 if TEST
     NODES = 3* ones(size(NODES));
 end
+if ~PARA
+    NODES = NODES(1);
+end
+
 %% Classifier structure definitions
 %%%% gas structures region
 
 %%%% connection definitions:
  allconn = {...
-     {'gwr1layer',   'gwr',{'pos'},                    'pos',3}...
-     {'gwr2layer',   'gwr',{'vel'},                    'vel',3}...
-     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3}...
-     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3}...
-     {'gwrSTSlayer', 'gwr',{'gwr4layer','gwr3layer'},  'all',3}};
+     {'gng1layer',   'gng',{'pos'},                    'pos',1}...
+     {'gng2layer',   'gng',{'vel'},                    'vel',1}...
+     {'gng3layer',   'gng',{'gng1layer'},              'pos',3}...
+     {'gng4layer',   'gng',{'gng2layer'},              'vel',3}...
+     {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3}};
 
 %  allconn = {...
 %      {'gwr1layer',   'gwr',{'pos'},                    'pos',3}...
@@ -56,7 +61,8 @@ end
 %      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3}}; 
  
 %allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos'}...
-%           {'gwr12ayer',   'gwr',{'gwr1layer'},                    'pos'}};
+%           {'gwr12ayer',   'gwr',{'gwr1layer'},
+%           'pos'}};
 
 %%%% building arq_connect
 arq_connect(1:length(allconn)) = struct('name','','method','','sourcelayer','', 'layertype','','q',1);
