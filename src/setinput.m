@@ -21,7 +21,7 @@ for j = 1:length(arq_connect.sourcelayer)
             if isempty( svst_t_v.gas(i).bestmatchbyindex)
                 error('wrong computation order. bestmatch field not yet defined.')
             end
-            [inputinput{j},inputends,y] = longinput( savestruc.gas(i).nodes(svst_t_v.gas(i).bestmatchbyindex), arq_connect.q, svst_t_v.gas(i).inputs.input_ends, svst_t_v.gas(i).y);
+            [inputinput{j},inputends,y] = longinput( savestruc.gas(i).nodes(:,svst_t_v.gas(i).bestmatchbyindex), arq_connect.q, svst_t_v.gas(i).inputs.input_ends, svst_t_v.gas(i).y);
             %%% old  longinput call. I will no longer create .bestmatch, so
             %%% I need to create it on the fly from gasnodes
             %            [inputinput{j},inputends,y] = longinput( svst_t_v.gas(i).bestmatch, arq_connect.q, svst_t_v.gas(i).inputs.input_ends, svst_t_v.gas(i).y);

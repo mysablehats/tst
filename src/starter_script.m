@@ -29,7 +29,7 @@ aa_environment
 load_skel_data
 
 TEST = false; % set to false to actually run it
-PARA = false;
+PARA = true;
 
 NODES = 100*ones(1,8);
 
@@ -109,7 +109,7 @@ y_val = [y_val y_val];
 dbgmsg('Starting chain structure for GWR and GNG for nodes:',num2str(NODES),1)
 dbgmsg('###Using multilayer GWR and GNG ###',1)
 
-for i = 1:length(NODES)
+parfor i = 1:length(NODES)
     %[savestructure(i).train.data, savestructure(i).train.indexes] =
     %shuffledataftw(data_train); % I cant shuffle any longer...
     %but I still need to assign it !
@@ -139,7 +139,7 @@ dbgmsg('Labelling',num2str(NODES),1)
 
 whatIlabel = 1:length(savestructure(1).gas); %change this series for only the last value to label only the last gas
 
-for i=1:length(savestructure)
+parfor i=1:length(savestructure)
     savestructure(i).val.data = data_val;
     savestructure(i).val.ends = ends_val;
     savestructure(i).val.y = y_val;
