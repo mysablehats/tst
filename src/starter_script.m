@@ -29,9 +29,9 @@ aa_environment
 load_skel_data
 
 TEST = false; % set to false to actually run it
-PARA = true;
+PARA = false;
 
-NODES = 100*ones(1,8);
+NODES = 1000*ones(1,8);
 
 if TEST
     NODES = 3* ones(size(NODES));
@@ -75,7 +75,7 @@ parfor i = 1:length(allconn)
 end
 inputs = struct('input',[],'input_ends',[]);
 gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[]);
-gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'fig',[]); %bestmatch will have the training matrix for subsequent layers
+gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'fig',[],'nodesl',[]); %bestmatch will have the training matrix for subsequent layers
 vt_data = struct('indexes',[],'data',[],'ends',[],'gas',gas_data);
 savestructure(1:length(NODES)) = struct('maxnodes',[], 'gas', gas_methods, 'train',vt_data,'val',vt_data,'figset',[]); % I have a problem with figset. I don't kno
 parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
@@ -139,7 +139,7 @@ dbgmsg('Labelling',num2str(NODES),1)
 
 whatIlabel = 1:length(savestructure(1).gas); %change this series for only the last value to label only the last gas
 
-parfor i=1:length(savestructure)
+for i=1:length(savestructure)
     savestructure(i).val.data = data_val;
     savestructure(i).val.ends = ends_val;
     savestructure(i).val.y = y_val;
@@ -160,7 +160,7 @@ parfor i=1:length(savestructure)
         [~, savestructure(i).val.gas(j).bestmatchbyindex] = genbestmmatrix(savestructure(i).gas(j).nodes, savestructure(i).val.gas(j).inputs.input, arq_connect(j).layertype, arq_connect(j).q); %assuming the best matching node always comes from initial dataset!
         
         dbgmsg('Applying labels for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = labeller(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).bestmatchbyindex,  savestructure(i).val.gas(j).bestmatchbyindex, savestructure(i).train.gas(j).inputs.input, savestructure(i).train.gas(j).y);
+        [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class,savestructure(i).gas(j).nodesl ] = labeller(savestructure(i).gas(j).nodes, savestructure(i).train.gas(j).bestmatchbyindex,  savestructure(i).val.gas(j).bestmatchbyindex, savestructure(i).train.gas(j).inputs.input, savestructure(i).train.gas(j).y);
         %%%% I dont understand what I did, so I will code this again.
         %%% why did I write .bestmatch when it should be nodes??? what was I thinnking [savestructure(i).train.gas(j).class, savestructure(i).val.gas(j).class] = untitled6(savestructure(i).gas(j).bestmatch, savestructure(i).train.gas(j).inputs.input,savestructure(i).val.gas(j).inputs.input, y_train);
         
@@ -170,9 +170,10 @@ end
 %% Displaying multiple confusion matrices for GWR and GNG for nodes
 % This part creates the matrices that can later be shown with the
 % plotconfusion() function.
-savestructure(i).figset = {}; %% you should clear the set first if you want to rebuild them
-dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
-
+for i =1:length(savestructure)
+    savestructure(i).figset = {}; %% you should clear the set first if you want to rebuild them
+    dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
+end
 for i=1:length(savestructure)
     for j = whatIlabel
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(savestructure(i).val.gas(j).y,savestructure(i).val.gas(j).class);

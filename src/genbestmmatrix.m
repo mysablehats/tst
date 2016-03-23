@@ -1,7 +1,7 @@
-function [ matmat, matmat_byindex] = genbestmmatrix(gwr_nodes, data, whichisit,q)
-matmat = zeros(size(gwr_nodes,1),size(data,2));
+function [ matmat, matmat_byindex] = genbestmmatrix(nodes, data, whichisit,q)
+matmat = zeros(size(nodes,1),size(data,2));
 %matmat_byindex = zeros(1,size(data,2));
-[~,matmat_byindex] = pdist2(gwr_nodes',data','euclidean','Smallest',1);
+[~,matmat_byindex] = pdist2(nodes',data','euclidean','Smallest',1);
 matmat = data(matmat_byindex);
 % 
 % for i = 1:size(data,2) 
