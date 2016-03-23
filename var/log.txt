@@ -10153,3 +10153,123 @@ remoteParallelFunction: make_general_channel/channel_general: Setting validation
 [23-Mar-2016 66276.950000] starter_script: Finding best matching units for gas: 'gng1layer' (1) for process:1
 [23-Mar-2016 66277.260000] starter_script: Applying labels for gas: 'gng1layer' (1) for process:1
 [23-Mar-2016 66277.270000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 66818.080000] starter_script: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 66818.360000] starter_script: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 66818.720000] starter_script: Applying labels for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 66818.730000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 66820.220000] starter_script: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 66820.670000] starter_script: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 66821.330000] starter_script: Applying labels for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 66821.340000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 66825.450000] starter_script: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 66825.880000] starter_script: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 66826.560000] starter_script: Applying labels for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 66826.570000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 66831.220000] starter_script: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 66832.180000] starter_script: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 66835.790000] starter_script: Applying labels for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 66835.790000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 66866.900000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:100
+[23-Mar-2016 66874.360000] starter_script: 1-th set.gng1layer Confusion matrix on this validation set:(1,1):8453	(1,2):2595	(2,1):3358	(2,2):3682	
+[23-Mar-2016 66878.530000] starter_script: 1-th set.gng2layer Confusion matrix on this validation set:(1,1):6335	(1,2):4713	(2,1):3429	(2,2):3611	
+[23-Mar-2016 66882.500000] starter_script: 1-th set.gng3layer Confusion matrix on this validation set:(1,1):1627	(1,2):9313	(2,1):1065	(2,2):5871	
+[23-Mar-2016 66886.540000] starter_script: 1-th set.gng4layer Confusion matrix on this validation set:(1,1):3542	(1,2):7398	(2,1):1502	(2,2):5434	
+[23-Mar-2016 66890.600000] starter_script: 1-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):2572	(1,2):8260	(2,1):1504	(2,2):5328	
+[23-Mar-2016 66909.780000] starter_script: gng1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	52.3011%	|| Specificity overall mean:	76.5116%	|| Precision overall mean:	58.6586%	|| F1 overall mean:	55.2977%
+[23-Mar-2016 66909.800000] starter_script: gng1layer	 [All data for Validation set] Best Sensitivity/Recall:        	52.3011%	|| Best Specificity:        	76.5116%	|| Best Precision:        	58.6586%	|| Best F1:       	55.2977%
+[23-Mar-2016 66909.810000] starter_script: gng2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	51.2926%	|| Specificity overall mean:	57.3407%	|| Precision overall mean:	43.3806%	|| F1 overall mean:	47.006%
+[23-Mar-2016 66909.810000] starter_script: gng2layer	 [All data for Validation set] Best Sensitivity/Recall:        	51.2926%	|| Best Specificity:        	57.3407%	|| Best Precision:        	43.3806%	|| Best F1:       	47.006%
+[23-Mar-2016 66909.820000] starter_script: gng3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	84.6453%	|| Specificity overall mean:	14.872%	|| Precision overall mean:	38.6657%	|| F1 overall mean:	53.0832%
+[23-Mar-2016 66909.820000] starter_script: gng3layer	 [All data for Validation set] Best Sensitivity/Recall:        	84.6453%	|| Best Specificity:        	14.872%	|| Best Precision:        	38.6657%	|| Best F1:       	53.0832%
+[23-Mar-2016 66909.820000] starter_script: gng4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	78.3449%	|| Specificity overall mean:	32.3766%	|| Precision overall mean:	42.3473%	|| F1 overall mean:	54.9777%
+[23-Mar-2016 66909.830000] starter_script: gng4layer	 [All data for Validation set] Best Sensitivity/Recall:        	78.3449%	|| Best Specificity:        	32.3766%	|| Best Precision:        	42.3473%	|| Best F1:       	54.9777%
+[23-Mar-2016 66909.830000] starter_script: gngSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	77.9859%	|| Specificity overall mean:	23.7445%	|| Precision overall mean:	39.2111%	|| F1 overall mean:	52.1841%
+[23-Mar-2016 66909.840000] starter_script: gngSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	77.9859%	|| Best Specificity:        	23.7445%	|| Best Precision:        	39.2111%	|| Best F1:       	52.1841%
+[23-Mar-2016 72025.990000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 72027.000000] starter_script: Running starter script
+[23-Mar-2016 72027.010000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 72043.290000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[23-Mar-2016 72056.750000] starter_script: Starting chain structure for GWR and GNG for nodes:100
+[23-Mar-2016 72056.760000] starter_script: ###Using multilayer GWR and GNG ###
+[23-Mar-2016 12.500000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:1
+[23-Mar-2016 12.890000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 12.890000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 12.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 70.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 70.090000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 70.090000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 71.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:1
+[23-Mar-2016 71.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 71.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 71.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 128.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 128.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 128.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 130.500000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:1
+[23-Mar-2016 130.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 130.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 130.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 197.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 197.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 197.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 199.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:1
+[23-Mar-2016 199.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 199.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 199.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 268.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 268.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 268.340000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 273.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:1
+[23-Mar-2016 273.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 273.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 273.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 415.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 415.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 415.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 72258.910000] starter_script: Labelling100
+[23-Mar-2016 72258.920000] starter_script: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 72259.150000] starter_script: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 72259.670000] starter_script: Applying labels for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 72259.690000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 72261.210000] starter_script: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 72261.460000] starter_script: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 72261.790000] starter_script: Applying labels for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 72261.800000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 72263.340000] starter_script: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 72263.780000] starter_script: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 72264.490000] starter_script: Applying labels for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 72264.490000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 72269.040000] starter_script: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 72269.470000] starter_script: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 72270.160000] starter_script: Applying labels for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 72270.160000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 72273.720000] starter_script: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 72274.410000] starter_script: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 72277.360000] starter_script: Applying labels for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 72277.370000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 72303.830000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:100
+[23-Mar-2016 72310.820000] starter_script: 1-th set.gng1layer Confusion matrix on this validation set:(1,1):8453	(1,2):2595	(2,1):3358	(2,2):3682	
+[23-Mar-2016 72313.300000] starter_script: 1-th set.gng2layer Confusion matrix on this validation set:(1,1):6335	(1,2):4713	(2,1):3429	(2,2):3611	
+[23-Mar-2016 72317.440000] starter_script: 1-th set.gng3layer Confusion matrix on this validation set:(1,1):1627	(1,2):9313	(2,1):1065	(2,2):5871	
+[23-Mar-2016 72320.210000] starter_script: 1-th set.gng4layer Confusion matrix on this validation set:(1,1):3542	(1,2):7398	(2,1):1502	(2,2):5434	
+[23-Mar-2016 72322.630000] starter_script: 1-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):2572	(1,2):8260	(2,1):1504	(2,2):5328	
+[23-Mar-2016 72344.470000] starter_script: gng1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	52.3011%	|| Specificity overall mean:	76.5116%	|| Precision overall mean:	58.6586%	|| F1 overall mean:	55.2977%
+[23-Mar-2016 72344.500000] starter_script: gng1layer	 [All data for Validation set] Best Sensitivity/Recall:        	52.3011%	|| Best Specificity:        	76.5116%	|| Best Precision:        	58.6586%	|| Best F1:       	55.2977%
+[23-Mar-2016 72344.510000] starter_script: gng2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	51.2926%	|| Specificity overall mean:	57.3407%	|| Precision overall mean:	43.3806%	|| F1 overall mean:	47.006%
+[23-Mar-2016 72344.510000] starter_script: gng2layer	 [All data for Validation set] Best Sensitivity/Recall:        	51.2926%	|| Best Specificity:        	57.3407%	|| Best Precision:        	43.3806%	|| Best F1:       	47.006%
+[23-Mar-2016 72344.510000] starter_script: gng3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	84.6453%	|| Specificity overall mean:	14.872%	|| Precision overall mean:	38.6657%	|| F1 overall mean:	53.0832%
+[23-Mar-2016 72344.510000] starter_script: gng3layer	 [All data for Validation set] Best Sensitivity/Recall:        	84.6453%	|| Best Specificity:        	14.872%	|| Best Precision:        	38.6657%	|| Best F1:       	53.0832%
+[23-Mar-2016 72344.520000] starter_script: gng4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	78.3449%	|| Specificity overall mean:	32.3766%	|| Precision overall mean:	42.3473%	|| F1 overall mean:	54.9777%
+[23-Mar-2016 72344.520000] starter_script: gng4layer	 [All data for Validation set] Best Sensitivity/Recall:        	78.3449%	|| Best Specificity:        	32.3766%	|| Best Precision:        	42.3473%	|| Best F1:       	54.9777%
+[23-Mar-2016 72344.530000] starter_script: gngSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	77.9859%	|| Specificity overall mean:	23.7445%	|| Precision overall mean:	39.2111%	|| F1 overall mean:	52.1841%
+[23-Mar-2016 72344.540000] starter_script: gngSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	77.9859%	|| Best Specificity:        	23.7445%	|| Best Precision:        	39.2111%	|| Best F1:       	52.1841%
+[23-Mar-2016 72909.930000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 72909.930000] starter_script: Running starter script
+[23-Mar-2016 72909.930000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 72911.360000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[23-Mar-2016 72923.530000] starter_script: Starting chain structure for GWR and GNG for nodes:1000
+[23-Mar-2016 72923.530000] starter_script: ###Using multilayer GWR and GNG ###
+[23-Mar-2016 429.910000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:1
+[23-Mar-2016 429.910000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 429.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:1000 nodes.
+[23-Mar-2016 429.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0        1 .  0     0000 .    50.0. 9   10036539012
