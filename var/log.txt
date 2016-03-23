@@ -9386,3 +9386,770 @@ gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of no
 [22-Mar-2016 24667.780000] starter_script: gng4layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.8006%	|| Best F1:       	55.9084%
 [22-Mar-2016 24667.790000] starter_script: gngSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
 [22-Mar-2016 24667.790000] starter_script: gngSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[22-Mar-2016 24834.110000] starter_script: =======================================================================================================================================================================================================================================
+[22-Mar-2016 24834.110000] starter_script: Running starter script
+[22-Mar-2016 24834.110000] starter_script: =======================================================================================================================================================================================================================================
+[22-Mar-2016 24835.860000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[22-Mar-2016 24846.540000] starter_script: Starting chain structure for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[22-Mar-2016 24846.550000] starter_script: ###Using multilayer GWR and GNG ###
+[22-Mar-2016 16.220000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:4
+[22-Mar-2016 16.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 16.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 16.670000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 15.000000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:6
+[22-Mar-2016 15.420000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 15.430000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 15.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 14.840000] remoteParallelFunction[22-Mar-2016 16.600000] : make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:8
+remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:1
+[22-Mar-2016 15.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: [22-Mar-2016 17.020000] gng_lax: generates GNG A and C matricesremoteParallelFunction
+: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 15.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 17.030000] remoteParallelFunction: make_general_channel/channel_general: [22-Mar-2016 16.600000] gas_method: gng_lax: Executing GNG with:100 nodes.
+remoteParallelFunction: [22-Mar-2016 15.260000] make_general_channel/channel_generalremoteParallelFunction: gas_method: make_general_channel/channel_general: : gas_methodWorking on gas: 'gng1layer' (1) with method:gng for process:5: 
+gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 16.270000] [22-Mar-2016 17.050000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:3
+[22-Mar-2016 17.030000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 17.040000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 16.290000] [22-Mar-2016 17.050000] [22-Mar-2016 16.700000] remoteParallelFunctionremoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : gas_method: gas_method: gng_lax: make_general_channel/channel_general: gng_lax: :     0          .  0     1000 .    50.0. 9   10036539012generates GNG A and C matricesgas_method
+
+: Working on gas: 'gng1layer' (1) with method:gng for process:2
+[22-Mar-2016 16.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 16.730000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 16.720000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 15.090000] [22-Mar-2016 16.720000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:7
+[22-Mar-2016 16.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 15.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 15.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 15.570000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 24903.300000] starter_script: =======================================================================================================================================================================================================================================
+[22-Mar-2016 24904.050000] starter_script: Running starter script
+[22-Mar-2016 24904.060000] starter_script: =======================================================================================================================================================================================================================================
+[22-Mar-2016 24906.700000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[22-Mar-2016 24918.660000] starter_script: Starting chain structure for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[22-Mar-2016 24918.670000] starter_script: ###Using multilayer GWR and GNG ###
+[22-Mar-2016 49.120000] [22-Mar-2016 50.760000] remoteParallelFunctionremoteParallelFunction: make_general_channel/channel_general: : gas_methodmake_general_channel/channel_general: Working on gas: 'gng1layer' (1) with method:gng for process:4: 
+gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:8
+[22-Mar-2016 51.160000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 51.160000] [22-Mar-2016 49.450000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : gas_methodgas_method: : gng_laxgng_lax: : Executing GNG with:100 nodes.generates GNG A and C matrices
+
+[22-Mar-2016 49.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 51.170000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 49.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 49.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:6
+[22-Mar-2016 49.810000] remoteParallelFunction: make_general_channel/channel_general[22-Mar-2016 50.610000] : gas_method: gng_lax: generates GNG A and C matrices
+remoteParallelFunction: [22-Mar-2016 49.810000] make_general_channel/channel_generalremoteParallelFunction: : gas_methodmake_general_channel/channel_general: : gas_methodWorking on gas: 'gng1layer' (1) with method:gng for process:3: gng_lax
+: Executing GNG with:100 nodes.
+[22-Mar-2016 51.020000] remoteParallelFunction: make_general_channel/channel_general[22-Mar-2016 51.000000] : [22-Mar-2016 49.820000] gas_method: remoteParallelFunctionWorking on gas: 'gng1layer' (1) with method:gng for process:1: make_general_channel/channel_general: 
+gas_methodremoteParallelFunction: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012: 
+make_general_channel/channel_general: [22-Mar-2016 51.060000] gas_method: remoteParallelFunction: Working on gas: 'gng1layer' (1) with method:gng for process:5make_general_channel/channel_general: 
+gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 51.060000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 51.070000] [22-Mar-2016 51.480000] remoteParallelFunctionremoteParallelFunction: make_general_channel/channel_general: : make_general_channel/channel_generalgas_method: : gng_laxgas_method: :     0          .  0     1000 .    50.0. 9   10036539012[22-Mar-2016 51.450000] gng_lax
+: generates GNG A and C matricesremoteParallelFunction
+: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 51.480000] remoteParallelFunction: [22-Mar-2016 51.460000] make_general_channel/channel_generalremoteParallelFunction: : gas_methodmake_general_channel/channel_general: : gas_methodgng_lax: gng_lax: : Executing GNG with:100 nodes.Executing GNG with:100 nodes.
+
+[22-Mar-2016 51.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 51.490000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 49.360000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:7
+[22-Mar-2016 49.820000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 49.820000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 49.830000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 50.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:2
+[22-Mar-2016 51.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 51.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 51.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 109.430000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 109.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:8
+[22-Mar-2016 109.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:8
+[22-Mar-2016 112.140000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 112.150000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:4
+[22-Mar-2016 112.150000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:4
+[22-Mar-2016 110.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:8
+[22-Mar-2016 110.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 110.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 110.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 113.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:4
+[22-Mar-2016 113.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 113.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 113.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 111.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 111.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:7
+[22-Mar-2016 111.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:7
+[22-Mar-2016 112.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 112.140000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:6
+[22-Mar-2016 112.150000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:6
+[22-Mar-2016 113.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:6[22-Mar-2016 114.540000] 
+[22-Mar-2016 113.420000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : gas_method: make_general_channel/channel_generalgng_lax: : generates GNG A and C matricesgas_method
+: gng_lax: End number of nodes:100 With MAXNODES:100[22-Mar-2016 113.430000] 
+remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 113.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 114.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:2
+[22-Mar-2016 114.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:2
+[22-Mar-2016 115.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 115.090000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:5
+[22-Mar-2016 115.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:5
+[22-Mar-2016 113.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:7
+[22-Mar-2016 113.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 113.420000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 113.430000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 114.810000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 114.820000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:3
+[22-Mar-2016 114.830000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:3
+[22-Mar-2016 115.870000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:2
+[22-Mar-2016 115.870000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 115.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 115.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 116.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:5
+[22-Mar-2016 116.480000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 116.480000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 116.480000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 116.170000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:3
+[22-Mar-2016 116.170000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 116.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 116.190000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 118.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 118.270000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:1
+[22-Mar-2016 118.280000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[22-Mar-2016 119.500000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:1
+[22-Mar-2016 119.500000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 119.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 119.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 171.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 171.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:8
+[22-Mar-2016 171.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:8
+[22-Mar-2016 175.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 175.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:4
+[22-Mar-2016 175.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:4
+[22-Mar-2016 173.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:8
+[22-Mar-2016 173.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 173.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 173.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 177.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:4
+[22-Mar-2016 177.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 177.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 177.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 177.430000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 177.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:7
+[22-Mar-2016 177.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:7
+[22-Mar-2016 177.640000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 177.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:6
+[22-Mar-2016 177.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:6
+[22-Mar-2016 179.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 179.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:5
+[22-Mar-2016 179.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:5
+[22-Mar-2016 179.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 179.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:3
+[22-Mar-2016 179.890000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:3
+[22-Mar-2016 179.870000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 179.870000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:2
+[22-Mar-2016 179.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:2
+[22-Mar-2016 179.060000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:7
+[22-Mar-2016 179.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 179.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 179.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 179.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:6
+[22-Mar-2016 179.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 179.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 179.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 181.290000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:5
+[22-Mar-2016 181.290000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 181.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 181.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 181.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:3
+[22-Mar-2016 181.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 181.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 181.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 181.480000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:2
+[22-Mar-2016 181.490000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 181.490000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 181.490000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 182.910000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 182.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:1
+[22-Mar-2016 182.930000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[22-Mar-2016 184.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:1
+[22-Mar-2016 184.670000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 184.670000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 184.680000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 243.720000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 243.720000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:8
+[22-Mar-2016 243.720000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:8
+[22-Mar-2016 248.090000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 248.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:4
+[22-Mar-2016 248.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:4
+[22-Mar-2016 246.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:8
+[22-Mar-2016 246.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 246.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 246.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 250.890000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:4
+[22-Mar-2016 250.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 250.910000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 250.910000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 251.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 251.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:6
+[22-Mar-2016 251.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:6
+[22-Mar-2016 254.270000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:6
+[22-Mar-2016 254.280000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 254.280000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 254.280000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 254.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 254.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:7
+[22-Mar-2016 254.400000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:7
+[22-Mar-2016 257.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 257.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:5
+[22-Mar-2016 257.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:5
+[22-Mar-2016 257.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 257.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:3
+[22-Mar-2016 257.700000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:3
+[22-Mar-2016 257.570000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:7
+[22-Mar-2016 257.580000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 257.580000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 257.580000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 259.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 259.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:1
+[22-Mar-2016 259.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[22-Mar-2016 260.150000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:5
+[22-Mar-2016 260.150000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 260.160000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 260.160000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 260.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:3
+[22-Mar-2016 260.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 260.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 260.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 260.630000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 260.640000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:2
+[22-Mar-2016 260.640000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:2
+[22-Mar-2016 262.760000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:1
+[22-Mar-2016 262.760000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 262.760000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 262.770000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 263.870000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:2
+[22-Mar-2016 263.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 263.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 263.880000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 318.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 318.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:8
+[22-Mar-2016 318.190000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:8
+[22-Mar-2016 323.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 323.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:4
+[22-Mar-2016 323.340000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:4
+[22-Mar-2016 322.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:8
+[22-Mar-2016 322.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 322.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 322.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 328.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:4
+[22-Mar-2016 328.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 328.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 328.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 328.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 328.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:6
+[22-Mar-2016 328.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:6
+[22-Mar-2016 333.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:6
+[22-Mar-2016 333.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 333.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 333.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 336.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 336.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:7
+[22-Mar-2016 336.270000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:7
+[22-Mar-2016 339.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 339.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:5
+[22-Mar-2016 339.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:5
+[22-Mar-2016 341.500000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 341.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:3
+[22-Mar-2016 341.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:3
+[22-Mar-2016 342.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 342.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:1
+[22-Mar-2016 342.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[22-Mar-2016 343.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 343.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:2
+[22-Mar-2016 343.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:2
+[22-Mar-2016 343.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:7
+[22-Mar-2016 343.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 343.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 343.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 347.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:5
+[22-Mar-2016 347.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 347.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 347.140000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 350.620000] [22-Mar-2016 349.710000] [22-Mar-2016 350.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:1
+[22-Mar-2016 350.690000] remoteParallelFunctionremoteParallelFunctionremoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+: : make_general_channel/channel_generalmake_general_channel/channel_general: gas_method: : gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:2
+Working on gas: 'gngSTSlayer' (5) with method:gng for process:3
+[22-Mar-2016 350.690000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 350.740000] [22-Mar-2016 349.760000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+remoteParallelFunction: make_general_channel/channel_general: gas_method[22-Mar-2016 350.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+: gng_lax: generates GNG A and C matrices
+[22-Mar-2016 350.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: [22-Mar-2016 349.780000]     0          .  0     1000 .    50.0. 9   10036539012remoteParallelFunction
+: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[22-Mar-2016 350.770000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 349.810000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[22-Mar-2016 475.070000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 475.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:8
+[22-Mar-2016 475.080000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:8
+[22-Mar-2016 482.530000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 482.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:4
+[22-Mar-2016 482.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:4
+[22-Mar-2016 490.570000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 490.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:6
+[22-Mar-2016 490.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:6
+[22-Mar-2016 511.390000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 511.410000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:5
+[22-Mar-2016 511.420000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:5
+[22-Mar-2016 507.500000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 507.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:7
+[22-Mar-2016 507.560000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:7
+[22-Mar-2016 512.960000] [22-Mar-2016 514.450000] [22-Mar-2016 513.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[22-Mar-2016 513.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:1
+[22-Mar-2016 512.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:3
+[22-Mar-2016 513.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[22-Mar-2016 514.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:2
+[22-Mar-2016 512.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:3
+[22-Mar-2016 514.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:2
+[22-Mar-2016 25207.440000] starter_script: Labelling100  100  100  100  100  100  100  100
+[22-Mar-2016 535.520000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:1
+[22-Mar-2016 535.690000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[22-Mar-2016 535.910000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:1
+[22-Mar-2016 535.970000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 535.230000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:2
+[22-Mar-2016 535.400000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:2
+[22-Mar-2016 535.600000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:2
+[22-Mar-2016 535.640000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 537.410000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:3
+[22-Mar-2016 537.580000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:3
+[22-Mar-2016 537.770000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:3
+[22-Mar-2016 537.820000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 542.920000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:1
+[22-Mar-2016 543.060000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[22-Mar-2016 543.250000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:1
+[22-Mar-2016 543.250000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 542.900000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:2
+[22-Mar-2016 543.040000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:2
+[22-Mar-2016 543.240000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:2
+[22-Mar-2016 543.240000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 545.080000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:3
+[22-Mar-2016 545.250000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:3
+[22-Mar-2016 545.470000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:3
+[22-Mar-2016 545.470000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 551.110000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:1
+[22-Mar-2016 551.330000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[22-Mar-2016 551.790000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:1
+[22-Mar-2016 551.800000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 551.920000] [22-Mar-2016 552.830000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:3
+remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:2
+[22-Mar-2016 552.170000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:2
+[22-Mar-2016 553.070000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:3
+[22-Mar-2016 553.550000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:3
+[22-Mar-2016 553.550000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 552.690000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:2
+[22-Mar-2016 552.700000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 508.580000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:4
+[22-Mar-2016 508.790000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:4
+[22-Mar-2016 509.010000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:4
+[22-Mar-2016 509.080000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 572.530000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:1
+[22-Mar-2016 572.760000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[22-Mar-2016 573.290000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:1
+[22-Mar-2016 573.290000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 517.560000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:4
+[22-Mar-2016 517.700000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:4
+[22-Mar-2016 517.900000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:4
+[22-Mar-2016 517.910000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 577.580000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:3
+[22-Mar-2016 577.900000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:3
+[22-Mar-2016 578.440000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:3
+[22-Mar-2016 578.440000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 525.480000] [22-Mar-2016 578.320000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:4
+remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:2
+[22-Mar-2016 525.740000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:4
+[22-Mar-2016 578.570000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:2
+[22-Mar-2016 531.800000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:5
+[22-Mar-2016 579.070000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:2
+[22-Mar-2016 579.080000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 526.320000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:4
+[22-Mar-2016 526.330000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 531.970000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:5
+[22-Mar-2016 532.160000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:5
+[22-Mar-2016 532.270000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 539.360000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:5
+[22-Mar-2016 539.500000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:5
+[22-Mar-2016 539.690000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:5
+[22-Mar-2016 539.690000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 600.960000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:1
+[22-Mar-2016 601.970000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[22-Mar-2016 605.030000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:1
+[22-Mar-2016 605.050000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 548.890000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:5
+[22-Mar-2016 549.130000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:5
+[22-Mar-2016 549.600000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:5
+[22-Mar-2016 549.610000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 603.860000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:3
+[22-Mar-2016 548.530000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:4
+[22-Mar-2016 548.810000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:4
+[22-Mar-2016 604.780000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:3
+[22-Mar-2016 549.320000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:4
+[22-Mar-2016 549.320000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 608.260000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:3
+[22-Mar-2016 608.260000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 568.380000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:5
+[22-Mar-2016 568.600000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:5
+[22-Mar-2016 569.070000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:5
+[22-Mar-2016 569.070000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 606.050000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:2
+[22-Mar-2016 606.990000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:2
+[22-Mar-2016 609.890000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:2
+[22-Mar-2016 609.890000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 511.020000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:6
+[22-Mar-2016 511.240000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:6
+[22-Mar-2016 511.460000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:6
+[22-Mar-2016 511.560000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 589.200000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:5
+[22-Mar-2016 589.910000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:5
+[22-Mar-2016 570.120000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:4
+[22-Mar-2016 571.220000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:4
+[22-Mar-2016 592.720000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:5
+[22-Mar-2016 592.730000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 574.000000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:4
+[22-Mar-2016 574.000000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 519.260000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:6
+[22-Mar-2016 519.410000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:6
+[22-Mar-2016 519.660000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:6
+[22-Mar-2016 519.660000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 528.830000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:6
+[22-Mar-2016 529.080000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:6
+[22-Mar-2016 529.600000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:6
+[22-Mar-2016 529.610000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 551.050000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:6
+[22-Mar-2016 551.310000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:6
+[22-Mar-2016 551.860000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:6
+[22-Mar-2016 551.860000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 576.040000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:6
+[22-Mar-2016 577.100000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:6
+[22-Mar-2016 529.440000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:7
+[22-Mar-2016 529.620000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:7
+[22-Mar-2016 529.840000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:7
+[22-Mar-2016 529.910000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 579.820000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:6
+[22-Mar-2016 579.820000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 496.470000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:8
+[22-Mar-2016 496.630000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:8
+[22-Mar-2016 496.820000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:8
+[22-Mar-2016 496.900000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 536.300000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:7
+[22-Mar-2016 536.420000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:7
+[22-Mar-2016 536.600000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:7
+[22-Mar-2016 536.610000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 503.250000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:8
+[22-Mar-2016 503.370000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:8
+[22-Mar-2016 503.550000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:8
+[22-Mar-2016 503.560000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 542.880000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:7
+[22-Mar-2016 543.100000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:7
+[22-Mar-2016 543.550000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:7
+[22-Mar-2016 543.550000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 509.860000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:8
+[22-Mar-2016 510.080000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:8
+[22-Mar-2016 510.550000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:8
+[22-Mar-2016 510.550000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 560.570000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:7
+[22-Mar-2016 560.790000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:7
+[22-Mar-2016 561.250000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:7
+[22-Mar-2016 561.260000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 528.170000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:8
+[22-Mar-2016 528.370000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:8
+[22-Mar-2016 528.850000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:8
+[22-Mar-2016 528.850000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 585.910000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:7
+[22-Mar-2016 586.760000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:7
+[22-Mar-2016 548.690000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:8
+[22-Mar-2016 549.320000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:8
+[22-Mar-2016 589.590000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:7
+[22-Mar-2016 589.590000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[22-Mar-2016 551.980000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:8
+[22-Mar-2016 551.980000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 48654.390000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48654.550000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48654.610000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48654.640000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48654.660000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48654.710000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48654.720000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48654.730000] dbgmsg: Displaying multiple confusion matrices for GWR and GNG for nodes:100  100  100  100  100  100  100  100
+[23-Mar-2016 48667.860000] dbgmsg: 1-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48670.240000] dbgmsg: 1-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48673.940000] dbgmsg: 1-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48676.470000] dbgmsg: 1-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48679.640000] dbgmsg: 1-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 48684.430000] dbgmsg: 2-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48688.520000] dbgmsg: 2-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48690.820000] dbgmsg: 2-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48693.290000] dbgmsg: 2-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48697.850000] dbgmsg: 2-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 48701.520000] dbgmsg: 3-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48705.930000] dbgmsg: 3-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48710.490000] dbgmsg: 3-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48713.420000] dbgmsg: 3-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48715.680000] dbgmsg: 3-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 48719.350000] dbgmsg: 4-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48722.170000] dbgmsg: 4-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48726.310000] dbgmsg: 4-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48730.980000] dbgmsg: 4-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48734.920000] dbgmsg: 4-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 48737.280000] dbgmsg: 5-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48739.700000] dbgmsg: 5-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48744.430000] dbgmsg: 5-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48749.030000] dbgmsg: 5-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48751.550000] dbgmsg: 5-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 48753.880000] dbgmsg: 6-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48758.040000] dbgmsg: 6-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48760.400000] dbgmsg: 6-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48764.300000] dbgmsg: 6-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48768.790000] dbgmsg: 6-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 48772.280000] dbgmsg: 7-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48776.910000] dbgmsg: 7-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48780.750000] dbgmsg: 7-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48783.030000] dbgmsg: 7-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48785.560000] dbgmsg: 7-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 48789.460000] dbgmsg: 8-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48793.030000] dbgmsg: 8-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 48795.330000] dbgmsg: 8-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48797.650000] dbgmsg: 8-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 48801.950000] dbgmsg: 8-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 49744.630000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 49745.520000] starter_script: Running starter script
+[23-Mar-2016 49745.530000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 49762.960000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[23-Mar-2016 49778.170000] starter_script: Starting chain structure for GWR and GNG for nodes:100
+[23-Mar-2016 49778.180000] starter_script: ###Using multilayer GWR and GNG ###
+[23-Mar-2016 12.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:1
+[23-Mar-2016 12.830000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 12.840000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 12.850000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 68.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 68.560000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 68.560000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 69.750000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:1
+[23-Mar-2016 69.760000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 69.770000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 69.770000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 126.730000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 126.730000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 126.730000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 128.230000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:1
+[23-Mar-2016 128.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 128.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 128.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 194.510000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 194.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 194.520000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 197.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:1
+[23-Mar-2016 197.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 197.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 197.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 265.250000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 265.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 265.260000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 269.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:1
+[23-Mar-2016 269.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 269.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 269.680000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 410.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 410.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 410.110000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 50012.450000] starter_script: Labelling100
+[23-Mar-2016 424.800000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 424.920000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 425.080000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 425.100000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 430.900000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 431.000000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 431.170000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 431.170000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 437.180000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 437.380000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 437.820000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 437.820000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 454.040000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 454.240000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 454.710000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 454.710000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 471.160000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 471.780000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 474.370000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 474.370000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 50114.130000] starter_script: Displaying multiple confusion matrices for GWR and GNG for nodes:100
+[23-Mar-2016 50122.930000] starter_script: 1-th set.gng1layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 50127.860000] starter_script: 1-th set.gng2layer Confusion matrix on this validation set:(1,1):0	(1,2):11048	(2,1):0	(2,2):7040	
+[23-Mar-2016 50132.010000] starter_script: 1-th set.gng3layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 50134.540000] starter_script: 1-th set.gng4layer Confusion matrix on this validation set:(1,1):0	(1,2):10940	(2,1):0	(2,2):6936	
+[23-Mar-2016 50137.280000] starter_script: 1-th set.gngSTSlayer Confusion matrix on this validation set:(1,1):0	(1,2):10832	(2,1):0	(2,2):6832	
+[23-Mar-2016 50160.230000] starter_script: gng1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.9208%	|| F1 overall mean:	56.0331%
+[23-Mar-2016 50160.250000] starter_script: gng1layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.9208%	|| Best F1:       	56.0331%
+[23-Mar-2016 50160.250000] starter_script: gng2layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.9208%	|| F1 overall mean:	56.0331%
+[23-Mar-2016 50160.260000] starter_script: gng2layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.9208%	|| Best F1:       	56.0331%
+[23-Mar-2016 50160.260000] starter_script: gng3layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.8006%	|| F1 overall mean:	55.9084%
+[23-Mar-2016 50160.260000] starter_script: gng3layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.8006%	|| Best F1:       	55.9084%
+[23-Mar-2016 50160.260000] starter_script: gng4layer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.8006%	|| F1 overall mean:	55.9084%
+[23-Mar-2016 50160.260000] starter_script: gng4layer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.8006%	|| Best F1:       	55.9084%
+[23-Mar-2016 50160.270000] starter_script: gngSTSlayer	 [All data for Validation set] Sensitivity/Recall overall mean:	100%	|| Specificity overall mean:	0%	|| Precision overall mean:	38.6775%	|| F1 overall mean:	55.7805%
+[23-Mar-2016 50160.270000] starter_script: gngSTSlayer	 [All data for Validation set] Best Sensitivity/Recall:        	100%	|| Best Specificity:        	0%	|| Best Precision:        	38.6775%	|| Best F1:       	55.7805%
+[23-Mar-2016 50917.670000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 50917.680000] starter_script: Running starter script
+[23-Mar-2016 50917.680000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 50919.080000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[23-Mar-2016 50931.040000] starter_script: Starting chain structure for GWR and GNG for nodes:100
+[23-Mar-2016 50931.050000] starter_script: ###Using multilayer GWR and GNG ###
+[23-Mar-2016 584.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:1
+[23-Mar-2016 584.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 584.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 584.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 639.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 639.540000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 639.550000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 640.620000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:1
+[23-Mar-2016 640.620000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 640.620000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 640.630000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 697.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 697.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 697.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 698.950000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:1
+[23-Mar-2016 698.950000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 698.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 698.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 764.840000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 764.840000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 764.840000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 767.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:1
+[23-Mar-2016 767.460000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 767.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 767.470000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 835.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 835.120000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 835.130000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 839.600000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:1
+[23-Mar-2016 839.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 839.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 839.610000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 980.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 980.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 980.710000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 51105.860000] starter_script: Labelling100
+[23-Mar-2016 996.160000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 996.270000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 996.440000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 996.450000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 1002.260000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 1002.370000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 1002.540000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 1002.540000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 1008.630000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 1008.830000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 1009.270000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 1009.270000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 1025.760000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 1025.950000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 1026.410000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 1026.420000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 1042.890000] remoteParallelFunction: make_general_channel/channel_general: Setting validation input (and clipping output) for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 1043.500000] remoteParallelFunction: make_general_channel/channel_general: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 1046.090000] remoteParallelFunction: make_general_channel/channel_general: Applying labels for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 1046.090000] remoteParallelFunction: make_general_channel/channel_general: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 64560.500000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 64560.510000] starter_script: Running starter script
+[23-Mar-2016 64560.520000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 64573.150000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[23-Mar-2016 64588.110000] starter_script: Starting chain structure for GWR and GNG for nodes:100
+[23-Mar-2016 64588.120000] starter_script: ###Using multilayer GWR and GNG ###
+[23-Mar-2016 12.620000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:1
+[23-Mar-2016 13.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 13.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 13.030000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 72.730000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 72.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 72.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 74.000000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:1
+[23-Mar-2016 74.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 74.010000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 74.020000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 133.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 133.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 133.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 134.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:1
+[23-Mar-2016 134.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 134.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 134.930000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 203.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 203.650000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 203.660000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 206.430000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:1
+[23-Mar-2016 206.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 206.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 206.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 279.220000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 279.230000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 279.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 283.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:1
+[23-Mar-2016 283.980000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 283.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 283.990000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 430.630000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 430.630000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 430.630000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 64871.220000] starter_script: Labelling100
+[23-Mar-2016 64871.240000] starter_script: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 64871.700000] starter_script: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 64872.290000] starter_script: Applying labels for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 64872.320000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 65867.940000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 65882.820000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.
+[23-Mar-2016 66067.420000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 66067.430000] starter_script: Running starter script
+[23-Mar-2016 66067.430000] starter_script: =======================================================================================================================================================================================================================================
+[23-Mar-2016 66080.090000] starter_script: conformskel: Applies normalizations of several sorts on both training and validation datasets
+[23-Mar-2016 66091.880000] starter_script: Starting chain structure for GWR and GNG for nodes:100
+[23-Mar-2016 66091.890000] starter_script: ###Using multilayer GWR and GNG ###
+[23-Mar-2016 12.240000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng1layer' (1) with method:gng for process:1
+[23-Mar-2016 12.600000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 12.600000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 12.620000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 68.090000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 68.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng1layer' (1) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 68.100000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 69.280000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng2layer' (2) with method:gng for process:1
+[23-Mar-2016 69.290000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 69.300000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 69.310000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 125.440000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 125.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng2layer' (2) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 125.450000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng2layer' (2) for process:1
+[23-Mar-2016 126.960000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng3layer' (3) with method:gng for process:1
+[23-Mar-2016 126.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 126.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 126.970000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 192.730000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 192.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng3layer' (3) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 192.740000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng3layer' (3) for process:1
+[23-Mar-2016 195.370000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gng4layer' (4) with method:gng for process:1
+[23-Mar-2016 195.370000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 195.380000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 195.380000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 263.170000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 263.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gng4layer' (4) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 263.180000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gng4layer' (4) for process:1
+[23-Mar-2016 267.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Working on gas: 'gngSTSlayer' (5) with method:gng for process:1
+[23-Mar-2016 267.900000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: generates GNG A and C matrices
+[23-Mar-2016 267.920000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: Executing GNG with:100 nodes.
+[23-Mar-2016 267.930000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax:     0          .  0     1000 .    50.0. 9   10036539012
+[23-Mar-2016 409.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_lax: End number of nodes:100 With MAXNODES:100
+[23-Mar-2016 409.320000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finished working on gas: 'gngSTSlayer' (5) with method:gng.Num of nodes reached:100 for process:1
+[23-Mar-2016 409.330000] remoteParallelFunction: make_general_channel/channel_general: gas_method: Finding best matching units for gas: 'gngSTSlayer' (5) for process:1
+[23-Mar-2016 66276.700000] starter_script: Labelling100
+[23-Mar-2016 66276.710000] starter_script: Setting validation input (and clipping output) for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 66276.950000] starter_script: Finding best matching units for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 66277.260000] starter_script: Applying labels for gas: 'gng1layer' (1) for process:1
+[23-Mar-2016 66277.270000] starter_script: labeller: labeling: Applying labels to the prototypical nodes.

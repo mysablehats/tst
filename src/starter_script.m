@@ -29,7 +29,7 @@ aa_environment
 load_skel_data
 
 TEST = false; % set to false to actually run it
-PARA = true;
+PARA = false;
 
 NODES = 100*ones(1,8);
 
@@ -139,7 +139,7 @@ dbgmsg('Labelling',num2str(NODES),1)
 
 whatIlabel = 1:length(savestructure(1).gas); %change this series for only the last value to label only the last gas
 
-parfor i=1:length(savestructure)
+for i=1:length(savestructure)
     savestructure(i).val.data = data_val;
     savestructure(i).val.ends = ends_val;
     savestructure(i).val.y = y_val;
@@ -170,9 +170,10 @@ end
 %% Displaying multiple confusion matrices for GWR and GNG for nodes
 % This part creates the matrices that can later be shown with the
 % plotconfusion() function.
-savestructure(i).figset = {}; %% you should clear the set first if you want to rebuild them
-dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
-
+for i =1:length(savestructure)
+    savestructure(i).figset = {}; %% you should clear the set first if you want to rebuild them
+    dbgmsg('Displaying multiple confusion matrices for GWR and GNG for nodes:',num2str(NODES),1)
+end
 for i=1:length(savestructure)
     for j = whatIlabel
         [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(savestructure(i).val.gas(j).y,savestructure(i).val.gas(j).class);

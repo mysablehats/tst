@@ -9,10 +9,17 @@ function labels = labeling(nodes, data, y)
 %%%%%MESSAGES 
 dbgmsg('Applying labels to the prototypical nodes.',1)
 %%%%%
+[~,ni] = pdist2(data',nodes', 'euclidean', 'Smallest',1);
+
+labels = y(ni);
+
+end
+function labels = labelling(nodes, data, y)
 maxmax = size(nodes,2);
 labels = zeros(1,maxmax);
 
 for i = 1:maxmax
     [~, ~, ni1 , ~ , ~] = findnearest(nodes(:,i), data); % s1 is the index of the nearest point in data
     labels(i) = y(ni1);
+end
 end
