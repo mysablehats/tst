@@ -1,4 +1,8 @@
 function [linput,newends, newy] = longinput(shortinput, q, ends, y)
+dimshort = size(shortinput,1);
+endofdata = size(shortinput,2);
+
+
 newends = zeros(size(ends));
 linput = zeros(size(shortinput,1)*q,size(shortinput,2)-size(ends,2)*(q-1));
 newy = zeros(1,size(linput,2));
@@ -10,12 +14,10 @@ newy = zeros(1,size(linput,2));
 
 newends = ends-(q-1);
 k = 1;
-dimshort = size(shortinput,1);
 maxj = size(ends,2);
-endofdata = size(shortinput,2);
 for j = 1:maxj
     maxi = newends(j);
-    if maxi<0
+    if maxi<0 % this likely not working...
         newends(j) =0;
     else
         for i = 1:maxi
