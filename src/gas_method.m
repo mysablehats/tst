@@ -1,4 +1,4 @@
-function savestructure = gas_method(savestructure, arq_connect, i,j, num_of_nodes, dimdim)
+function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
 %% Gas Method
 % This is a function to go over a gas of the classifier, populate it with the apropriate input and generate the best matching units for the next layer.  
 %% Setting up some labels
@@ -20,10 +20,10 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, num_of_node
         %DO GNG OR GWR
         if strcmp(arq_connect.method,'gng')
             %do gng
-            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~, ~] = gng_lax(savestructure.train.gas(j).inputs.input,num_of_nodes); 
+            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~, ~] = gng_lax(savestructure.train.gas(j).inputs.input,arq_connect.params); 
         elseif strcmp(arq_connect.method,'gwr')
             %do gwr
-            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~, ~] = gwr(savestructure.train.gas(j).inputs.input,num_of_nodes); 
+            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~, ~] = gwr(savestructure.train.gas(j).inputs.input,arq_connect.params); 
         else
             error('unknown method')
         end
