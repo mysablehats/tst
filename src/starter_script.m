@@ -42,7 +42,7 @@ PARA = false;
 
 P = 4;
 
-NODES = 500;
+NODES = 1000;
 
 if TEST
     NODES = 100;
@@ -141,22 +141,33 @@ data.y.train = y_train;
 data.ends.train = ends_train;
 data.ends.val = ends_val;
 
-best = [0 0 0 0];
-for i = 1:4
-    n = randperm(size(data_train,2),2);
-    params.startingpoint = [n(1) n(2)];
-    [~, mt] = starter_sc(data, allconn, P);
-    if mt(1)>best(1)&&mt(4)>40
-        best(1) = mt(1);
-        bestmtallconn.sensitivity = allconn;
-    end
-    if mt(2)>best(2)&&mt(4)>40
-        best(2) = mt(2);
-        bestmtallconn.specificity = allconn;
-    end
-    if mt(3)>best(3)&&mt(4)>40
-        best(3) = mt(3);
-        bestmtallconn.precision = allconn;
-    end
+%a.best = [0 0 0 0];
+for i = 1:8
+    paramsZ(i) = params;
 end
 
+tic
+for j = 1:576
+    clear a
+    a(1:8) = struct('best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
+parfor i = 1:8
+    n = randperm(size(data_train,2)-2,2); % -(q-1) necessary because concatenation reduces the data size!
+    paramsZ(i).startingpoint = [n(1) n(2)]; 
+    allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, paramsZ(i)}...
+            };
+    [~, a(i).mt] = starter_sc(data, allconn, P);
+    if a(i).mt(1)>a(i).best(1)&&a(i).mt(4)>40
+        a(i).best(1) = a(i).mt(1);
+        a(i).bestmtallconn.sensitivity = allconn;
+    end
+    if a(i).mt(2)>a(i).best(2)&&a(i).mt(4)>40
+        a(i).best(2) = a(i).mt(2);
+        a(i).bestmtallconn.specificity = allconn;
+    end
+    if a(i).mt(3)>a(i).best(3)&&a(i).mt(4)>40
+        a(i).best(3) = a(i).mt(3);
+        a(i).bestmtallconn.precision = allconn;
+    end
+end
+end
+toc

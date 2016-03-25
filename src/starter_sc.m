@@ -1,5 +1,6 @@
 function [savestructure, metrics] = starter_sc(data, allconn, P)
 
+PLOTIT = false;
 data_val = data.val;
 data_train = data.train;
 y_val = data.y.val;
@@ -134,9 +135,11 @@ for i=1:length(savestructure)
 end
 
 %% Actual display of the confusion matrices:
-for i = 1:length(savestructure)
-    figure
-    plotconfusion(savestructure(i).figset{:})
+if PLOTIT
+    for i = 1:length(savestructure)
+        figure
+        plotconfusion(savestructure(i).figset{:})
+    end
 end
 % plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
 % clear i
