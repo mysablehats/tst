@@ -10,17 +10,27 @@ close all;
 % dbgmsg('Skeleton data (training and validation) generated.')
 % %%validation and training set
 
+%% Pre-conditioning of data
+% 
+%[data_train, data_val] = removehipbias(data_train, data_val); 
+[data_train_, data_val_] = conformskel(data_train, data_val,'nohips','normal');
+[data_train_mirror, data_val_mirror] = conformskel(data_train, data_val,'mirror','nohips','normal');
+data_train = [data_train_, data_train_mirror];
+ends_train = [ends_train, ends_train];
+data_val = [data_val_, data_val_mirror];
+ends_val = [ends_val, ends_val];
+y_train = [y_train y_train];
+y_val = [y_val y_val];
+
 %% Loads environment Variables and saved Data
-fclose('all');
-aa_environment
+
 load_skel_data
 
 TEST = true; % set to false to actually run it
 PARA = true;
-
 P = 4;
-
 NODES = 1000;
+
 
 if TEST
     NODES = 3;
@@ -31,7 +41,7 @@ end
 
 
 params.PLOTIT = false;
-params.RANDOMSTART = true;
+params.RANDOMSTART = false;
 
 params.amax = 50; %greatest allowed age
 params.nodes = NODES; %maximum number of nodes/neurons in the gas
@@ -65,6 +75,13 @@ params.d                           = .99;   % Error reduction factor.
 %      {'gng4layer',   'gng',{'gng2layer'},              'vel',3}...
 %      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3}};
 
+  allconn = {...
+      {'gwr1layer',   'gwr',{'pos'},                    'pos',1,params}...
+      {'gwr2layer',   'gwr',{'vel'},                    'vel',1,params}...
+      {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3,params}...
+      {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3,params}...
+      {'gwrSTSlayer', 'gwr',{'gwr4layer','gwr3layer'},  'all',3,params}};
+
 %  allconn = {...
 %      {'gwr1layer',   'gwr',{'pos'},                    'pos',3}...
 %      {'gwr2layer',   'gwr',{'vel'},                    'vel',3}...
@@ -74,21 +91,10 @@ params.d                           = .99;   % Error reduction factor.
 %      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3}...
 %      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3}}; 
  
-allconn = {{'gwr1layer',   'gng',{'pos'},                    'pos',3, params}...
-           };
-       
+% allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, params}...
+%            };
+%        
 
-%% Pre-conditioning of data
-% 
-%[data_train, data_val] = removehipbias(data_train, data_val); 
-[data_train_, data_val_] = conformskel(data_train, data_val,'nohips','normal');
-[data_train_mirror, data_val_mirror] = conformskel(data_train, data_val,'mirror','nohips','normal');
-data_train = [data_train_, data_train_mirror];
-ends_train = [ends_train, ends_train];
-data_val = [data_val_, data_val_mirror];
-ends_val = [ends_val, ends_val];
-y_train = [y_train y_train];
-y_val = [y_val y_val];
 
 %%  Pre gas conditioning
 

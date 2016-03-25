@@ -10718,3 +10718,107 @@ remoteParallelFunction: make_general_channel/channel_general: gas_method: gng_la
 [24-Mar-2016 4904.320000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gng.Num of nodes reached:3 for process:2
 [24-Mar-2016 4904.330000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
 [24-Mar-2016 4905.150000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gng for process:3
+[25-Mar-2016 167578.440000] starter_script: starter_sc: =======================================================================================================================================================================================================================================
+[25-Mar-2016 167578.450000] starter_script: starter_sc: Running starter script
+[25-Mar-2016 167578.450000] starter_script: starter_sc: =======================================================================================================================================================================================================================================
+[25-Mar-2016 167597.090000] starter_script: starter_sc: Starting chain structure for GWR and GNG for nodes:4
+[25-Mar-2016 167597.090000] starter_script: starter_sc: ###Using multilayer GWR and GNG ###
+[25-Mar-2016 167598.080000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gng for process:1
+[25-Mar-2016 167598.120000] starter_script: starter_sc: gas_method: gng_lax: generates GNG A and C matrices
+[25-Mar-2016 167598.130000] starter_script: starter_sc: gas_method: gng_lax: Executing GNG with:3 nodes.
+[25-Mar-2016 167598.160000] starter_script: starter_sc: gas_method: gng_lax:     0          .  0      000 .    5 .0. 9   10326539012
+[25-Mar-2016 167606.670000] starter_script: starter_sc: gas_method: gng_lax: End number of nodes:3 With MAXNODES:3
+[25-Mar-2016 167606.700000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gng.Num of nodes reached:3 for process:1
+[25-Mar-2016 167606.700000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 167609.030000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gng for process:2
+[25-Mar-2016 167609.040000] starter_script: starter_sc: gas_method: gng_lax: generates GNG A and C matrices
+[25-Mar-2016 167609.050000] starter_script: starter_sc: gas_method: gng_lax: Executing GNG with:3 nodes.
+[25-Mar-2016 167609.060000] starter_script: starter_sc: gas_method: gng_lax:     0          .  0      000 .    5 .0. 9   10326539012
+[25-Mar-2016 167615.970000] starter_script: starter_sc: gas_method: gng_lax: End number of nodes:3 With MAXNODES:3
+[25-Mar-2016 167615.980000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gng.Num of nodes reached:3 for process:2
+[25-Mar-2016 167615.980000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 167617.090000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gng for process:3
+[25-Mar-2016 167617.090000] starter_script: starter_sc: gas_method: gng_lax: generates GNG A and C matrices
+[25-Mar-2016 167617.100000] starter_script: starter_sc: gas_method: gng_lax: Executing GNG with:3 nodes.
+[25-Mar-2016 167617.100000] starter_script: starter_sc: gas_method: gng_lax:     0          .  0      000 .    5 .0. 9   10326539012
+[25-Mar-2016 167625.270000] starter_script: starter_sc: gas_method: gng_lax: End number of nodes:3 With MAXNODES:3
+[25-Mar-2016 167625.280000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gng.Num of nodes reached:3 for process:3
+[25-Mar-2016 167625.290000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 167626.860000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gng for process:4
+[25-Mar-2016 167626.870000] starter_script: starter_sc: gas_method: gng_lax: generates GNG A and C matrices
+[25-Mar-2016 167626.880000] starter_script: starter_sc: gas_method: gng_lax: Executing GNG with:3 nodes.
+[25-Mar-2016 167626.880000] starter_script: starter_sc: gas_method: gng_lax:     0          .  0      000 .    5 .0. 9   10326539012
+[25-Mar-2016 167635.500000] starter_script: starter_sc: gas_method: gng_lax: End number of nodes:3 With MAXNODES:3
+[25-Mar-2016 167635.500000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gng.Num of nodes reached:3 for process:4
+[25-Mar-2016 167635.500000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 167635.790000] starter_script: starter_sc: Labelling4
+[25-Mar-2016 167635.800000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 167636.040000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 167636.120000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 167636.130000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 167636.410000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 167636.640000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 167636.780000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 167636.790000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 167637.190000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 167637.630000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 167637.780000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 167637.790000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 167638.220000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 167638.670000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 167638.820000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 167638.820000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 167639.260000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 167639.270000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 167639.280000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 167639.280000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 167644.580000] starter_script: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):7350	(1,2):3590	(2,1):4611	(2,2):2325	
+[25-Mar-2016 167648.070000] starter_script: starter_sc: 2-th set.gwr1layer Confusion matrix on this validation set:(1,1):7350	(1,2):3590	(2,1):4611	(2,2):2325	
+[25-Mar-2016 167651.170000] starter_script: starter_sc: 3-th set.gwr1layer Confusion matrix on this validation set:(1,1):7350	(1,2):3590	(2,1):4611	(2,2):2325	
+[25-Mar-2016 167653.890000] starter_script: starter_sc: 4-th set.gwr1layer Confusion matrix on this validation set:(1,1):7350	(1,2):3590	(2,1):4611	(2,2):2325	
+[25-Mar-2016 167681.520000] starter_script: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	33.5208%	|| Specificity overall mean:	67.1846%	|| Precision overall mean:	39.3068%	|| F1 overall mean:	36.184%
+[25-Mar-2016 167681.540000] starter_script: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	33.5208%	|| Best Specificity:        	67.1846%	|| Best Precision:        	39.3068%	|| Best F1:       	36.184%
+[25-Mar-2016 167988.180000] starter_script: starter_sc: =======================================================================================================================================================================================================================================
+[25-Mar-2016 167988.190000] starter_script: starter_sc: Running starter script
+[25-Mar-2016 167988.190000] starter_script: starter_sc: =======================================================================================================================================================================================================================================
+[25-Mar-2016 167988.460000] starter_script: starter_sc: Starting chain structure for GWR and GNG for nodes:4
+[25-Mar-2016 167988.470000] starter_script: starter_sc: ###Using multilayer GWR and GNG ###
+[25-Mar-2016 167989.450000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[25-Mar-2016 167996.600000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:1
+[25-Mar-2016 167996.620000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 167997.810000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:2
+[25-Mar-2016 168008.150000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:2
+[25-Mar-2016 168008.150000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 168009.510000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:3
+[25-Mar-2016 168016.530000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:3
+[25-Mar-2016 168016.530000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 168017.940000] starter_script: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:4
+[25-Mar-2016 168026.380000] starter_script: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:3 for process:4
+[25-Mar-2016 168026.400000] starter_script: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 168026.890000] starter_script: starter_sc: Labelling4
+[25-Mar-2016 168026.910000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 168027.330000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 168027.480000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[25-Mar-2016 168027.500000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 168027.930000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 168028.380000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 168028.530000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:2
+[25-Mar-2016 168028.540000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 168028.990000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 168029.410000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 168029.550000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:3
+[25-Mar-2016 168029.570000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 168030.080000] starter_script: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 168030.520000] starter_script: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 168030.660000] starter_script: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:4
+[25-Mar-2016 168030.660000] starter_script: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[25-Mar-2016 168031.120000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 168031.130000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 168031.140000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 168031.140000] starter_script: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:4
+[25-Mar-2016 168033.800000] starter_script: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):7949	(1,2):2991	(2,1):5606	(2,2):1330	
+[25-Mar-2016 168036.090000] starter_script: starter_sc: 2-th set.gwr1layer Confusion matrix on this validation set:(1,1):7949	(1,2):2991	(2,1):5606	(2,2):1330	
+[25-Mar-2016 168040.050000] starter_script: starter_sc: 3-th set.gwr1layer Confusion matrix on this validation set:(1,1):7949	(1,2):2991	(2,1):5606	(2,2):1330	
+[25-Mar-2016 168042.460000] starter_script: starter_sc: 4-th set.gwr1layer Confusion matrix on this validation set:(1,1):7949	(1,2):2991	(2,1):5606	(2,2):1330	
+[25-Mar-2016 168057.750000] starter_script: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	19.1753%	|| Specificity overall mean:	72.66%	|| Precision overall mean:	30.7799%	|| F1 overall mean:	23.6297%
+[25-Mar-2016 168057.770000] starter_script: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	19.1753%	|| Best Specificity:        	72.66%	|| Best Precision:        	30.7799%	|| Best F1:       	23.6297%
