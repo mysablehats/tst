@@ -10,9 +10,14 @@ close all;
 % dbgmsg('Skeleton data (training and validation) generated.')
 % %%validation and training set
 
+
+%% Loads environment Variables and saved Data
+
+load_skel_data
+
+
 %% Pre-conditioning of data
 % 
-%[data_train, data_val] = removehipbias(data_train, data_val); 
 [data_train_, data_val_] = conformskel(data_train, data_val,'nohips','normal');
 [data_train_mirror, data_val_mirror] = conformskel(data_train, data_val,'mirror','nohips','normal');
 data_train = [data_train_, data_train_mirror];
@@ -22,26 +27,35 @@ ends_val = [ends_val, ends_val];
 y_train = [y_train y_train];
 y_val = [y_val y_val];
 
-%% Loads environment Variables and saved Data
+% a = 1;
+% windowSize = 1;
+% b = (1/windowSize)*ones(1,windowSize);
+% 
+% data_train = medfilt1(data_train,3);
+% data_val = medfilt1(data_val,3);
 
-load_skel_data
 
+
+%% Setting up runtime variables
 TEST = true; % set to false to actually run it
-PARA = true;
-P = 4;
-NODES = 1000;
+PARA = false;
 
+P = 4;
+
+NODES = 500;
 
 if TEST
-    NODES = 3;
+    NODES = 100;
 end
 if ~PARA
     P = 1;
 end
 
+params.PLOTIT = false; %not really working
+params.RANDOMSTART = false; % if true it overrides the .startingpoint variable
 
-params.PLOTIT = false;
-params.RANDOMSTART = false;
+n = randperm(size(data_train,2),2);
+params.startingpoint = [n(1) n(2)];
 
 params.amax = 50; %greatest allowed age
 params.nodes = NODES; %maximum number of nodes/neurons in the gas
@@ -69,30 +83,46 @@ params.d                           = .99;   % Error reduction factor.
 
 %%%% connection definitions:
 %  allconn = {...
-%      {'gng1layer',   'gng',{'pos'},                    'pos',1}...
-%      {'gng2layer',   'gng',{'vel'},                    'vel',1}...
-%      {'gng3layer',   'gng',{'gng1layer'},              'pos',3}...
-%      {'gng4layer',   'gng',{'gng2layer'},              'vel',3}...
-%      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3}};
-
-  allconn = {...
-      {'gwr1layer',   'gwr',{'pos'},                    'pos',1,params}...
-      {'gwr2layer',   'gwr',{'vel'},                    'vel',1,params}...
-      {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3,params}...
-      {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3,params}...
-      {'gwrSTSlayer', 'gwr',{'gwr4layer','gwr3layer'},  'all',3,params}};
+%      {'gng1layer',   'gng',{'pos'},                    'pos',1,params}...
+%      {'gng2layer',   'gng',{'vel'},                    'vel',1,params}...
+%      {'gng3layer',   'gng',{'gng1layer'},              'pos',3,params}...
+%      {'gng4layer',   'gng',{'gng2layer'},              'vel',3,params}...
+%      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3,params}};
+% 
+%   allconn = {...
+%       {'gwr1layer',   'gwr',{'pos'},                    'pos',1,params}...
+%       {'gwr2layer',   'gwr',{'vel'},                    'vel',1,params}...
+%       {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3,params}...
+%       {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3,params}...
+%       {'gwrSTSlayer', 'gwr',{'gwr4layer','gwr3layer'},  'all',3,params}};
 
 %  allconn = {...
-%      {'gwr1layer',   'gwr',{'pos'},                    'pos',3}...
-%      {'gwr2layer',   'gwr',{'vel'},                    'vel',3}...
-%      {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3}...
-%      {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3}...
-%      {'gwr5layer',   'gwr',{'gwr3layer'},              'pos',3}...
-%      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3}...
-%      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3}}; 
- 
-% allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, params}...
-%            };
+%      {'gwr1layer',   'gwr',{'pos'},                    'pos',3,params}...
+%      {'gwr2layer',   'gwr',{'vel'},                    'vel',3,params}...
+%      {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3,params}...
+%      {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3,params}...
+%      {'gwr5layer',   'gwr',{'gwr3layer'},              'pos',3,params}...
+%      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3,params}...
+%      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3,params}}; 
+
+% allconn = {...
+%      {'gng1layer',   'gng',{'pos'},                    'pos',1,params}...
+%      {'gng2layer',   'gng',{'vel'},                    'vel',1,params}...
+%      {'gng3layer',   'gng',{'gng1layer'},              'pos',3,params}...
+%      {'gng4layer',   'gng',{'gng2layer'},              'vel',3,params}...
+%      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3,params}};
+
+%  allconn = {...
+%      {'gwr1layer',   'gwr',{'pos'},                    'pos',3,params}...
+%      {'gwr2layer',   'gwr',{'vel'},                    'vel',3,params}...
+%      {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',3,params}...
+%      {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',3,params}...
+%      {'gwr5layer',   'gwr',{'gwr3layer'},              'pos',3,params}...
+%      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3,params}...
+%      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3,params}}; 
+%  
+ allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, params}...
+            };
 %        
 
 
@@ -102,14 +132,8 @@ params.d                           = .99;   % Error reduction factor.
 %% Pos gas conditioning
 
 
-%%
-% a = 1;
-% windowSize = 1;
-% b = (1/windowSize)*ones(1,windowSize);
-% 
-% data_train = medfilt1(data_train,3);
-% data_val = medfilt1(data_val,3);
 
+%%
 data.val = data_val;
 data.train = data_train;
 data.y.val = y_val;
@@ -117,6 +141,22 @@ data.y.train = y_train;
 data.ends.train = ends_train;
 data.ends.val = ends_val;
 
-sv = starter_sc(data, allconn, P);
-
+best = [0 0 0 0];
+for i = 1:4
+    n = randperm(size(data_train,2),2);
+    params.startingpoint = [n(1) n(2)];
+    [~, mt] = starter_sc(data, allconn, P);
+    if mt(1)>best(1)&&mt(4)>40
+        best(1) = mt(1);
+        bestmtallconn.sensitivity = allconn;
+    end
+    if mt(2)>best(2)&&mt(4)>40
+        best(2) = mt(2);
+        bestmtallconn.specificity = allconn;
+    end
+    if mt(3)>best(3)&&mt(4)>40
+        best(3) = mt(3);
+        bestmtallconn.precision = allconn;
+    end
+end
 

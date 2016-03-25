@@ -1,4 +1,4 @@
-function savestructure = starter_sc(data, allconn, P)
+function [savestructure, metrics] = starter_sc(data, allconn, P)
 
 data_val = data.val;
 data_train = data.train;
@@ -26,7 +26,7 @@ dbgmsg('========================================================================
 
 %%%% building arq_connect
 arq_connect(1:length(allconn)) = struct('name','','method','','sourcelayer','', 'layertype','','q',1,'params',struct());
-parfor i = 1:length(allconn)
+for i = 1:length(allconn)
     arq_connect(i).name = allconn{i}{1};
     arq_connect(i).method = allconn{i}{2};
     arq_connect(i).sourcelayer = allconn{i}{3};
@@ -39,7 +39,7 @@ gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'confusions',[],'b
 gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'fig',[],'nodesl',[]); %bestmatch will have the training matrix for subsequent layers
 vt_data = struct('indexes',[],'data',[],'ends',[],'gas',gas_data);
 savestructure(1:P) = struct('maxnodes',[], 'gas', gas_methods, 'train',vt_data,'val',vt_data,'figset',[]); % I have a problem with figset. I don't kno
-parfor i = 1:length(savestructure) % oh, I don't know how to do it elegantly
+for i = 1:length(savestructure) % oh, I don't know how to do it elegantly
     savestructure(i).figset = {};
 end
 
