@@ -1,40 +1,48 @@
-function [linput,newends, newy] = longinput(shortinput, q, ends, y)
-dimshort = size(shortinput,1);
-endofdata = size(shortinput,2);
+function [linput,newends, newy] = longinput(shortinput, q, ends, y,p)
+% this function was getting messy, so I decided to recreate the structure
+% that generated her, so to make easier debugging
+realends = cumsum(ends,2);
 
+actionstructure(1:size(ends,2)) = struct();
+actionstructure(1).pose = shortinput(:,1:realends(1)); 
+actionstructure(1).end = ends(1);
+actionstructure(1).y = y(1);
 
-newends = zeros(size(ends));
-linput = zeros(size(shortinput,1)*q,size(shortinput,2)-size(ends,2)*(q-1));
-newy = zeros(1,size(linput,2));
-%%% I will try with pre allocation if it doesnt work, then I will try with
-%%% the cat approach -> start from 2 and cat it...
-
-%there should be some error checking here, so if any "ends" is smaller than
-%q then, it should complain, but I won't write it because it is 
-
-newends = ends-(q-1);
-k = 1;
-maxj = size(ends,2);
-for j = 1:maxj
-    maxi = newends(j);
-    if maxi<0 % this likely not working...
-        newends(j) =0;
-    else
-        for i = 1:maxi
-            a = zeros(dimshort*q,1);
-            for l =1:q
-                funnyindex = k+l-1+(q-1)*(j-1); %it should have the property of jumping the last q-1 points of a set
-                if funnyindex>endofdata
-                    newends(j) = newends(j)-1; %perhaps I cannot fill a whole vector? this should never happen, but I don't know, these indexes are funny/.
-                    break
-                else
-                    a(1+dimshort*(l-1):dimshort*l) = shortinput(:,funnyindex);
-                end
+for i = 2:size(ends,2)
+    actionstructure(i).pose = shortinput(:,realends(i-1):realends(i));
+    actionstructure(i).end = ends(i);
+    actionstructure(i).y = y(realends(i));
+end
+shortdim = size(shortinput,1);
+for i = 1:length(actionstructure)
+    m = 1;
+    for j = 1:1+p:actionstructure(i).end
+        a = zeros(shortdim*q,1);
+        if j+q-1>actionstructure(i).end
+            %cant complete the whole vector!
+            break
+        else
+            for k = 1:q
+                a(1+(k-1)*shortdim:k*shortdim) = actionstructure(i).pose(:,j+k-1);
             end
-            linput(:,k) = a;
-            newy(k) = y(funnyindex); %% this was done in a hurry and has to be debugged.
-            k=k+1;
         end
+        %have to save a somewhere
+        actionstructure(i).long(m).vec = a;
+        m = m+1;
+    end
+    %should concatenate long now
+    actionstructure(i).newend = length(actionstructure(i).long);
+    actionstructure(i).longinput = zeros(q*shortdim,actionstructure(i).newend);
+    actionstructure(i).longy = actionstructure(i).y*ones(1,actionstructure(i).newend);
+    for j = 1:actionstructure(i).newend
+        actionstructure(i).longinput(:,j) = actionstructure(i).long(j).vec;
     end
 end
+linput = actionstructure(1).longinput;
+newy = actionstructure(1).longy;
+newends(1) = actionstructure(1).newend;
+for i = 2:length(actionstructure)
+    linput = cat(2,linput,actionstructure(i).longinput);
+    newy = cat(2,newy, actionstructure(i).longy);
+    newends(i) = actionstructure(i).newend;
 end
