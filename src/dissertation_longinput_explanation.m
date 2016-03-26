@@ -30,7 +30,7 @@ y = 1:size(shortinput,2)
 % the matrix we just generated.
 
 q = 3;
-
+p = 0;
 %%
 % Some other necessary step is to have a vector with the ends of each
 % action. This is necessary because our dataset is made from the
@@ -75,7 +75,7 @@ linput_size_auto = [k*q, datasetlength - size(ends,2)*(q-1) ]
 %%
 % The actual function then:
 
-[linput,newends, newy] = longinput(shortinput, q, ends,y)
+[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
 
 %%
 % We can see it gives us our expected result, but it is better to run the
@@ -111,7 +111,7 @@ newends_should_auto = ends - ( q - 1) % will output, but mostly I want to check 
 [k datasetlength ]= size(shortinput)
 linput_size_auto = [k*q, datasetlength - size(ends,2)*(q-1) ]
 %%
-[linput,newends, newy] = longinput(shortinput, q, ends,y) % will output; but it is too big for visual inspection
+[linput,newends, newy] = longinput(shortinput, q, ends,y,p) % will output; but it is too big for visual inspection
 
 %%
 % Finally checking what we did:
@@ -149,4 +149,23 @@ are_they_exactly_the_same = all(linput(11:30,1)==linput(1:20,2)) % 1 is true...
 % that it takes the whole system 9 data samples to produce one answer. This
 % perhaps implies that the sliding window scheme was using non-overlaping
 % data.
+% What was likely done was something that resembles a reshape. Since we
+% cannot easily justify such a choice, we introduce an additional variable
+% p that defines the amount of overlap the longinput will have.
+%%
+% Back to our short example:
+shortinput = reshape(1:4*11,4,[])
+y = 1:size(shortinput,2)
+ends = [6, 5];
+p= 0;
+q = 3;
+[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
+
+%%
+% And setting our new variable p
+p = 1;
+[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
+p = 2; % basically a reshape
+[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
+
 
