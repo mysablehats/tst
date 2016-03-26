@@ -37,7 +37,7 @@ y_val = [y_val y_val];
 
 
 %% Setting up runtime variables
-TEST = true; % set to false to actually run it
+TEST = false; % set to false to actually run it
 PARA = false;
 
 P = 4;
@@ -141,33 +141,32 @@ data.y.train = y_train;
 data.ends.train = ends_train;
 data.ends.val = ends_val;
 
-%a.best = [0 0 0 0];
 for i = 1:8
     paramsZ(i) = params;
 end
 
 tic
-for j = 1:576
-    clear a
-    a(1:8) = struct('best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
-parfor i = 1:8
-    n = randperm(size(data_train,2)-2,2); % -(q-1) necessary because concatenation reduces the data size!
-    paramsZ(i).startingpoint = [n(1) n(2)]; 
-    allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, paramsZ(i)}...
+clear a
+a(1:4) = struct('best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
+for j = 1:1    
+    parfor i = 1:4
+        n = randperm(size(data_train,2)-3,2); % -(q-1) necessary because concatenation reduces the data size!
+        paramsZ(i).startingpoint = [n(1) n(2)];
+        allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, paramsZ(i)}...
             };
-    [~, a(i).mt] = starter_sc(data, allconn, P);
-    if a(i).mt(1)>a(i).best(1)&&a(i).mt(4)>40
-        a(i).best(1) = a(i).mt(1);
-        a(i).bestmtallconn.sensitivity = allconn;
+        [~, a(i).mt] = starter_sc(data, allconn, P);
+        if a(i).mt(1)>a(i).best(1)&&a(i).mt(4)>40
+            a(i).best(1) = a(i).mt(1);
+            a(i).bestmtallconn.sensitivity = allconn;
+        end
+        if a(i).mt(2)>a(i).best(2)&&a(i).mt(4)>40
+            a(i).best(2) = a(i).mt(2);
+            a(i).bestmtallconn.specificity = allconn;
+        end
+        if a(i).mt(3)>a(i).best(3)&&a(i).mt(4)>40
+            a(i).best(3) = a(i).mt(3);
+            a(i).bestmtallconn.precision = allconn;
+        end
     end
-    if a(i).mt(2)>a(i).best(2)&&a(i).mt(4)>40
-        a(i).best(2) = a(i).mt(2);
-        a(i).bestmtallconn.specificity = allconn;
-    end
-    if a(i).mt(3)>a(i).best(3)&&a(i).mt(4)>40
-        a(i).best(3) = a(i).mt(3);
-        a(i).bestmtallconn.precision = allconn;
-    end
-end
 end
 toc
