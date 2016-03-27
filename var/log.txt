@@ -13999,3 +13999,395 @@ remoteParallelFunction[26-Mar-2016 10016.570000] : remoteParallelFunctionmake_ge
 [26-Mar-2016 11262.720000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):8690	(1,2):2250	(2,1):2817	(2,2):4119	
 [26-Mar-2016 11262.720000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	59.3858%	|| Specificity overall mean:	79.4333%	|| Precision overall mean:	64.6726%	|| F1 overall mean:	61.9166%
 [26-Mar-2016 11262.730000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	59.3858%	|| Best Specificity:        	79.4333%	|| Best Precision:        	64.6726%	|| Best F1:       	61.9166%
+[27-Mar-2016 10.300000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.740000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 10.750000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.760000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 10.770000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 10.330000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.770000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 10.770000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 10.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 10.260000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.710000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 10.710000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.720000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 10.730000] [27-Mar-2016 10.230000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.680000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 10.690000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 10.700000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 10.700000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 11.600000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 11.620000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point49468
+[27-Mar-2016 11.610000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 11.640000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point66126
+[27-Mar-2016 11.650000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point74689
+[27-Mar-2016 11.530000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 11.550000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point66814
+[27-Mar-2016 11.520000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 465.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 465.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 466.670000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 466.670000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 470.620000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 470.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 470.820000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 471.470000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 471.490000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 471.660000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 471.960000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 471.970000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 472.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 472.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 477.210000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 477.500000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 477.510000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 477.520000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 478.070000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 478.330000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 478.350000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 478.360000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 529.060000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 529.060000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 531.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 531.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 533.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 533.810000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 533.980000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 535.100000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 535.110000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 536.570000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 536.580000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 536.770000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 537.890000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 537.900000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 540.100000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 540.370000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3281	(1,2):385	(2,1):946	(2,2):1384	
+[27-Mar-2016 540.390000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	59.3991%	|| Specificity overall mean:	89.4981%	|| Precision overall mean:	78.2363%	|| F1 overall mean:	67.5287%
+[27-Mar-2016 540.400000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	59.3991%	|| Best Specificity:        	89.4981%	|| Best Precision:        	78.2363%	|| Best F1:       	67.5287%
+[27-Mar-2016 542.820000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 543.060000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3108	(1,2):558	(2,1):872	(2,2):1458	
+[27-Mar-2016 543.070000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	62.5751%	|| Specificity overall mean:	84.7791%	|| Precision overall mean:	72.3214%	|| F1 overall mean:	67.0962%
+[27-Mar-2016 543.080000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	62.5751%	|| Best Specificity:        	84.7791%	|| Best Precision:        	72.3214%	|| Best F1:       	67.0962%
+[27-Mar-2016 543.870000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 543.880000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 543.880000] remoteParallelFunction: make_general_channel/channel_general: starter_sc[27-Mar-2016 478.410000] : remoteParallelFunction: make_general_channel/channel_general=======================================================================================================================================================================================================================================: 
+starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 543.890000] [27-Mar-2016 478.410000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : Starting chain structure for GWR and GNG for nodes:1Running starter script
+
+[27-Mar-2016 543.890000] [27-Mar-2016 478.410000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : ###Using multilayer GWR and GNG ###starter_sc
+: =======================================================================================================================================================================================================================================
+[27-Mar-2016 478.420000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 478.420000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 541.230000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 541.240000] [27-Mar-2016 479.260000] remoteParallelFunction: make_general_channel/channel_generalremoteParallelFunction: : starter_scmake_general_channel/channel_general: Running starter script: 
+starter_sc: [27-Mar-2016 541.240000] =======================================================================================================================================================================================================================================remoteParallelFunction
+: make_general_channel/channel_general[27-Mar-2016 479.270000] : starter_sc: remoteParallelFunction=======================================================================================================================================================================================================================================: 
+make_general_channel/channel_general: starter_sc: [27-Mar-2016 541.240000] Running starter script
+remoteParallelFunction: [27-Mar-2016 479.270000] make_general_channel/channel_generalremoteParallelFunction: : starter_scmake_general_channel/channel_general: : Starting chain structure for GWR and GNG for nodes:1starter_sc
+: =======================================================================================================================================================================================================================================[27-Mar-2016 541.240000] 
+remoteParallelFunction: make_general_channel/channel_general: [27-Mar-2016 479.270000] starter_scremoteParallelFunction: : ###Using multilayer GWR and GNG ###make_general_channel/channel_general
+: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 479.270000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 479.130000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 479.140000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point71411
+[27-Mar-2016 544.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 544.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point47455
+[27-Mar-2016 544.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point48560
+[27-Mar-2016 479.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 479.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point57867
+[27-Mar-2016 541.930000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 541.930000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point37761
+[27-Mar-2016 541.930000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point36373
+[27-Mar-2016 849.860000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 849.860000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 854.500000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 854.510000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 854.700000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 855.830000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 855.830000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 860.990000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 861.160000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3027	(1,2):639	(2,1):729	(2,2):1601	
+[27-Mar-2016 861.160000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	68.7124%	|| Specificity overall mean:	82.5696%	|| Precision overall mean:	71.4732%	|| F1 overall mean:	70.0656%
+[27-Mar-2016 861.160000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	68.7124%	|| Best Specificity:        	82.5696%	|| Best Precision:        	71.4732%	|| Best F1:       	70.0656%
+[27-Mar-2016 991.170000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 991.180000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 994.850000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 994.860000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 995.790000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 995.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 995.970000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 999.460000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 999.470000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 999.650000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 997.090000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 997.090000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1000.770000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1000.770000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1002.340000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1002.500000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 1002.520000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 1002.520000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 1006.030000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1006.200000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 1006.210000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 1006.210000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 985.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 985.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 990.240000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 990.250000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 990.410000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 991.480000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 991.480000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 996.230000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 996.370000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3228	(1,2):438	(2,1):1029	(2,2):1301	
+[27-Mar-2016 996.380000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.8369%	|| Specificity overall mean:	88.0524%	|| Precision overall mean:	74.8131%	|| F1 overall mean:	63.9469%
+[27-Mar-2016 996.390000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.8369%	|| Best Specificity:        	88.0524%	|| Best Precision:        	74.8131%	|| Best F1:       	63.9469%
+[27-Mar-2016 1006.870000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 1006.880000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 1006.880000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 1006.880000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 1006.880000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 861.890000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 861.890000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 861.890000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 861.900000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 861.910000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 997.000000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 997.010000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 997.010000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 997.020000] remoteParallelFunction: make_general_channel/channel_general[27-Mar-2016 1003.210000] : starter_scremoteParallelFunction: Starting chain structure for GWR and GNG for nodes:1: 
+make_general_channel/channel_general[27-Mar-2016 997.020000] : starter_scremoteParallelFunction: : =======================================================================================================================================================================================================================================make_general_channel/channel_general
+: starter_sc[27-Mar-2016 1003.210000] : remoteParallelFunction###Using multilayer GWR and GNG ###: 
+make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 1003.210000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 1003.220000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 1003.220000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 1007.620000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 862.620000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 862.620000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point34531
+[27-Mar-2016 862.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point48045
+[27-Mar-2016 997.710000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 997.710000] [27-Mar-2016 1003.900000] remoteParallelFunction: make_general_channel/channel_general: remoteParallelFunctionstarter_sc: : make_general_channel/channel_generalgas_method: : starter_scgwr: : gas_methodn1 overflow. using last data point70789: 
+Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 1003.910000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point63703
+[27-Mar-2016 1321.360000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 1321.370000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1326.170000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 1326.180000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1326.370000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1327.530000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1327.540000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1332.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1333.000000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 1333.000000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 1333.010000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 1476.690000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 1476.700000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1481.320000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 1481.320000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1481.500000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1482.620000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1482.620000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1487.700000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1487.870000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3273	(1,2):393	(2,1):1000	(2,2):1330	
+[27-Mar-2016 1487.870000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	57.0815%	|| Specificity overall mean:	89.2799%	|| Precision overall mean:	77.1909%	|| F1 overall mean:	65.6304%
+[27-Mar-2016 1487.870000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	57.0815%	|| Best Specificity:        	89.2799%	|| Best Precision:        	77.1909%	|| Best F1:       	65.6304%
+[27-Mar-2016 1519.420000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 1519.420000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1533.540000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 1533.550000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1524.020000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 1524.030000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1524.190000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1525.300000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1525.300000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1538.160000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 1538.160000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1538.330000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1539.450000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1539.450000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1530.260000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1530.420000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3228	(1,2):438	(2,1):1029	(2,2):1301	
+[27-Mar-2016 1530.420000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.8369%	|| Specificity overall mean:	88.0524%	|| Precision overall mean:	74.8131%	|| F1 overall mean:	63.9469%
+[27-Mar-2016 1530.420000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.8369%	|| Best Specificity:        	88.0524%	|| Best Precision:        	74.8131%	|| Best F1:       	63.9469%
+[27-Mar-2016 1544.290000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1544.440000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3052	(1,2):614	(2,1):766	(2,2):1564	
+[27-Mar-2016 1544.450000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	67.1245%	|| Specificity overall mean:	83.2515%	|| Precision overall mean:	71.809%	|| F1 overall mean:	69.3878%
+[27-Mar-2016 1544.450000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	67.1245%	|| Best Specificity:        	83.2515%	|| Best Precision:        	71.809%	|| Best F1:       	69.3878%
+[27-Mar-2016 1545.050000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 1545.050000] [27-Mar-2016 1333.680000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : starter_scRunning starter script: 
+=======================================================================================================================================================================================================================================
+[27-Mar-2016 1545.050000] [27-Mar-2016 1333.680000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : =======================================================================================================================================================================================================================================Running starter script
+
+[27-Mar-2016 1333.680000] remoteParallelFunction[27-Mar-2016 1545.050000] : make_general_channel/channel_generalremoteParallelFunction: : starter_scmake_general_channel/channel_general: : =======================================================================================================================================================================================================================================starter_sc
+: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 1333.680000] [27-Mar-2016 1545.050000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : Starting chain structure for GWR and GNG for nodes:1###Using multilayer GWR and GNG ###
+
+[27-Mar-2016 1333.690000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 1488.530000] [27-Mar-2016 1531.060000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : ==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+[27-Mar-2016 1488.530000] [27-Mar-2016 1531.060000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : starter_scRunning starter script: 
+Running starter script[27-Mar-2016 1488.540000] 
+remoteParallelFunction[27-Mar-2016 1531.060000] : make_general_channel/channel_generalremoteParallelFunction: : starter_scmake_general_channel/channel_general: : =======================================================================================================================================================================================================================================starter_sc
+: =======================================================================================================================================================================================================================================
+[27-Mar-2016 1488.540000] remoteParallelFunction: [27-Mar-2016 1531.060000] make_general_channel/channel_general: remoteParallelFunctionstarter_sc: : make_general_channel/channel_generalStarting chain structure for GWR and GNG for nodes:1: 
+starter_sc: [27-Mar-2016 1488.540000] Starting chain structure for GWR and GNG for nodes:1
+remoteParallelFunction: [27-Mar-2016 1531.060000] make_general_channel/channel_general: remoteParallelFunctionstarter_sc: : make_general_channel/channel_general###Using multilayer GWR and GNG ###: 
+starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 1334.410000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 1334.410000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point25739[27-Mar-2016 1545.780000] 
+remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 1545.790000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point64964
+[27-Mar-2016 1531.750000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 1531.750000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point47149
+[27-Mar-2016 1489.240000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 1489.240000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point51628
+[27-Mar-2016 1714.380000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 1714.390000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1719.110000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 1719.120000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1719.290000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1720.470000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1720.470000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1725.750000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1725.930000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3142	(1,2):524	(2,1):814	(2,2):1516	
+[27-Mar-2016 1725.940000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	65.0644%	|| Specificity overall mean:	85.7065%	|| Precision overall mean:	74.3137%	|| F1 overall mean:	69.3822%
+[27-Mar-2016 1725.940000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	65.0644%	|| Best Specificity:        	85.7065%	|| Best Precision:        	74.3137%	|| Best F1:       	69.3822%
+[27-Mar-2016 1951.930000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 1951.930000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1956.560000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 1956.560000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1956.730000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1957.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 1957.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 1962.930000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 1963.090000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3229	(1,2):437	(2,1):967	(2,2):1363	
+[27-Mar-2016 1963.090000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	58.4979%	|| Specificity overall mean:	88.0797%	|| Precision overall mean:	75.7222%	|| F1 overall mean:	66.0048%
+[27-Mar-2016 1963.100000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	58.4979%	|| Best Specificity:        	88.0797%	|| Best Precision:        	75.7222%	|| Best F1:       	66.0048%
+[27-Mar-2016 2051.320000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 2051.320000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2069.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 2069.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2055.900000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 2055.900000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2056.060000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2057.170000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2057.180000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 2074.540000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 2074.550000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2074.720000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2075.830000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2075.830000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 2062.150000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 2062.310000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3108	(1,2):558	(2,1):872	(2,2):1458	
+[27-Mar-2016 2062.310000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	62.5751%	|| Specificity overall mean:	84.7791%	|| Precision overall mean:	72.3214%	|| F1 overall mean:	67.0962%
+[27-Mar-2016 2062.320000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	62.5751%	|| Best Specificity:        	84.7791%	|| Best Precision:        	72.3214%	|| Best F1:       	67.0962%
+[27-Mar-2016 2080.670000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 2080.820000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3228	(1,2):438	(2,1):1029	(2,2):1301	
+[27-Mar-2016 2080.820000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.8369%	|| Specificity overall mean:	88.0524%	|| Precision overall mean:	74.8131%	|| F1 overall mean:	63.9469%
+[27-Mar-2016 2080.830000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.8369%	|| Best Specificity:        	88.0524%	|| Best Precision:        	74.8131%	|| Best F1:       	63.9469%
+[27-Mar-2016 1726.660000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 2081.430000] [27-Mar-2016 1726.660000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : Running starter script=======================================================================================================================================================================================================================================
+
+[27-Mar-2016 1726.670000] [27-Mar-2016 2081.430000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : starter_sc=======================================================================================================================================================================================================================================: 
+Running starter script
+[27-Mar-2016 2081.430000] [27-Mar-2016 1726.670000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : =======================================================================================================================================================================================================================================Starting chain structure for GWR and GNG for nodes:1
+
+[27-Mar-2016 1726.670000] [27-Mar-2016 2081.440000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : starter_sc###Using multilayer GWR and GNG ###: 
+Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 2081.440000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 2062.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 2062.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 2062.950000] remoteParallelFunction[27-Mar-2016 1963.780000] : make_general_channel/channel_generalremoteParallelFunction: : starter_scmake_general_channel/channel_general: : =======================================================================================================================================================================================================================================starter_sc
+: =======================================================================================================================================================================================================================================
+[27-Mar-2016 2062.960000] [27-Mar-2016 1963.780000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : Starting chain structure for GWR and GNG for nodes:1Running starter script
+
+[27-Mar-2016 2062.960000] [27-Mar-2016 1963.780000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : ###Using multilayer GWR and GNG ###=======================================================================================================================================================================================================================================
+
+[27-Mar-2016 1963.790000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 1963.800000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 1727.380000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 1727.380000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point46415
+[27-Mar-2016 1727.390000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point38190
+[27-Mar-2016 2082.160000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 2082.170000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point62519
+[27-Mar-2016 2082.170000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point41577
+[27-Mar-2016 2063.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 2063.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point46217
+[27-Mar-2016 1964.480000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 1964.480000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point48523
+[27-Mar-2016 1964.480000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point43884
+[27-Mar-2016 2177.280000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 2177.280000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2417.730000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 2417.730000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2536.180000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 2536.180000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2181.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 2181.950000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2182.120000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2183.280000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2183.280000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 2422.440000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 2422.450000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2422.630000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2540.900000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 2540.900000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2541.080000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2423.780000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2423.790000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 2542.220000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2542.230000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 2188.450000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 2188.650000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 2188.650000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 2188.660000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 2429.060000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 2429.230000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 2429.230000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 2429.230000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 2547.490000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 2547.650000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3325	(1,2):341	(2,1):1046	(2,2):1284	
+[27-Mar-2016 2547.650000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.1073%	|| Specificity overall mean:	90.6983%	|| Precision overall mean:	79.0154%	|| F1 overall mean:	64.9305%
+[27-Mar-2016 2547.650000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.1073%	|| Best Specificity:        	90.6983%	|| Best Precision:        	79.0154%	|| Best F1:       	64.9305%
+[27-Mar-2016 2570.540000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finished working on gas: 'gwr1layer' (1) with method:gwr.Num of nodes reached:1000 for process:1
+[27-Mar-2016 2570.540000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2574.920000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Labelling1
+[27-Mar-2016 2574.920000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Setting validation input (and clipping output) for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2575.080000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Finding best matching units for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2576.140000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Applying labels for gas: 'gwr1layer' (1) for process:1
+[27-Mar-2016 2576.150000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: labeller: labeling: Applying labels to the prototypical nodes.
+[27-Mar-2016 2580.840000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Displaying multiple confusion matrices for GWR and GNG for nodes:1
+[27-Mar-2016 2580.970000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: 1-th set.gwr1layer Confusion matrix on this validation set:(1,1):3228	(1,2):438	(2,1):1029	(2,2):1301	
+[27-Mar-2016 2580.980000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Sensitivity/Recall overall mean:	55.8369%	|| Specificity overall mean:	88.0524%	|| Precision overall mean:	74.8131%	|| F1 overall mean:	63.9469%
+[27-Mar-2016 2580.990000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gwr1layer	 [All data for Validation set] Best Sensitivity/Recall:        	55.8369%	|| Best Specificity:        	88.0524%	|| Best Precision:        	74.8131%	|| Best F1:       	63.9469%
+[27-Mar-2016 2548.300000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: =======================================================================================================================================================================================================================================
+[27-Mar-2016 2548.300000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Running starter script
+[27-Mar-2016 2189.320000] [27-Mar-2016 2548.310000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : ==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+[27-Mar-2016 2189.330000] remoteParallelFunction[27-Mar-2016 2548.320000] : remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : starter_scRunning starter script: 
+Starting chain structure for GWR and GNG for nodes:1[27-Mar-2016 2189.330000] 
+[27-Mar-2016 2548.320000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : starter_sc=======================================================================================================================================================================================================================================: 
+###Using multilayer GWR and GNG ###
+[27-Mar-2016 2189.330000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: Starting chain structure for GWR and GNG for nodes:1
+[27-Mar-2016 2189.330000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 2429.910000] [27-Mar-2016 2581.620000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : ==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+[27-Mar-2016 2429.910000] [27-Mar-2016 2581.620000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : Running starter scriptRunning starter script
+
+[27-Mar-2016 2429.910000] [27-Mar-2016 2581.620000] remoteParallelFunctionremoteParallelFunction: : make_general_channel/channel_generalmake_general_channel/channel_general: : starter_scstarter_sc: : ==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+[27-Mar-2016 2581.620000] [27-Mar-2016 2429.910000] remoteParallelFunction: remoteParallelFunctionmake_general_channel/channel_general: : make_general_channel/channel_generalstarter_sc: : starter_scStarting chain structure for GWR and GNG for nodes:1: 
+Starting chain structure for GWR and GNG for nodes:1[27-Mar-2016 2581.630000] 
+remoteParallelFunction[27-Mar-2016 2429.920000] : make_general_channel/channel_generalremoteParallelFunction: : starter_scmake_general_channel/channel_general: : ###Using multilayer GWR and GNG ###starter_sc
+: ###Using multilayer GWR and GNG ###
+[27-Mar-2016 2190.030000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 2190.030000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point33955
+[27-Mar-2016 2549.030000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 2582.300000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 2582.300000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n1 overflow. using last data point54688
+[27-Mar-2016 2430.610000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: Working on gas: 'gwr1layer' (1) with method:gwr for process:1
+[27-Mar-2016 2430.610000] remoteParallelFunction: make_general_channel/channel_general: starter_sc: gas_method: gwr: n2 overflow. using last data point61085

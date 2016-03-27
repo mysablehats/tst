@@ -29,7 +29,7 @@ y = 1:size(shortinput,2)
 % that we are puting together a vector of q = 3 with our input of k = 4 from
 % the matrix we just generated.
 
-q = [3 0];
+Q = 3;
 %%
 % Some other necessary step is to have a vector with the ends of each
 % action. This is necessary because our dataset is made from the
@@ -56,7 +56,7 @@ newends_should = [4, 3];
 %%
 % The automated test procedure for any ends array can be thus defined as:
 
-newends_should_auto = ends - ( q(1) - 1)
+newends_should_auto = ends - ( Q - 1)
 
 %% 
 % Another check is to see if the size of the resulting array is correct. We
@@ -69,12 +69,12 @@ linput_size = [12,7];
 % num_of_actions*(q-1) or in matlab
 
 [k datasetlength ]= size(shortinput)
-linput_size_auto = [k*q(1), datasetlength - size(ends,2)*(q(1)-1) ]
+linput_size_auto = [k*Q, datasetlength - size(ends,2)*(Q-1) ]
 
 %%
 % The actual function then:
 
-[linput,newends, newy] = longinput(shortinput, q, ends,y)
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)
 
 %%
 % We can see it gives us our expected result, but it is better to run the
@@ -95,9 +95,9 @@ end
 % We can try now with a bigger set, say:
 
 k = 10
-q = [3 0]
+Q = [3 0]
 
-ends = fix(rand(1,10)*10) + q(1) % the +q here means I always have at least enough data to fill one long-vector; the shorter action samples would just be discarded. The algorithm does this, but checking it automatically would be a little more complicated.
+ends = fix(rand(1,10)*10) + Q(1) % the +q here means I always have at least enough data to fill one long-vector; the shorter action samples would just be discarded. The algorithm does this, but checking it automatically would be a little more complicated.
 
 sum(ends); % this should be equal to the size of the dataset
 
@@ -106,11 +106,11 @@ shortinput = reshape(1:k*sum(ends),k,[])
 y = 1:size(shortinput,2) %ones(1, size(shortinput,2)) % also need to redefine y
 
 %%
-newends_should_auto = ends - ( q(1) - 1) % will output, but mostly I want to check automatically with the if clauses
+newends_should_auto = ends - ( Q(1) - 1) % will output, but mostly I want to check automatically with the if clauses
 [k datasetlength ]= size(shortinput)
-linput_size_auto = [k*q(1), datasetlength - size(ends,2)*(q(1)-1) ]
+linput_size_auto = [k*Q(1), datasetlength - size(ends,2)*(Q(1)-1) ]
 %%
-[linput,newends, newy] = longinput(shortinput, q, ends,y) % will output; but it is too big for visual inspection
+[linput,newends, newy] = longinput(shortinput, Q, ends,y) % will output; but it is too big for visual inspection
 
 %%
 % Finally checking what we did:
@@ -156,16 +156,56 @@ are_they_exactly_the_same = all(linput(11:30,1)==linput(1:20,2)) % 1 is true...
 shortinput = reshape(1:4*11,4,[])
 y = 1:size(shortinput,2)
 ends = [6, 5];
-q = [3 0];
-[linput,newends, newy] = longinput(shortinput, q, ends,y)
+Q = 3;
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)
 
 %%
 % And setting our new variable p
-q = [3 1];
-[linput,newends, newy] = longinput(shortinput, q, ends,y)
+Q = [3 1];
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)
 %%
 % And with this new value of p, this is basically a reshape...
-q =[3 2]; % basically a reshape
-[linput,newends, newy] = longinput(shortinput, q, ends,y)
+Q =[3 2]; % basically a reshape
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)
 
+%%
+% A further (and hopefully final) improvement to the concatenation allows
+% for undersampling, and that is the r variable (or third component of q
 
+%Q = [q p r]; % default r = 1 
+
+Q = [3 0 2]; % will skip every second sample, 
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)
+
+%% 
+% Our input is too short to show what is happening, so trying with a bigger
+% set:
+shortinput = reshape(1:4*29,4,[])
+y = 1:size(shortinput,2)
+Q = [3 0 2];
+ends = [10, 11, 8];
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)
+
+%% 
+% One may note that the y value is being assigned from the the last y(end) for i-th
+% action. Having a repeating value here is intentional, since this is
+% supposed to be constant for each action.
+
+%% 
+% For undersampled results one may see that end of each action is preserved
+% , i. e., actions are not merged (which would generate a non-sensical
+% vector!), but there is some overlap with the action vectors. If this is
+% not desired one may need to set a larger value for p, such as:
+Q = [3 4 2];
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)
+
+%%
+% That is, p should be set as the overlap amount desired when r = 1,
+% multiplied by r. One could rewrite the function to do this simple
+% multiplication, but I suppose then some fractional values of p would make
+% sense, as fractional values of q or r don't. 
+% But also, currently this function has no error checking so one may type
+% invalid results and get weird outputs such as
+
+Q = [-5 4 2];
+[linput,newends, newy] = longinput(shortinput, Q, ends,y)

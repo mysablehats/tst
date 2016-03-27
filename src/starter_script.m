@@ -152,7 +152,7 @@ for j = 1:7
     parfor i = 1:4
         n = randperm(size(data_train,2)-3,2); % -(q-1) necessary because concatenation reduces the data size!
         paramsZ(i).startingpoint = [n(1) n(2)];
-        allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 0], paramsZ(i)}...
+        allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 2], paramsZ(i)}...
             };
         [~, a(i).mt] = starter_sc(data, allconn, P);
         if a(i).mt(1)>a(i).best(1)&&a(i).mt(4)>40
