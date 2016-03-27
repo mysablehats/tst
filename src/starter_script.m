@@ -38,11 +38,11 @@ y_val = [y_val y_val];
 
 %% Setting up runtime variables
 TEST = false; % set to false to actually run it
-PARA = true;
+PARA = false;
 
-P = 8;
+P = 4;
 
-NODES = 100;
+NODES = 1000;
 
 if TEST
     NODES = 10;
@@ -157,8 +157,7 @@ for j = 1:800
             };
         [~, a(i).mt] = starter_sc(data, allconn, 1);
         a(i).bestmtallconn.sensitivity = allconn;
-    end
-    
+    end    
     b = cat(2,b,a);
 end
 toc
