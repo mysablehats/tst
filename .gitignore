@@ -1,0 +1,7 @@
+*.mat
+*.m~
+*.mat
+src/html
+var/log*
+
+*.jpg
