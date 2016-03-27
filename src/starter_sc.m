@@ -26,7 +26,7 @@ dbgmsg('========================================================================
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% building arq_connect
-arq_connect(1:length(allconn)) = struct('name','','method','','sourcelayer','', 'layertype','','q',1,'params',struct());
+arq_connect(1:length(allconn)) = struct('name','','method','','sourcelayer','', 'layertype','','q',[1 0],'params',struct());
 for i = 1:length(allconn)
     arq_connect(i).name = allconn{i}{1};
     arq_connect(i).method = allconn{i}{2};

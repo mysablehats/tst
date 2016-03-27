@@ -2,7 +2,7 @@
 
 shortinput = reshape(1:44,4,[])
 
-q = 3;
+q = [3 0];
 
 ends = [6, 5];
 

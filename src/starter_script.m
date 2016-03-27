@@ -45,7 +45,7 @@ P = 4;
 NODES = 1000;
 
 if TEST
-    NODES = 100;
+    NODES = 10;
 end
 if ~PARA
     P = 1;
@@ -121,7 +121,7 @@ params.d                           = .99;   % Error reduction factor.
 %      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3,params}...
 %      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3,params}}; 
 %  
- allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, params}...
+ allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 0], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
             };
 %        
 
@@ -148,11 +148,11 @@ end
 tic
 clear a
 a(1:4) = struct('best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
-for j = 1:1    
+for j = 1:7    
     parfor i = 1:4
         n = randperm(size(data_train,2)-3,2); % -(q-1) necessary because concatenation reduces the data size!
         paramsZ(i).startingpoint = [n(1) n(2)];
-        allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',3, paramsZ(i)}...
+        allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 0], paramsZ(i)}...
             };
         [~, a(i).mt] = starter_sc(data, allconn, P);
         if a(i).mt(1)>a(i).best(1)&&a(i).mt(4)>40

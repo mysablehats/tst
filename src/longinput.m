@@ -1,6 +1,10 @@
-function [linput,newends, newy] = longinput(shortinput, q, ends, y,p)
+function [linput,newends, newy] = longinput(shortinput, qp, ends, y)
 % this function was getting messy, so I decided to recreate the structure
 % that generated her, so to make easier debugging
+% It is very disellegant of me. I apologise.
+q = qp(1);
+p = qp(2);
+
 realends = cumsum(ends,2);
 
 actionstructure(1:size(ends,2)) = struct();
@@ -9,7 +13,7 @@ actionstructure(1).end = ends(1);
 actionstructure(1).y = y(1);
 
 for i = 2:size(ends,2)
-    actionstructure(i).pose = shortinput(:,realends(i-1):realends(i));
+    actionstructure(i).pose = shortinput(:,realends(i-1)+1:realends(i));
     actionstructure(i).end = ends(i);
     actionstructure(i).y = y(realends(i));
 end

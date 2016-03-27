@@ -29,8 +29,7 @@ y = 1:size(shortinput,2)
 % that we are puting together a vector of q = 3 with our input of k = 4 from
 % the matrix we just generated.
 
-q = 3;
-p = 0;
+q = [3 0];
 %%
 % Some other necessary step is to have a vector with the ends of each
 % action. This is necessary because our dataset is made from the
@@ -57,7 +56,7 @@ newends_should = [4, 3];
 %%
 % The automated test procedure for any ends array can be thus defined as:
 
-newends_should_auto = ends - ( q - 1)
+newends_should_auto = ends - ( q(1) - 1)
 
 %% 
 % Another check is to see if the size of the resulting array is correct. We
@@ -70,12 +69,12 @@ linput_size = [12,7];
 % num_of_actions*(q-1) or in matlab
 
 [k datasetlength ]= size(shortinput)
-linput_size_auto = [k*q, datasetlength - size(ends,2)*(q-1) ]
+linput_size_auto = [k*q(1), datasetlength - size(ends,2)*(q(1)-1) ]
 
 %%
 % The actual function then:
 
-[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
+[linput,newends, newy] = longinput(shortinput, q, ends,y)
 
 %%
 % We can see it gives us our expected result, but it is better to run the
@@ -96,9 +95,9 @@ end
 % We can try now with a bigger set, say:
 
 k = 10
-q = 3
+q = [3 0]
 
-ends = fix(rand(1,10)*10) + q % the +q here means I always have at least enough data to fill one long-vector; the shorter action samples would just be discarded. The algorithm does this, but checking it automatically would be a little more complicated.
+ends = fix(rand(1,10)*10) + q(1) % the +q here means I always have at least enough data to fill one long-vector; the shorter action samples would just be discarded. The algorithm does this, but checking it automatically would be a little more complicated.
 
 sum(ends); % this should be equal to the size of the dataset
 
@@ -107,11 +106,11 @@ shortinput = reshape(1:k*sum(ends),k,[])
 y = 1:size(shortinput,2) %ones(1, size(shortinput,2)) % also need to redefine y
 
 %%
-newends_should_auto = ends - ( q - 1) % will output, but mostly I want to check automatically with the if clauses
+newends_should_auto = ends - ( q(1) - 1) % will output, but mostly I want to check automatically with the if clauses
 [k datasetlength ]= size(shortinput)
-linput_size_auto = [k*q, datasetlength - size(ends,2)*(q-1) ]
+linput_size_auto = [k*q(1), datasetlength - size(ends,2)*(q(1)-1) ]
 %%
-[linput,newends, newy] = longinput(shortinput, q, ends,y,p) % will output; but it is too big for visual inspection
+[linput,newends, newy] = longinput(shortinput, q, ends,y) % will output; but it is too big for visual inspection
 
 %%
 % Finally checking what we did:
@@ -157,15 +156,16 @@ are_they_exactly_the_same = all(linput(11:30,1)==linput(1:20,2)) % 1 is true...
 shortinput = reshape(1:4*11,4,[])
 y = 1:size(shortinput,2)
 ends = [6, 5];
-p= 0;
-q = 3;
-[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
+q = [3 0];
+[linput,newends, newy] = longinput(shortinput, q, ends,y)
 
 %%
 % And setting our new variable p
-p = 1;
-[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
-p = 2; % basically a reshape
-[linput,newends, newy] = longinput(shortinput, q, ends,y,p)
+q = [3 1];
+[linput,newends, newy] = longinput(shortinput, q, ends,y)
+%%
+% And with this new value of p, this is basically a reshape...
+q =[3 2]; % basically a reshape
+[linput,newends, newy] = longinput(shortinput, q, ends,y)
 
 
