@@ -37,12 +37,12 @@ y_val = [y_val y_val];
 
 
 %% Setting up runtime variables
-TEST = false; % set to false to actually run it
-PARA = false;
+TEST = 1; % set to false to actually run it
+PARA = 1;
 
 P = 4;
 
-NODES = 1000;
+NODES = 200;
 
 if TEST
     NODES = 10;
@@ -121,7 +121,7 @@ params.d                           = .99;   % Error reduction factor.
 %      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3,params}...
 %      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3,params}}; 
 %  
- allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 0], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
+ allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
             };
 %        
 
@@ -147,17 +147,19 @@ end
 
 tic
 clear a
+
 a(1:P) = struct('best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
 b = [];
-for j = 1:800
+for j = 1:1
     parfor i = 1:P
         n = randperm(size(data_train,2)-3,2); % -(q-1) necessary because concatenation reduces the data size!
         paramsZ(i).startingpoint = [n(1) n(2)];
-        allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 2], paramsZ(i)}...
-            };
-        [~, a(i).mt] = starter_sc(data, allconn, 1);
-        a(i).bestmtallconn.sensitivity = allconn;
+        pallconn = allconn;
+        pallconn{1}{1,6} = paramsZ(i);
+        [~, a(i).mt] = starter_sc(data, pallconn, 1);
+        a(i).bestmtallconn.sensitivity = pallconn;
     end    
     b = cat(2,b,a);
 end
 toc
+fix(clock)
