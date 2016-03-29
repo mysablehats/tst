@@ -10,7 +10,7 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
 % After some consideration, I have decided that all of the long inputing
 % will be done inside setinput, because it it would be easier. 
 
-        [savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.input_ends, savestructure.train.gas(j).y]  = setinput(arq_connect, savestructure, dimdim, savestructure.train); %%%%%%
+        [savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.input_ends, savestructure.train.gas(j).y, savestructure.train.gas(j).inputs.oldwhotokill]  = setinput(arq_connect, savestructure, dimdim, savestructure.train); %%%%%%
   
 %% 
 % After setting the input, we can actually run the gas, either a GNG or the
@@ -44,4 +44,11 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
         %PRE MESSAGE  
         dbgmsg('Finding best matching units for gas: ''',savestructure.gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
         [~, savestructure.train.gas(j).bestmatchbyindex] = genbestmmatrix(savestructure.gas(j).nodes, savestructure.train.gas(j).inputs.input, arq_connect.layertype, arq_connect.q); %assuming the best matching node always comes from initial dataset!
+        
+%% Post-conditioning function
+%This will be the noise removing function. I want this to be optional or allow other things to be done to the data and I
+%am still thinking about how to do it. Right now I will just create the
+%whattokill property and let setinput deal with it. 
+        dbgmsg('Flagging noisy input for removal from gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with points with more than',num2str(arq_connect.params.gamma),' standard deviations, for process:',num2str(i),1)
+        savestructure.train.gas(j).whotokill = removenoise(savestructure.gas(j).nodes, savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.oldwhotokill, arq_connect.params.gamma);
 end
