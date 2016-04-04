@@ -35,8 +35,8 @@ for i = 1:length(allconn)
     arq_connect(i).q = allconn{i}{5};
     arq_connect(i).params = allconn{i}{6};
 end
-inputs = struct('input',[],'input_ends',[],'oldwhotokill',[]);
-gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[],'whotokill',[]);
+inputs = struct('input_clip',[],'input',[],'input_ends',[],'oldwhotokill',{}, 'index', {});
+gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[],'whotokill',{});
 gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'fig',[],'nodesl',[]); %bestmatch will have the training matrix for subsequent layers
 vt_data = struct('indexes',[],'data',[],'ends',[],'gas',gas_data);
 savestructure(1:P) = struct('maxnodes',[], 'gas', gas_methods, 'train',vt_data,'val',vt_data,'figset',[]); % I have a problem with figset. I don't kno
@@ -100,7 +100,7 @@ for i=1:length(savestructure)
         savestructure(i).val.gas(j).name = arq_connect(j).name;
         
         dbgmsg('Setting validation input (and clipping output) for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends, savestructure(i).val.gas(j).y, savestructure(i).val.gas(j).inputs.oldwhotokill]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
+        [~, savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends, savestructure(i).val.gas(j).y, ~, savestructure.val.gas(j).inputs.index]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
        
         % I didn't realize, but I need to do this for the validation
         % dataset as well.

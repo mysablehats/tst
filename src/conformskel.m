@@ -1,4 +1,4 @@
-function [conform_train, conform_val] = conformskel(varargin )
+function [conform_train, conform_val, skelldef] = conformskel(varargin )
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%MESSAGES PART
 dbgmsg('Applies normalizations of several sorts on both training and validation datasets')
@@ -8,6 +8,7 @@ test = false;
 %%% Since some of the normalizations will change the size of the data-set
 %%% it is sensible to put them all in the same place where this can be
 %%% controlled.
+skelldef = struct();
 
 if isempty(varargin)||strcmp(varargin{1},'test')
     if length(varargin)>1
@@ -18,6 +19,8 @@ if isempty(varargin)||strcmp(varargin{1},'test')
 else
     data_train = varargin{1};
     data_val = varargin{2};
+    skelldef.length = size(data_val,1);
+    
     
     % creates the function handle cell array
     conformations = {};
@@ -87,6 +90,7 @@ else
         conform_val = data_val;        
     end
 end
+skelldef.realkilldim = realkilldim;
 end
 function newskel = centerhips(skel)
 

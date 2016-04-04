@@ -1,4 +1,4 @@
-function [linput,newends, newy] = longinput(shortinput, qp, ends, y)
+function [linput,newends, newy, indexes] = longinput(shortinput, qp, ends, y, iindex)
 % this function was getting messy, so I decided to recreate the structure
 % that generated her, so to make easier debugging
 % It is very disellegant of me. I apologise.
@@ -21,17 +21,20 @@ actionstructure(1:size(ends,2)) = struct();
 actionstructure(1).pose = shortinput(:,1:realends(1)); 
 actionstructure(1).end = ends(1);
 actionstructure(1).y = y(realends(1));
+actionstructure(1).index = iindex(1:ends(1));
 
 for i = 2:size(ends,2)
     actionstructure(i).pose = shortinput(:,realends(i-1)+1:realends(i));
     actionstructure(i).end = ends(i);
     actionstructure(i).y = y(realends(i));
+    actionstructure(i).index = iindex(realends(i-1):realends(i));
 end
 shortdim = size(shortinput,1);
 for i = 1:length(actionstructure)
     m = 1;
     for j = 1:1+p:actionstructure(i).end
         a = zeros(shortdim*q,1);
+        indexx = cell(1,3);
         if j+q*r-1>actionstructure(i).end
             %cant complete the whole vector!
             break
@@ -39,26 +42,32 @@ for i = 1:length(actionstructure)
             k = 1;
             for lop = 1:r:q*r
                 a(1+(k-1)*shortdim:k*shortdim) = actionstructure(i).pose(:,j+lop-1);
+                indexx{lop/r} = actionstructure(i).index{j+lop-1}; 
                 k = k+1;
             end
         end
         %have to save a somewhere
         actionstructure(i).long(m).vec = a;
+        actionstructure(i).long(m).index = indexx;
         m = m+1;
     end
     %should concatenate long now
     actionstructure(i).newend = length(actionstructure(i).long);
     actionstructure(i).longinput = zeros(q*shortdim,actionstructure(i).newend);
     actionstructure(i).longy = actionstructure(i).y*ones(1,actionstructure(i).newend);
+    actionstructure(i).longindex = cell(size(actionstructure(i).longy));
     for j = 1:actionstructure(i).newend
         actionstructure(i).longinput(:,j) = actionstructure(i).long(j).vec;
+        actionstructure(i).longindex{j} = actionstructure(i).long(j).index;
     end
 end
 linput = actionstructure(1).longinput;
 newy = actionstructure(1).longy;
 newends(1) = actionstructure(1).newend;
+indexes = actionstructure(1).longindex;
 for i = 2:length(actionstructure)
     linput = cat(2,linput,actionstructure(i).longinput);
     newy = cat(2,newy, actionstructure(i).longy);
     newends(i) = actionstructure(i).newend;
+    indexes = cat(2,indexes, actionstructure(i).longindex);
 end
