@@ -20,10 +20,10 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
         %DO GNG OR GWR
         if strcmp(arq_connect.method,'gng')
             %do gng
-            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~, ~] = gng_lax(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
+            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~] = gng_lax(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
         elseif strcmp(arq_connect.method,'gwr')
             %do gwr
-            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~, ~] = gwr(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
+            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~] = gwr(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
         else
             error('unknown method')
         end
