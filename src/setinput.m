@@ -110,7 +110,11 @@ if ~isempty(rev)
     imax = size(rev,2);
     jmax = size(idxx,2);
     for i = 1:imax
-        currrev = [rev{1,i}{:}];
+        try %actually I may have solved a problem with the turtles thing, but I think I havent. this fix is a hAck, hope it doesnt break too often, sorry
+            currrev = [rev{1,i}{:}];
+        catch
+            currrev = rev{i};
+        end
         jlower = max([1 fix((currrev(1)*.9)/(q*(p+1)*r))-1 ]); % I think indexes will be always ordered, so I THINK this will always work...
         jhigher = min([jmax ceil((currrev(end))/(q*(p+1)*r))+1]); % multiply by 10 if it doesnt work %%% there is some irregularity here because of actions that dont end where they should, so each ending action can cause you to drift additionally q*(p+1)*r-1 data samples      
         for j = jlower:jhigher         %1:jmax %%% I will try to improve this by limiting the data that I look up based on q!
@@ -119,7 +123,7 @@ if ~isempty(rev)
                 curridxx = [idxx{j}{k}{:}];
                 if all(currrev==curridxx) %maybe I can try this, if it fails do a catch opening it once more. it will be the world's slowest function, but...
                     eliminate = cat(2, eliminate, j);
-                elseif j==jlower&&currrev(1)<curridxx(3)
+                elseif j==jlower&&currrev(1)<curridxx(end)
                     %dbgmsg('Out of bounds with current indexing scheme!',1)
                     error('Out of bounds with current indexing scheme!')
                 end
