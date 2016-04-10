@@ -100,7 +100,7 @@ for i=1:length(savestructure)
         savestructure(i).val.gas(j).name = arq_connect(j).name;
         
         dbgmsg('Setting validation input (and clipping output) for gas: ''',savestructure(i).gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
-        [~, savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends, savestructure(i).val.gas(j).y, ~, savestructure.val.gas(j).inputs.index]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
+        [~, savestructure(i).val.gas(j).inputs.input, savestructure(i).val.gas(j).inputs.input_ends, savestructure(i).val.gas(j).y, ~, savestructure.val.gas(j).inputs.index, savestructure.val.gas(j).inputs.awk]  = setinput(arq_connect(j), savestructure(i), size(data_train,1), savestructure(i).val);
        
         % I didn't realize, but I need to do this for the validation
         % dataset as well.

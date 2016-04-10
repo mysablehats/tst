@@ -1,4 +1,4 @@
-function [extinput_clipped, extinput, inputends,y, removeremove, indexes] = setinput(arq_connect, savestruc,data_size, svst_t_v) %needs to receive the correct data size so that generateidx may work well
+function [extinput_clipped, extinput, inputends,y, removeremove, indexes, awko] = setinput(arq_connect, savestruc,data_size, svst_t_v) %needs to receive the correct data size so that generateidx may work well
 %%%%%% this is the place to get long inputs actually.
 %arqconnect has only the current layer, so it is flat
 %inputends need to be the same for everything to work out fine
@@ -13,8 +13,10 @@ function [extinput_clipped, extinput, inputends,y, removeremove, indexes] = seti
 % so far. So in short: same "ends" for every component.
 extinput = [];
 midremove = [];
+awko = [];
 inputinput = cell(length(arq_connect.sourcelayer),1);
 removeremove = inputinput; %they are the same size
+awk = inputinput; %it is also the same size...
 %if inputends dont coincide this function will give a strange error
 inputends = [];
 [posidx, velidx] = generateidx(data_size, arq_connect.params.skelldef);
@@ -39,7 +41,10 @@ for j = 1:length(arq_connect.sourcelayer)
             %            [inputinput{j},inputends,y] = longinput( svst_t_v.gas(i).bestmatch, arq_connect.q, svst_t_v.gas(i).inputs.input_ends, svst_t_v.gas(i).y);
 
             %inputinput{j} = longinput(savestruc.gas(i).bestmatch; %
-            removeremove{1} = turtlesallthewaydown(svst_t_v.gas(i).whotokill);                     
+            removeremove{j} = (svst_t_v.gas(i).whotokill);                     
+            %%% this part will construct my newly created awk vector out of
+            %%% initial awk vectors
+            awk{j} = makeawk(arq_connect.q, svst_t_v.gas(i).inputs.awk);
             foundmysource = true;
         end
     end
@@ -48,14 +53,17 @@ for j = 1:length(arq_connect.sourcelayer)
                 [inputinput{j},inputends,y, indexes] = longinput(svst_t_v.data(posidx,:), arq_connect.q, svst_t_v.ends, svst_t_v.y, num2cell(1:size(svst_t_v.data,2)));
                 %inputinput{j} = svst_t_v.data(posidx,:); %
                 %ends is savestructure.train.ends
+                awk{j} = makeawk(arq_connect.q, arq_connect.params.skelldef.awk.pos);
             elseif strcmp(arq_connect.layertype, 'vel')
                 [inputinput{j},inputends,y, indexes] = longinput(svst_t_v.data(velidx,:), arq_connect.q, svst_t_v.ends, svst_t_v.y, num2cell(1:size(svst_t_v.data,2)));
                 %inputinput{j} = svst_t_v.data(velidx,:); %
                 %ends is savestructure.train.ends
+                awk{j} = makeawk(arq_connect.q, arq_connect.params.skelldef.awk.vel);
             elseif strcmp(arq_connect.layertype, 'all')
                 [inputinput{j},inputends,y, indexes] = longinput(svst_t_v.data, arq_connect.q, svst_t_v.ends, svst_t_v.y, num2cell(1:size(svst_t_v.data,2)));
                 %inputinput{j} = svst_t_v.data; %
                 %ends is savestructure.train.ends
+                awk{j} = makeawk(arq_connect.q, [arq_connect.params.skelldef.awk.pos;  arq_connect.params.skelldef.awk.vel] );
             end
     end
     if isempty(inputinput)
@@ -65,11 +73,16 @@ end
 if length(inputinput)>1
     for i = 1:length(inputinput)
         extinput = cat(1,extinput,inputinput{i}); % this part should check for the right ends, ends should also be a cell array, and they should be concatenated properly
-        midremove = cat(1,midremove,removeremove{i}); %{i}
+        %%% dealing with possible empty sets::
+        if ~isempty(removeremove{i})
+            midremove = cat(1,midremove,removeremove{i}); %{i}
+        end        
+        awko = cat(1,awko,awk{i});
     end
 else
     extinput = inputinput{:};
-    midremove = turtlesallthewaydown(removeremove); 
+    midremove = removeremove{:}; %no turtles!
+    awko = awk{:};
     %oh, it may be wrong,,, have
     %to check wrappung and unwrapping %%it was wrong, I will check
     %unwrapping inside removebaddata
@@ -77,6 +90,9 @@ else
     
 end
 extinput_clipped= removebaddata(extinput, indexes, midremove, arq_connect.q); 
+end
+function awk = makeawk(q,inawk)
+awk = repmat(inawk,q(1),1);
 end
 function icli = removebaddata(inp, idxx,rev, qp) % inpe, y,
 if ~isempty(rev)
@@ -115,17 +131,37 @@ if ~isempty(rev)
         catch
             currrev = rev{i};
         end
-        jlower = max([1 fix((currrev(1)*.9)/(q*(p+1)*r))-1 ]); % I think indexes will be always ordered, so I THINK this will always work...
-        jhigher = min([jmax ceil((currrev(end))/(q*(p+1)*r))+1]); % multiply by 10 if it doesnt work %%% there is some irregularity here because of actions that dont end where they should, so each ending action can cause you to drift additionally q*(p+1)*r-1 data samples      
+        try
+            jlower = max([1 fix((currrev(1)*.9)/(q*(p+1)*r))-1 ]); % I think indexes will be always ordered, so I THINK this will always work...
+            jhigher = min([jmax ceil((currrev(end))/(q*(p+1)*r))+1]); % multiply by 10 if it doesnt work %%% there is some irregularity here because of actions that dont end where they should, so each ending action can cause you to drift additionally q*(p+1)*r-1 data samples      
+        catch %% in strange concatenations my speedup will fail. I cannot think of everything...
+            jlower = 1;
+            jhigher = jmax;
+        end
         for j = jlower:jhigher         %1:jmax %%% I will try to improve this by limiting the data that I look up based on q!
             kmax = size(idxx{j},2);
             for k = 1:kmax                
                 curridxx = [idxx{j}{k}{:}];
-                if all(currrev==curridxx) %maybe I can try this, if it fails do a catch opening it once more. it will be the world's slowest function, but...
+%                 maxcurrpoint = max(turtlesallthewaydown(curridxx));
+%                 mincurrpoint = min(turtlesallthewaydown(curridxx));
+                if isequal(currrev,curridxx) %maybe I can try this, if it fails do a catch opening it once more. it will be the world's slowest function, but...
                     eliminate = cat(2, eliminate, j);
-                elseif j==jlower&&currrev(1)<curridxx(end)
-                    %dbgmsg('Out of bounds with current indexing scheme!',1)
-                    error('Out of bounds with current indexing scheme!')
+                    %I have to also unwrap curridx to check if any of its
+                    %elements is equals to currrev
+                elseif (iscell(curridxx)&&length(curridxx)>length(currrev))
+                    arryofcurridx = curridxx;
+                    while (iscell(arryofcurridx)&&length(arryofcurridx)>length(currrev))
+                        arryofcurridx = [curridxx{:}];
+                        for mm = 1:length(arryofcurridx);
+                            if isequal(currrev,arryofcurridx(mm))
+                                eliminate = cat(2, eliminate, j);
+                            end
+                        end
+                    end
+%                 elseif j==jlower&&currrev(1)<curridxx(end) %% I could not
+%                 make my error check work for cells of cells of cells of cells, since the count of label was different than the content. I will have to make due without it...
+%                     %dbgmsg('Out of bounds with current indexing scheme!',1)
+%                     error('Out of bounds with current indexing scheme!')
                 end
             end
         end

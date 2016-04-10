@@ -4,13 +4,15 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
 %% Setting up some labels
         savestructure.gas(j).name = arq_connect.name;
         savestructure.gas(j).method = arq_connect.method;
-      
+        savestructure.gas(j).layertype = arq_connect.layertype;
+        arq_connect.params.layertype = arq_connect.layertype;
+        
 %% Choosing the right input for this layer
 % This calls the function set input that chooses what will be written on the .inputs variable. It also handles the sliding window concatenations and saves the .input_ends properties, so that this can be done recursevely. 
 % After some consideration, I have decided that all of the long inputing
 % will be done inside setinput, because it it would be easier. 
 
-        [savestructure.train.gas(j).inputs.input_clip, savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.input_ends, savestructure.train.gas(j).y, savestructure.train.gas(j).inputs.oldwhotokill, savestructure.train.gas(j).inputs.index]  = setinput(arq_connect, savestructure, dimdim, savestructure.train); %%%%%%
+        [savestructure.train.gas(j).inputs.input_clip, savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.input_ends, savestructure.train.gas(j).y, savestructure.train.gas(j).inputs.oldwhotokill, savestructure.train.gas(j).inputs.index, savestructure.train.gas(j).inputs.awk ]  = setinput(arq_connect, savestructure, dimdim, savestructure.train); %%%%%%
   
 %% 
 % After setting the input, we can actually run the gas, either a GNG or the

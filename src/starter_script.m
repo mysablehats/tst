@@ -15,11 +15,41 @@ close all;
 
 load_skel_data
 
+important = 0.1;
+relevant = 0.03;
+minor = 0.005;
+
+awk = [...
+    important;...   %1    hips
+    important;...   %2    abdomen
+    important;...   %3    neck or something
+    relevant;...    %4    tip of the head
+    important;...   %5    right shoulder
+    relevant;...    %6    right also shoulder or elbow
+    relevant;...    %7    right elbow maybe
+    relevant;...    %8    right hand
+    important;...   %9    left part of shoulder
+    relevant;...    %10   left something maybe elbow
+    relevant;...    %11   left maybe elbow
+    relevant;...    %12   left hand
+    important;...   %13   left hip
+    relevant;...    %14   left knee
+    minor;...       %15   left part of foot
+    minor;...       %16   left tip of foot
+    important;...   %17   right hip %important because hips dont lie
+    relevant;...    %18   right knee
+    minor;...       %19   right part of foot
+    minor;...       %20   right tip of foot
+    important;...   %21   middle of upper torax
+    minor;...       %22   right some part of the hand
+    minor;...       %23   right some other part of the hand
+    minor;...       %24   left some part of the hand
+    minor];         %25   left some other part of the hand
 
 %% Pre-conditioning of data
 % 
-[data_train_, data_val_, skelldef] = conformskel(data_train, data_val,'nohips','normal','nofeet');
-[data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val,'mirror','nohips','normal','nofeet');
+[data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,'nohips','nofeet');
+[data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirror','nohips','nofeet');
 data_train = [data_train_, data_train_mirror];
 ends_train = [ends_train, ends_train];
 data_val = [data_val_, data_val_mirror];
@@ -38,20 +68,20 @@ y_val = [y_val y_val];
 
 %% Setting up runtime variables
 TEST = 0; % set to false to actually run it
-PARA = 1;
+PARA = 0;
 
 P = 4;
 
-NODES = 200;
+NODES = 500;
 
 if TEST
-    NODES = 10;
+    NODES = 2;
 end
 if ~PARA
     P = 1;
 end
 
-params.PLOTIT = false; %not really working
+params.PLOTIT =0 ;
 params.RANDOMSTART = false; % if true it overrides the .startingpoint variable
 
 n = randperm(size(data_train,2),2);
@@ -66,8 +96,8 @@ params.skelldef = skelldef;
 
 %Exclusive for gwr
 params.STATIC = true;
-params.MAX_EPOCHS = 1; % this means data will be run over twice
-params.at = 0.95; %activity threshold
+params.MAX_EPOCHS = 2; % this means data will be run over twice
+params.at = 0.165; %activity threshold
 params.h0 = 1;
 params.ab = 0.95;
 params.an = 0.95;
@@ -91,13 +121,22 @@ params.d                           = .99;   % Error reduction factor.
 %      {'gng4layer',   'gng',{'gng2layer'},              'vel',3,params}...
 %      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3,params}};
 % 
-  allconn = {...
-      {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
-      {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
-      {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
-      {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
-      {'gwrSTSlayer', 'gwr',{'gwr4layer','gwr3layer'},  'all',[3 2],params}};
+allconn = {...
+    {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 2 3],params}...
+    {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 2 3],params}...
+    {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
+    {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
+    {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
 
+% allconn = {...
+%     {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
+%     {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
+%     {'gwrSTSlayer', 'gwr',{'gwr1layer','gwr2layer'},  'all',[3 2],params}};
+
+% allconn = {...
+%     {'gwr1layer',   'gwr',{'pos'},                    'pos',[3 0],params}...
+%     {'gwr2layer',   'gwr',{'vel'},                    'vel',[3 0],params}...
+%     {'gwrSTSlayer', 'gwr',{'gwr1layer','gwr2layer'},  'all',[1 0],params}};
 %  allconn = {...
 %      {'gwr1layer',   'gwr',{'pos'},                    'pos',3,params}...
 %      {'gwr2layer',   'gwr',{'vel'},                    'vel',3,params}...
@@ -124,8 +163,8 @@ params.d                           = .99;   % Error reduction factor.
 %      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3,params}}; 
 %  
 %  allconn = {...
-%         {'gwr1layer',   'gwr',{'pos'},                    'pos',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
-%         {'gwr2layer',   'gwr',{'gwr1layer'},              'pos',[3 2], params}...
+%         {'gwr1layer',   'gwr',{'pos'},                    'all',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
+%         {'gwr2layer',   'gwr',{'gwr1layer'},              'all',[3 2], params}...
 %         };
 %   allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
 %            };
@@ -154,18 +193,22 @@ end
 tic
 clear a
 
-a(1:P) = struct('best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
+a(1:P) = struct();%'best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
 b = [];
-for j = 1:1
-    parfor i = 1:P
-        n = randperm(size(data_train,2)-3,2); % -(q-1) necessary because concatenation reduces the data size!
-        paramsZ(i).startingpoint = [n(1) n(2)];
-        pallconn = allconn;
-        pallconn{1}{1,6} = paramsZ(i);
-        [~, a(i).mt] = starter_sc(data, pallconn, 1);
-        a(i).bestmtallconn.sensitivity = pallconn;
-    end    
-    b = cat(2,b,a);
+if PARA
+    for j = 1:1
+        parfor i = 1:P
+            a(i).a = executioncore_in_starterscript(paramsZ(i),allconn, data);
+        end
+        b = cat(2,b,a.a);
+    end
+else
+    for j = 1:1
+        for i = 1:P
+            a(i).a = executioncore_in_starterscript(paramsZ(i),allconn, data);
+        end
+        b = cat(2,b,a.a);
+    end
 end
 toc
 fix(clock)

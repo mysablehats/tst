@@ -34,15 +34,15 @@ for i = 1:length(actionstructure)
     m = 1;
     for j = 1:1+p:actionstructure(i).end
         a = zeros(shortdim*q,1);
-        indexx = cell(1,3);
+        indexx = cell(1,q);
         if j+q*r-1>actionstructure(i).end
             %cant complete the whole vector!
             break
         else
             k = 1;
-            for lop = 1:r:q*r
-                a(1+(k-1)*shortdim:k*shortdim) = actionstructure(i).pose(:,j+lop-1);
-                indexx{lop/r} = actionstructure(i).index{j+lop-1}; 
+            for lop = 1:q
+                a(1+(k-1)*shortdim:k*shortdim) = actionstructure(i).pose(:,j+lop*r-1);
+                indexx{lop} = actionstructure(i).index{j+lop*r-1}; 
                 k = k+1;
             end
         end

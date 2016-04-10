@@ -19,14 +19,19 @@ if isempty(varargin)||strcmp(varargin{1},'test')
 else
     data_train = varargin{1};
     data_val = varargin{2};
+    awk = varargin{3};
     skelldef.length = size(data_val,1);
-    
-    
+    if size(data_train)~=skelldef.length
+        error('data_train and data_val must have the same length!!!')
+    end
+    if any(size(awk).*[6 1]~= size(data_val(:,1)))
+        error('wrong size for awk. It should be the same size of the input data. maybe you should transpose it?')
+    end
     % creates the function handle cell array
     conformations = {};
     killdim = [];
     
-    for i =3:length(varargin)
+    for i =4:length(varargin)
         switch varargin{i}
             case 'test'
                 test = true;
@@ -49,10 +54,12 @@ else
             case 'notorax'
                 conformations = [conformations, {@centertorax}];
                 dbgmsg('WARNING, the normalization: ' , varargin{i},' is performing poorly, it should not be used.', true);
-                %killdim = [killdim, 21];
+                killdim = [killdim, 21];
             case 'nofeet'
-                conformations = [conformations, {@nofeet}];
-                killdim = [killdim, 20, 16];
+                conformations = [conformations, {@nofeet}]; %not sure i need this...
+                killdim = [killdim, 19, 20, 15, 16];
+            case 'nohands'
+                 killdim = [killdim, 19, 20, 15, 16];
             case 'axial'
                 %conformations = [conformations, {@centerhips}];
                 dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
@@ -78,19 +85,24 @@ else
             data_val(:,j) = func(data_val(:,j));
         end
     end
-    
+    skelldef.elementorder = 1:skelldef.length;
     % squeeze them accordingly?
     if ~test
-        whattokill = reshape(1:size(data_train,1),size(data_train,1)/3,3);
+        whattokill = reshape(1:skelldef.length,skelldef.length/3,3);
         realkilldim = whattokill(killdim,:);
-        conform_train = data_train(setdiff(1:size(data_train,1),realkilldim),:); %sorry for the in-liners..
-        conform_val = data_val(setdiff(1:size(data_val,1),realkilldim),:);
+        conform_train = data_train(setdiff(1:skelldef.length,realkilldim),:); %sorry for the in-liners..
+        conform_val = data_val(setdiff(1:skelldef.length,realkilldim),:);
+        skelldef.elementorder = skelldef.elementorder(setdiff(1:skelldef.length,realkilldim));
+        %%% awk
+        skelldef.awk.pos = repmat(awk(setdiff(1:skelldef.length/6,killdim)),3,1);
+        skelldef.awk.vel = repmat(awk(setdiff(1:skelldef.length/6,killdim)),3,1);
     else
         conform_train = data_train;
         conform_val = data_val;        
     end
 end
 skelldef.realkilldim = realkilldim;
+[skelldef.pos, skelldef.vel] = generateidx(skelldef.length, skelldef);
 end
 function newskel = centerhips(skel)
 
