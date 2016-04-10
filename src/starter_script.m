@@ -15,9 +15,9 @@ close all;
 
 load_skel_data
 
-important = 0.1;
-relevant = 0.03;
-minor = 0.005;
+important = 1; %0.1;
+relevant =1; %0.03;
+minor = 1; %0.005;
 
 awk = [...
     important;...   %1    hips
@@ -68,7 +68,7 @@ y_val = [y_val y_val];
 
 %% Setting up runtime variables
 TEST = 0; % set to false to actually run it
-PARA = 0;
+PARA = 1;
 
 P = 4;
 
@@ -97,7 +97,7 @@ params.skelldef = skelldef;
 %Exclusive for gwr
 params.STATIC = true;
 params.MAX_EPOCHS = 2; % this means data will be run over twice
-params.at = 0.165; %activity threshold
+params.at = 0.95; %activity threshold
 params.h0 = 1;
 params.ab = 0.95;
 params.an = 0.95;
@@ -121,9 +121,16 @@ params.d                           = .99;   % Error reduction factor.
 %      {'gng4layer',   'gng',{'gng2layer'},              'vel',3,params}...
 %      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3,params}};
 % 
+% allconn = {...
+%     {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 2 3],params}...
+%     {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 2 3],params}...
+%     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
+%     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
+%     {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
+
 allconn = {...
-    {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 2 3],params}...
-    {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 2 3],params}...
+    {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
+    {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
     {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
