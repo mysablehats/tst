@@ -128,7 +128,7 @@ for idx_folder = idx_folderi
                 vel = zeros(size(jMatSkl)); % initial velocity is zero
                 ncnc = meany*30; %normalizing constant since the sensor is hopefully always at 30 fps
                 for i = 2:size(jMatSkl,3)
-                    vel(:,:,i) = (jMatSkl(:,:,i) - jMatSkl(:,:,i-1))/(KinectTimeBody(i,1)-KinectTimeBody(i-1,1))*ncnc;
+                    vel(:,:,i) = ncnc*(jMatSkl(:,:,i) - jMatSkl(:,:,i-1))/(KinectTimeBody(i,1)-KinectTimeBody(i-1,1));
                 end
                 jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder,'time',KinectTimeBody,'vel',vel);
                 %%%%%% size(jskelstruc.skel) % this was here for debugging

@@ -15,9 +15,9 @@ dbgmsg('Skeleton data (training and validation) generated.')
 
 load_skel_data
 
-important = 1; %0.1;
-relevant =1; %0.03;
-minor = 1; %0.005;
+important = 0.1;
+relevant =0.03;
+minor = 0.005;
 
 awk = [...
     important;...   %1    hips
@@ -67,8 +67,8 @@ y_val = [y_val y_val];
 
 
 %% Setting up runtime variables
-TEST = 0; % set to false to actually run it
-PARA = 1;
+TEST = 1; % set to false to actually run it
+PARA = 0;
 
 P = 4;
 

@@ -34,6 +34,8 @@ for i = 1:length(allconn)
     arq_connect(i).layertype = allconn{i}{4};
     arq_connect(i).q = allconn{i}{5};
     arq_connect(i).params = allconn{i}{6};
+    %%% hack I need this info in params as well
+    arq_connect(i).params.q = arq_connect(i).q;
 end
 inputs = struct('input_clip',[],'input',[],'input_ends',[],'oldwhotokill',{}, 'index', {});
 gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[],'whotokill',{});
