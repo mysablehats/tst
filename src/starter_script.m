@@ -5,9 +5,9 @@ close all;
 %% Generate Skeletons
 % This takes quite a while to execute, so I rarely run it. 
 %%% >>>>> this has to be changed into a function.
-%generate_skel_data %% very time consuming -> also will generate a new
-% clear all
-% dbgmsg('Skeleton data (training and validation) generated.')
+generate_skel_data %% very time consuming -> also will generate a new
+clear all
+dbgmsg('Skeleton data (training and validation) generated.')
 % %%validation and training set
 
 
@@ -72,13 +72,10 @@ PARA = 1;
 
 P = 4;
 
-NODES = 500;
+NODES = 1000;
 
 if TEST
     NODES = 2;
-end
-if ~PARA
-    P = 1;
 end
 
 params.PLOTIT =0 ;
@@ -197,11 +194,14 @@ for i = 1:P
     paramsZ(i) = params;
 end
 
-tic
+
 clear a
 
 a(1:P) = struct();%'best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
 b = [];
+starttime = tic;
+if ~TEST 
+while toc(starttime)<3600*10
 if PARA
     for j = 1:1
         parfor i = 1:P
@@ -217,5 +217,10 @@ else
         b = cat(2,b,a.a);
     end
 end
-toc
-fix(clock)
+end
+else
+    executioncore_in_starterscript(paramsZ(1),allconn, data);
+end
+savevar = strcat('b',num2str(NODES),'_', num2str(params.MAX_EPOCHS),'epochs',num2str(size(b,2)),'remove4sigma');
+eval(strcat(savevar,'=b;'))
+save(strcat(pathtodropbox,'/classifier/',savevar,'.mat'),savevar)

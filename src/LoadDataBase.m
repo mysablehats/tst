@@ -116,10 +116,19 @@ for idx_folder = idx_folderi
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
                 % % Put here your code! 
                 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+                deltatimes = diff(KinectTimeBody(:,1));
+                meany = mean(deltatimes);
+                steady = std(deltatimes);
+                if any(((deltatimes)-meany)>.8*meany)||steady>6e3||any((deltatimes-meany).^2/steady^2>3)||meany<2e5||meany>6e5
+                    figure
+                    hist(deltatimes)
+                    %error('You will have to handle sample rate!!!')
+                end
                 %%% Calculate velocities!!
                 vel = zeros(size(jMatSkl)); % initial velocity is zero
+                ncnc = meany*30; %normalizing constant since the sensor is hopefully always at 30 fps
                 for i = 2:size(jMatSkl,3)
-                    vel(:,:,i) = (jMatSkl(:,:,i) - jMatSkl(:,:,i-1))/(KinectTimeBody(i,1)-KinectTimeBody(i-1,1));
+                    vel(:,:,i) = (jMatSkl(:,:,i) - jMatSkl(:,:,i-1))/(KinectTimeBody(i,1)-KinectTimeBody(i-1,1))*ncnc;
                 end
                 jskelstruc = struct('skel',jMatSkl, 'act',groupName,'act_type', name_Subfolder, 'index', idx_test, 'subject', idx_folder,'time',KinectTimeBody,'vel',vel);
                 %%%%%% size(jskelstruc.skel) % this was here for debugging

@@ -25,12 +25,12 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
             [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~] = gng_lax(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
         elseif strcmp(arq_connect.method,'gwr')
             %do gwr
-            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~] = gwr(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
+            [savestructure.gas(j).nodes, savestructure.gas(j).edges, savestructure.gas(j).outparams] = gwr(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
         else
             error('unknown method')
         end
         %%%% POS-MESSAGE
-        dbgmsg('Finished working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,'.Num of nodes reached:',num2str(size(savestructure.gas(j).nodes,2)),' for process:',num2str(i),1)
+        dbgmsg('Finished working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,'.Num of nodes reached:',num2str(savestructure.gas(j).outparams.graph.nodesvect(end)),' for process:',num2str(i),1)
         %%%% FIND BESTMATCHING UNITS
         
 %% Best-matching units

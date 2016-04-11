@@ -168,6 +168,9 @@ if ~isempty(rev)
     end
     whattoget = setdiff(allitems, eliminate);
     icli = inp(:,whattoget);
+    if size(rev,2)<size(unique(eliminate),2)
+        disp('point removal is weird!, please debug')
+    end
     dbgmsg('I removed', num2str(size(unique(eliminate),2)), ' out of ', num2str(size(inp,2)), ' points!',1)
 else
     icli = inp;

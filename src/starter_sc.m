@@ -73,6 +73,17 @@ for i = 1:P
     end
     
 end
+%% Gas Outcomes
+if 1% PLOTIT
+    for i = 1:length(savestructure)
+        figure
+        for j = 1:length(arq_connect)
+            subplot (1,length(arq_connect),j)
+            hist(savestructure(i).gas(j).outparams.graph.errorvect)
+            title((savestructure(i).gas(j).name))
+        end        
+    end
+end
 %% Labelling
 % The current labelling procedure for both the validation and training datasets. As of this moment I label all the gases
 % to see how adding each part increases the overall performance of the
