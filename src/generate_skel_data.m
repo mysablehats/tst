@@ -56,9 +56,9 @@ end
 % saves data
 %%%%%%
 
-[~, data_train,y_train, ends_train] = extractdata(allskel1);
-save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_'),'data_train', 'y_train','allskeli1','ends_train','-v7.3');
+[~, data_train,y_train, ends_train, y_labels_train] = extractdata(allskel1);
+save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_'),'data_train','y_labels_train', 'y_train','allskeli1','ends_train','-v7.3');
 dbgmsg('Training data saved.')
-[~, data_val,y_val, ends_val] = extractdata(allskel2);
-save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_val_'),'data_val', 'y_val','allskeli2','ends_val','-v7.3');
+[~, data_val,y_val, ends_val, y_labels_val] = extractdata(allskel2);
+save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_val_'),'data_val','y_labels_val', 'y_val','allskeli2','ends_val','-v7.3');
 dbgmsg('Validation data saved.')

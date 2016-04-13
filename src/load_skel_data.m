@@ -5,5 +5,5 @@
 % 
 aa_environment % load environment variables
 
-load(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_val.mat'))
-load(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel.mat'))
+load(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_val_.mat'))
+load(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_.mat'))

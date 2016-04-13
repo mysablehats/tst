@@ -1,6 +1,6 @@
 function [savestructure, metrics] = starter_sc(data, allconn, P)
 
-PLOTIT = false;
+PLOTIT = true;
 data_val = data.val;
 data_train = data.train;
 y_val = data.y.val;

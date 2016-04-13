@@ -72,7 +72,7 @@ for idx_folder = idx_folderi
                 %*************************
                 %****Load depth frame*****
                 %*************************
-                fid = fopen(strcat(Folder,SLASH,'Depth',SLASH,'Filedepth_',num2str(frameIdx-1),'.bin'));
+                fid = fopen(strcat(Folder,SLASH,'Depth',SLASH,'Filedepth_',num2str(frameIdx-1),'.bin'),'r');
                 arrayFrame = fread(fid,'uint16');
                 fclose(fid);
                 M = zeros(rowPixel, columnPixel);
