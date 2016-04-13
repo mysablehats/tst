@@ -9,12 +9,15 @@ function labels = labeling(nodes, data, y)
 %%%%%MESSAGES 
 dbgmsg('Applying labels to the prototypical nodes.',1)
 %%%%%
-[~,ni] = pdist2(data',nodes', 'euclidean', 'Smallest',1);
-
-labels = y(ni);
+try
+    [~,ni] = pdist2(data',nodes', 'euclidean', 'Smallest',1);
+catch
+    [~, ni1 ]= labelling(nodes, data, y);
+end
+labels = y(:,ni);
 
 end
-function labels = labelling(nodes, data, y)
+function [labels, ni1 ]= labelling(nodes, data, y)
 maxmax = size(nodes,2);
 labels = zeros(1,maxmax);
 

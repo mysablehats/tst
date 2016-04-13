@@ -24,10 +24,10 @@ else
 end
 lab = sort(labelZ);
 
-Y = whichlab(structure(1),lab,typetype)*ones(size(structure(1).skel,3),1);
+Y = repmat(whichlab(structure(1),lab,typetype),1,size(structure(1).skel,3));
 for i = 2:length(structure) % I think each iteration is one action
     Data = cat(3, Data, structure(i).skel);
-    Y = cat(1, Y, whichlab(structure(i),lab,typetype)*ones(size(structure(i).skel,3),1));
+    Y = cat(2, Y, repmat(whichlab(structure(i),lab,typetype),1,size(structure(i).skel,3)));
     ends = cat(2, ends, size(structure(i).skel,3));
 end
 if WANTVELOCITY
@@ -43,7 +43,7 @@ vectordata = [Data(:,1,1); Data(:,2,1); Data(:,3,1)];
 for i = 2:length(Data)
     vectordata = cat(2,vectordata, [Data(:,1,i); Data(:,2,i); Data(:,3,i)]);
 end
-Y = Y';
+%Y = Y';
 end
 function [lab, biglab] = alllabels(st)
 lab = cell(0);
@@ -82,23 +82,26 @@ else
 end
 
 end
-function lab = whichlab(st,lb,tt)
+function outlab = whichlab(st,lb,tt)
+numoflabels = size(lb,2);
 switch tt
     case 'act_type'
-        for i = 1:size(lb,2)
+        for i = 1:numoflabels
             if strcmp(lb{i},[st.act st.act_type])
-                lab = i-1;
+                lab = i; %i-1;
             end
         end
     
     case 'act'
-        for i = 1:size(lb,2)
+        for i = 1:numoflabels
             if strcmp(lb{i},st.act)
-                lab = i-1;
+                lab = i;%i-1;
             end
         end    
     otherwise
         error('Unknown classification type!')
 end
-
+%I thought lab was a good choice, but matlab
+outlab = zeros(numoflabels,1);
+outlab(lab) = 1;
 end

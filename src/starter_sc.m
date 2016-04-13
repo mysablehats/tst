@@ -156,12 +156,12 @@ if PLOTIT
 end
 % plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
 % clear i
-%% Calculate my own measures over the matrices
-% TO DO: This is bad. I should probably read the confusion documentation instead of doing this
-% manually
-for j = whatIlabel %this is weird, but I just changed this to show only the last gas
-    metrics = howgood(savestructure,j);
-    dbgmsg(savestructure(1).gas(j).name,'\t [All data for Validation set] Sensitivity/Recall overall mean:\t', num2str(metrics(1)),'%%\t|| Specificity overall mean:\t', num2str(metrics(2)),'%%\t|| Precision overall mean:\t', num2str(metrics(3)),'%%\t|| F1 overall mean:\t', num2str(metrics(4)),'%%',1)
-    metrics = whoisbest(savestructure,j);
-    dbgmsg(savestructure(1).gas(j).name,'\t [All data for Validation set] Best Sensitivity/Recall:        \t', num2str(metrics(1)),'%%\t|| Best Specificity:        \t', num2str(metrics(2)),'%%\t|| Best Precision:        \t', num2str(metrics(3)),'%%\t|| Best F1:       \t', num2str(metrics(4)),'%%',1)
-end
+% %% Calculate my own measures over the matrices
+% % TO DO: This is bad. I should probably read the confusion documentation instead of doing this
+% % manually
+% for j = whatIlabel %this is weird, but I just changed this to show only the last gas
+%     metrics = howgood(savestructure,j);
+%     dbgmsg(savestructure(1).gas(j).name,'\t [All data for Validation set] Sensitivity/Recall overall mean:\t', num2str(metrics(1)),'%%\t|| Specificity overall mean:\t', num2str(metrics(2)),'%%\t|| Precision overall mean:\t', num2str(metrics(3)),'%%\t|| F1 overall mean:\t', num2str(metrics(4)),'%%',1)
+%     metrics = whoisbest(savestructure,j);
+%     dbgmsg(savestructure(1).gas(j).name,'\t [All data for Validation set] Best Sensitivity/Recall:        \t', num2str(metrics(1)),'%%\t|| Best Specificity:        \t', num2str(metrics(2)),'%%\t|| Best Precision:        \t', num2str(metrics(3)),'%%\t|| Best F1:       \t', num2str(metrics(4)),'%%',1)
+% end

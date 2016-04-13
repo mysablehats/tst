@@ -4,13 +4,14 @@ nodesl = labeling(nodes,train_input,y_train);
 
 tcsize = size(train_bestmatchbyindex,2);
 vcsize = size(val_bestmatchbyindex,2);
+ycsize = size(y_train,1);
 
-train_class = zeros(1,tcsize);
-val_class = zeros(1,vcsize);
+train_class = zeros(ycsize,tcsize);
+val_class = zeros(ycsize,vcsize);
 
 for i =1:tcsize
-    train_class(i) = nodesl(train_bestmatchbyindex(i));
+    train_class(:,i) = nodesl(train_bestmatchbyindex(i));
 end
 for i =1:vcsize
-    val_class(i) = nodesl(val_bestmatchbyindex(i));
+    val_class(:,i) = nodesl(val_bestmatchbyindex(i));
 end

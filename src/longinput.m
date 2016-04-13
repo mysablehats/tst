@@ -20,13 +20,13 @@ realends = cumsum(ends,2);
 actionstructure(1:size(ends,2)) = struct();
 actionstructure(1).pose = shortinput(:,1:realends(1)); 
 actionstructure(1).end = ends(1);
-actionstructure(1).y = y(realends(1));
+actionstructure(1).y = y(:,realends(1));
 actionstructure(1).index = iindex(1:ends(1));
 
 for i = 2:size(ends,2)
     actionstructure(i).pose = shortinput(:,realends(i-1)+1:realends(i));
     actionstructure(i).end = ends(i);
-    actionstructure(i).y = y(realends(i));
+    actionstructure(i).y = y(:,realends(i));
     actionstructure(i).index = iindex(realends(i-1):realends(i));
 end
 shortdim = size(shortinput,1);
@@ -54,7 +54,7 @@ for i = 1:length(actionstructure)
     %should concatenate long now
     actionstructure(i).newend = length(actionstructure(i).long);
     actionstructure(i).longinput = zeros(q*shortdim,actionstructure(i).newend);
-    actionstructure(i).longy = actionstructure(i).y*ones(1,actionstructure(i).newend);
+    actionstructure(i).longy = repmat(actionstructure(i).y,1,actionstructure(i).newend);
     actionstructure(i).longindex = cell(size(actionstructure(i).longy));
     for j = 1:actionstructure(i).newend
         actionstructure(i).longinput(:,j) = actionstructure(i).long(j).vec;
