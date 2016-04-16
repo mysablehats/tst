@@ -132,11 +132,17 @@ if ~isempty(rev)
             currrev = rev{i};
         end
         try
-            jlower = max([1 fix((currrev(1)*.9)/(q*(p+1)*r))-1 ]); % I think indexes will be always ordered, so I THINK this will always work...
+            jlower = max([1 fix((currrev(1)*.7)/(q*(p+1)*r))-1 ]); % I think indexes will be always ordered, so I THINK this will always work...
             jhigher = min([jmax ceil((currrev(end))/(q*(p+1)*r))+1]); % multiply by 10 if it doesnt work %%% there is some irregularity here because of actions that dont end where they should, so each ending action can cause you to drift additionally q*(p+1)*r-1 data samples      
         catch %% in strange concatenations my speedup will fail. I cannot think of everything...
-            jlower = 1;
-            jhigher = jmax;
+            try %% maybe it is still a cell then?
+                jlower = max([1 fix((currrev{1}*.9)/(q*(p+1)*r))-1 ]); 
+                jhigher = min([jmax ceil((currrev{end})/(q*(p+1)*r))+1]);
+            catch
+                dbgmsg('You better debug this function because using these long indexes will take forever!!!!!')
+                jlower = 1;
+                jhigher = jmax;
+            end                       
         end
         for j = jlower:jhigher         %1:jmax %%% I will try to improve this by limiting the data that I look up based on q!
             kmax = size(idxx{j},2);
@@ -145,7 +151,11 @@ if ~isempty(rev)
 %                 maxcurrpoint = max(turtlesallthewaydown(curridxx));
 %                 mincurrpoint = min(turtlesallthewaydown(curridxx));
                 if isequal(currrev,curridxx) %maybe I can try this, if it fails do a catch opening it once more. it will be the world's slowest function, but...
-                    eliminate = cat(2, eliminate, j);
+                    if iscell(currrev)
+                        eliminate = cat(2, eliminate, [currrev{:}]);
+                    else
+                        eliminate = cat(2, eliminate, j);
+                    end
                     %I have to also unwrap curridx to check if any of its
                     %elements is equals to currrev
                 elseif (iscell(curridxx)&&length(curridxx)>length(currrev))

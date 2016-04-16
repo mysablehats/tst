@@ -1,3 +1,4 @@
+function [allskel1, allskel2, allskeli1, allskeli2] = generate_skel_data(varargin)
 % generates the .mat files that have the generated datasets for training and
 % validation
 % based on 2 types of random sampling
@@ -10,11 +11,46 @@
 % data_train, y_train
 % data_val, y_val
 % 
-aa_environment
 
-allskeli1 = [9,10,11,4,8,5,3,6]; %% comment these out to have random new samples
-allskeli2 = [1,2,7];%% comment these out to have random new samples
-sampling_type = 'type2'
+%aa_environment
+if nargin<2
+    error('I need at least the name of the data set (either ''CAD60'' or ''tstv2'') and the data sampling type (either ''type1'' or ''type2'')')
+end
+
+dataset = varargin{1};
+sampling_type = varargin{2};
+if nargin>2
+    allskeli1 = varargin{3};
+end
+if nargin>3
+    allskeli2 = varargin{4};
+end
+
+switch dataset
+    case 'CAD60'
+        loadfun = @readcad60;
+        datasize = 4;
+    case 'tstv2'
+        loadfun = @LoadDataBase;
+        datasize = 11;
+    case 'stickman'
+        loadfun = @generate_falling_stick;
+        datasize = 6;        
+    otherwise
+        error('Unknown database.')
+end
+
+%%% checks to see if indices will be within array range
+if exist('allskeli1','var')
+    if any(allskeli1>datasize)
+        error('Index 1 is out of range for selected dataset.')
+    end
+end
+if exist('allskeli2','var')
+    if any(allskeli2>datasize)
+        error('Index 2 is out of range for selected dataset.')
+    end
+end
 
 
 %%%%%%%%Messages part: provides feedback for the user
@@ -26,39 +62,35 @@ end
 
 %%%% type 1 data sampling: known subjects, unknown individual activities from them:
 if strcmp(sampling_type,'type1')
-    allskel = LoadDataBase(1:11); %main data
+    allskel = loadfun(1:datasize); %main data
     if ~exist('allskeli1','var')
         allskeli1 = randperm(length(allskel),fix(length(allskel)*.8)); % generates the indexes for sampling the dataset
     end
     allskel1 = allskel(allskeli1);
-    allskeli2 = setdiff(1:length(allskel),allskeli1); % use the remaining data as validation set
+    if ~exist('allskeli2','var')
+        allskeli2 = setdiff(1:length(allskel),allskeli1); % use the remaining data as validation set
+    end
     allskel2 = allskel(allskeli2);
 end
 
 %%%% type 2 data sampling: unknown subjects, unknown individual activities from them:
 if strcmp(sampling_type,'type2')
     if ~exist('allskeli1','var')
-        allskeli1 = randperm(11,fix(11*.8)); % generates the indexes for sampling the dataset
+        allskeli1 = randperm(datasize,fix(datasize*.8)); % generates the indexes for sampling the dataset
     end
-    allskel1 = LoadDataBase(allskeli1(1)); %initializes the training dataset
+    allskel1 = loadfun(allskeli1(1)); %initializes the training dataset
     for i=2:length(allskeli1)
-        allskel1 = cat(2,LoadDataBase(allskeli1(i)),allskel1 ); 
+        allskel1 = cat(2,loadfun(allskeli1(i)),allskel1 ); 
     end
 
-    allskeli2 = setdiff(1:11,allskeli1); % use the remaining data as validation set
+    allskeli2 = setdiff(1:datasize,allskeli1); % use the remaining data as validation set
 
-    allskel2 = LoadDataBase(allskeli2(1)); %initializes the training dataset
+    allskel2 = loadfun(allskeli2(1)); %initializes the training dataset
     for i=2:length(allskeli2)
-        allskel2 = cat(2,LoadDataBase(allskeli2(i)),allskel2 ); 
+        allskel2 = cat(2,loadfun(allskeli2(i)),allskel2 ); 
     end
 end
 %%%%%%
 % saves data
 %%%%%%
 
-[~, data_train,y_train, ends_train, y_labels_train] = extractdata(allskel1);
-save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_'),'data_train','y_labels_train', 'y_train','allskeli1','ends_train','-v7.3');
-dbgmsg('Training data saved.')
-[~, data_val,y_val, ends_val, y_labels_val] = extractdata(allskel2);
-save(strcat(pathtodropbox,SLASH,'share',SLASH,'tst_skel_val_'),'data_val','y_labels_val', 'y_val','allskeli2','ends_val','-v7.3');
-dbgmsg('Validation data saved.')

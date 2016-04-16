@@ -1,6 +1,6 @@
 % create the matrix from the structure to access the database and run the
 % classification....
-function [Data, vectordata, Y, ends, lab] = extractdata(structure)
+function [Data, vectordata, Y, ends, lab] = extractdata(structure, typetype, inputlabels)
 WANTVELOCITY = true;
 
 %%%%%%%%Messages part. Feedback for the user about the algorithm
@@ -9,16 +9,16 @@ if WANTVELOCITY
     dbgmsg('Constructing long vectors with velocity data as well')
 end
 %%%%%%%%
-typetype= 'act_type';
+%typetype= 'act_type';
 %typetype= 'act';
 
 Data = structure(1).skel;
 ends = size(structure(1).skel,3);
 % approach
 if strcmp(typetype,'act')
-    [labelZ,~] = alllabels(structure);
+    [labelZ,~] = alllabels(structure,inputlabels);
 elseif strcmp(typetype,'act_type')
-    [~, labelZ] = alllabels(structure);
+    [~, labelZ] = alllabels(structure,inputlabels);
 else
     error('weird typetype!')
 end
@@ -45,8 +45,8 @@ for i = 2:length(Data)
 end
 %Y = Y';
 end
-function [lab, biglab] = alllabels(st)
-lab = cell(0);
+function [lab, biglab] = alllabels(st,lab)
+%lab = cell(0);
 biglab = lab;
 
 if isfield(st,'act')&&isfield(st,'act_type')
@@ -62,21 +62,23 @@ if isfield(st,'act')&&isfield(st,'act_type')
             biglab = [{bgilab}, biglab];
         end
     end
+end
+if isfield(st,'act_type')
+    for i = 1:length(st) % I think each iteration is one action
+        cu = strfind(biglab, st(i).act_type);
+        if isempty(biglab)||isempty(cell2mat(cu))
+            biglab = [{st(i).act_type}, biglab];
+        end
+         
+    end
 elseif isfield(st,'act')
     for i = 1:length(st) % I think each iteration is one action
         cu = strfind(lab, st(i).act);
         if isempty(lab)||isempty(cell2mat(cu))
             lab = [{st(i).act}, lab];
         end
-    end
-elseif isfield(st,'act_type')
-    for i = 1:length(st) % I think each iteration is one action
-        cu = strfind(lab, st(i).act);
-        if isempty(lab)||isempty(cell2mat(cu))
-            lab = [{st(i).act}, lab];
-        end
-         
-    end
+    end 
+    
 else
     error('No action fields in data structure.')
 end
@@ -86,21 +88,24 @@ function outlab = whichlab(st,lb,tt)
 numoflabels = size(lb,2);
 switch tt
     case 'act_type'
-        for i = 1:numoflabels
-            if strcmp(lb{i},[st.act st.act_type])
-                lab = i; %i-1;
-            end
+        if isfield(st, 'act')
+            comp_act = [st.act st.act_type];
+        else
+            comp_act = st.act_type;
         end
-    
     case 'act'
-        for i = 1:numoflabels
-            if strcmp(lb{i},st.act)
-                lab = i;%i-1;
-            end
-        end    
+        comp_act = st.act;
     otherwise
         error('Unknown classification type!')
 end
+
+for i = 1:numoflabels
+    if strcmp(lb{i},comp_act)
+        lab = i;%i-1;
+    end
+end
+
+
 %I thought lab was a good choice, but matlab
 outlab = zeros(numoflabels,1);
 outlab(lab) = 1;

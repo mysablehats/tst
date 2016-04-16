@@ -3,7 +3,7 @@ function [polidx, velidx] = generateidx(varargin)
 %size and a label value
 lllen = varargin{1};
 if nargin==1        
-    switch lllen
+    switch lllen %%% i should find an elegant way of doing this
         case 75
             %%%%regular skeleton
             polidx = [1:75];
@@ -20,6 +20,10 @@ if nargin==1
             %%%%skeleton - hips + velocities
             polidx = [1:24 50:73 99:122];
             velidx = [25:49 74:98 123:147];
+        case 90
+            %%%%simple skeleton+ velocities from CAD60
+            polidx = [1:15 31:45 61:75];
+            velidx = [16:30 46:60 76:90];
         otherwise
             error('Strange size!')
             %%%%regular skeleton

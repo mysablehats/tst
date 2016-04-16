@@ -10,6 +10,14 @@ test = false;
 %%% controlled.
 skelldef = struct();
 
+if size(size(varargin{2},1))==90
+    dbgmsg('All of ',1)
+    
+    conform_train = data_train;
+        conform_val = data_val; 
+end
+
+
 if isempty(varargin)||strcmp(varargin{1},'test')
     if length(varargin)>1
         [conform_train, conform_val] = conformskel_test(varargin{2:end}); %%% I've decided to put the testing procedure here to keep things cleaner

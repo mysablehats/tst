@@ -3,17 +3,30 @@ clear all;
 close all;
 
 %% Generate Skeletons
-% This takes quite a while to execute, so I rarely run it. 
+% This makes a new dataset, so results will be no longer
 %%% >>>>> this has to be changed into a function.
-generate_skel_data %% very time consuming -> also will generate a new
-clear all
+%allskeli1 = [9,10,11,4,8,5,3,6]; %% comment these out to have random new samples
+%allskeli2 = [1,2,7];%% comment these out to have random new samples
+sampling_type = 'type2';
+datasettype = 'CAD60';
+activity_type = 'act_type';
+labels_names = []; 
+[allskel1, allskel2, allskeli1, allskeli2] = generate_skel_data(datasettype, sampling_type); %, allskeli1, allskeli2); 
+aa_environment
+[~, data_train,y_train, ends_train, labels_names] = extractdata(allskel1, activity_type, labels_names);
+save(strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_'),'data_train','labels_names', 'y_train','allskeli1','ends_train','-v7.3');
+dbgmsg('Training data saved.')
+[~, data_val,y_val, ends_val, labels_names] = extractdata(allskel2, activity_type, labels_names);
+save(strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_val_'),'data_val','labels_names', 'y_val','allskeli2','ends_val','-v7.3');
+dbgmsg('Validation data saved.')
+%clear all
 dbgmsg('Skeleton data (training and validation) generated.')
 % %%validation and training set
 
 
 %% Loads environment Variables and saved Data
 
-load_skel_data
+%load_skel_data
 
 important = 1;%0.1;
 relevant = 1;%0.03;
@@ -46,8 +59,14 @@ awk = [...
     minor;...       %24   left some part of the hand
     minor];         %25   left some other part of the hand
 
+if size(awk,1)*6~=size(data_val,1)
+    awk = ones(size(data_val,1)/6,1);
+    dbgmsg('Must update awk for this sized skeleton.',1)
+end
+
 %% Pre-conditioning of data
 % 
+
 [data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,'nohips','nofeet');
 [data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirror','nohips','nofeet');
 data_train = [data_train_, data_train_mirror];
@@ -67,12 +86,12 @@ y_val = [y_val y_val];
 
 
 %% Setting up runtime variables
-TEST = 1; % set to false to actually run it
+TEST = 0; % set to false to actually run it
 PARA = 0;
 
 P = 4;
 
-NODES = 1000;
+NODES = 100;
 
 if TEST
     NODES = 10;
@@ -93,8 +112,8 @@ params.skelldef = skelldef;
 
 %Exclusive for gwr
 params.STATIC = true;
-params.MAX_EPOCHS = 2; % this means data will be run over twice
-params.at = 0.75; %activity threshold
+params.MAX_EPOCHS = 1; 
+params.at = 0.95; %activity threshold
 params.h0 = 1;
 params.ab = 0.95;
 params.an = 0.95;
@@ -206,7 +225,7 @@ a(1:P) = struct();%'best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensit
 b = [];
 starttime = tic;
 if ~TEST 
-while toc(starttime)<3600*10
+while toc(starttime)<3600*.010
 if PARA
     for j = 1:1
         parfor i = 1:P
@@ -226,6 +245,6 @@ end
 else
     executioncore_in_starterscript(paramsZ(1),allconn, data);
 end
-savevar = strcat('b',num2str(NODES),'_', num2str(params.MAX_EPOCHS),'epochs',num2str(size(b,2)),'remove4sigma');
+savevar = strcat('b',num2str(NODES),'_', num2str(params.MAX_EPOCHS),'epochs',num2str(size(b,2)),'remove4sigma', sampling_type, datasettype, activity_type);
 eval(strcat(savevar,'=b;'))
 save(strcat(pathtodropbox,'/classifier/',savevar,'.mat'),savevar)
