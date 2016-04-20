@@ -10,14 +10,6 @@ test = false;
 %%% controlled.
 skelldef = struct();
 
-if size(size(varargin{2},1))==90
-    dbgmsg('All of ',1)
-    
-    conform_train = data_train;
-        conform_val = data_val; 
-end
-
-
 if isempty(varargin)||strcmp(varargin{1},'test')
     if length(varargin)>1
         [conform_train, conform_val] = conformskel_test(varargin{2:end}); %%% I've decided to put the testing procedure here to keep things cleaner
@@ -29,12 +21,24 @@ else
     data_val = varargin{2};
     awk = varargin{3};
     skelldef.length = size(data_val,1);
+    
+    %%% checks
+       
     if size(data_train)~=skelldef.length
         error('data_train and data_val must have the same length!!!')
     end
     if any(size(awk).*[6 1]~= size(data_val(:,1)))
         error('wrong size for awk. It should be the same size of the input data. maybe you should transpose it?')
     end
+    
+    if size(data_val,1)==90&&~(nargin==4&&strcmp(varargin{4},'mirror'))
+    dbgmsg('The skeleton transformations are defined with a specific order and that only works for a skeleton with 25 points. Anything different crashes, so I will do nothing.',1)
+    
+    conform_train = data_train;
+    conform_val = data_val; 
+    return
+    end   
+    
     % creates the function handle cell array
     conformations = {};
     killdim = [];

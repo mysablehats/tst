@@ -3,9 +3,17 @@ function allskel = generate_falling_stick(numsticks)
 for kk = 1:numsticks
     num_of_points_in_stick = 25;
     
+    %%% random size
+    %%% random start location
+    %%% random initial velocity for falling stick
+    
+    
     l = (1.6+rand()*.3)*100;
     
     for akk = [0,1]
+        startlocation = 150*[rand(), rand(), rand()];
+        phi = 2*pi*rand();
+        initial_velocity = -1*rand();
         if akk
             act = 'Fall';
             % from http://www.chem.mtu.edu/~tbco/cm416/MatlabTutorialPart2.pdf and
@@ -18,22 +26,23 @@ for kk = 1:numsticks
             % td = diff(t)
             
             testOptions = odeset('RelTol',1e-3,'AbsTol', [1e-4; 1e-2]);
-            [t,x] =     ode45(@stickfall, [0 2], [pi/2;-1*rand()], testOptions);
+            [t,x] =     ode45(@stickfall, [0 2], [pi/2;initial_velocity], testOptions);
             
             %%% resample to kinect average sample rate, i.e. 15 or 30 hz
             x = resample(x,t,30);
             
-            [skel, vel] = construct_skel(x,l,num_of_points_in_stick ,[0, 0, 0]);
+            [skel, vel] = construct_skel(x,l,num_of_points_in_stick ,startlocation, phi);
             
         else
             act = 'Stand';
             %%% non falling activity
             x = ones(100,2)*[[pi/2 0];[0 0]]; % does it even make sense if the velocity changes and the position does not?
-            [skel, vel] = construct_skel(x, l, num_of_points_in_stick, [rand(), rand(), rand()]);
+            [skel, vel] = construct_skel(x, l, num_of_points_in_stick, startlocation, phi);
             
         end
         %for i = 1:s
-        jskelstruc = struct('skel',skel,'act_type', act, 'index', kk, 'subject', kk,'time',[],'vel', vel);
+        construct_sk_struct = struct('x',x,'l',l,'num_points', num_of_points_in_stick,'startlocation',startlocation,'phi',phi);
+        jskelstruc = struct('skel',skel,'act_type', act, 'index', kk, 'subject', kk,'time',[],'vel', vel, 'construct_sk_struct', construct_sk_struct);
         
         %plot(stickstick(:,1), stickstick(:,2), '*')
         if exist('allskel','var') % initialize my big matrix of skeletons
@@ -71,7 +80,9 @@ dx2 = (m*l^2/4*cos(x1*x2^2) -m*g*l/2*cos(x1))/(Ic+m*l^2/4*cos(x1)^2);
 dx = [dx1;dx2];
 
 end
-function [stickstick,stickvel] = construct_skel(thetha, l, num_of_points_in_stick, displacement)
+function [stickstick,stickvel] = construct_skel(thetha, l, num_of_points_in_stick, displacement, phi)
+
+bn = [rand(), rand(), rand()]/1000; %% I need a bit of noise or the classifier gets insane
 
 simdim = size(thetha(:,1),1);
 
@@ -81,14 +92,14 @@ stickvel = stickstick; %%%
 for i=1:simdim
     stickstick(1,:,i) = displacement;
     for j = 2:num_of_points_in_stick
-        stickstick(j,:,i) = [l*j*cos(thetha(i,1)), l*j*sin(thetha(i,1)), 0]/num_of_points_in_stick+ displacement;
+        stickstick(j,:,i) = ([cos(thetha(i,1))*cos(phi), sin(thetha(i,1)), cos(thetha(i,1))*sin(phi)]+bn)*l*j/num_of_points_in_stick+ displacement;
     end
 end
 %%% the initial velocities are not zero; so lets set the right results
 
-stickvel(1,:,1) = [0,0,0];
-for j = 2:num_of_points_in_stick
-    stickvel(j,:,1) = [l*j*cos(thetha(1,2)), l*j*sin(thetha(1,2)), 0]/num_of_points_in_stick;
+%stickvel(1,:,1) = [0,0,0];
+for j = 1:num_of_points_in_stick
+    stickvel(j,:,1) = [cos(thetha(1,2))*cos(phi), sin(thetha(1,2)), cos(thetha(1,2))*sin(phi)]*l*j/num_of_points_in_stick;
 end
 
 %%% for the next ones I will calculate the points
