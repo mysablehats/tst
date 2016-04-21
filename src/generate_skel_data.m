@@ -35,7 +35,7 @@ switch dataset
         datasize = 11;
     case 'stickman'
         loadfun = @generate_falling_stick;
-        datasize = 6;        
+        datasize = 30;        
     otherwise
         error('Unknown database.')
 end

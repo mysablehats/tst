@@ -9,7 +9,7 @@ try
 		homepath = '/home/fbklein/Documents/classifier/';
 		%disp('reached isunix')
 	end
-	addpath(genpath(homepath)) 
+	%addpath(genpath(homepath)) 
 catch
 	disp('oh-oh')
 	%open dialog box?

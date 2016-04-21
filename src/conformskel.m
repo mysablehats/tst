@@ -17,11 +17,19 @@ if isempty(varargin)||strcmp(varargin{1},'test')
         [conform_train, conform_val] = conformskel_test();
     end
 else
+    
+
     data_train = varargin{1};
     data_val = varargin{2};
     awk = varargin{3};
-    skelldef.length = size(data_val,1);
     
+    %%% initiallize variables to make skelldef 
+    killdim = [];
+    skelldef.length = size(data_val,1);
+    skelldef.realkilldim = [];
+    skelldef.elementorder = 1:skelldef.length;
+    skelldef.awk.pos = repmat(awk(setdiff(1:skelldef.length/6,killdim)),3,1);
+    skelldef.awk.vel = repmat(awk(setdiff(1:skelldef.length/6,killdim)),3,1);
     %%% checks
        
     if size(data_train)~=skelldef.length
@@ -33,7 +41,9 @@ else
     
     if size(data_val,1)==90&&~(nargin==4&&strcmp(varargin{4},'mirror'))
     dbgmsg('The skeleton transformations are defined with a specific order and that only works for a skeleton with 25 points. Anything different crashes, so I will do nothing.',1)
-    
+    %%% but I still need to exit the variables and create the skeleton
+    %%% definition...
+    [skelldef.pos, skelldef.vel] = generateidx(skelldef.length, skelldef);
     conform_train = data_train;
     conform_val = data_val; 
     return
@@ -97,7 +107,7 @@ else
             data_val(:,j) = func(data_val(:,j));
         end
     end
-    skelldef.elementorder = 1:skelldef.length;
+    
     % squeeze them accordingly?
     if ~test
         whattokill = reshape(1:skelldef.length,skelldef.length/3,3);
