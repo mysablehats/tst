@@ -8,7 +8,7 @@ y_train = data.y.train;
 ends_train = data.ends.train;
 ends_val = data.ends.val;
 
-metrics = [];
+
 %% starter_script
 % This is the main function to run the chained classifier, label and generate
 % confusion matrices and recall, precision and F1 values for the skeleton
@@ -25,7 +25,9 @@ dbgmsg('========================================================================
 dbgmsg('Running starter script')
 dbgmsg('=======================================================================================================================================================================================================================================')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% making metrics structure
 
+metrics = struct('confusions',[],'conffig',[],'outparams',[]);
 %%%% building arq_connect
 arq_connect(1:length(allconn)) = struct('name','','method','','sourcelayer','', 'layertype','','q',[1 0],'params',struct());
 for i = 1:length(allconn)
@@ -39,7 +41,7 @@ for i = 1:length(allconn)
     arq_connect(i).params.q = arq_connect(i).q;
 end
 inputs = struct('input_clip',[],'input',[],'input_ends',[],'oldwhotokill',{}, 'index', {});
-gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'confusions',[],'bestmatch',[],'bestmatchbyindex',[],'whotokill',{});
+gas_data = struct('name','','class',[],'y',[],'inputs',inputs,'bestmatch',[],'bestmatchbyindex',[],'whotokill',{});
 gas_methods(1:length(arq_connect)) = struct('name','','edges',[],'nodes',[],'fig',[],'nodesl',[]); %bestmatch will have the training matrix for subsequent layers
 vt_data = struct('indexes',[],'data',[],'ends',[],'gas',gas_data);
 savestructure(1:P) = struct('maxnodes',[], 'gas', gas_methods, 'train',vt_data,'val',vt_data,'figset',[]); % I have a problem with figset. I don't kno
@@ -72,11 +74,13 @@ for i = 1:P
     
     for j = 1:length(arq_connect)
         savestructure(i) = gas_method(savestructure(i), arq_connect(j), i,j, size(data_train,1)); % I had to separate it to debug it.
-
+        metrics(i,j).outparams = savestructure(i).gas(j).outparams;
     end
     
 end
 %% Gas Outcomes
+% This should be made into a function... It is a nice graph to perhaps
+% debug the gas...
 if 1% PLOTIT
     for i = 1:length(savestructure)
         figure
@@ -142,13 +146,15 @@ for i =1:length(savestructure)
 end
 for i=1:length(savestructure)
     for j = whatIlabel
-        [~,savestructure(i).gas(j).confusions.val,~,~] = confusion(savestructure(i).val.gas(j).y,savestructure(i).val.gas(j).class);
-        [~,savestructure(i).gas(j).confusions.train,~,~] = confusion(savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class);
+        [~,metrics(i,j).confusions.val,~,~] = confusion(savestructure(i).val.gas(j).y,savestructure(i).val.gas(j).class);
+        [~,metrics(i,j).confusions.train,~,~] = confusion(savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class);
         
-        dbgmsg(num2str(i),'-th set.',savestructure(i).gas(j).name,' Confusion matrix on this validation set:',writedownmatrix(savestructure(i).gas(j).confusions.val),1)
-        savestructure(i).gas(j).fig = {savestructure(i).val.gas(j).y,                   savestructure(i).val.gas(j).class,  strcat(savestructure(i).gas(j).name,savestructure(i).gas(j).method,'V', num2str(savestructure(i).maxnodes)),...
-                                       savestructure(i).train.gas(j).y,savestructure(i).train.gas(j).class,strcat(savestructure(i).gas(j).name,savestructure(i).gas(j).method,'T', num2str(savestructure(i).maxnodes))}; %difficult to debug line, sorry. if it doesn't work, weep.
-        savestructure(i).figset = {savestructure(i).figset{:}, savestructure(i).gas(j).fig{:}};
+        dbgmsg(num2str(i),'-th set.',savestructure(i).gas(j).name,' Confusion matrix on this validation set:',writedownmatrix(metrics(i,j).confusions.val),1)
+        savestructure(i).gas(j).fig.val =   {savestructure(i).val.gas(j).y,     savestructure(i).val.gas(j).class,  strcat(savestructure(i).gas(j).name,savestructure(i).gas(j).method,'V', num2str(savestructure(i).maxnodes))};
+        savestructure(i).gas(j).fig.train = {savestructure(i).train.gas(j).y,   savestructure(i).train.gas(j).class,strcat(savestructure(i).gas(j).name,savestructure(i).gas(j).method,'T', num2str(savestructure(i).maxnodes))}; 
+        savestructure(i).figset = [savestructure(i).figset, savestructure(i).gas(j).fig.val, savestructure(i).gas(j).fig.train];
+        %%%
+        metrics(i,j).conffig = savestructure(i).gas(j).fig;
     end
 end
 
@@ -158,7 +164,7 @@ if PLOTIT
         figure
         plotconfusion(savestructure(i).figset{:})
         figure 
-        plotconfusion(savestructure(i).gas(end).fig{:})
+        plotconfusion(savestructure(i).gas(end).fig.val{:})
     end    
 end
 % plotconfusion(ones(size(y_val)),y_val, 'always guess "it''s a fall" on Validation Set:',zeros(size(y_val)),y_val, 'always guess "it''s NOT a fall" on Validation Set:')
@@ -195,15 +201,9 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
         %%%% PRE-MESSAGE
         dbgmsg('Working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,' for process:',num2str(i),1)
         %DO GNG OR GWR
-        if strcmp(arq_connect.method,'gng')
-            %do gng
-            [savestructure.gas(j).nodes, savestructure.gas(j).edges, ~] = gng_lax(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
-        elseif strcmp(arq_connect.method,'gwr')
-            %do gwr
-            [savestructure.gas(j).nodes, savestructure.gas(j).edges, savestructure.gas(j).outparams] = gwr(savestructure.train.gas(j).inputs.input_clip,arq_connect.params); 
-        else
-            error('unknown method')
-        end
+
+        [savestructure.gas(j).nodes, savestructure.gas(j).edges, savestructure.gas(j).outparams] = gas_wrapper(savestructure.train.gas(j).inputs.input_clip,arq_connect.params, arq_connect.method); 
+
         %%%% POS-MESSAGE
         dbgmsg('Finished working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,'.Num of nodes reached:',num2str(savestructure.gas(j).outparams.graph.nodesvect(end)),' for process:',num2str(i),1)
         %%%% FIND BESTMATCHING UNITS

@@ -6,5 +6,7 @@ pallconn{1,1}{1,6} = paramsZ; % I only change the initial points of the position
 %pallconn{1,3}{1,6} = paramsZ; %but I want the concatenation to reflect the same position that I randomized. actually this is not going to happen because of the sliding window scheme
 %pallconn{1,4}{1,6} = pallconn{1,2}{1,6};
 
-[a.sv, a.mt] = starter_sc(data, pallconn, 1);
+%[a.sv, a.mt] = starter_sc(data, pallconn, 1);
+[~, a.mt] = starter_sc(data, pallconn, 1);
+
 end

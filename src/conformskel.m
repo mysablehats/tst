@@ -18,8 +18,7 @@ if isempty(varargin)||strcmp(varargin{1},'test')
     end
 else
     
-
-    data_train = varargin{1};
+        data_train = varargin{1};
     data_val = varargin{2};
     awk = varargin{3};
     
@@ -30,28 +29,33 @@ else
     skelldef.elementorder = 1:skelldef.length;
     skelldef.awk.pos = repmat(awk(setdiff(1:skelldef.length/6,killdim)),3,1);
     skelldef.awk.vel = repmat(awk(setdiff(1:skelldef.length/6,killdim)),3,1);
-    %%% checks
-       
+    
+    %%%
+    skelldef.bodyparts = genbodyparts(skelldef.length);
+
+    %%%errorkarling   
     if size(data_train)~=skelldef.length
         error('data_train and data_val must have the same length!!!')
     end
     if any(size(awk).*[6 1]~= size(data_val(:,1)))
         error('wrong size for awk. It should be the same size of the input data. maybe you should transpose it?')
-    end
+    end    
     
-    if size(data_val,1)==90&&~(nargin==4&&strcmp(varargin{4},'mirror'))
-    dbgmsg('The skeleton transformations are defined with a specific order and that only works for a skeleton with 25 points. Anything different crashes, so I will do nothing.',1)
-    %%% but I still need to exit the variables and create the skeleton
-    %%% definition...
-    [skelldef.pos, skelldef.vel] = generateidx(skelldef.length, skelldef);
-    conform_train = data_train;
-    conform_val = data_val; 
-    return
-    end   
+    %%%further checks?
+    
+%     if size(data_val,1)==90&&~(nargin==4&&strcmp(varargin{4},'mirror'))
+%     dbgmsg('The skeleton transformations are defined with a specific order and that only works for a skeleton with 25 points. Anything different crashes, so I will do nothing.',1)
+%     %%% but I still need to exit the variables and create the skeleton
+%     %%% definition...
+%     [skelldef.pos, skelldef.vel] = generateidx(skelldef.length, skelldef);
+%     conform_train = data_train;
+%     conform_val = data_val; 
+%     return
+%     end   
     
     % creates the function handle cell array
     conformations = {};
-    killdim = [];
+    killdim = [];   
     
     for i =4:length(varargin)
         switch varargin{i}
@@ -59,7 +63,7 @@ else
                 test = true;
             case 'nohips'
                 conformations = [conformations, {@centerhips}];
-                killdim = [killdim, 1];
+                killdim = [killdim, skelldef.bodyparts.hip_center];
             case 'normal'
                 conformations = [conformations, {@normalize}];
                 %dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
@@ -76,12 +80,12 @@ else
             case 'notorax'
                 conformations = [conformations, {@centertorax}];
                 dbgmsg('WARNING, the normalization: ' , varargin{i},' is performing poorly, it should not be used.', true);
-                killdim = [killdim, 21];
+                killdim = [killdim, skelldef.bodyparts.TORSO];
             case 'nofeet'
                 conformations = [conformations, {@nofeet}]; %not sure i need this...
-                killdim = [killdim, 19, 20, 15, 16];
+                killdim = [killdim, skelldef.bodyparts.RIGHT_FOOT, skelldef.bodyparts.LEFT_FOOT];
             case 'nohands'
-                 killdim = [killdim, 19, 20, 15, 16];
+                 killdim = [killdim, skelldef.bodyparts.RIGHT_HAND, skelldef.bodyparts.LEFT_HAND];
             case 'axial'
                 %conformations = [conformations, {@centerhips}];
                 dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
@@ -93,21 +97,18 @@ else
     end
     
     % execute them for training and validation sets
-    for i = 1:length(conformations)
-        func = conformations{i};
-        dbgmsg('Applying normalization: ', varargin{i+2},false);
-        for j = 1:size(data_train,2)
-            data_train(:,j) = func(data_train(:,j));
+    if ~isempty(skelldef.bodyparts)
+        for i = 1:length(conformations)
+            func = conformations{i};
+            dbgmsg('Applying normalization: ', varargin{i+2},false);
+            for j = 1:size(data_train,2)
+                data_train(:,j) = func(data_train(:,j), skelldef.bodyparts);
+            end
+            for j = 1:size(data_val,2)
+                data_val(:,j) = func(data_val(:,j), skelldef.bodyparts);
+            end
         end
     end
-    
-    for i = 1:length(conformations)
-        func = conformations{i};
-        for j = 1:size(data_val,2)
-            data_val(:,j) = func(data_val(:,j));
-        end
-    end
-    
     % squeeze them accordingly?
     if ~test
         whattokill = reshape(1:skelldef.length,skelldef.length/3,3);
@@ -126,29 +127,36 @@ end
 skelldef.realkilldim = realkilldim;
 [skelldef.pos, skelldef.vel] = generateidx(skelldef.length, skelldef);
 end
-function newskel = centerhips(skel)
+function newskel = centerhips(skel, bod)
 
 [tdskel,hh] = makefatskel(skel);
 
-hips = [repmat(tdskel(1,:),25,1);zeros(hh-25,3)]; % this is so that we dont subtract the velocities
+if isempty(bod.hip_center)&&hh==30
+    %%% then this possibly it is the 15 joint skeleton
+    hip = (tdskel(bod.LEFT_HIP,:) + tdskel(bod.RIGHT_HIP,:))/2;
+else
+    hip = tdskel(bod.hip_center,:);
+    
+end
+
+hips = [repmat(hip,hh/2,1);zeros(hh/2,3)]; % this is so that we dont subtract the velocities
 
 newskel = tdskel - hips;
 
 %I need to shape it back into 75(-3 now) x 1
 newskel = makethinskel(newskel);
 end
-function newskel = centertorax(skel)
+function newskel = centertorax(skel, bod)
 
 [tdskel,hh] = makefatskel(skel);
 
-torax = [repmat(tdskel(21,:),25,1);zeros(hh-25,3)]; 
+torax = [repmat(tdskel(bod.TORSO,:),hh/2,1);zeros(hh/2,3)]; 
 
 newskel = tdskel - torax;
 
-%I need to shape it back into 75(-3 now) x 1
 newskel = makethinskel(newskel);
 end
-function newskel = norotatehips(skel)
+function newskel = norotatehips(skel, bod)
 [tdskel,hh] = makefatskel(skel);
 
 %%%%some normalization procedure %%%%%
@@ -157,14 +165,14 @@ function newskel = norotatehips(skel)
 % the hips already
 % according to my notes, they are the points 17(RHip) 13(LHip) around point
 % 1
-if hh == 25 || hh == 50
-    rvec = tdskel(17,:)-tdskel(13,:);
-elseif hh == 24 || hh == 49
-    rvec = tdskel(16,:)-tdskel(12,:);
-else
-    rvec = [1 0 0];
-    dbgmsg('Don''t know how to un-rotate this. Doing nothing')
-end
+% if hh == 25 || hh == 50
+    rvec = tdskel(bod.RIGHT_HIP,:)-tdskel(bod.LEFT_HIP,:);
+% elseif hh == 24 || hh == 49
+%     rvec = tdskel(16,:)-tdskel(12,:);
+% else
+%     rvec = [1 0 0];
+%     dbgmsg('Don''t know how to un-rotate this. Doing nothing')
+% end
 
    
    rotmat = vecRotMat(rvec/norm(rvec),[1 0 0 ]); % arbitrary direction. hope I am not doing anything too stupid
@@ -174,21 +182,21 @@ end
 
 newskel = makethinskel(tdskel);
 end
-function newskel = norotateshoulders(skel)
+function newskel = norotateshoulders(skel, bod)
 [tdskel,hh] = makefatskel(skel);
 
 %%%%some normalization procedure %%%%%
 % I will consider the rotation of the shoulders as the most important for a
 % person, 
 %according to my notes, they are the points 5(RS) 9(LS) and 21 Upper torax
-if hh == 25 || hh == 50
-    rvec = tdskel(5,:)-tdskel(9,:);
-elseif hh == 24 || hh == 49
-    rvec = tdskel(5,:)-tdskel(9,:); % dumbass
-else
-    rvec = [1 0 0];
-    dbgmsg('Don''t know how to un-rotate this. Doing nothing')
-end
+% if hh == 25 || hh == 50
+    rvec = tdskel(bod.LEFT_SHOULDER,:)-tdskel(bod.LEFT_SHOULDER,:);
+% elseif hh == 24 || hh == 49
+%     rvec = tdskel(5,:)-tdskel(9,:); % dumbass
+% else
+%     rvec = [1 0 0];
+%     dbgmsg('Don''t know how to un-rotate this. Doing nothing')
+% end
    
    rotmat = vecRotMat(rvec/norm(rvec),[1 0 0 ]); % arbitrary direction. hope I am not doing anything too stupid
    for i = 1:hh
@@ -197,35 +205,41 @@ end
 
 newskel = makethinskel(tdskel);
 end
-function newskel = abnormalize(skel)
+function newskel = abnormalize(skel, ~)
+% [tdskel,hh] = makefatskel(skel);
+
+%%%%some conformation procedure %%%%%
+% if hh == 25
+newskel = skel + rand(size(skel));
+
+%    tdskel = tdskel + rand(size(tdskel));
+% else
+%     dbgmsg('Don''t know how to un-abnormalize this. Doing nothing')
+% end
+
+%newskel = makethinskel(tdskel);
+end
+function newskel = nofeet(skel, bod)
 [tdskel,hh] = makefatskel(skel);
 
 %%%%some conformation procedure %%%%%
-if hh == 25
-    tdskel = tdskel + rand(size(tdskel));
-else
-    dbgmsg('Don''t know how to un-abnormalize this. Doing nothing')
-end
+% if mod(hh,25) == 0 % I will remove this and make a smaller skeleton, but first I will zero-it
+%     tdskel(16,:) = zeros(1,size(tdskel,2));
+%     tdskel(20,:) = zeros(1,size(tdskel,2));
+% elseif mod(hh,25) == 24
+%     tdskel(15,:) = zeros(1,size(tdskel,2));
+%     tdskel(19,:) = zeros(1,size(tdskel,2));
+% else
+%     dbgmsg('Don''t know how to remove feet from this. Doing nothing')
+% end
+%%% following my older-self's advice I will also invalidate what I remove, but with NaNs 
+sizeofnans = size(tdskel([bod.RIGHT_FOOT, bod.LEFT_FOOT],:));
+
+tdskel([bod.RIGHT_FOOT, bod.LEFT_FOOT],:) = NaN(sizeofnans);
 
 newskel = makethinskel(tdskel);
 end
-function newskel = nofeet(skel)
-[tdskel,hh] = makefatskel(skel);
-
-%%%%some conformation procedure %%%%%
-if mod(hh,25) == 0 % I will remove this and make a smaller skeleton, but first I will zero-it
-    tdskel(16,:) = zeros(1,size(tdskel,2));
-    tdskel(20,:) = zeros(1,size(tdskel,2));
-elseif mod(hh,25) == 24
-    tdskel(15,:) = zeros(1,size(tdskel,2));
-    tdskel(19,:) = zeros(1,size(tdskel,2));
-else
-    dbgmsg('Don''t know how to remove feet from this. Doing nothing')
-end
-
-newskel = makethinskel(tdskel);
-end
-function newskel = mirror(skel)
+function newskel = mirror(skel, ~)
 [tdskel,~] = makefatskel(skel);
 
 %%%%some conformation procedure %%%%%
@@ -233,7 +247,7 @@ tdskel(:,1) = -tdskel(:,1);
 
 newskel = makethinskel(tdskel);
 end
-function newskel = normalize(skel)
+function newskel = normalize(skel, ~)
 %%this function was developed by inspection. a random skeleton was used
 %just to make sure that the variables are in similar orders of magnitude.
 %The average std deviation from the skeletons computed as
@@ -336,4 +350,107 @@ else
         end
     end
 end
+end
+function bodyparts = genbodyparts(lenlen)
+bodyparts = struct();
+switch lenlen
+    case 150
+        bodyparts.hip_center = 1;
+        bodyparts.abdomen = 2;
+        bodyparts.neck_or_something = 3;
+        bodyparts.tip_of_the_head = 4;
+        bodyparts.right_shoulder = 5;
+        bodyparts.right_also_shoulder_or_elbow = 6;
+        bodyparts.right_elbow_maybe = 7;
+        bodyparts.right_hand = 8;
+        bodyparts.left_shoulder = 9;
+        bodyparts.left_something_maybe_elbow = 10;
+        bodyparts.left_maybe_elbow = 11;
+        bodyparts.left_hand = 12;
+        bodyparts.left_hip = 13;
+        bodyparts.left_knee = 14;
+        bodyparts.left_part_of_foot = 15;
+        bodyparts.left_tip_of_foot = 16;
+        bodyparts.right_hip_important_because_hips_dont_lie = 17;
+        bodyparts.right_knee = 18;
+        bodyparts.right_part_of_foot = 19;
+        bodyparts.right_tip_of_foot = 20;
+        bodyparts.middle_of_upper_torax = 21;
+        bodyparts.right_some_part_of_the_hand = 22;
+        bodyparts.right_some_other_part_of_the_hand = 23;
+        bodyparts.left_some_part_of_the_hand = 24;
+        bodyparts.left_some_other_part_of_the_hand = 25;
+        %%% synonyms
+        bodyparts.RIGHT_HIP = bodyparts.right_hip_important_because_hips_dont_lie;
+        bodyparts.LEFT_HIP = bodyparts.left_hip;
+        
+        bodyparts.LEFT_SHOULDER = bodyparts.left_shoulder;
+        bodyparts.RIGHT_SHOULDER = bodyparts.right_shoulder;
+        
+        bodyparts.RIGHT_FOOT =  [bodyparts.right_part_of_foot,	 bodyparts.right_tip_of_foot];
+        bodyparts.LEFT_FOOT =  [bodyparts.left_part_of_foot,	 bodyparts.left_tip_of_foot];
+        bodyparts.HEAD	=	 bodyparts.tip_of_the_head;
+        bodyparts.TORSO = bodyparts.middle_of_upper_torax;
+        bodyparts.LEFT_HAND = [bodyparts.left_some_part_of_the_hand bodyparts.left_some_other_part_of_the_hand];
+        bodyparts.RIGHT_HAND = [bodyparts.right_some_part_of_the_hand bodyparts.right_some_other_part_of_the_hand];
+        
+    case 120
+        bodyparts.hip_center = 1;
+        bodyparts.spine = 2;
+        bodyparts.shoulder_center = 3;
+        bodyparts.head = 4;
+        bodyparts.shoulder_left = 5;
+        bodyparts.elbow_left = 6;
+        bodyparts.wrist_left = 7;
+        bodyparts.hand_left = 8;
+        bodyparts.shoulder_right = 9;
+        bodyparts.elbow_right = 10;
+        bodyparts.wrist_right = 11;
+        bodyparts.hand_right = 12;
+        bodyparts.hip_left = 13;
+        bodyparts.knee_left = 14;
+        bodyparts.ankle_left = 15;
+        bodyparts.foot_left = 16;
+        bodyparts.hip_right = 17;
+        bodyparts.knee_right = 18;
+        bodyparts.ankle_right = 19;
+        bodyparts.foot_right = 20;
+        %%% synonyms
+        bodyparts.RIGHT_HIP = bodyparts.hip_right;
+        bodyparts.LEFT_HIP = bodyparts.hip_left;
+  
+        bodyparts.LEFT_SHOULDER = bodyparts.shoulder_left;
+        bodyparts.RIGHT_SHOULDER = bodyparts.shoulder_right;
+        
+        bodyparts.RIGHT_FOOT =  [bodyparts.ankle_right,	 bodyparts.foot_right];
+        bodyparts.LEFT_FOOT =  [bodyparts.ankle_left,	 bodyparts.foot_left];
+        bodyparts.HEAD	=	 bodyparts.head;
+        bodyparts.TORSO = bodyparts.shoulder_center;
+        bodyparts.LEFT_HAND = [bodyparts.wrist_left, bodyparts.hand_left];
+        bodyparts.RIGHT_HAND = [bodyparts.wrist_right, bodyparts.hand_right];
+        
+    case 90
+        bodyparts.HEAD = 1;
+        bodyparts.NECK = 2;
+        bodyparts.TORSO = 3;
+        bodyparts.LEFT_SHOULDER = 4;
+        bodyparts.LEFT_ELBOW = 5;
+        bodyparts.RIGHT_SHOULDER = 6;
+        bodyparts.RIGHT_ELBOW = 7;
+        bodyparts.LEFT_HIP = 8;
+        bodyparts.LEFT_KNEE = 9;
+        bodyparts.RIGHT_HIP = 10;
+        bodyparts.RIGHT_KNEE = 11;
+        bodyparts.LEFT_HAND = 12;
+        bodyparts.RIGHT_HAND = 13;
+        bodyparts.LEFT_FOOT = 14;
+        bodyparts.RIGHT_FOOT = 15;       
+        %%%
+        bodyparts.hip_center = [];
+        
+    otherwise
+        dbgmsg('No idea from this size from what type of skeleton this is. I will assume it is a randomstick.')
+        return
+end
+
 end
