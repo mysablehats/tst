@@ -3,8 +3,13 @@ clear all;
 close all;
 
 %% Generate Skeletons
-% This makes a new dataset, so results will be no longer
-%%% >>>>> this has to be changed into a function.
+% This makes a new dataset, so results will be no longer comparable.
+% datasettypes are 'CAD60', 'tstv2' and 'stickman'
+%it is possible to input who you want to be on the training and validation
+%set using the variables below. The numbers are either the subject number
+%for 'type2' "samplingtype" or activity count for 'type1'. It is actually
+%not a sampling type, but the way you divide the sets. I could not find a
+%better name for it. 
 %allskeli1 = [9,10,11,4,8,5,3,6]; %% comment these out to have random new samples
 %allskeli2 = [1,2,7];%% comment these out to have random new samples
 sampling_type = 'type2';
@@ -14,20 +19,22 @@ labels_names = [];
 [allskel1, allskel2, allskeli1, allskeli2] = generate_skel_data(datasettype, sampling_type); %, allskeli1, allskeli2); 
 aa_environment
 [~, data_train,y_train, ends_train, labels_names] = extractdata(allskel1, activity_type, labels_names);
-save(strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_'),'data_train','labels_names', 'y_train','allskeli1','ends_train','-v7.3');
+traindataname = strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_');
+save(traindataname,'data_train','labels_names', 'y_train','allskeli1','ends_train','-v7.3');
 dbgmsg('Training data saved.')
 [~, data_val,y_val, ends_val, labels_names] = extractdata(allskel2, activity_type, labels_names);
-save(strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_val_'),'data_val','labels_names', 'y_val','allskeli2','ends_val','-v7.3');
+valdataname = strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_val_');
+save(valdataname,'data_val','labels_names', 'y_val','allskeli2','ends_val','-v7.3');
 dbgmsg('Validation data saved.')
 %clear all
 dbgmsg('Skeleton data (training and validation) generated.')
 % %%validation and training set
 
 
-%% Loads environment Variables and saved Data
+%%%% Loads environment Variables and saved Data
 
-%load_skel_data
-
+%%%load_skel_data
+%% Awk definition:
 important = 1;%0.1;
 relevant = 1;%0.03;
 minor = 1;%0.005;
@@ -61,20 +68,33 @@ awk = [...
 
 if size(awk,1)*6~=size(data_val,1)
     awk = ones(size(data_val,1)/6,1);
-    dbgmsg('Must update awk for this sized skeleton.',1)
+    dbgmsg('Must update awk for this a skeleton this size.',1)
 end
 
 %% Pre-conditioning of data
 % 
 
-[data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,'nohips','nofeet');
-[data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirror','nohips','nofeet');
-data_train = [data_train_, data_train_mirror];
-ends_train = [ends_train, ends_train];
-data_val = [data_val_, data_val_mirror];
-ends_val = [ends_val, ends_val];
-y_train = [y_train y_train];
-y_val = [y_val y_val];
+ [data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,'nohips','nofeet');
+ [data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirror','nohips','nofeet');
+%[data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,'nohips','nofeet');
+%[data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirror');
+
+%% writing data structure
+data.train = [data_train_, data_train_mirror];
+data.ends.train = [ends_train, ends_train];
+data.val = [data_val_, data_val_mirror];
+data.ends.val = [ends_val, ends_val];
+data.y.train = [y_train y_train];
+data.y.val = [y_val y_val];
+
+% %%
+% data.val = data_val;
+% data.train = data_train;
+% data.y.val = y_val;
+% data.y.train = y_train;
+% data.ends.train = ends_train;
+% data.ends.val = ends_val;
+% 
 
 % a = 1;
 % windowSize = 1;
@@ -87,18 +107,21 @@ y_val = [y_val y_val];
 
 %% Setting up runtime variables
 TEST = 0; % set to false to actually run it
-PARA = 0;
+PARA = 1;
 
 P = 4;
 
-NODES = 100;
+NODES = 600;
 
 if TEST
-    NODES = 10;
+    NODES = 2;
 end
 
-params.PLOTIT =0 ;
+params.PLOTIT =1 ;
 params.RANDOMSTART = false; % if true it overrides the .startingpoint variable
+params.RANDOMSET = true;
+params.savegas.resume = true;
+params.savegas.path = pathtodropbox;
 
 n = randperm(size(data_train,2),2);
 params.startingpoint = [n(1) n(2)];
@@ -109,10 +132,11 @@ params.en = 0.006; %epsilon subscript n
 params.eb = 0.2; %epsilon subscript b
 params.gamma = 4; % for the denoising function
 params.skelldef = skelldef;
+params.plottingstep = 0; % zero will make it plot only the end-gas
+params.MAX_EPOCHS = 50; 
 
 %Exclusive for gwr
 params.STATIC = true;
-params.MAX_EPOCHS = 1; 
 params.at = 0.95; %activity threshold
 params.h0 = 1;
 params.ab = 0.95;
@@ -121,6 +145,7 @@ params.tb = 3.33;
 params.tn = 3.33;
 
 %Exclusive for gng
+params.age_inc                  = 1;
 params.lambda                   = 3;
 params.alpha                    = .5;     % q and f units error reduction constant.
 params.d                           = .99;   % Error reduction factor.
@@ -130,12 +155,20 @@ params.d                           = .99;   % Error reduction factor.
 %%%% gas structures region
 
 %%%% connection definitions:
-%  allconn = {...
-%      {'gng1layer',   'gng',{'pos'},                    'pos',1,params}...
-%      {'gng2layer',   'gng',{'vel'},                    'vel',1,params}...
-%      {'gng3layer',   'gng',{'gng1layer'},              'pos',3,params}...
-%      {'gng4layer',   'gng',{'gng2layer'},              'vel',3,params}...
-%      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',3,params}};
+allconn = {...
+    {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
+    {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
+    {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
+    {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
+    {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
+
+% 
+% allconn = {...
+%      {'gng1layer',   'gng',{'pos'},                    'pos',[1 0],params}...
+%      {'gng2layer',   'gng',{'vel'},                    'vel',[1 0],params}...
+%      {'gng3layer',   'gng',{'gng1layer'},              'pos',[3 0],params}...
+%      {'gng4layer',   'gng',{'gng2layer'},              'vel',[3 0],params}...
+%      {'gngSTSlayer', 'gng',{'gng4layer','gng3layer'},  'all',[3 0],params}};
 % 
 % allconn = {...
 %     {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 2 3],params}...
@@ -144,18 +177,13 @@ params.d                           = .99;   % Error reduction factor.
 %     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
 %     {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
 
+
 % allconn = {...
 %     {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
 %     {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
-%     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
-%     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
-%     {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
-allconn = {...
-    {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
-    {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
-    {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 0],params}...
-    {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 0],params}...
-    {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 0],params}};
+%     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 0],params}...
+%     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 0],params}...
+%     {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 0],params}};
 % allconn = {...
 %     {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
 %     {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
@@ -206,14 +234,8 @@ allconn = {...
 
 
 
-%%
-data.val = data_val;
-data.train = data_train;
-data.y.val = y_val;
-data.y.train = y_train;
-data.ends.train = ends_train;
-data.ends.val = ends_val;
 
+%%
 for i = 1:P
     paramsZ(i) = params;
 end
@@ -225,13 +247,16 @@ a(1:P) = struct();%'best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensit
 b = [];
 starttime = tic;
 if ~TEST 
-while toc(starttime)<3600*.010
+while toc(starttime)<1%3600*8
 if PARA
     for j = 1:1
-        parfor i = 1:P
+        spmd(P)
             a(i).a = executioncore_in_starterscript(paramsZ(i),allconn, data);
         end
-        b = cat(2,b,a.a);
+        %b = cat(2,b,a.a);
+        b = [a{:} b];
+        clear a
+        a(1:P) = struct();
     end
 else
     for j = 1:1
@@ -239,6 +264,8 @@ else
             a(i).a = executioncore_in_starterscript(paramsZ(i),allconn, data);
         end
         b = cat(2,b,a.a);
+        clear a
+        a(1:P) = struct();
     end
 end
 end
@@ -247,4 +274,5 @@ else
 end
 savevar = strcat('b',num2str(NODES),'_', num2str(params.MAX_EPOCHS),'epochs',num2str(size(b,2)),'remove4sigma', sampling_type, datasettype, activity_type);
 eval(strcat(savevar,'=b;'))
+clear b
 save(strcat(pathtodropbox,'/classifier/',savevar,'.mat'),savevar)

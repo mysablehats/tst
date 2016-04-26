@@ -199,10 +199,10 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
 % After setting the input, we can actually run the gas, either a GNG or the
 % GWR function we wrote.
         %%%% PRE-MESSAGE
-        dbgmsg('Working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,' for process:',num2str(i),1)
+        dbgmsg('Working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,' for process:',num2str(labindex),1)
         %DO GNG OR GWR
 
-        [savestructure.gas(j).nodes, savestructure.gas(j).edges, savestructure.gas(j).outparams] = gas_wrapper(savestructure.train.gas(j).inputs.input_clip,arq_connect.params, arq_connect.method); 
+        [savestructure.gas(j).nodes, savestructure.gas(j).edges, savestructure.gas(j).outparams] = gas_wrapper(savestructure.train.gas(j).inputs.input_clip,arq_connect); 
 
         %%%% POS-MESSAGE
         dbgmsg('Finished working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,'.Num of nodes reached:',num2str(savestructure.gas(j).outparams.graph.nodesvect(end)),' for process:',num2str(i),1)
