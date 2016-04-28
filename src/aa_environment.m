@@ -1,11 +1,11 @@
-global homepath pathtodropbox SLASH pathtodata logpath
+global homepath wheretosavestuff SLASH pathtodata logpath
 try
     if ismac
-		pathtodropbox = '~/Dropbox/octave_progs';
+		wheretosavestuff = '/remote/elements/fall_detection_datasets/var';
 		homepath = '~/matlabprogs/';
 		%disp('reached ismac')
 	elseif isunix
-		pathtodropbox = '/home/fbklein/Dropbox/octave_progs';
+		wheretosavestuff = '/home/fbklein/Dropbox/octave_progs';
 		homepath = '/home/fbklein/Documents/classifier/';
 		%disp('reached isunix')
 	end

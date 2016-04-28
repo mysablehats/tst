@@ -4,9 +4,9 @@ function [Data, vectordata, Y, ends, lab] = extractdata(structure, typetype, inp
 WANTVELOCITY = true;
 
 %%%%%%%%Messages part. Feedback for the user about the algorithm
-dbgmsg('Extracting data from skeleton structure')
+dbgmsg('Extracting data from skeleton structure',1)
 if WANTVELOCITY
-    dbgmsg('Constructing long vectors with velocity data as well')
+    dbgmsg('Constructing long vectors with velocity data as well',1)
 end
 %%%%%%%%
 %typetype= 'act_type';

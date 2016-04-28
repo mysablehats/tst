@@ -17,15 +17,20 @@ datasettype = 'CAD60';
 activity_type = 'act_type';
 labels_names = []; 
 [allskel1, allskel2, allskeli1, allskeli2] = generate_skel_data(datasettype, sampling_type); %, allskeli1, allskeli2); 
+
+[allskel1, allskel2] = conformactions(allskel1,allskel2, 'none');
+
 aa_environment
 [~, data_train,y_train, ends_train, labels_names] = extractdata(allskel1, activity_type, labels_names);
-traindataname = strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_');
+[~, data_val,y_val, ends_val, labels_names] = extractdata(allskel2, activity_type, labels_names);
+traindataname = strcat(wheretosavestuff,SLASH,'share',SLASH,datasettype,'_skel_');
+valdataname = strcat(wheretosavestuff,SLASH,'share',SLASH,datasettype,'_skel_val_');
+
 save(traindataname,'data_train','labels_names', 'y_train','allskeli1','ends_train','-v7.3');
 dbgmsg('Training data saved.')
-[~, data_val,y_val, ends_val, labels_names] = extractdata(allskel2, activity_type, labels_names);
-valdataname = strcat(pathtodropbox,SLASH,'share',SLASH,datasettype,'_skel_val_');
 save(valdataname,'data_val','labels_names', 'y_val','allskeli2','ends_val','-v7.3');
 dbgmsg('Validation data saved.')
+
 %clear all
 dbgmsg('Skeleton data (training and validation) generated.')
 % %%validation and training set
@@ -96,6 +101,8 @@ data.y.val = [y_val y_val];
 % data.ends.val = ends_val;
 % 
 
+%%% this is a bad place to apply the filter because it will merge different
+%%% actions together!
 % a = 1;
 % windowSize = 1;
 % b = (1/windowSize)*ones(1,windowSize);
@@ -111,7 +118,7 @@ PARA = 1;
 
 P = 4;
 
-NODES = 600;
+NODES = 300;
 
 if TEST
     NODES = 2;
@@ -121,7 +128,7 @@ params.PLOTIT =1 ;
 params.RANDOMSTART = false; % if true it overrides the .startingpoint variable
 params.RANDOMSET = true;
 params.savegas.resume = true;
-params.savegas.path = pathtodropbox;
+params.savegas.path = wheretosavestuff;
 
 n = randperm(size(data_train,2),2);
 params.startingpoint = [n(1) n(2)];
@@ -133,7 +140,7 @@ params.eb = 0.2; %epsilon subscript b
 params.gamma = 4; % for the denoising function
 params.skelldef = skelldef;
 params.plottingstep = 0; % zero will make it plot only the end-gas
-params.MAX_EPOCHS = 50; 
+params.MAX_EPOCHS = 1; 
 
 %Exclusive for gwr
 params.STATIC = true;
@@ -258,6 +265,7 @@ if PARA
         clear a
         a(1:P) = struct();
     end
+        
 else
     for j = 1:1
         for i = 1:P
@@ -275,4 +283,4 @@ end
 savevar = strcat('b',num2str(NODES),'_', num2str(params.MAX_EPOCHS),'epochs',num2str(size(b,2)),'remove4sigma', sampling_type, datasettype, activity_type);
 eval(strcat(savevar,'=b;'))
 clear b
-save(strcat(pathtodropbox,'/classifier/',savevar,'.mat'),savevar)
+save(strcat(wheretosavestuff,SLASH,savevar,'.mat'),savevar)
