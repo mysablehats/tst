@@ -73,7 +73,7 @@ for i = 1:P
     savestructure(i).train.y = y_train;
     
     for j = 1:length(arq_connect)
-        savestructure(i) = gas_method(savestructure(i), arq_connect(j), i,j, size(data_train,1)); % I had to separate it to debug it.
+        savestructure(i) = gas_method(savestructure(i), arq_connect(j),j, size(data_train,1)); % I had to separate it to debug it.
         metrics(i,j).outparams = savestructure(i).gas(j).outparams;
     end
     
@@ -179,7 +179,7 @@ end
 %     dbgmsg(savestructure(1).gas(j).name,'\t [All data for Validation set] Best Sensitivity/Recall:        \t', num2str(metrics(1)),'%%\t|| Best Specificity:        \t', num2str(metrics(2)),'%%\t|| Best Precision:        \t', num2str(metrics(3)),'%%\t|| Best F1:       \t', num2str(metrics(4)),'%%',1)
 % end
 end
-function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
+function savestructure = gas_method(savestructure, arq_connect,j, dimdim)
 %% Gas Method
 % This is a function to go over a gas of the classifier, populate it with the apropriate input and generate the best matching units for the next layer.  
 %% Setting up some labels
@@ -205,7 +205,7 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
         [savestructure.gas(j).nodes, savestructure.gas(j).edges, savestructure.gas(j).outparams] = gas_wrapper(savestructure.train.gas(j).inputs.input_clip,arq_connect); 
 
         %%%% POS-MESSAGE
-        dbgmsg('Finished working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,'.Num of nodes reached:',num2str(savestructure.gas(j).outparams.graph.nodesvect(end)),' for process:',num2str(i),1)
+        dbgmsg('Finished working on gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with method: ',savestructure.gas(j).method ,'.Num of nodes reached:',num2str(savestructure.gas(j).outparams.graph.nodesvect(end)),' for process:',num2str(labindex),1)
         %%%% FIND BESTMATCHING UNITS
         
 %% Best-matching units
@@ -219,13 +219,17 @@ function savestructure = gas_method(savestructure, arq_connect, i,j, dimdim)
 % Well, for the last gas it does make a difference, since these units will
 % not be used... Still I will  not fix it unless I have to.
         %PRE MESSAGE  
-        dbgmsg('Finding best matching units for gas: ''',savestructure.gas(j).name,''' (', num2str(j),') for process:',num2str(i),1)
+        dbgmsg('Finding best matching units for gas: ''',savestructure.gas(j).name,''' (', num2str(j),') for process:',num2str(labindex),1)
         [~, savestructure.train.gas(j).bestmatchbyindex] = genbestmmatrix(savestructure.gas(j).nodes, savestructure.train.gas(j).inputs.input, arq_connect.layertype, arq_connect.q); %assuming the best matching node always comes from initial dataset!
         
 %% Post-conditioning function
 %This will be the noise removing function. I want this to be optional or allow other things to be done to the data and I
 %am still thinking about how to do it. Right now I will just create the
 %whattokill property and let setinput deal with it. 
-        dbgmsg('Flagging noisy input for removal from gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with points with more than',num2str(arq_connect.params.gamma),' standard deviations, for process:',num2str(i),1)
-        savestructure.train.gas(j).whotokill = removenoise(savestructure.gas(j).nodes, savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.oldwhotokill, arq_connect.params.gamma, savestructure.train.gas(j).inputs.index);
+        if arq_connect.params.removepoints
+            dbgmsg('Flagging noisy input for removal from gas: ''',savestructure.gas(j).name,''' (', num2str(j),') with points with more than',num2str(arq_connect.params.gamma),' standard deviations, for process:',num2str(labindex),1)
+            savestructure.train.gas(j).whotokill = removenoise(savestructure.gas(j).nodes, savestructure.train.gas(j).inputs.input, savestructure.train.gas(j).inputs.oldwhotokill, arq_connect.params.gamma, savestructure.train.gas(j).inputs.index);
+        else
+            dbgmsg('Skipping removal of noisy input for gas:',savestructure.gas(j).name)
+        end
 end

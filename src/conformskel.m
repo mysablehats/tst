@@ -18,11 +18,11 @@ if isempty(varargin)||strcmp(varargin{1},'test')
     end
 else
     
-        data_train = varargin{1};
+    data_train = varargin{1};
     data_val = varargin{2};
     awk = varargin{3};
     
-    %%% initiallize variables to make skelldef 
+    %%% initiallize variables to make skelldef
     killdim = [];
     skelldef.length = size(data_val,1);
     skelldef.realkilldim = [];
@@ -38,7 +38,7 @@ else
         error('data_train and data_val must have the same length!!!')
     end
     if any(size(awk).*[6 1]~= size(data_val(:,1)))
-        error('wrong size for awk. It should be the same size of the input data. maybe you should transpose it?')
+        warning('wrong size for awk. It should be the same size of the input data. maybe you should transpose it?')
     end    
     
     %%%further checks?
@@ -61,19 +61,26 @@ else
         switch varargin{i}
             case 'test'
                 test = true;
+            case 'highhips'
+                conformations = [conformations, {@highhips}];
             case 'nohips'
                 conformations = [conformations, {@centerhips}];
                 killdim = [killdim, skelldef.bodyparts.hip_center];
             case 'normal'
                 conformations = [conformations, {@normalize}];
                 %dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
-            case 'mirror'
-                conformations = [conformations, {@mirror}];
+            case 'mirrorx'
+                conformations = [conformations, {@mirrorx}];
+            case 'mirrory'
+                conformations = [conformations, {@mirrory}];
+            case 'mirrorz'
+                conformations = [conformations, {@mirrorz}];
             case 'mahal'
                 %conformations = [conformations, {@mahal}];
                 dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
             case 'norotate'
                 conformations = [conformations, {@norotatehips}];
+                dbgmsg('WARNING, the normalization: ' , varargin{i},' is performing poorly, it should not be used.', true);
             case 'norotateshoulders'
                 conformations = [conformations, {@norotateshoulders}];
                 dbgmsg('WARNING, the normalization: ' , varargin{i},' is performing poorly, it should not be used.', true);
@@ -85,12 +92,15 @@ else
                 conformations = [conformations, {@nofeet}]; %not sure i need this...
                 killdim = [killdim, skelldef.bodyparts.RIGHT_FOOT, skelldef.bodyparts.LEFT_FOOT];
             case 'nohands'
-                 killdim = [killdim, skelldef.bodyparts.RIGHT_HAND, skelldef.bodyparts.LEFT_HAND];
+                dbgmsg('WARNING, the normalization: ' , varargin{i},' is performing poorly, it should not be used.', true);
+                killdim = [killdim, skelldef.bodyparts.RIGHT_HAND, skelldef.bodyparts.LEFT_HAND];
             case 'axial'
-                %conformations = [conformations, {@centerhips}];
+                %conformations = [conformations, {@axial}];
                 dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
             case 'addnoise'
                 conformations = [conformations, {@abnormalize}];
+            case 'spherical'
+                conformations = [conformations, {@to_spherical}];
             otherwise
                 dbgmsg('ATTENTION: Unimplemented normalization/ typo.',varargin{i},true);
         end
@@ -138,6 +148,26 @@ else
     hip = tdskel(bod.hip_center,:);
     
 end
+
+hips = [repmat(hip,hh/2,1);zeros(hh/2,3)]; % this is so that we dont subtract the velocities
+
+newskel = tdskel - hips;
+
+%I need to shape it back into 75(-3 now) x 1
+newskel = makethinskel(newskel);
+end
+function newskel = highhips(skel, bod)
+
+[tdskel,hh] = makefatskel(skel);
+
+if isempty(bod.hip_center)&&hh==30
+    %%% then this possibly it is the 15 joint skeleton
+    hip = (tdskel(bod.LEFT_HIP,:) + tdskel(bod.RIGHT_HIP,:))/2;
+else
+    hip = tdskel(bod.hip_center,:);
+    
+end
+hip(1,2) = 0; %% 
 
 hips = [repmat(hip,hh/2,1);zeros(hh/2,3)]; % this is so that we dont subtract the velocities
 
@@ -239,11 +269,27 @@ tdskel([bod.RIGHT_FOOT, bod.LEFT_FOOT],:) = NaN(sizeofnans);
 
 newskel = makethinskel(tdskel);
 end
-function newskel = mirror(skel, ~)
+function newskel = mirrorx(skel, ~)
 [tdskel,~] = makefatskel(skel);
 
 %%%%some conformation procedure %%%%%
 tdskel(:,1) = -tdskel(:,1);
+
+newskel = makethinskel(tdskel);
+end
+function newskel = mirrory(skel, ~)
+[tdskel,~] = makefatskel(skel);
+
+%%%%some conformation procedure %%%%%
+tdskel(:,2) = -tdskel(:,2);
+
+newskel = makethinskel(tdskel);
+end
+function newskel = mirrorz(skel, ~)
+[tdskel,~] = makefatskel(skel);
+
+%%%%some conformation procedure %%%%%
+tdskel(:,3) = -tdskel(:,3);
 
 newskel = makethinskel(tdskel);
 end
@@ -277,6 +323,17 @@ end
 
 newskel = makethinskel(tdskel);
 end
+function newskel = to_spherical(skel, ~)
+
+[tdskel,~] = makefatskel(skel);
+
+newskel = zeros(size(tdskel));
+
+[newskel(:,1),newskel(:,2),newskel(:,3)] = cart2sph(tdskel(:,1),tdskel(:,2),tdskel(:,3)); 
+
+newskel = makethinskel(newskel);
+end
+
 function [a,b] = conformskel_test(varargin)
 load_test_skel
 
