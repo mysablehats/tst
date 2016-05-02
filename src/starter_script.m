@@ -282,7 +282,7 @@ end
 clear a
 
 a(1:P) = struct();%'best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
-b = [];
+%b = [];
 starttime = tic;
 if ~TEST 
 while toc(starttime)<1%3600*8
