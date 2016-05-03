@@ -281,25 +281,28 @@ end
 
 clear a
 
-a(1:P) = struct();%'best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
-%b = [];
+%a(1:P) = struct();%'best',[0 0 0],'mt',[0 0 0 0], 'bestmtallconn',struct('sensitivity',struct(),'specificity',struct(),'precision',struct()));
+b = [];
 starttime = tic;
 if ~TEST 
 while toc(starttime)<1%3600*8
 if PARA
     for j = 1:1
         spmd(P)
-            a(labindex).a = executioncore_in_starterscript(paramsZ(labindex),allconn, data);
+            a = executioncore_in_starterscript(paramsZ(labindex),allconn, data);
         end
+%         save('shithead.mat','a')
         %b = cat(2,b,a.a);
-        b(1:P) = struct(); 
-        for i=1:length(a)
-            c = a{i};
-            a{i} = [];
-            b(i) = c.a;
-        end
-        clear a c
-        a(1:P) = struct();
+        %b(1:P) = struct();
+        %count = length(b);
+        b = [a{:} b];
+%         for i=length(a)+count:-1:1+count
+%             c = a{i};
+%             a{i} = [];
+%             b(i) = c.a.mt;
+%         end
+%         clear a c
+%         a(1:P) = struct();
     end
         
 else
