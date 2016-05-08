@@ -20,8 +20,16 @@ else
     
     data_train = varargin{1};
     data_val = varargin{2};
-    awk = varargin{3};
-    
+    if isnumeric(varargin{3})
+        awk = varargin{3};
+        lindx = 4;
+    elseif ischar(varargin{3})
+        awk = ones(size(data_val,1)/6,1);
+        lindx = 3;
+        dbgmsg('awk not defined. considering all joints as having equal importance.',1)
+    else
+        error('Strange input. I don''t know what to do with it. ')
+    end
     %%% initiallize variables to make skelldef
     killdim = [];
     skelldef.length = size(data_val,1);
@@ -57,7 +65,7 @@ else
     conformations = {};
     killdim = [];   
     
-    for i =4:length(varargin)
+    for i =lindx:length(varargin)
         switch varargin{i}
             case 'test'
                 test = true;
@@ -67,7 +75,8 @@ else
                 conformations = [conformations, {@centerhips}];
                 killdim = [killdim, skelldef.bodyparts.hip_center];
             case 'normal'
-                conformations = [conformations, {@normalize}];
+                conformations = [conformations, {@normalize}];  
+                
                 %dbgmsg('Unimplemented normalization: ', varargin{i} ,true);
             case 'mirrorx'
                 conformations = [conformations, {@mirrorx}];
@@ -101,6 +110,12 @@ else
                 conformations = [conformations, {@abnormalize}];
             case 'spherical'
                 conformations = [conformations, {@to_spherical}];
+            case 'intostick'
+                conformations = [conformations, {@intostick}];
+                killdim = [4:(skelldef.length/6) (skelldef.length/6+4):(skelldef.length/3) ];
+            case 'intostick2'
+                conformations = [conformations, {@intostick2}];
+                killdim = [4:(skelldef.length/6) (skelldef.length/6+4):(skelldef.length/3) ];
             otherwise
                 dbgmsg('ATTENTION: Unimplemented normalization/ typo.',varargin{i},true);
         end
@@ -110,12 +125,25 @@ else
     if ~isempty(skelldef.bodyparts)
         for i = 1:length(conformations)
             func = conformations{i};
-            dbgmsg('Applying normalization: ', varargin{i+2},false);
+            dbgmsg('Applying normalization: ', varargin{i+2},true);
+            if isequal(func, @normalize)
+                %%% must go through whole dataset!
+                %%% if there is ever another function that requires this,
+                %%% then I should probably use a switch - if that works...
+                allskels = makefatskel(data_train);
+                %%% calculating the magic constants for our data
+                vectdata_pos = reshape(allskels(1:skelldef.length/6,:,:),1,[]);
+                skelldef.pos_std = std(vectdata_pos);
+                skelldef.pos_mean=mean(vectdata_pos);
+                vectdata_vel = reshape(allskels((skelldef.length/6+1):end,:,:),1,[]);
+                skelldef.vel_std = std(vectdata_vel);
+                skelldef.vel_mean=mean(vectdata_vel);
+            end
             for j = 1:size(data_train,2)
-                data_train(:,j) = func(data_train(:,j), skelldef.bodyparts);
+                data_train(:,j) = func(data_train(:,j), skelldef);
             end
             for j = 1:size(data_val,2)
-                data_val(:,j) = func(data_val(:,j), skelldef.bodyparts);
+                data_val(:,j) = func(data_val(:,j), skelldef);
             end
         end
     end
@@ -137,7 +165,9 @@ end
 skelldef.realkilldim = realkilldim;
 [skelldef.pos, skelldef.vel] = generateidx(skelldef.length, skelldef);
 end
-function newskel = centerhips(skel, bod)
+function newskel = centerhips(skel, skelldef)
+
+bod = skelldef.bodyparts;
 
 [tdskel,hh] = makefatskel(skel);
 
@@ -156,7 +186,9 @@ newskel = tdskel - hips;
 %I need to shape it back into 75(-3 now) x 1
 newskel = makethinskel(newskel);
 end
-function newskel = highhips(skel, bod)
+function newskel = highhips(skel, skelldef)
+
+bod = skelldef.bodyparts;
 
 [tdskel,hh] = makefatskel(skel);
 
@@ -176,7 +208,9 @@ newskel = tdskel - hips;
 %I need to shape it back into 75(-3 now) x 1
 newskel = makethinskel(newskel);
 end
-function newskel = centertorax(skel, bod)
+function newskel = centertorax(skel, skelldef)
+
+bod = skelldef.bodyparts;
 
 [tdskel,hh] = makefatskel(skel);
 
@@ -186,7 +220,9 @@ newskel = tdskel - torax;
 
 newskel = makethinskel(newskel);
 end
-function newskel = norotatehips(skel, bod)
+function newskel = norotatehips(skel, skelldef)
+
+bod = skelldef.bodyparts;
 [tdskel,hh] = makefatskel(skel);
 
 %%%%some normalization procedure %%%%%
@@ -212,7 +248,9 @@ function newskel = norotatehips(skel, bod)
 
 newskel = makethinskel(tdskel);
 end
-function newskel = norotateshoulders(skel, bod)
+function newskel = norotateshoulders(skel, skelldef)
+
+bod = skelldef.bodyparts;
 [tdskel,hh] = makefatskel(skel);
 
 %%%%some normalization procedure %%%%%
@@ -249,7 +287,9 @@ newskel = skel + rand(size(skel));
 
 %newskel = makethinskel(tdskel);
 end
-function newskel = nofeet(skel, bod)
+function newskel = nofeet(skel, skelldef)
+
+bod = skelldef.bodyparts;
 [tdskel,hh] = makefatskel(skel);
 
 %%%%some conformation procedure %%%%%
@@ -293,7 +333,7 @@ tdskel(:,3) = -tdskel(:,3);
 
 newskel = makethinskel(tdskel);
 end
-function newskel = normalize(skel, ~)
+function newskel = normalize(skel, skelldef)
 %%this function was developed by inspection. a random skeleton was used
 %just to make sure that the variables are in similar orders of magnitude.
 %The average std deviation from the skeletons computed as
@@ -303,23 +343,32 @@ function newskel = normalize(skel, ~)
 %1 as possible
 
 [tdskel,hh] = makefatskel(skel);
-magicconstant1 = 2.951426379619558e+02;
-magicconstant2 = 1.401162861741577e-04;
-%%%%some conformation procedure %%%%%
-if hh == 24
-    tdskel = tdskel/magicconstant1;
-elseif hh>=25
-    for i = 1:25
-        tdskel(i,:) = tdskel(i,:)/magicconstant1;
-    end
-else
-    dbgmsg('Don''t know how to normalize this. Doing nothing')
+
+for i = 1:hh/2
+    tdskel(i,:) = (tdskel(i,:) - skelldef.pos_mean)/skelldef.pos_std; %- skelldef.pos_mean
 end
-if hh>=26 %then there is velocities, right?
-    for i = 26:hh
-        tdskel(i,:) = tdskel(i,:)/magicconstant2;
-    end
+for i = (hh/2+1):hh
+    tdskel(i,:) = (tdskel(i,:) - skelldef.vel_mean)/skelldef.vel_std;%- skelldef.vel_mean
 end
+% %%%% this can actually deal with datasets without velocities. I am leaving
+% %%%% this here in case I ever want to reference it...
+% magicconstant1 = 2.951426379619558e+02;
+% magicconstant2 = 1.401162861741577e-04;
+% %%%%some conformation procedure %%%%%
+% if hh == 24
+%     tdskel = tdskel/magicconstant1;
+% elseif hh>=25
+%     for i = 1:25
+%         tdskel(i,:) = tdskel(i,:)/magicconstant1;
+%     end
+% else
+%     dbgmsg('Don''t know how to normalize this. Doing nothing')
+% end
+% if hh>=26 %then there is velocities, right?
+%     for i = 26:hh
+%         tdskel(i,:) = tdskel(i,:)/magicconstant2;
+%     end
+% end
 
 newskel = makethinskel(tdskel);
 end
@@ -333,6 +382,68 @@ newskel = zeros(size(tdskel));
 
 newskel = makethinskel(newskel);
 end
+function newskel = intostick(skel, skelldef)
+
+bod = skelldef.bodyparts;
+
+[tdskel,hh] = makefatskel(skel);
+
+%disp('ok')
+UCI = [bod.HEAD bod.NECK bod.LEFT_SHOULDER  bod.RIGHT_SHOULDER bod.LEFT_ELBOW bod.RIGHT_ELBOW bod.LEFT_HAND bod.RIGHT_HAND  ];
+
+uppercentroid = mean(tdskel(UCI ,:));
+
+uppercentroidvel  = mean(tdskel(UCI+hh/2,:));
+
+middlecentroid = tdskel(bod.TORSO,:);
+
+middlecentroidvel = tdskel(bod.TORSO+hh/2,:);
+
+LCI = [bod.LEFT_FOOT bod.RIGHT_FOOT bod.LEFT_KNEE bod.RIGHT_KNEE bod.LEFT_HIP bod.RIGHT_HIP];
+
+lowercentroid =mean(tdskel(LCI,:));  
+
+lowercentroidvel =mean(tdskel(LCI+hh/2,:));  
+
+zeroskel = zeros(size(tdskel));
+
+zeroskel(1:3,:) = [uppercentroid;middlecentroid;lowercentroid];
+zeroskel((hh/2+1):(hh/2+3),:) = [uppercentroidvel;middlecentroidvel;lowercentroidvel];
+
+newskel = makethinskel(zeroskel);
+end
+function newskel = intostick2(skel, skelldef)
+
+bod = skelldef.bodyparts;
+
+[tdskel,hh] = makefatskel(skel);
+
+%disp('ok')
+UCI = [bod.HEAD bod.NECK bod.LEFT_SHOULDER  bod.RIGHT_SHOULDER bod.LEFT_ELBOW bod.RIGHT_ELBOW  ];
+
+uppercentroid = mean(tdskel(UCI ,:));
+
+uppercentroidvel  = mean(tdskel(UCI+hh/2,:));
+
+middlecentroid = tdskel(bod.TORSO,:);
+
+middlecentroidvel = tdskel(bod.TORSO+hh/2,:);
+
+LCI = [ bod.LEFT_KNEE bod.RIGHT_KNEE bod.LEFT_HIP bod.RIGHT_HIP];
+
+lowercentroid =mean(tdskel(LCI,:));  
+
+lowercentroidvel =mean(tdskel(LCI+hh/2,:));  
+
+zeroskel = zeros(size(tdskel));
+
+zeroskel(1:3,:) = [uppercentroid;middlecentroid;lowercentroid];
+zeroskel((hh/2+1):(hh/2+3),:) = [uppercentroidvel;middlecentroidvel;lowercentroidvel];
+
+newskel = makethinskel(zeroskel);
+end
+
+
 
 function [a,b] = conformskel_test(varargin)
 load_test_skel
@@ -438,11 +549,17 @@ switch lenlen
         bodyparts.left_some_part_of_the_hand = 24;
         bodyparts.left_some_other_part_of_the_hand = 25;
         %%% synonyms
+        bodyparts.NECK = bodyparts.neck_or_something;
         bodyparts.RIGHT_HIP = bodyparts.right_hip_important_because_hips_dont_lie;
         bodyparts.LEFT_HIP = bodyparts.left_hip;
         
         bodyparts.LEFT_SHOULDER = bodyparts.left_shoulder;
         bodyparts.RIGHT_SHOULDER = bodyparts.right_shoulder;
+        
+        bodyparts.LEFT_ELBOW = bodyparts.left_maybe_elbow;        
+        bodyparts.RIGHT_ELBOW = bodyparts.right_elbow_maybe;
+        bodyparts.LEFT_KNEE =  bodyparts.left_knee;
+        bodyparts.RIGHT_KNEE = bodyparts.right_knee;        
         
         bodyparts.RIGHT_FOOT =  [bodyparts.right_part_of_foot,	 bodyparts.right_tip_of_foot];
         bodyparts.LEFT_FOOT =  [bodyparts.left_part_of_foot,	 bodyparts.left_tip_of_foot];

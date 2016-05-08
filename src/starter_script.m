@@ -32,7 +32,9 @@ activity_type = 'act';
 % is still on a structure form, that is, separated into actions. This is
 % necessary to apply filters on the data, since after they are put into a
 % sequential form, doing this would merge skeletons together. 
-[allskel1, allskel2] = conformactions(allskel1,allskel2, 'filter');
+%
+% 'filter', 'none', 'median?'
+[allskel1, allskel2] = conformactions(allskel1,allskel2, 'none');
 
 aa_environment
 %%
@@ -98,9 +100,9 @@ end
 
 %% Pre-conditioning of data
 % 
-
- [data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,'highhips','nofeet', 'spherical');
- [data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirrorx','highhips','nofeet', 'spherical');
+preconditions = {'nohips', 'normal', 'intostick2'};
+ [data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,preconditions{:});
+ [data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirrorx',preconditions{:});
 %[data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,'nohips','nofeet');
 %[data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val, awk,'mirror');
 
@@ -134,18 +136,18 @@ data.y.val = [y_val y_val];
 
 %% Setting up runtime variables
 TEST = 0; % set to false to actually run it
-PARA = 1;
+PARA = 0;
 
 P = 4;
 
-NODES = 2;
+NODES = 2000;
 
 if TEST
     NODES = 2;
 end
 
-params.removepoints = false;
-params.PLOTIT = false;
+params.removepoints = true;
+params.PLOTIT = true;
 params.RANDOMSTART = false; % if true it overrides the .startingpoint variable
 params.RANDOMSET = true; % if true, each sample (either alone or sliding window concatenated sample) will be presented to the gas at random
 params.savegas.resume = true; % if true, it will see if it can find an old gas from the same dataset and same parameters from before and use it as a starting point for learning. Enables you to resume learning in case there is a computer crash.
@@ -160,12 +162,12 @@ params.en = 0.006; %epsilon subscript n
 params.eb = 0.2; %epsilon subscript b
 params.gamma = 4; % for the denoising function
 params.skelldef = skelldef;
-params.plottingstep = 100; % zero will make it plot only the end-gas
-params.MAX_EPOCHS = 50; 
+params.plottingstep = 0; % zero will make it plot only the end-gas
+params.MAX_EPOCHS = 10; 
 
 %Exclusive for gwr
 params.STATIC = true;
-params.at = 0.95; %activity threshold
+params.at = 0.8; %activity threshold
 params.h0 = 1;
 params.ab = 0.95;
 params.an = 0.95;
@@ -227,10 +229,10 @@ end
 %     {'gwr1layer',   'gwr',{'pos'},                    'pos',[3 0],params}...
 %     {'gwr2layer',   'gwr',{'vel'},                    'vel',[3 0],params}...
 %     {'gwrSTSlayer', 'gwr',{'gwr1layer','gwr2layer'},  'all',[1 0],params}};
-allconn = {...
-    {'gwr1layer',   'gwr',{'pos'},                    'pos',[3 4 2],params}...
-    {'gwr2layer',   'gwr',{'vel'},                    'vel',[3 4 2],params}...
-    {'gwrSTSlayer', 'gwr',{'gwr1layer','gwr2layer'},  'all',[3 2],params}};
+% allconn = {...
+%     {'gwr1layer',   'gwr',{'pos'},                    'pos',[3 4 2],params}...
+%     {'gwr2layer',   'gwr',{'vel'},                    'vel',[3 4 2],params}...
+%     {'gwrSTSlayer', 'gwr',{'gwr1layer','gwr2layer'},  'all',[3 2],params}};
 %  allconn = {...
 %      {'gwr1layer',   'gwr',{'pos'},                    'pos',3,params}...
 %      {'gwr2layer',   'gwr',{'vel'},                    'vel',3,params}...
@@ -256,10 +258,10 @@ allconn = {...
 %      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3,params}...
 %      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3,params}}; 
 %  
-%  allconn = {...
-%         {'gwr1layer',   'gwr',{'pos'},                    'all',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
-%         {'gwr2layer',   'gwr',{'gwr1layer'},              'all',[3 2], params}...
-%         };
+ allconn = {...
+        {'gwr1layer',   'gwr',{'all'},                    'all',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
+        {'gwr2layer',   'gwr',{'gwr1layer'},              'all',[3 2], params}...
+        };
 %   allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
 %            };
 %        
@@ -285,24 +287,14 @@ clear a
 b = [];
 starttime = tic;
 if ~TEST 
-while toc(starttime)<1%3600*8
+while toc(starttime)<3600*10
 if PARA
     for j = 1:1
         spmd(P)
             a = executioncore_in_starterscript(paramsZ(labindex),allconn, data);
         end
-%         save('shithead.mat','a')
-        %b = cat(2,b,a.a);
-        %b(1:P) = struct();
-        %count = length(b);
         b = [a{:} b];
-%         for i=length(a)+count:-1:1+count
-%             c = a{i};
-%             a{i} = [];
-%             b(i) = c.a.mt;
-%         end
-%         clear a c
-%         a(1:P) = struct();
+        clear a
     end
         
 else
@@ -321,5 +313,6 @@ else
 end
 savevar = strcat('b',num2str(NODES),'_', num2str(params.MAX_EPOCHS),'epochs',num2str(size(b,2)),removepoints_str, sampling_type, datasettype, activity_type);
 eval(strcat(savevar,'=b;'))
+
 clear b
 save(strcat(wheretosavestuff,SLASH,savevar,'.mat'),savevar)

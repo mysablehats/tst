@@ -110,7 +110,7 @@ mean_pos_std/mean_vel_std
 
 [normal_train, normal_val] = conformskel(data_train, data_val,'nohips','normal');
 
-nodata = [normal_train, normal_val];
+nodata = normal_train;%[normal_train, normal_val];
 
 %%
 % Now we want to verify if our procedures were effective in removing this:

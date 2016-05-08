@@ -1,5 +1,5 @@
-global pathtodropbox SLASH
-if isempty(pathtodropbox)||isempty(SLASH)
+global wheretosavestuff SLASH
+if isempty(wheretosavestuff)||isempty(SLASH)
     aa_environment
 end
-load(strcat(pathtodropbox,SLASH,'share',SLASH,'test_skel.mat'));
+load(strcat(wheretosavestuff,SLASH,'test_skel.mat'));
