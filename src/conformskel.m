@@ -1,7 +1,7 @@
 function [conform_train, conform_val, skelldef] = conformskel(varargin )
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%MESSAGES PART
-dbgmsg('Applies normalizations of several sorts on both training and validation datasets')
+dbgmsg('Applies normalizations of several sorts on both training and validation datasets',1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 test = false;
 
@@ -20,6 +20,7 @@ else
     
     data_train = varargin{1};
     data_val = varargin{2};
+    %awk = generate_awk;
     if isnumeric(varargin{3})
         awk = varargin{3};
         lindx = 4;
@@ -626,5 +627,45 @@ switch lenlen
         dbgmsg('No idea from this size from what type of skeleton this is. I will assume it is a randomstick.')
         return
 end
+
+end
+function awk = generate_awk
+%% Awk definition:
+important = 1;%0.1;
+relevant = 1;%0.03;
+minor = 1;%0.005;
+
+awk = [...
+    important;...   %1    hips
+    important;...   %2    abdomen
+    important;...   %3    neck or something
+    relevant;...    %4    tip of the head
+    important;...   %5    right shoulder
+    relevant;...    %6    right also shoulder or elbow
+    relevant;...    %7    right elbow maybe
+    relevant;...    %8    right hand
+    important;...   %9    left part of shoulder
+    relevant;...    %10   left something maybe elbow
+    relevant;...    %11   left maybe elbow
+    relevant;...    %12   left hand
+    important;...   %13   left hip
+    relevant;...    %14   left knee
+    minor;...       %15   left part of foot
+    minor;...       %16   left tip of foot
+    important;...   %17   right hip %important because hips dont lie
+    relevant;...    %18   right knee
+    minor;...       %19   right part of foot
+    minor;...       %20   right tip of foot
+    important;...   %21   middle of upper torax
+    minor;...       %22   right some part of the hand
+    minor;...       %23   right some other part of the hand
+    minor;...       %24   left some part of the hand
+    minor];         %25   left some other part of the hand
+
+% if size(awk,1)*6~=size(data_val,1)
+%     awk = ones(size(data_val,1)/6,1);
+%     dbgmsg('Must update awk for this a skeleton this size.',1)
+% end
+
 
 end
