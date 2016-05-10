@@ -9,34 +9,55 @@ function A = skeldraw(varargin)
 %%%%%%MESSAGES PART
 %dbgmsg('This function is very often called in drawing functions and this message will cause serious slowdown.',1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A = [];
 if length(varargin)==1
     doIdraw = true;
     skel = varargin{1};
+    swoosh = false;
 elseif length(varargin)==2
     skel = varargin{1};
     doIdraw = varargin{2};
+    swoosh = false;
+elseif nvargin==3
+    skel = varargin{1};
+    doIdraw = varargin{2};
+    swoosh = varargin{3};
 else
     error('too many input arguments, don''t know what to do with all of them!')
     
 end
 
-if size(skel,2) ~=1
+if size(skel,2) ~=1&&size(skel,3) ==1&&size(skel,1)>=45
     if doIdraw % if you want to draw you care about pretty, but not speed, I assume...
         % the fast way is create first the A matrix and then do::
         % plot3(A(1,:),A(2,:), A(3,:)) % so no numbered skeletons if drawing a set :-(
         for i = 1:size(skel,2)
-            skeldraw(skel(:,i),true); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+            skeldraw(skel(:,i),true,swoosh); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
         end
     else
-        A = skeldraw(skel(:,1),false);
+        A = skeldraw(skel(:,1),false,swoosh);
         for i = 2:size(skel,2)
-            A = cat(2, A, skeldraw(skel(:,i),false)); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+            A = cat(2, A, skeldraw(skel(:,i),false,swoosh)); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
         end
     end
-else
-    
+elseif size(skel,2) ==3&&size(skel,3) ==1 
+    %%% this must mean that it is already fat
+    tdskel = skel;
+    A = drawcore(tdskel, doIdraw,swoosh);
+elseif size(skel,2) ==3&&size(skel,3) >1 %wow such confuse, very mess
+    %%% it is fat AND a sequence
+    hold on
+    for i = 1:(size(skel,3)-1)
+        skeldraw(skel(:,:,[i i+1]),doIdraw,swoosh); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+    end
+    hold off
+elseif size(skel,2) ==1 %% then it is thin
     tdskel = makefatskel(skel);
-    
+    A = drawcore(tdskel, doIdraw,swoosh);
+end
+
+end
+function A = drawcore(tdskel, doIdraw,swoosh)
     %check size of tdskel
     % there are many different possibilities here, but the size might be enough
     % to tell what is happening
@@ -59,7 +80,25 @@ else
     elseif size(tdskel,1) < 24
         error('Don''t know what to do weird size :-( ')
     end
+    if size(tdskel,2) ==2&&swoosh
+     moresticks = [];
     
+    %moresticks = zeros(3,3*size(row));
+    for i=1:size(tdskel,1)
+        for j=1:2
+            moresticks = cat(2,moresticks,[tdskel(i,:,j);tdskel(i,:,j); [NaN NaN NaN]]');
+        end
+    end
+    
+    SK = skeldraw(A(:,1),0);
+    for i = 2:size(A,2)
+       SK = [SK skeldraw(A(:,i),0)];      
+    end
+    T = [SK moresticks];
+    
+    % make A into a sequence of 3d points
+    A = threedeeA(A);   
+    end
     A = stick_draw(tdskel);
     if doIdraw ==true
         hold_initialstate = ishold();
@@ -75,7 +114,6 @@ else
         end
         
     end
-end
 end
 function a = stick_draw(tdskel)
 
