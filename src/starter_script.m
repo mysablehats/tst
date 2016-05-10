@@ -1,6 +1,7 @@
-fclose('all');
-clear all;
-close all;
+function cst = starter_script()
+% fclose('all');
+% clear all;
+% close all;
 
 %%%% STARTING MESSAGES PART FOR THIS RUN
 global VERBOSE LOGIT
@@ -10,19 +11,19 @@ dbgmsg('========================================================================
 dbgmsg('Running starter script')
 dbgmsg('=======================================================================================================================================================================================================================================')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Each trial is trained on freshly partitioned/ generated data, so that we 
+% Each trial is trained on freshly partitioned/ generated data, so that we
 % have an unbiased understanding of how the chained-gas is classifying.
 %
 % They are generated in a way that you can use nnstart to classify them and
-% evaluated how much better (or worse) a neural network or some other algorithm
-% can separate these datasets.
-% Also, the data for each action example has different length, so the
-% partition of datapoints is not equitative (there will be some fluctuation
-% in the performance of putting every case in one single bin) and it will
-% not be the same in validation and training sets. So in case this is annoying
-% to you and you want to run always with a similar dataset, set
+% evaluated how much better (or worse) a neural network or some other
+% algorithm can separate these datasets. Also, the data for each action
+% example has different length, so the partition of datapoints is not
+% equitative (there will be some fluctuation in the performance of putting
+% every case in one single bin) and it will not be the same in validation
+% and training sets. So in case this is annoying to you and you want to run
+% always with a similar dataset, set
 % generatenewdataset = false
-generatenewdataset = false;
+generatenewdataset = true;
 % if you want to save plot graphs and other information, set saveb = true; 
 saveb = false;
 if generatenewdataset
@@ -31,18 +32,19 @@ if generatenewdataset
     % datasettypes are 'CAD60', 'tstv2' and 'stickman'
     datasettype = 'tstv2';
     %%
-    % It is possible to input who you want to be on the training and validation
-    %set using the variables below. The numbers are either the subject number
-    %for 'type2' "samplingtype" or activity count for 'type1'. It is actually
-    %not a sampling type, but the way you divide the sets. I could not find a
-    %better name for it.
-    sampling_type = 'type2';
+    % It is possible to input who you want to be on the training and
+    % validation
+    %set using the variables below. The numbers are either the subject
+    %number for 'type2' "samplingtype" or activity count for 'type1'. It is
+    %actually not a sampling type, but the way you divide the sets. I could
+    %not find a better name for it.
+    sampling_type = 'type1';
     %%
-    % You can select from either 'act_type' or 'act' to choose if the you want
-    % classes of actions or each action to be classified. This is an
+    % You can select from either 'act_type' or 'act' to choose if the you
+    % want classes of actions or each action to be classified. This is an
     % unsupervised method, so this can only improve the classification on a
     % smaller number of classes.
-    activity_type = 'act';
+    activity_type = 'act_type';
     %%
     %You can pass the variables allskeli1 and allskeli2 to generate_skel_data,
     %if you want to generate a specific set of training and validation data
@@ -52,18 +54,19 @@ if generatenewdataset
     [allskel1, allskel2, allskeli1, allskeli2] = generate_skel_data(datasettype, sampling_type); %, allskeli1, allskeli2);
     
     %%
-    % conformactions is here to enable some preprocessing on the data while it
-    % is still on a structure form, that is, separated into actions. This is
-    % necessary to apply filters on the data, since after they are put into a
-    % sequential form, doing this would merge skeletons together.
+    % conformactions is here to enable some preprocessing on the data while
+    % it is still on a structure form, that is, separated into actions.
+    % This is necessary to apply filters on the data, since after they are
+    % put into a sequential form, doing this would merge skeletons
+    % together.
     %
     % 'filter', 'none', 'median?'
     prefilter = 'none';
     [allskel1, allskel2] = conformactions(allskel1,allskel2, prefilter);
     %%
-    % extractdata actually generates the long matrices to train the algorithm.
-    % creates long data matrices from the data structures and save them for
-    % future use. Load these with load_skel_data
+    % extractdata actually generates the long matrices to train the
+    % algorithm. creates long data matrices from the data structures and
+    % save them for future use. Load these with load_skel_data
 
     
     aa_environment % loads environment variables
@@ -127,7 +130,7 @@ end
 % end
 
 % 
-preconditions = {'nohips', 'normal', 'intostick2'};
+preconditions = {'nohips', 'nofeet'};
  [data_train_, data_val_, ~] = conformskel(data_train, data_val,preconditions{:});
  [data_train_mirror, data_val_mirror, skelldef] = conformskel(data_train, data_val,'mirrorx',preconditions{:});
 %  [data_train_, data_val_, ~] = conformskel(data_train, data_val, awk,preconditions{:});
@@ -159,21 +162,22 @@ data.y.val = [y_val y_val];
 
 %% Setting up runtime variables
 TEST = 0; % set to false to actually run it
-PARA = 1;
+PARA = 0;
 
-P = 4;
+P = 1;
 
-NODES = 2;
+NODES = 1000;
 
 if TEST
     NODES = 2;
 end
 
 params.removepoints = true;
-params.PLOTIT = false;
-params.RANDOMSTART = false; % if true it overrides the .startingpoint variable
-params.RANDOMSET = true; % if true, each sample (either alone or sliding window concatenated sample) will be presented to the gas at random
-params.savegas.resume = true; % if true, it will see if it can find an old gas from the same dataset and same parameters from before and use it as a starting point for learning. Enables you to resume learning in case there is a computer crash.
+params.PLOTIT = true;
+params.RANDOMSTART = true; % if true it overrides the .startingpoint variable
+params.RANDOMSET = false; % if true, each sample (either alone or sliding window concatenated sample) will be presented to the gas at random
+params.savegas.resume = false; % do not set to true. not working
+params.savegas.save = false;
 params.savegas.path = wheretosavestuff;
 params.savegas.parallelgases = true;
 params.savegas.parallelgasescount = 0;
@@ -190,11 +194,11 @@ params.eb = 0.2; %epsilon subscript b
 params.gamma = 4; % for the denoising function
 params.skelldef = skelldef;
 params.plottingstep = 0; % zero will make it plot only the end-gas
-params.MAX_EPOCHS = 1; 
+params.MAX_EPOCHS = 20; 
 
 %Exclusive for gwr
 params.STATIC = true;
-params.at = 0.8; %activity threshold
+params.at = 0.95; %activity threshold
 params.h0 = 1;
 params.ab = 0.95;
 params.an = 0.95;
@@ -218,12 +222,12 @@ end
 %%%% gas structures region
 
 %%%% connection definitions:
-% allconn = {...
-%     {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
-%     {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
-%     {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
-%     {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
-%     {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
+allconn = {...
+    {'gwr1layer',   'gwr',{'pos'},                    'pos',[1 0],params}...
+    {'gwr2layer',   'gwr',{'vel'},                    'vel',[1 0],params}...
+    {'gwr3layer',   'gwr',{'gwr1layer'},              'pos',[3 2],params}...
+    {'gwr4layer',   'gwr',{'gwr2layer'},              'vel',[3 2],params}...
+    {'gwrSTSlayer', 'gwr',{'gwr3layer','gwr4layer'},  'all',[3 2],params}};
 
 % 
 % allconn = {...
@@ -285,10 +289,10 @@ end
 %      {'gwr6layer',   'gwr',{'gwr4layer'},              'vel',3,params}...
 %      {'gwrSTSlayer', 'gwr',{'gwr6layer','gwr5layer'},  'all',3,params}}; 
 %  
- allconn = {...
-        {'gwr1layer',   'gwr',{'all'},                    'all',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
-        {'gwr2layer',   'gwr',{'gwr1layer'},              'all',[3 2], params}...
-        };
+%  allconn = {...
+%         {'gwr1layer',   'gwr',{'all'},                    'all',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
+%         {'gwr2layer',   'gwr',{'gwr1layer'},              'all',[3 2], params}...
+%         };
 %   allconn = {{'gwr1layer',   'gwr',{'pos'},                    'pos',[3 2], params}... %% now there is a vector where q used to be, because we have the p overlap variable...
 %            };
 %        
@@ -354,4 +358,5 @@ save(strcat(wheretosavestuff,SLASH,savevar,'.mat'),savevar)
 end
 gen_cst
 clear b
-
+clock
+end

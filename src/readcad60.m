@@ -1,5 +1,13 @@
 function allskel = readcad60(subject)
 
+if length(subject)>1
+    allskel = [];
+    for i = subject
+        allskel = [allskel readcad60(i)];
+    end
+    return
+end
+
 [slash, pathtodata] = OS_VARS;
 %%% read
 realpath = strcat(pathtodata, '..',slash,'CAD60',slash,'data', num2str(subject), slash);
