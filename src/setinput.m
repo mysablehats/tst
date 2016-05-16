@@ -95,6 +95,12 @@ function awk = makeawk(q,inawk)
 awk = repmat(inawk,q(1),1);
 end
 function icli = removebaddata(inp, idxx,rev, qp) % inpe, y,
+%%%% THIS FUNCTION IS A MESS. It was really difficult to write, it is slow
+%%%% (I have implemented a considerable speedup, but then it lost
+%%%% generality!) and perhaps even inaccurate. BUT, to make this better it
+%%%% would probably require to not use cells anymore, but a structure with
+%%%% variable number of fields and go through them in order. 
+
 if ~isempty(rev)
     q = qp(1);
     switch length(qp)
@@ -108,7 +114,7 @@ if ~isempty(rev)
             p = qp(2);
             r = qp(3);
     end
-    dbgmsg('OMG, I am removing some points!!!!!!!!!!!!!!!!!!!!')
+    dbgmsg('I am removing some points!')
     
     % I will make this a basic implementation. The cells should have
     % appropriate multi-layer data points to remove, so it will likely not be

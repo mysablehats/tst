@@ -20,63 +20,112 @@ else
     
 end
 
-if size(skel,2) ~=1
-    if doIdraw % if you want to draw you care about pretty, but not speed, I assume...
-        % the fast way is create first the A matrix and then do::
-        % plot3(A(1,:),A(2,:), A(3,:)) % so no numbered skeletons if drawing a set :-(
-        for i = 1:size(skel,2)
-            skeldraw(skel(:,i),true); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+A = [];
+cellA = [];
+markers = false;
+
+%%% I know hacks make your life hell, but...
+% there is no way around this. everyone will receive fat 2 skeletons so
+% that we can draw the pretty thing.
+if size(skel,3)==1 %%it will fail for a single fat skeleton, bt nothing is perfect...
+    if size(skel,2) ~=1
+        for i = 1:(size(skel,2)-1)
+            tdskel = cat(3, makefatskel(skel(:,i)),makefatskel(skel(:,i+1)));
+            [AA,cellAA] = constructA(remove_excess(tdskel));
+            cellA = cat(2, cellA, {cellAA}); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+            A = cat(2, A, AA);
         end
+        %return
     else
-        A = skeldraw(skel(:,1),false);
-        for i = 2:size(skel,2)
-            A = cat(2, A, skeldraw(skel(:,i),false)); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
-        end
+        tdskel = cat(3,makefatskel(skel),makefatskel(skel));
+        [A,cellA] = constructA(remove_excess(tdskel)); 
+        %%% only markers if drawing a single skeleton        
+        %markers = true;
     end
 else
-    
-    tdskel = makefatskel(skel);
-    
-    %check size of tdskel
-    % there are many different possibilities here, but the size might be enough
-    % to tell what is happening
-    %if > 50 then it has to have small paths. I will draw just the first
-    %then...
-    %if == 49 then it has velocities, I will also take those out
-    
-    if size(tdskel,1) > 25
-        %have to remove all the n*25 parts from the end
-        wheretoclip = mod(size(tdskel,1),25);
-        if wheretoclip==0
-            wheretoclip = 25;
+    for i =1:(size(skel,3)-1)
+        %%% has to be separated into groups of 2
+        tdskel = cat(3,skel(:,:,i),skel(:,:,i+1));
+        [AA,cellAA] = constructA(remove_excess(tdskel));
+        cellA = cat(2, cellA, {cellAA}); % I perhaps should use the fast way, but I am lazy, so I may do this in the future
+        A = cat(2, A, AA);        
+    end
+end
+
+if doIdraw
+    hold_initialstate = ishold();
+    hold on
+    if markers
+        for ll = 1:2            
+            plot3(tdskel(:,1,ll), tdskel(:,2,ll), tdskel(:,3,ll),'.y','markersize',15); view(0,0); axis equal;            
+            for k=1:25 % I used this to make the drawings, but now I think it looks cool and I don't want to remove it
+                text(tdskel(k,1,ll), tdskel(k,2,ll), tdskel(k,3,ll),num2str(k))
+            end
         end
-        tdskel = tdskel(1:wheretoclip,:);
     end
     
-    if size(tdskel,1) == 24
-        tdskel = [[0 0 0 ];tdskel]; % for the hips
-        %tdskel = [tdskel(1:20,:);[0 0 0 ];tdskel(21:end,:)]; % for the thorax
-    elseif size(tdskel,1) < 24
-        error('Don''t know what to do weird size :-( ')
-    end
-    
-    A = stick_draw(tdskel);
-    if doIdraw ==true
-        hold_initialstate = ishold();
-        plot3(tdskel(:,1), tdskel(:,2), tdskel(:,3),'.y','markersize',15); view(0,0); axis equal;
-        hold on
-        for k=1:25 % I used this to make the drawings, but now I think it looks cool and I don't want to remove it
-            text(tdskel(k,1), tdskel(k,2), tdskel(k,3),num2str(k))
-        end
-        plot3(A(1,:),A(2,:), A(3,:))
-        hold off
-        if hold_initialstate == 1
-            hold on
-        end
+    mycmap = colormap( gca ,winter(size(cellA,2)));
+    try
+        pp = plot3(cellA{:});
         
+    catch
+        plotA = [cellA{:}];
+        pp = plot3(plotA{:});
     end
+    for i = 1: size(cellA,2)
+        pp(i).Color = mycmap(i,:);
+    end
+        
+    hold off
+    if hold_initialstate == 1
+        hold on
+    end
+    
 end
+
 end
+function tdskel = remove_excess(tdskel)
+%check size of tdskel
+% there are many different possibilities here, but the size might be enough
+% to tell what is happening
+%if > 50 then it has to have small paths. I will draw just the first
+%then...
+%if == 49 then it has velocities, I will also take those out
+
+if size(tdskel,1) > 25
+    %have to remove all the n*25 parts from the end
+    wheretoclip = mod(size(tdskel,1),25);
+    if wheretoclip==0
+        wheretoclip = 25;
+    end
+    tdskel = tdskel(1:wheretoclip,:,:);
+end
+
+if size(tdskel,1) == 24
+    tdskel = [[0 0 0 ];tdskel]; % for the hips
+    %tdskel = [tdskel(1:20,:);[0 0 0 ];tdskel(21:end,:)]; % for the thorax
+elseif size(tdskel,1) < 24
+    error('Don''t know what to do weird size :-( ')
+end
+
+
+end
+function [A, cellA] = constructA(tdskel)
+
+moresticks = [];
+
+for i=1:size(tdskel,1)
+    moresticks = cat(2,moresticks,[tdskel(i,:,1);tdskel(i,:,2); [NaN NaN NaN]]');
+end
+
+A1 = stick_draw(tdskel(:,:,1));
+A2 = stick_draw(tdskel(:,:,2));
+
+A = [A1 A2 moresticks];
+
+cellA = {A(1,:),A(2,:), A(3,:)};
+end
+
 function a = stick_draw(tdskel)
 
 %
@@ -88,7 +137,7 @@ function a = stick_draw(tdskel)
 %
 % 5-6-7 right arm
 % 8 22 23 right hand
-% 
+%
 % 9-10-11 left arm
 % 12 24 25 left hand
 %
@@ -110,7 +159,7 @@ a= [a draw_1_stick(tdskel, 3,4)];
 
 a= [a draw_1_stick(tdskel, 5,21)];
 a= [a draw_1_stick(tdskel, 21,9)];
-%a= [a draw_1_stick(tdskel, 5,9)]; %%%% just to draw the thorax thing 
+%a= [a draw_1_stick(tdskel, 5,9)]; %%%% just to draw the thorax thing
 
 a= [a draw_1_stick(tdskel, 5,6)];
 a= [a draw_1_stick(tdskel, 6,7)];

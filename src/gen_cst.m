@@ -6,7 +6,7 @@ end
 if ~exist('cst','var')
     cst = struct(); 
 else
-    cst(end+1) = cst(1);
+    cst(end+1).nodes = [];%cst(1);
 end
 
 cst(end).nodes = NODES;
@@ -17,6 +17,7 @@ cst(end).sampling_type = sampling_type;
 cst(end).datainputvectorsize = size(data.train,1);
 cst(end).trainsubjectindexes = allskeli1;
 cst(end).valsubjectindexes = allskeli2;
+cst(end).arch = architectures;
 if exist('prefilter','var')
     cst(end).prefilter = prefilter;
 else
@@ -44,6 +45,7 @@ cst(end).metrics(length(b),length(b(1).mt)) = struct; %,2,size(b(1).mt(1).confus
 
 for ii = 1:length(b)
     for jj= 1:length(b(ii).mt)
+        cst(end).metrics(ii,jj).conffig = b(ii).mt(jj).conffig;
         cst(end).metrics(ii,jj).val = b(ii).mt(jj).confusions.val;
         cst(end).metrics(ii,jj).train = b(ii).mt(jj).confusions.train;
         if ~isfield(b(ii).mt(jj).outparams, 'accumulatedepochs')

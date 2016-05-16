@@ -69,7 +69,7 @@ for i=1:number_of_metrics
             legendvar{j} = prefixstr;
         end
     end
-    hLegend = legend(findall(ax,'Tag','Box'), legendvar{:});
+    hLegend = legend(findall(ax,'Tag','Box'), legendvar{end:-1:1});
     % if ~ishold
     %     gg = gca;
     set(ax,'YLim', [0 100]); % 'YDir', 'reverse',

@@ -1,11 +1,11 @@
 global homepath wheretosavestuff SLASH pathtodata logpath
 try
     if ismac
-		wheretosavestuff = '/remote/elements/fall_detection_datasets/var';
+		wheretosavestuff = '/Volumes/Seagate';
 		homepath = '~/matlabprogs/';
 		%disp('reached ismac')
 	elseif isunix
-		wheretosavestuff = '/home/fbklein/Dropbox/octave_progs';
+		wheretosavestuff = '/media/fbklein/Elements/fall_detection_datasets/var'; 
 		homepath = '/home/fbklein/Documents/classifier/';
 		%disp('reached isunix')
 	end

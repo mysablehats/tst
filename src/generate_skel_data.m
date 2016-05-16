@@ -35,7 +35,11 @@ switch dataset
         datasize = 11;
     case 'stickman'
         loadfun = @generate_falling_stick;
-        datasize = 30;        
+        datasize = 20; 
+        if strcmp(sampling_type,'type1')
+            dbgmsg('Sampling type1 not implemented for falling_stick!!! Using type2',1)
+            sampling_type = 'type2';
+        end
     otherwise
         error('Unknown database.')
 end
