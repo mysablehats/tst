@@ -26,6 +26,11 @@ if nargin>3
     allskeli2 = varargin{4};
 end
 
+if isempty(allskeli1)||isempty(allskeli2)
+    clear allskeli1
+    clear allskeli2
+end
+
 switch dataset
     case 'CAD60'
         loadfun = @readcad60;

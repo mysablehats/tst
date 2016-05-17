@@ -1,7 +1,8 @@
 % create the matrix from the structure to access the database and run the
 % classification....
-function [Data, vectordata, Y, ends, lab] = extractdata(structure, typetype, inputlabels)
+function [data, lab] = extractdata(structure, typetype, inputlabels)
 WANTVELOCITY = true;
+RANDSQE = false;
 
 %%%%%%%%Messages part. Feedback for the user about the algorithm
 dbgmsg('Extracting data from skeleton structure',1)
@@ -12,8 +13,8 @@ end
 %typetype= 'act_type';
 %typetype= 'act';
 
-Data = structure(1).skel;
-ends = size(structure(1).skel,3);
+Data = [];
+ends = [];
 % approach
 if strcmp(typetype,'act')
     [labelZ,~] = alllabels(structure,inputlabels);
@@ -24,26 +25,40 @@ else
 end
 lab = sort(labelZ);
 
-Y = repmat(whichlab(structure(1),lab,typetype),1,size(structure(1).skel,3));
-for i = 2:length(structure) % I think each iteration is one action
+Y = [];
+
+if RANDSQE
+    randseq = randperm(length(structure));
+else
+    randseq = 1:length(structure);
+end
+
+for i = randseq % I think each iteration is one action
     Data = cat(3, Data, structure(i).skel);
     Y = cat(2, Y, repmat(whichlab(structure(i),lab,typetype),1,size(structure(i).skel,3)));
     ends = cat(2, ends, size(structure(i).skel,3));
 end
 if WANTVELOCITY
-    Data_vel = structure(1).vel;
-    for i = 2:length(structure) % I think each iteration is one action
+    Data_vel = [];
+    for i = randseq % I think each iteration is one action
         Data_vel = cat(3, Data_vel, structure(i).vel);        
     end
     Data = cat(1,Data, Data_vel);
 end
 % It will also construct data for a clustering analysis, whatever the hell
 % that might mean in this sense
-vectordata = [Data(:,1,1); Data(:,2,1); Data(:,3,1)];
-for i = 2:length(Data)
+vectordata = [];
+for i = 1:length(Data)
     vectordata = cat(2,vectordata, [Data(:,1,i); Data(:,2,i); Data(:,3,i)]);
 end
 %Y = Y';
+%Data, vectordata, Y, ends, lab]
+
+data.data = vectordata;
+%data.tensor = Data;
+data.y = Y;
+data.ends = ends;
+
 end
 function [lab, biglab] = alllabels(st,lab)
 %lab = cell(0);
