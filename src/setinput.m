@@ -75,7 +75,8 @@ if length(inputinput)>1
         extinput = cat(1,extinput,inputinput{i}); % this part should check for the right ends, ends should also be a cell array, and they should be concatenated properly
         %%% dealing with possible empty sets::
         if ~isempty(removeremove{i})
-            midremove = cat(1,midremove,removeremove{i}); %{i}
+            midremove = cat(2,midremove,removeremove{i}); %{i}
+            %midremove = cat(1,midremove,removeremove{i}); %{i}
         end        
         awko = cat(1,awko,awk{i});
     end

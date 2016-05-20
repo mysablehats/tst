@@ -1,34 +1,34 @@
 function [A, C ,outparams] = gas_wrapper(data,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%cf parisi, 2015 and cf marsland, 2002
-%based on the GNG algorithm from the guy that did the GNG algorithm for
-%matlab
+%cf parisi, 2015 and cf marsland, 2002 based on the GNG algorithm from the
+%guy that did the GNG algorithm for matlab
 
-% some tiny differences:
-% in the 2002 paper, they want to show the learning of topologies ability
-% of the GWR algorithm, which is not our main goal. In this sense they have
-% a function that can generate new points as pleased p(eta). This is not
-% our case, we will just go through our data sequentially
+% some tiny differences: in the 2002 paper, they want to show the learning
+% of topologies ability of the GWR algorithm, which is not our main goal.
+% In this sense they have a function that can generate new points as
+% pleased p(eta). This is not our case, we will just go through our data
+% 'sequentially' (or with a random permutation)
 
-% I am not taking time into account. the h(time) function is therefore
-% something that yields a constant value
+% Also, I am not taking time into account. the h(time) function is
+% therefore something that yields a constant value
 
-%the initial parameters for the algorithm:
-%global maxnodes at en eb h0 ab an tb tn amax
+% As of yet, the gpu use is poor and not optimized, running at 10x slower
+% speed than on the cpu. Also, resuming is only perhaps functional when not
+% using parallel threads; this is due to the fact that with many different
+% initialization parameters it gets hard to know exactly the
+% characteristics of the gas before training time. There are many ways this
+% can be solved, it just hasn't been priority yet.
+
+%the initial parameters for the algorithm: global maxnodes at en eb h0 ab
+%an tb tn amax
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%maxnodes = params.nodes; %maximum number of nodes/neurons in the gas
-%at = params.at;%0.95; %activity threshold
-%en = params.en;%= 0.006; %epsilon subscript n
-%eb = params.eb;%= 0.2; %epsilon subscript b
-%amax = params.amax;%= 50; %greatest allowed age
+%maxnodes = params.nodes; %maximum number of nodes/neurons in the gas at =
+%params.at;%0.95; %activity threshold en = params.en;%= 0.006; %epsilon
+%subscript n eb = params.eb;%= 0.2; %epsilon subscript b amax =
+%params.amax;%= 50; %greatest allowed age
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%% STARTING MESSAGES PART FOR THIS RUN
-global VERBOSE LOGIT
-VERBOSE = true;
-LOGIT = true;
 
 if nargin == 3
     params = varargin{1};

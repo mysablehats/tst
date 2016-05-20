@@ -26,7 +26,11 @@ if nargin>3
     allskeli2 = varargin{4};
 end
 
-if isempty(allskeli1)||isempty(allskeli2)
+if isempty(allskeli1)||isempty(allskeli2)||varargin{5} 
+    %%% maybe it would make sense here to just generate the complementary
+    %%% group with setdiff, but I decided for: if any subject definition is
+    %%% empty, or simvar(end).randSubjEachIteration is true, then generate
+    %%% new sample.
     clear allskeli1
     clear allskeli2
 end

@@ -1,8 +1,20 @@
 % create the matrix from the structure to access the database and run the
 % classification....
-function [data, lab] = extractdata(structure, typetype, inputlabels)
-WANTVELOCITY = true;
-RANDSQE = false;
+function [data, lab] = extractdata(structure, typetype, inputlabels,varargin)
+for i = 1:length(varargin)
+    switch varargin{i}
+        case 'wantvelocity'
+            WANTVELOCITY = true;
+        case 'rand'
+            RANDSQE = true;
+        case 'novelocity'
+            WANTVELOCITY = true;
+        case 'seq'
+            RANDSQE = false;
+        otherwise
+            error('unexpected argument')
+    end
+end
 
 %%%%%%%%Messages part. Feedback for the user about the algorithm
 dbgmsg('Extracting data from skeleton structure',1)
